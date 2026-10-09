@@ -635,11 +635,16 @@
             <article class="step-card" data-step="0">
               <div class="step-card-top">
                 <span class="step-icon ic-users" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="ic-a"><path class="ic-draw" pathLength="1" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle class="ic-draw" pathLength="1" cx="9" cy="7" r="4"></circle></g>
-                    <g class="ic-b"><path class="ic-draw" pathLength="1" d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path class="ic-draw" pathLength="1" d="M16 3.13a4 4 0 0 1 0 7.75"></path></g>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer si-slide-left">
+                      <circle cx="40" cy="44" r="12"></circle>
+                      <path d="M18 94v-8a22 22 0 0 1 44 0v8"></path>
+                    </g>
+                    <g class="si-layer si-slide-right">
+                      <circle cx="88" cy="44" r="12"></circle>
+                      <path d="M66 94v-8a22 22 0 0 1 44 0v8"></path>
+                    </g>
+                    <path class="si-accent" d="M10 102h108"></path>
                   </svg>
                 </span>
                 <span class="step-number">01</span>
@@ -653,9 +658,17 @@
             <article class="step-card" data-step="1">
               <div class="step-card-top">
                 <span class="step-icon ic-shield" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path class="ic-draw ic-shield" pathLength="1" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <path class="ic-draw ic-check" pathLength="1" d="m9 12 2 2 4-4"></path>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer">
+                      <path d="M22 88a42 42 0 0 1 84 0"></path>
+                      <path d="M34 88a30 30 0 0 1 60 0" stroke-dasharray="3 6"></path>
+                      <path d="M22 88h10M96 88h10M64 46v8M34.3 58.3l5.6 5.6M93.7 58.3l-5.6 5.6"></path>
+                    </g>
+                    <g class="si-layer si-needle">
+                      <path d="M64 88 64 52"></path>
+                    </g>
+                    <circle class="si-accent si-accent-fill" cx="64" cy="88" r="4"></circle>
+                    <path class="si-accent" d="M10 102h108"></path>
                   </svg>
                 </span>
                 <span class="step-number">02</span>
@@ -669,10 +682,18 @@
             <article class="step-card" data-step="2">
               <div class="step-card-top">
                 <span class="step-icon ic-layers" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon class="ic-draw ic-l1" pathLength="1" points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                    <polyline class="ic-draw ic-l3" pathLength="1" points="2 17 12 22 22 17"></polyline>
-                    <polyline class="ic-draw ic-l2" pathLength="1" points="2 12 12 17 22 12"></polyline>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer si-ring">
+                      <circle cx="64" cy="58" r="40"></circle>
+                      <circle cx="64" cy="58" r="25" stroke-dasharray="26 7"></circle>
+                    </g>
+                    <g class="si-layer si-nodes">
+                      <circle cx="64" cy="18" r="5"></circle>
+                      <circle cx="104" cy="58" r="5"></circle>
+                      <circle cx="64" cy="98" r="5"></circle>
+                      <circle cx="24" cy="58" r="5"></circle>
+                    </g>
+                    <path class="si-accent" d="M50 58h28M64 44v28"></path>
                   </svg>
                 </span>
                 <span class="step-number">03</span>
@@ -686,8 +707,17 @@
             <article class="step-card" data-step="3">
               <div class="step-card-top">
                 <span class="step-icon ic-bolt" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon class="ic-draw ic-bolt" pathLength="1" points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer si-doc">
+                      <rect x="30" y="12" width="68" height="86"></rect>
+                      <path d="M54 34h30M54 55h30M54 76h30"></path>
+                    </g>
+                    <g class="si-layer si-checks">
+                      <path class="si-check si-check-1" d="m38 34 4 4 6-8"></path>
+                      <path class="si-check si-check-2" d="m38 55 4 4 6-8"></path>
+                      <path class="si-check si-check-3" d="m38 76 4 4 6-8"></path>
+                    </g>
+                    <path class="si-accent" d="M10 108h108"></path>
                   </svg>
                 </span>
                 <span class="step-number">04</span>
@@ -701,9 +731,15 @@
             <article class="step-card" data-step="4">
               <div class="step-card-top">
                 <span class="step-icon ic-trend" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline class="ic-draw ic-trend" pathLength="1" points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                    <polyline class="ic-draw ic-arrow" pathLength="1" points="16 7 22 7 22 13"></polyline>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer si-bars">
+                      <path d="M18 98V70h16v28M44 98V56h16v42M70 98V44h16v54M96 98V30h16v68"></path>
+                    </g>
+                    <g class="si-layer si-chart-line">
+                      <path d="m14 72 30-22 24 12 38-40"></path>
+                      <circle cx="106" cy="22" r="4"></circle>
+                    </g>
+                    <path class="si-accent" d="M10 102h108"></path>
                   </svg>
                 </span>
                 <span class="step-number">05</span>
@@ -717,10 +753,17 @@
             <article class="step-card" data-step="5">
               <div class="step-card-top">
                 <span class="step-icon ic-cycle" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="ic-spin"><polyline class="ic-draw" pathLength="1" points="23 4 23 10 17 10"></polyline>
-                    <polyline class="ic-draw" pathLength="1" points="1 20 1 14 7 14"></polyline>
-                    <path class="ic-draw" pathLength="1" d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></g>
+                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="si-layer si-orbit">
+                      <path d="M28 58a36 36 0 0 1 61-26"></path>
+                      <path d="m89 20 0 12-12 0"></path>
+                      <path d="M100 58a36 36 0 0 1-61 26"></path>
+                      <path d="m39 96 0-12 12 0"></path>
+                    </g>
+                    <g class="si-layer si-pulse">
+                      <path d="M30 60h14l6-12 9 26 8-20 6 8h25"></path>
+                    </g>
+                    <circle class="si-accent si-accent-fill" cx="64" cy="58" r="3"></circle>
                   </svg>
                 </span>
                 <span class="step-number">06</span>
