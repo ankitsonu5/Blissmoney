@@ -1336,6 +1336,153 @@ button {
   transform: scale(1.03);
 }
 
+/* ---------- Who We Serve: two-column head ---------- */
+.section-head.serve-head {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: 28px clamp(40px, 6vw, 110px);
+}
+.serve-label {
+  margin-bottom: 26px;
+}
+.serve-head-side .lede {
+  margin-top: 0;
+}
+.serve-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-light);
+}
+.serve-meta-num {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--green);
+}
+.serve-meta-text {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 30ch;
+}
+
+/* Marker sweep behind "actually" once the heading has animated in */
+#serve h2 em {
+  background-image: linear-gradient(
+    transparent 62%,
+    rgba(12, 175, 128, 0.2) 62%,
+    rgba(12, 175, 128, 0.2) 92%,
+    transparent 92%
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+#serve h2.is-marked em {
+  background-size: 100% 100%;
+}
+
+/* ---------- Who We Serve: card upgrades ---------- */
+.seg-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: -8px -6px 18px -10px;
+}
+.seg-svg {
+  width: 96px;
+  height: 90px;
+  overflow: visible;
+  color: rgba(16, 20, 15, 0.5);
+}
+.seg-svg .si-layer,
+.seg-svg .si-accent {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  transition: stroke 0.35s ease;
+}
+.seg-svg .si-accent {
+  stroke: var(--green);
+}
+.seg-svg .si-bars {
+  transform-origin: 50% 100%;
+}
+.si-fold {
+  animation: siFold 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+}
+.segment-card:hover .seg-svg .si-layer {
+  stroke: var(--green);
+}
+.seg-num {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  opacity: 0.45;
+  margin-top: 12px;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+.segment-card:hover .seg-num {
+  color: var(--green);
+  opacity: 1;
+}
+.seg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -6px 0 22px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.seg-link span {
+  transition: transform 0.35s var(--ease);
+}
+.segment-card:hover .seg-link,
+.seg-link:focus-visible {
+  opacity: 1;
+  transform: none;
+}
+.seg-link:hover span {
+  transform: translateX(6px);
+}
+.segment-card:hover .card-img-wrap img {
+  transform: scale(1.07);
+}
+@media (hover: none) {
+  .seg-link {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-head.serve-head {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seg-svg * {
+    animation: none !important;
+  }
+  #serve h2 em {
+    transition: none;
+  }
+}
+
 /* ============================================================
    CH 02 — DISCIPLINES + STATS
    ============================================================ */

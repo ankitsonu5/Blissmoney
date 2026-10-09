@@ -366,7 +366,13 @@
           ease: "power3.out",
         },
         "-=0.6",
-      );
+      )
+        .from(
+          "#serve .serve-label, #serve .serve-meta",
+          { y: 20, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" },
+          "<",
+        )
+        .add(() => heading.classList.add("is-marked"), "-=0.3");
 
       // Parallax scrub on continuous scroll through the section
       gsap.to(serveHead, {
