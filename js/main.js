@@ -516,6 +516,57 @@
     });
   }
 
+  /* ---------- Hero scroll zoom-out ---------- */
+  const heroScroll = $("#heroScroll");
+  if (heroScroll) {
+    const heroEl = $(".hero", heroScroll);
+    const heroVisual = $(".hero-visual", heroScroll);
+    let heroTicking = false;
+
+    // Distance (layout px, unaffected by the scale transform) from the logo's
+    // centre to the hero's centre.
+    const measureHeroShift = () => {
+      if (!heroEl || !heroVisual) return;
+      heroVisual.style.left = "0px";
+      heroVisual.style.top = "0px";
+      let x = heroVisual.offsetWidth / 2;
+      let y = heroVisual.offsetHeight / 2;
+      for (let el = heroVisual; el && el !== heroEl; el = el.offsetParent) {
+        x += el.offsetLeft;
+        y += el.offsetTop;
+      }
+      heroVisual.style.left = "";
+      heroVisual.style.top = "";
+      heroScroll.style.setProperty("--shift-x", `${heroEl.clientWidth / 2 - x}px`);
+      heroScroll.style.setProperty("--shift-y", `${heroEl.clientHeight / 2 - y}px`);
+    };
+
+    const updateHero = () => {
+      heroTicking = false;
+      const rect = heroScroll.getBoundingClientRect();
+      const range = rect.height - window.innerHeight;
+      const p = range > 0 ? Math.min(1, Math.max(0, -rect.top / range)) : 0;
+      heroScroll.style.setProperty("--p", p.toFixed(4));
+      // Eased logo travel, arriving at centre slightly before the end
+      const t = Math.min(1, p / 0.85);
+      heroScroll.style.setProperty("--move", (t * t * (3 - 2 * t)).toFixed(4));
+    };
+    const queueHero = () => {
+      if (!heroTicking) {
+        heroTicking = true;
+        requestAnimationFrame(updateHero);
+      }
+    };
+    window.addEventListener("scroll", queueHero, { passive: true });
+    window.addEventListener("resize", () => {
+      measureHeroShift();
+      queueHero();
+    });
+    window.addEventListener("load", measureHeroShift);
+    measureHeroShift();
+    updateHero();
+  }
+
   /* ---------- Smooth in-page anchor scrolling ---------- */
   document.addEventListener("click", (e) => {
     const link = e.target.closest('a[href^="#"]');

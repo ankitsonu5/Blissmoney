@@ -607,6 +607,64 @@ button {
 .hero-diagonal-beam {
   display: none;
 }
+
+/* Hero scroll zoom-out: hero sticks while the frame closes in around it */
+.hero-scroll {
+  --p: 0;
+  position: relative;
+  height: 190svh;
+  background: var(--ivory);
+}
+.hero-scroll > .hero {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 0;
+  clip-path: inset(
+    calc(var(--p) * 7%) calc(var(--p) * 5%) calc(var(--p) * 7%) calc(var(--p) * 5%)
+    round calc(var(--p) * 28px)
+  );
+  /* Scale the whole hero (it owns the background), never an inner wrapper:
+     a transform on .hero-inner/.hero-visual isolates the video's
+     mix-blend-mode: screen and its black background shows through. */
+  transform: scale(calc(1 - var(--p) * 0.06));
+  will-change: clip-path, transform;
+}
+.hero-scroll .hero-content {
+  opacity: calc(1 - var(--p) * 1.25);
+  transform: translateY(calc(var(--p) * -40px));
+}
+.hero-scroll .aurora {
+  transform: scale(calc(1 + var(--p) * 0.14));
+}
+/* Logo glides to the centre of the frame as the text fades out.
+   Uses left/top (not transform) so the video's mix-blend-mode keeps working. */
+.hero-scroll .hero-visual {
+  left: calc(var(--move, 0) * var(--shift-x, 0px));
+  top: calc(var(--move, 0) * var(--shift-y, 0px));
+  will-change: left, top;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll {
+    height: auto;
+  }
+  .hero-scroll > .hero {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    clip-path: none;
+  }
+  .hero-scroll .hero-visual {
+    left: 0;
+    top: 0;
+  }
+  .hero-scroll > .hero,
+  .hero-scroll .hero-content,
+  .hero-scroll .aurora {
+    transform: none;
+    opacity: 1;
+  }
+}
 .hero-inner {
   width: min(100% - 48px, 1340px);
   margin-inline: auto;
