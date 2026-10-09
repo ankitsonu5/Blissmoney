@@ -5,15 +5,15 @@
   "use strict";
 
   /* ---------- Helpers ---------- */
-  const $  = (s, c) => (c || document).querySelector(s);
+  const $ = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
 
   // Indian currency formatting (₹, lakh/crore grouping)
-  const inr = (n) =>
-    "₹" + Math.round(n).toLocaleString("en-IN");
+  const inr = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
 
   const inrShort = (n) => {
-    if (n >= 1e7) return "₹" + (n / 1e7).toFixed(2).replace(/\.00$/, "") + " Cr";
+    if (n >= 1e7)
+      return "₹" + (n / 1e7).toFixed(2).replace(/\.00$/, "") + " Cr";
     if (n >= 1e5) return "₹" + (n / 1e5).toFixed(2).replace(/\.00$/, "") + " L";
     return inr(n);
   };
@@ -28,8 +28,12 @@
       const p = heroVideo.play();
       if (p !== undefined) {
         p.catch(() => {
-          window.addEventListener("click", () => heroVideo.play(), { once: true });
-          window.addEventListener("touchstart", () => heroVideo.play(), { once: true });
+          window.addEventListener("click", () => heroVideo.play(), {
+            once: true,
+          });
+          window.addEventListener("touchstart", () => heroVideo.play(), {
+            once: true,
+          });
         });
       }
     };
@@ -39,12 +43,19 @@
   /* ---------- Header: scrolled state + hide on scroll down ---------- */
   const header = $("#siteHeader");
   let lastY = 0;
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    header.classList.toggle("scrolled", y > 40);
-    header.classList.toggle("hidden", y > 400 && y > lastY && !$("#mobileMenu").classList.contains("open"));
-    lastY = y;
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      const y = window.scrollY;
+      header.classList.toggle("scrolled", y > 40);
+      header.classList.toggle(
+        "hidden",
+        y > 400 && y > lastY && !$("#mobileMenu").classList.contains("open"),
+      );
+      lastY = y;
+    },
+    { passive: true },
+  );
 
   /* ---------- Mobile menu ---------- */
   const toggle = $("#navToggle");
@@ -56,8 +67,12 @@
     menu.setAttribute("aria-hidden", !open);
     document.body.style.overflow = open ? "hidden" : "";
   };
-  toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
-  $$("#mobileMenu a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  toggle.addEventListener("click", () =>
+    setMenu(!menu.classList.contains("open")),
+  );
+  $$("#mobileMenu a").forEach((a) =>
+    a.addEventListener("click", () => setMenu(false)),
+  );
 
   /* ---------- Mobile submenu accordions ---------- */
   $$(".m-toggle").forEach((btn) => {
@@ -69,7 +84,8 @@
       $$(".m-item.open").forEach((it) => {
         it.classList.remove("open");
         it.querySelector(".m-toggle")?.setAttribute("aria-expanded", "false");
-        const s = it.querySelector(".m-sub"); if (s) s.style.maxHeight = null;
+        const s = it.querySelector(".m-sub");
+        if (s) s.style.maxHeight = null;
       });
       if (!open) {
         item.classList.add("open");
@@ -81,31 +97,38 @@
 
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver(
-    (entries) => entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
-    }),
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
   );
   $$(".reveal").forEach((el) => io.observe(el));
 
   /* ---------- Animated counters (stat band) ---------- */
-  const counterIO = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      counterIO.unobserve(e.target);
-      const el = e.target;
-      const target = +el.dataset.count;
-      const t0 = performance.now();
-      const dur = 1200;
-      const tick = (t) => {
-        const p = Math.min((t - t0) / dur, 1);
-        const val = Math.round(target * (1 - Math.pow(1 - p, 3)));
-        el.textContent = val < 10 ? `0${val}` : `${val}`;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
-  }, { threshold: 0.3 });
+  const counterIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        counterIO.unobserve(e.target);
+        const el = e.target;
+        const target = +el.dataset.count;
+        const t0 = performance.now();
+        const dur = 1200;
+        const tick = (t) => {
+          const p = Math.min((t - t0) / dur, 1);
+          const val = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          el.textContent = val < 10 ? `0${val}` : `${val}`;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    },
+    { threshold: 0.3 },
+  );
   $$(".stat-num").forEach((el) => {
     el.textContent = "00";
     counterIO.observe(el);
@@ -129,13 +152,17 @@
   });
   // open first by default
   const firstAcc = $(".acc-head");
-  if (firstAcc) firstAcc.nextElementSibling.style.maxHeight =
-    firstAcc.nextElementSibling.scrollHeight + "px";
+  if (firstAcc)
+    firstAcc.nextElementSibling.style.maxHeight =
+      firstAcc.nextElementSibling.scrollHeight + "px";
 
   /* ---------- Calculator tabs ---------- */
   $$(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      $$(".tab").forEach((t) => { t.classList.remove("active"); t.setAttribute("aria-selected", "false"); });
+      $$(".tab").forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
       tab.classList.add("active");
       tab.setAttribute("aria-selected", "true");
       $$(".calc-panel").forEach((p) => p.classList.remove("active"));
@@ -145,7 +172,9 @@
 
   /* ---------- Range slider fill ---------- */
   const paintRange = (input) => {
-    const min = +input.min, max = +input.max, val = +input.value;
+    const min = +input.min,
+      max = +input.max,
+      val = +input.value;
     input.style.setProperty("--fill", ((val - min) / (max - min)) * 100 + "%");
   };
   $$('input[type="range"]').forEach((r) => {
@@ -173,9 +202,12 @@
     $("#sipFV").textContent = inrShort(fv);
     $("#sipInvested").textContent = inrShort(invested);
     $("#sipGains").textContent = inrShort(fv - invested);
-    $("#sipBar").style.width = Math.min((invested / fv) * 100, 100).toFixed(1) + "%";
+    $("#sipBar").style.width =
+      Math.min((invested / fv) * 100, 100).toFixed(1) + "%";
   };
-  ["sipAmt", "sipYears", "sipRate"].forEach((id) => $("#" + id).addEventListener("input", sip));
+  ["sipAmt", "sipYears", "sipRate"].forEach((id) =>
+    $("#" + id).addEventListener("input", sip),
+  );
 
   /* --- Risk planning (life cover gap) --- */
   const risk = () => {
@@ -193,9 +225,12 @@
     $("#riskNeed").textContent = inrShort(need);
     $("#riskHave").textContent = inrShort(have);
     $("#riskGap").textContent = gap === 0 ? "Fully covered" : inrShort(gap);
-    $("#riskBar").style.width = Math.min((have / need) * 100, 100).toFixed(1) + "%";
+    $("#riskBar").style.width =
+      Math.min((have / need) * 100, 100).toFixed(1) + "%";
   };
-  ["riskExp", "riskYears", "riskLiab", "riskCover"].forEach((id) => $("#" + id).addEventListener("input", risk));
+  ["riskExp", "riskYears", "riskLiab", "riskCover"].forEach((id) =>
+    $("#" + id).addEventListener("input", risk),
+  );
 
   /* --- ROI / CAGR --- */
   const roi = () => {
@@ -214,7 +249,9 @@
     $("#roiGain").textContent = inrShort(end - start);
     $("#roiBar").style.width = Math.max(Math.min(cagr * 4, 100), 2) + "%";
   };
-  ["roiStart", "roiEnd", "roiYears"].forEach((id) => $("#" + id).addEventListener("input", roi));
+  ["roiStart", "roiEnd", "roiYears"].forEach((id) =>
+    $("#" + id).addEventListener("input", roi),
+  );
 
   /* --- Mortgage / EMI --- */
   const emi = () => {
@@ -234,10 +271,15 @@
     $("#emiTotal").textContent = inrShort(total);
     $("#emiBar").style.width = ((P / total) * 100).toFixed(1) + "%";
   };
-  ["emiAmt", "emiRate", "emiYears"].forEach((id) => $("#" + id).addEventListener("input", emi));
+  ["emiAmt", "emiRate", "emiYears"].forEach((id) =>
+    $("#" + id).addEventListener("input", emi),
+  );
 
   // initial paint
-  sip(); risk(); roi(); emi();
+  sip();
+  risk();
+  roi();
+  emi();
 
   /* ---------- Hero video autoplay safeguard ---------- */
   const heroVid = $(".hero-video");
@@ -290,12 +332,12 @@
       gsap.set(words, {
         y: "115%",
         opacity: 0,
-        rotateZ: 2
+        rotateZ: 2,
       });
       gsap.set(lede, {
         y: 30,
         opacity: 0,
-        filter: "blur(6px)"
+        filter: "blur(6px)",
       });
 
       // ScrollTrigger timeline
@@ -303,8 +345,8 @@
         scrollTrigger: {
           trigger: serveHead,
           start: "top 85%",
-          toggleActions: "play none none none"
-        }
+          toggleActions: "play none none none",
+        },
       });
 
       tl.to(words, {
@@ -313,15 +355,18 @@
         rotateZ: 0,
         duration: 1.05,
         stagger: 0.045,
-        ease: "power4.out"
-      })
-      .to(lede, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.9,
-        ease: "power3.out"
-      }, "-=0.6");
+        ease: "power4.out",
+      }).to(
+        lede,
+        {
+          y: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.9,
+          ease: "power3.out",
+        },
+        "-=0.6",
+      );
 
       // Parallax scrub on continuous scroll through the section
       gsap.to(serveHead, {
@@ -329,10 +374,10 @@
           trigger: "#serve",
           start: "top bottom",
           end: "bottom top",
-          scrub: 1
+          scrub: 1,
         },
         y: -30,
-        ease: "none"
+        ease: "none",
       });
     }
   }
@@ -345,7 +390,8 @@
     const track = $("#offeringsTrack");
 
     if (pinStage && track) {
-      const getScrollDistance = () => Math.max(track.scrollWidth - window.innerWidth, 0);
+      const getScrollDistance = () =>
+        Math.max(track.scrollWidth - window.innerWidth, 0);
 
       gsap.to(track, {
         x: () => -getScrollDistance(),
@@ -357,8 +403,8 @@
           end: () => "+=" + Math.max(getScrollDistance(), 600),
           scrub: 1,
           invalidateOnRefresh: true,
-          anticipatePin: 1
-        }
+          anticipatePin: 1,
+        },
       });
 
       // Refresh on window load to ensure all images have resolved dimensions
@@ -366,15 +412,21 @@
         ScrollTrigger.refresh();
       });
 
-      // Observe body height changes (debounced) to recalculate if images/fonts load late
-      let roTimeout;
-      const ro = new ResizeObserver(() => {
-        clearTimeout(roTimeout);
-        roTimeout = setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 200);
+      // Recalculate when late-loading images/fonts change layout.
+      // (A ResizeObserver on <body> must NOT be used here: the pin spacer itself
+      // changes body height, causing an endless refresh loop that leaves the
+      // track stuck at a stale x-offset when scrolling back up.)
+      let refreshTimeout;
+      const queueRefresh = () => {
+        clearTimeout(refreshTimeout);
+        refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 200);
+      };
+      $$("img").forEach((img) => {
+        if (!img.complete)
+          img.addEventListener("load", queueRefresh, { once: true });
       });
-      ro.observe(document.body);
+      if (document.fonts && document.fonts.ready)
+        document.fonts.ready.then(queueRefresh);
     }
   }
 
@@ -392,7 +444,7 @@
       if (cardWidth <= 0) return;
       const activeIdx = Math.min(
         Math.max(Math.round(stepsTrack.scrollLeft / cardWidth), 0),
-        stepIndicators.length - 1
+        stepIndicators.length - 1,
       );
       stepIndicators.forEach((ind, i) => {
         ind.classList.toggle("active", i === activeIdx);
@@ -407,7 +459,7 @@
       const cardWidth = firstCard.offsetWidth;
       stepsTrack.scrollBy({
         left: direction * cardWidth,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     };
 
@@ -425,7 +477,7 @@
           cards[idx].scrollIntoView({
             behavior: "smooth",
             block: "nearest",
-            inline: "start"
+            inline: "start",
           });
         }
       });
@@ -463,6 +515,25 @@
       stepsTrack.scrollLeft = scrollLeft - walk;
     });
   }
+
+  /* ---------- Smooth in-page anchor scrolling ---------- */
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute("href");
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    target.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "start",
+    });
+    history.pushState(null, "", id);
+  });
 
   /* ---------- Footer year ---------- */
   $("#year").textContent = new Date().getFullYear();
