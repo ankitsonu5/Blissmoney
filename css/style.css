@@ -109,6 +109,18 @@ button {
   margin-inline: auto;
 }
 
+/* Large desktop (1920px etc.): scale layout up so it doesn't look small */
+@media (min-width: 1800px) {
+  html {
+    zoom: 1.15;
+  }
+}
+@media (min-width: 2300px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
 /* ---------- grain + aurora ---------- */
 .grain {
   position: absolute;
@@ -857,9 +869,9 @@ button {
 }
 
 .btn-pill-ghost {
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--green-bright);
+  border: 1px solid rgba(25, 215, 159, 0.45);
   border-radius: 999px;
   padding: 15px 30px;
   font-size: 0.92rem;
@@ -1279,7 +1291,7 @@ button {
   border: 1px solid var(--line-light);
   border-left: none;
   border-radius: 0;
-  padding: 36px 32px 30px;
+  padding: 36px 32px 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1373,20 +1385,8 @@ button {
   max-width: 30ch;
 }
 
-/* Marker sweep behind "actually" once the heading has animated in */
-#serve h2 em {
-  background-image: linear-gradient(
-    transparent 62%,
-    rgba(12, 175, 128, 0.2) 62%,
-    rgba(12, 175, 128, 0.2) 92%,
-    transparent 92%
-  );
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  transition: background-size 0.9s cubic-bezier(0.65, 0, 0.35, 1);
-}
-#serve h2.is-marked em {
-  background-size: 100% 100%;
+#serve {
+  padding-bottom: 0;
 }
 
 /* ---------- Who We Serve: card upgrades ---------- */
