@@ -1690,15 +1690,15 @@ button {
   background:
     linear-gradient(
       180deg,
-      rgba(2, 12, 9, 0.5) 0%,
-      rgba(2, 12, 9, 0.15) 35%,
-      rgba(2, 12, 9, 0.82) 68%,
+      rgba(2, 20, 14, 0.48) 0%,
+      rgba(12, 175, 128, 0.24) 35%,
+      rgba(2, 16, 11, 0.82) 68%,
       rgba(1, 9, 7, 0.98) 100%
     ),
     radial-gradient(
-      ellipse 90% 70% at 100% 100%,
-      rgba(12, 175, 128, 0.28) 0%,
-      transparent 65%
+      ellipse 95% 75% at 100% 100%,
+      rgba(12, 175, 128, 0.40) 0%,
+      transparent 70%
     );
   z-index: 1;
   pointer-events: none;
@@ -1708,15 +1708,15 @@ button {
   background:
     linear-gradient(
       180deg,
-      rgba(2, 12, 9, 0.35) 0%,
-      rgba(2, 12, 9, 0.1) 35%,
-      rgba(2, 12, 9, 0.78) 65%,
+      rgba(2, 20, 14, 0.35) 0%,
+      rgba(12, 175, 128, 0.32) 35%,
+      rgba(2, 16, 11, 0.76) 65%,
       rgba(1, 9, 7, 0.98) 100%
     ),
     radial-gradient(
-      ellipse 95% 75% at 100% 100%,
-      rgba(20, 244, 156, 0.38) 0%,
-      transparent 65%
+      ellipse 100% 80% at 100% 100%,
+      rgba(20, 244, 156, 0.50) 0%,
+      transparent 70%
     );
 }
 
