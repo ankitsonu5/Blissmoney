@@ -421,9 +421,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">01</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Wealth Management</h3>
@@ -438,9 +435,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">02</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Comprehensive Financial Planning</h3>
@@ -455,9 +449,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">03</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Investment Solutions</h3>
@@ -472,9 +463,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">04</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Risk &amp; Protection Planning</h3>
@@ -489,9 +477,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">05</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Estate &amp; Succession Planning</h3>
@@ -506,9 +491,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">06</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Tax Planning &amp; CA Coordination</h3>
@@ -524,9 +506,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">07</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Alternative Investment Strategies</h3>
@@ -541,9 +520,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">08</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Loan &amp; Liability Advisory</h3>
@@ -558,9 +534,6 @@
                 <div class="card-overlay"></div>
               </div>
               <div class="card-inner-content">
-                <div class="card-top-meta">
-                  <span class="offering-num">09</span>
-                </div>
                 <div class="card-bottom-info">
                   <span class="card-accent-bar" aria-hidden="true"></span>
                   <h3>Investment Advisory</h3>
@@ -860,7 +833,7 @@
       <div class="container">
         <div class="section-head reveal">
           <h2>Clarity, in <em>numbers.</em></h2>
-          <p class="lede">Four quiet calculators. No forms, no sign-ups — just a first, honest
+          <p class="lede">Practical calculators. No forms, no sign-ups — just a first, honest
             estimate before a real conversation.</p>
         </div>
 
@@ -909,161 +882,453 @@
           </button>
         </div>
 
-        <!-- SIP -->
-        <div class="calc-panel active reveal" id="panel-sip">
-          <div class="calc-inputs">
-            <div class="field">
-              <label for="sipAmt">Monthly investment</label>
-              <output id="sipAmtOut">₹25,000</output>
-              <input type="range" id="sipAmt" min="1000" max="500000" step="1000" value="25000">
-            </div>
-            <div class="field">
-              <label for="sipYears">Time horizon</label>
-              <output id="sipYearsOut">15 yrs</output>
-              <input type="range" id="sipYears" min="1" max="40" step="1" value="15">
-            </div>
-            <div class="field">
-              <label for="sipRate">Expected return (p.a.)</label>
-              <output id="sipRateOut">12%</output>
-              <input type="range" id="sipRate" min="4" max="20" step="0.5" value="12">
-            </div>
+        <!-- FINANCIAL GOAL CALCULATORS -->
+        <div class="calc-panel financial-goal-panel active reveal" id="panel-sip">
+          <div class="goal-tabs" role="tablist" aria-label="Financial planning calculators">
+            <button class="goal-tab active" type="button" role="tab" aria-selected="true" data-goal="marriage">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="28" r="11"/><circle cx="30" cy="28" r="11"/><path d="M20 11h8l-4 7-4-7Z"/></svg>
+              </span>
+              <span>Marriage Expense Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="education">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M7 13c8-2 13 1 17 5v22c-4-4-9-7-17-5V13Z"/><path d="M41 13c-8-2-13 1-17 5v22c4-4 9-7 17-5V13Z"/><path d="M24 8v6M20 10h8"/></svg>
+              </span>
+              <span>Education Cost Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="home">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/><path d="M34 10v8"/></svg>
+              </span>
+              <span>Home Loan Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="car">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m9 29 4-11h22l4 11"/><path d="M6 29h36v10H6V29Z"/><circle cx="13" cy="39" r="3"/><circle cx="35" cy="39" r="3"/><path d="M13 29h22"/></svg>
+              </span>
+              <span>Car Purchase Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="vacation">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="27" rx="4"/><path d="M19 14V9h10v5M17 20v15M31 20v15M7 24h3M38 24h3"/></svg>
+              </span>
+              <span>Vacation Budget Calculator</span>
+            </button>
           </div>
-          <div class="calc-result">
-            <p class="r-label">Projected corpus</p>
-            <p class="r-big" id="sipFV">₹0</p>
-            <div class="r-rows">
-              <div><span>Invested</span><b id="sipInvested">₹0</b></div>
-              <div><span>Estimated gains</span><b id="sipGains" class="pos">₹0</b></div>
+
+          <div class="goal-calculator">
+            <div class="goal-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker">Financial goal planner</p>
+                <h3 id="goalCalcTitle">Marriage Expense Calculator</h3>
+                <p id="goalCalcDescription">Estimate the future cost and the investment needed to prepare for the celebration.</p>
+              </div>
+              <span class="goal-timeline" id="goalTimeline">8 years to goal</span>
             </div>
-            <div class="r-bar"><i id="sipBar" style="width:50%"></i></div>
-            <p class="r-note">Illustration only. Market-linked returns are not guaranteed.</p>
+
+            <div class="calc-inputs goal-inputs">
+              <div class="field goal-field" data-goal-field="1">
+                <label id="goalLabel1" for="goalValue1">Current age</label>
+                <input class="goal-number-input" type="text" id="goalValue1Out" value="10 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel1">
+                <input type="range" id="goalValue1" min="1" max="30" step="1" value="10" aria-labelledby="goalLabel1">
+              </div>
+              <div class="field goal-field" data-goal-field="2">
+                <label id="goalLabel2" for="goalValue2">Age at the start of marriage</label>
+                <input class="goal-number-input" type="text" id="goalValue2Out" value="18 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel2">
+                <input type="range" id="goalValue2" min="10" max="50" step="1" value="18" aria-labelledby="goalLabel2">
+              </div>
+              <div class="field goal-field" data-goal-field="3">
+                <label id="goalLabel3" for="goalValue3">Current marriage expenses</label>
+                <input class="goal-number-input" type="text" id="goalValue3Out" value="₹5,00,000" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel3">
+                <input type="range" id="goalValue3" min="100000" max="10000000" step="1000" value="500000" aria-labelledby="goalLabel3">
+              </div>
+              <div class="field goal-field" data-goal-field="4">
+                <label id="goalLabel4" for="goalValue4">Rate of return</label>
+                <input class="goal-number-input" type="text" id="goalValue4Out" value="7%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel4">
+                <input type="range" id="goalValue4" min="1" max="30" step="1" value="7" aria-labelledby="goalLabel4">
+              </div>
+              <div class="field goal-field" data-goal-field="5">
+                <label id="goalLabel5" for="goalValue5">Inflation rate</label>
+                <input class="goal-number-input" type="text" id="goalValue5Out" value="5%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel5">
+                <input type="range" id="goalValue5" min="1" max="30" step="1" value="5" aria-labelledby="goalLabel5">
+              </div>
+            </div>
+
+            <aside class="calc-result goal-result" aria-live="polite">
+              <p class="r-label" id="goalFutureLabel">Future marriage expenses</p>
+              <p class="r-big" id="goalFuture">₹0</p>
+              <div class="r-rows goal-result-rows">
+                <div><span id="goalCurrentLabel">Current marriage expenses</span><b id="goalCurrent">₹0</b></div>
+                <div><span>Planning through lump sum</span><b id="goalLumpSum">₹0</b></div>
+                <div><span>Planning through monthly SIP</span><b class="pos" id="goalSip">₹0</b></div>
+              </div>
+              <div class="goal-comparison" aria-label="Current and future cost comparison">
+                <div class="goal-comparison-head"><span>Cost comparison</span><b id="goalIncrease">+0%</b></div>
+                <div class="goal-bar-row"><span>Today</span><i><b id="goalCurrentBar"></b></i></div>
+                <div class="goal-bar-row"><span>Future</span><i><b class="future" id="goalFutureBar"></b></i></div>
+              </div>
+              <p class="r-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice. Actual results may vary with market performance.</p>
+            </aside>
           </div>
         </div>
 
-        <!-- RISK -->
-        <div class="calc-panel" id="panel-risk">
-          <div class="calc-inputs">
-            <div class="field">
-              <label for="riskExp">Annual family expenses</label>
-              <output id="riskExpOut">₹12,00,000</output>
-              <input type="range" id="riskExp" min="200000" max="10000000" step="100000" value="1200000">
-            </div>
-            <div class="field">
-              <label for="riskYears">Years to protect</label>
-              <output id="riskYearsOut">20 yrs</output>
-              <input type="range" id="riskYears" min="5" max="40" step="1" value="20">
-            </div>
-            <div class="field">
-              <label for="riskLiab">Outstanding liabilities</label>
-              <output id="riskLiabOut">₹50,00,000</output>
-              <input type="range" id="riskLiab" min="0" max="50000000" step="500000" value="5000000">
-            </div>
-            <div class="field">
-              <label for="riskCover">Existing life cover</label>
-              <output id="riskCoverOut">₹50,00,000</output>
-              <input type="range" id="riskCover" min="0" max="100000000" step="500000" value="5000000">
-            </div>
+        <!-- RISK PLANNING CALCULATORS -->
+        <div class="calc-panel native-calc-panel" id="panel-risk" data-native-group="risk">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Risk planning calculators">
+            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="retirement">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 6v6M14 10l4 5M34 10l-4 5"/><circle cx="24" cy="28" r="14"/><path d="M24 19v10l7 4"/></svg>
+              </span>
+              <span>Retirement Corpus Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="life">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 42S8 34 8 20V9l16-4 16 4v11c0 14-16 22-16 22Z"/><path d="M17 23h14M24 16v14"/></svg>
+              </span>
+              <span>Life Insurance Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="health">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 41S8 31 8 18a9 9 0 0 1 16-6 9 9 0 0 1 16 6c0 13-16 23-16 23Z"/><path d="M15 24h6l3-6 4 12 3-6h5"/></svg>
+              </span>
+              <span>Health Insurance Calculator</span>
+            </button>
           </div>
-          <div class="calc-result">
-            <p class="r-label">Additional cover suggested</p>
-            <p class="r-big" id="riskGap">₹0</p>
-            <div class="r-rows">
-              <div><span>Protection need</span><b id="riskNeed">₹0</b></div>
-              <div><span>Already covered</span><b id="riskHave">₹0</b></div>
+          <div class="native-calculator">
+            <div class="goal-calculator-head native-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker native-tool-kicker">Risk planning</p>
+                <h3 class="native-tool-title">Retirement Corpus Calculator</h3>
+                <p class="native-tool-description">Build the retirement corpus required to protect your future lifestyle.</p>
+              </div>
+              <span class="goal-timeline native-tool-timeline">31 years to retirement</span>
             </div>
-            <div class="r-bar"><i id="riskBar" style="width:30%"></i></div>
-            <p class="r-note">A simplified expense-replacement estimate. We refine this together.</p>
-          </div>
-        </div>
-
-        <!-- ROI -->
-        <div class="calc-panel" id="panel-roi">
-          <div class="calc-inputs">
-            <div class="field">
-              <label for="roiStart">Amount invested</label>
-              <output id="roiStartOut">₹10,00,000</output>
-              <input type="range" id="roiStart" min="10000" max="50000000" step="10000" value="1000000">
-            </div>
-            <div class="field">
-              <label for="roiEnd">Current / final value</label>
-              <output id="roiEndOut">₹18,00,000</output>
-              <input type="range" id="roiEnd" min="10000" max="100000000" step="10000" value="1800000">
-            </div>
-            <div class="field">
-              <label for="roiYears">Holding period</label>
-              <output id="roiYearsOut">5 yrs</output>
-              <input type="range" id="roiYears" min="1" max="30" step="1" value="5">
-            </div>
-          </div>
-          <div class="calc-result">
-            <p class="r-label">Annualised return (CAGR)</p>
-            <p class="r-big" id="roiCagr">0%</p>
-            <div class="r-rows">
-              <div><span>Absolute return</span><b id="roiAbs" class="pos">0%</b></div>
-              <div><span>Wealth gained</span><b id="roiGain">₹0</b></div>
-            </div>
-            <div class="r-bar"><i id="roiBar" style="width:40%"></i></div>
-            <p class="r-note">Past growth tells you what happened — not what happens next.</p>
+            <div class="calc-inputs native-tool-inputs"></div>
+            <aside class="calc-result native-tool-result" aria-live="polite">
+              <p class="r-label native-primary-label">Required corpus at retirement</p>
+              <p class="r-big native-primary-value">₹0</p>
+              <div class="r-rows native-result-rows"></div>
+              <div class="goal-comparison native-comparison">
+                <div class="goal-comparison-head"><span class="native-comparison-title">Cost comparison</span><b class="native-comparison-stat">+0%</b></div>
+                <div class="goal-bar-row"><span class="native-bar-label-one">Today</span><i><b class="native-bar-one"></b></i></div>
+                <div class="goal-bar-row"><span class="native-bar-label-two">Future</span><i><b class="future native-bar-two"></b></i></div>
+              </div>
+              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice.</p>
+            </aside>
           </div>
         </div>
 
-        <!-- EMI -->
-        <div class="calc-panel" id="panel-emi">
-          <div class="calc-inputs">
-            <div class="field">
-              <label for="emiAmt">Loan amount</label>
-              <output id="emiAmtOut">₹75,00,000</output>
-              <input type="range" id="emiAmt" min="100000" max="100000000" step="100000" value="7500000">
+        <!-- ROI / MUTUAL FUND PERFORMANCE CALCULATORS -->
+        <div class="calc-panel roi-planning-panel" id="panel-roi">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mutual fund performance calculators">
+            <button class="goal-tab roi-tool-tab active" type="button" role="tab" aria-selected="true" data-roi-tool="sip-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M8 39h32M12 34l8-9 7 5 10-15"/><path d="m30 15 7-1 1 7"/><circle cx="15" cy="13" r="5"/></svg>
+              </span>
+              <span>SIP Performance</span>
+            </button>
+            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="stp-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="9" width="14" height="30" rx="3"/><rect x="28" y="9" width="14" height="30" rx="3"/><path d="M18 19h13l-4-4M30 29H17l4 4"/></svg>
+              </span>
+              <span>STP Performance</span>
+            </button>
+            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="swp-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M8 14h32v24H8zM8 20h32"/><path d="M17 29h14M27 25l4 4-4 4"/></svg>
+              </span>
+              <span>SWP Performance</span>
+            </button>
+          </div>
+
+          <div class="roi-calculator">
+            <div class="goal-calculator-head roi-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker">Mutual fund performance</p>
+                <h3 class="roi-tool-title">SIP Performance</h3>
+                <p class="roi-tool-description">Compare a monthly SIP against your selected fund, dates and expected return.</p>
+              </div>
+              <span class="goal-timeline roi-tool-timeline">5 year performance window</span>
             </div>
-            <div class="field">
-              <label for="emiRate">Interest rate (p.a.)</label>
-              <output id="emiRateOut">8.5%</output>
-              <input type="range" id="emiRate" min="5" max="15" step="0.05" value="8.5">
-            </div>
-            <div class="field">
-              <label for="emiYears">Tenure</label>
-              <output id="emiYearsOut">20 yrs</output>
-              <input type="range" id="emiYears" min="1" max="30" step="1" value="20">
+
+            <div class="roi-workspace">
+              <section class="roi-form-card" aria-label="Mutual fund performance inputs">
+                <div class="roi-mode-switch" role="tablist" aria-label="Select funds by">
+                  <button type="button" class="roi-mode-btn active" role="tab" aria-selected="true" data-roi-mode="fund-house">Fund House</button>
+                  <button type="button" class="roi-mode-btn" role="tab" aria-selected="false" data-roi-mode="asset-category">Asset Category</button>
+                </div>
+
+                <div class="roi-filter-head">
+                  <div>
+                    <p class="roi-field-eyebrow">Choose universe</p>
+                    <h4 class="roi-filter-title">Select AMC</h4>
+                  </div>
+                  <span class="roi-selection-count">0 selected</span>
+                </div>
+
+                <div class="roi-filter-search-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                  <input type="search" class="roi-filter-search" placeholder="Search fund house" aria-label="Search fund house">
+                </div>
+                <div class="roi-filter-options" role="group" aria-label="Available fund houses"></div>
+
+                <div class="roi-fields-grid"></div>
+                <p class="roi-form-message" aria-live="polite"></p>
+                <button type="button" class="roi-calculate-btn">
+                  <span>Calculate performance</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </section>
+
+              <aside class="calc-result roi-performance-result" aria-live="polite">
+                <p class="r-label roi-primary-label">Projected value</p>
+                <p class="r-big roi-primary-value">₹0</p>
+                <div class="r-rows roi-result-rows"></div>
+
+                <div class="roi-result-toolbar" role="tablist" aria-label="Result view">
+                  <button type="button" class="roi-result-view active" role="tab" aria-selected="true" data-result-view="graph">Graph</button>
+                  <button type="button" class="roi-result-view" role="tab" aria-selected="false" data-result-view="table">Table</button>
+                  <span class="roi-result-scheme">Select a scheme</span>
+                </div>
+
+                <div class="roi-result-graph" data-result-panel="graph">
+                  <div class="roi-chart-head"><span>Value comparison</span><b class="roi-chart-stat">+0%</b></div>
+                  <div class="roi-chart-bars">
+                    <div class="roi-chart-column"><i><b class="roi-chart-bar-one"></b></i><span class="roi-chart-label-one">Invested</span><strong class="roi-chart-value-one">₹0</strong></div>
+                    <div class="roi-chart-column"><i><b class="roi-chart-bar-two"></b></i><span class="roi-chart-label-two">Projected</span><strong class="roi-chart-value-two">₹0</strong></div>
+                  </div>
+                </div>
+
+                <div class="roi-result-table" data-result-panel="table" hidden></div>
+                <p class="r-note roi-result-note">The calculation uses your selected return assumption. Actual scheme performance may vary with market conditions.</p>
+              </aside>
             </div>
           </div>
-          <div class="calc-result">
-            <p class="r-label">Monthly EMI</p>
-            <p class="r-big" id="emiMonthly">₹0</p>
-            <div class="r-rows">
-              <div><span>Total interest</span><b id="emiInterest">₹0</b></div>
-              <div><span>Total payment</span><b id="emiTotal">₹0</b></div>
+        </div>
+
+        <!-- MORTGAGE CALCULATORS -->
+        <div class="calc-panel native-calc-panel" id="panel-emi" data-native-group="mortgage">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mortgage calculators">
+            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="property-value">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/></svg>
+              </span>
+              <span>Property Value Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="emi-plan">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="8" width="34" height="32" rx="4"/><path d="M13 16h22M14 24h4M22 24h4M30 24h4M14 31h4M22 31h4M30 31h4"/></svg>
+              </span>
+              <span>EMI Calculator</span>
+            </button>
+          </div>
+          <div class="native-calculator">
+            <div class="goal-calculator-head native-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker native-tool-kicker">Home finance</p>
+                <h3 class="native-tool-title">Property Value Calculator</h3>
+                <p class="native-tool-description">Understand the monthly EMI and full borrowing cost before you commit.</p>
+              </div>
+              <span class="goal-timeline native-tool-timeline">5 year tenure</span>
             </div>
-            <div class="r-bar"><i id="emiBar" style="width:55%"></i></div>
-            <p class="r-note">The bar shows principal vs interest over the full tenure.</p>
+            <div class="calc-inputs native-tool-inputs"></div>
+            <aside class="calc-result native-tool-result" aria-live="polite">
+              <p class="r-label native-primary-label">Loan EMI</p>
+              <p class="r-big native-primary-value">₹0</p>
+              <div class="r-rows native-result-rows"></div>
+              <div class="goal-comparison native-comparison">
+                <div class="goal-comparison-head"><span class="native-comparison-title">Payment breakdown</span><b class="native-comparison-stat">0%</b></div>
+                <div class="goal-bar-row"><span class="native-bar-label-one">Principal</span><i><b class="native-bar-one"></b></i></div>
+                <div class="goal-bar-row"><span class="native-bar-label-two">Interest</span><i><b class="future native-bar-two"></b></i></div>
+              </div>
+              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only. Actual lending terms may vary.</p>
+            </aside>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======================= INSIGHTS ======================= -->
-    <section class="section light" id="insights">
+    <!-- ======================= TESTIMONIALS ======================= -->
+    <section class="testimonials section" id="testimonials" aria-labelledby="testimonialsTitle">
+      <div class="testimonial-orbit" aria-hidden="true"></div>
       <div class="container">
-        <div class="section-head row reveal">
+        <div class="testimonials-head reveal">
           <div>
-            <h2>Thinking, put in <em>writing.</em></h2>
+            <p class="chapter">Testimonial</p>
+            <h2 id="testimonialsTitle">What Our Investors <em>Says.</em></h2>
+            <p class="testimonials-intro">Real experiences from people building clearer, more confident financial lives with BlissMoney.</p>
           </div>
-          <a href="#" class="btn btn-outline btn-sm">All insights →</a>
+          <div class="testimonial-nav" aria-label="Testimonial navigation">
+            <!-- <span class="testimonial-count" id="testimonialCount" aria-live="polite">01–02 / 16</span> -->
+            <button type="button" class="testimonial-nav-btn" id="testimonialPrev" aria-label="Previous testimonial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M19 12H5M11 18L5 12L11 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button type="button" class="testimonial-nav-btn" id="testimonialNext" aria-label="Next testimonial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div class="insight-grid">
-          <a href="#" class="insight-card reveal">
-            <div class="insight-art art-a" aria-hidden="true"><span class="glyph">B</span></div>
-            <p class="meta">Wealth planning guide · 8 min</p>
-            <h3>Why a portfolio is not yet a plan</h3>
-            <p class="excerpt">Products are easy to buy. Coherence is the hard part — and the part
-              that actually compounds.</p>
+        <div class="testimonial-viewport reveal d1">
+          <div class="testimonial-track" id="testimonialTrack" aria-label="Client testimonials" tabindex="0">
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AV</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
+              <footer><strong>Mr. Alok Vashishtha</strong><span>Area Business Manager : Zydus Cadila</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AT</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>I have good experience with BlissMoney, also they provide me good suggestion on time to time and very supportive team.</p></blockquote>
+              <footer><strong>Mr. Akash Thakur</strong><span>IT Developer : Innovaccer</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SU</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
+              <footer><strong>Dr. Shubham Upadhyay</strong><span>JNMC</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">GV</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
+              <footer><strong>Mr. Gaurav Varshney</strong><span>HR Manager</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">UA</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>I have good experience with BlissMoney, also they provide me good suggestion on time to time and very supportive team.</p></blockquote>
+              <footer><strong>Mr. Udit Agarwal</strong><span>Business Manager</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">DT</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
+              <footer><strong>Mr. Dushyant Tomar</strong><span>Chief Engineer, Merchant Navy</span></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AA</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Impressive wealth management service! They provide personalized advice, explain options clearly, and handle everything with professionalism. My portfolio performance has improved, and I feel secure about my financial future</p></blockquote>
+              <footer><strong>Ashwini Ashu</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SB</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Professional and prompt support whenever needed</p></blockquote>
+              <footer><strong>Sridhar Balakrishnan</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">R</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Amazing team at bliss money. They listens to the requirements and tailor it as per your need. They also make you understand things in simple terms for your financial planning,so that it becomes easier for you to take decisions.</p></blockquote>
+              <footer><strong>Rashi</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CC</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>BlissMoney has made financial planning so much easier for me. The team explains things clearly, gives honest advice, and helps me stay on track with my wealth management goals. I really appreciate how responsive they are whenever I have questions. Truly a reliable partner for building financial security</p></blockquote>
+              <footer><strong>Chethan Chethu</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">VR</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Great experience with their wealth management team. They provide clear financial guidance, regular updates, and help align my investments with long-term goals. Transparent, professional, and highly reliable for anyone seeking financial growth</p></blockquote>
+              <footer><strong>Vaishnavi Reddy</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CS</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Thank you for being such amazing Financial Advisor! You are so understanding, compassionate, kind and helpful.</p></blockquote>
+              <footer><strong>Chandan Kumar Sharma</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CH</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>A team with extreme professionalism, highly experienced and carries detailed understanding on the client requirements which helps them to achieve their goals.</p></blockquote>
+              <footer><strong>Channaraj hattiholi</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SK</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Really receptive and thorough. Should be your go to financial advisory spot for long term wealth planning</p></blockquote>
+              <footer><strong>Shreyas KJ</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AR</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Working with this wealth management team feels like having a financial compass. They navigate complex investments with clarity and foresight, making my financial joumey surprisingly smooth and confident</p></blockquote>
+              <footer><strong>Amulya R</strong></footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">D</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
+              <blockquote><p>Bliss money is more than wealth management - ifs a partner in building security, growth, and true financial peace.</p></blockquote>
+              <footer><strong>Dhanush</strong></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= LATEST BLOGS ======================= -->
+    <section class="latest-blogs section" id="insights" aria-labelledby="latestBlogsTitle">
+      <div class="container">
+        <div class="latest-blogs-head reveal">
+          <div>
+            <p class="chapter">Fresh perspectives</p>
+            <h2 id="latestBlogsTitle">Latest <em>blogs.</em></h2>
+            <p class="latest-blogs-intro">Clear thinking on markets, planning and the decisions that shape long-term wealth.</p>
+          </div>
+          <a href="#" class="btn btn-outline btn-sm latest-blogs-all">View all blogs <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="latest-blog-grid">
+          <a href="#" class="latest-blog-card reveal" aria-label="Read: Staying disciplined when market headlines turn noisy">
+            <div class="latest-blog-art">
+              <img src="aseets/images/disciplines/disc_3.jpg" width="600" height="400" loading="lazy"
+                alt="Market price chart showing changing trends">
+              <span class="latest-blog-art-label">Market outlook</span>
+            </div>
+            <div class="latest-blog-body">
+              <p class="latest-blog-meta"><span>Market perspective</span><span>6 min read</span></p>
+              <h3>Staying disciplined when market headlines turn noisy</h3>
+              <p class="latest-blog-excerpt">A practical framework for separating portfolio decisions from short-term market emotion.</p>
+              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
+            </div>
           </a>
-          <a href="#" class="insight-card reveal d1">
-            <div class="insight-art art-b" aria-hidden="true"><span class="glyph">↗</span></div>
-            <p class="meta">Next generation · 11 min</p>
-            <h3>Passing on wealth without passing on confusion</h3>
-            <p class="excerpt">Succession fails on paperwork less often than it fails on
-              conversations that never happened.</p>
+
+          <a href="#" class="latest-blog-card reveal d1" aria-label="Read: Five signs your financial plan needs a reset">
+            <div class="latest-blog-art">
+              <img src="aseets/images/disciplines/disc_2.jpg" width="600" height="400" loading="lazy"
+                alt="Advisors reviewing a financial plan together">
+              <span class="latest-blog-art-label">Financial planning</span>
+            </div>
+            <div class="latest-blog-body">
+              <p class="latest-blog-meta"><span>Financial planning</span><span>7 min read</span></p>
+              <h3>Five signs your financial plan needs a reset</h3>
+              <p class="latest-blog-excerpt">Life changes faster than most plans. Here is when to revisit the assumptions behind yours.</p>
+              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a href="#" class="latest-blog-card reveal d2" aria-label="Read: Preparing wealth for the next generation">
+            <div class="latest-blog-art">
+              <img src="aseets/images/disciplines/disc_5.jpg" width="600" height="400" loading="lazy"
+                alt="Family home representing long-term legacy planning">
+              <span class="latest-blog-art-label">Legacy planning</span>
+            </div>
+            <div class="latest-blog-body">
+              <p class="latest-blog-meta"><span>Legacy planning</span><span>8 min read</span></p>
+              <h3>Preparing wealth for the next generation</h3>
+              <p class="latest-blog-excerpt">The conversations and structures that make succession clearer for the whole family.</p>
+              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
+            </div>
           </a>
         </div>
       </div>
@@ -1080,15 +1345,105 @@
           <h2 class="cta-heading reveal d1">Bring us the <em>full picture.</em></h2>
           <p class="cta-sub reveal d2">One conversation. No obligation. We will tell you honestly whether we can add value — and where.</p>
           <div class="cta-actions reveal d3">
-            <a href="mailto:hello@blissmoney.in" class="btn btn-solid">Book a consultation</a>
+            <a href="#contact-form" class="btn btn-solid">Book a consultation</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ======================= GET IN TOUCH (CONTACT FORM) ======================= -->
+    <section class="contact-form-section" id="contact-form" aria-labelledby="contactFormTitle">
+      <div class="contact-orbit contact-orbit-one" aria-hidden="true"></div>
+      <div class="contact-orbit contact-orbit-two" aria-hidden="true"></div>
+      <div class="grain contact-grain" aria-hidden="true"></div>
+
+      <div class="container contact-shell">
+        <div class="contact-intro reveal">
+          <p class="contact-kicker"><span aria-hidden="true"></span>Start a conversation</p>
+          <h2 class="contact-heading" id="contactFormTitle">Let’s make your wealth feel <em>clearer.</em></h2>
+          <p class="contact-lede">Share the context, not just the numbers. We’ll begin with the full picture and keep the next step straightforward.</p>
+
+          <div class="contact-direct">
+            <span>Prefer email?</span>
+            <a href="mailto:hello@blissmoney.in">hello@blissmoney.in <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal d1">
+          <div class="contact-card-head">
+            <h3>Tell us where you’d like clarity.</h3>
+          </div>
+
+          <form class="contact-form" id="contactForm" autocomplete="on" novalidate>
+            <div class="contact-form-grid">
+              <div class="form-group">
+                <label for="formName">Full name <span aria-hidden="true">*</span></label>
+                <input type="text" name="name" id="formName" class="form-control" placeholder="Your full name"
+                  autocomplete="name" minlength="2" maxlength="80" aria-describedby="formNameError" required>
+                <p class="form-error" id="formNameError" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="formMobile">Mobile number <span aria-hidden="true">*</span></label>
+                <input type="tel" name="mobile" id="formMobile" class="form-control" placeholder="+91 98765 43210"
+                  autocomplete="tel" inputmode="tel" maxlength="18" aria-describedby="formMobileError" required>
+                <p class="form-error" id="formMobileError" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail">Email address <span aria-hidden="true">*</span></label>
+                <input type="email" name="email" id="formEmail" class="form-control" placeholder="you@example.com"
+                  autocomplete="email" inputmode="email" maxlength="254" aria-describedby="formEmailError" required>
+                <p class="form-error" id="formEmailError" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="formService">Services <span aria-hidden="true">*</span></label>
+                <select name="service" id="formService" class="form-control form-select"
+                  aria-describedby="formServiceError" required>
+                  <option value="" disabled selected>Services *</option>
+                  <option value="Mutual Funds">Mutual Funds</option>
+                  <option value="Fixed Instruments">Fixed Instruments</option>
+                  <option value="Portfolio Management System">Portfolio Management System</option>
+                  <option value="Alternate Investment Plans">Alternate Investment Plans</option>
+                  <option value="Health Insurance">Health Insurance</option>
+                  <option value="Life Insurance">Life Insurance</option>
+                </select>
+                <p class="form-error" id="formServiceError" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group form-group-wide">
+                <div class="form-label-row">
+                  <label for="formMessage">How can we help? <span aria-hidden="true">*</span></label>
+                  <span class="message-count" id="formMessageCount">0 / 1000</span>
+                </div>
+                <textarea name="message" id="formMessage" class="form-control form-textarea"
+                  placeholder="Tell us briefly about your goals, priorities or the decision you’re considering."
+                  rows="5" minlength="20" maxlength="1000" aria-describedby="formMessageError formMessageCount"
+                  required></textarea>
+                <p class="form-error" id="formMessageError" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-action">
+              <button type="submit" class="btn-contact-submit" id="formSubmitBtn">
+                <span>Send enquiry</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- ======================= FOOTER ======================= -->
-    <footer class="footer">
-      <div class="foot-accent-bar"></div>
+    <footer class="footer" id="footer">
+      <div class="foot-accent-bar" aria-hidden="true"></div>
       <div class="container">
         <div class="foot-top">
           <div class="foot-brand">
