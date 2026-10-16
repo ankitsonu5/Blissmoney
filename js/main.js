@@ -2112,8 +2112,10 @@
             digits.length === 12 && digits.startsWith("91")
               ? digits.slice(2)
               : digits;
-          if (!/^[6-9]\d{9}$/.test(nationalNumber))
+          if (nationalNumber.length < 10)
             return "Enter a valid 10-digit Indian mobile number.";
+          if (!/^[6-9]\d{9}$/.test(nationalNumber))
+            return "Mobile number must start with 6, 7, 8, or 9.";
           return "";
         }
         case "formEmail":
@@ -2152,6 +2154,91 @@
       if (messageCount && messageField)
         messageCount.textContent = `${messageField.value.length} / 1000`;
     };
+
+    const mobileField = $("#formMobile");
+    const formatIndianMobile = (val) => {
+      if (!val) return "";
+      const str = val.trim();
+      if (str === "+" || str === "+9" || str === "+91" || str === "+91 ") {
+        return "";
+      }
+
+      let digits = "";
+      if (str.startsWith("+91") || str.startsWith("+ 91")) {
+        digits = str.slice(str.indexOf("91") + 2).replace(/\D/g, "");
+      } else {
+        digits = str.replace(/\D/g, "");
+        if (digits.length > 10 && digits.startsWith("91")) {
+          digits = digits.slice(2);
+        } else if (digits.length > 10 && digits.startsWith("0")) {
+          digits = digits.slice(1);
+        }
+      }
+
+      digits = digits.slice(0, 10);
+      if (!digits) return "";
+
+      if (digits.length <= 5) {
+        return `+91 ${digits}`;
+      }
+      return `+91 ${digits.slice(0, 5)} ${digits.slice(5)}`;
+    };
+
+    if (mobileField) {
+      const handleMobileInput = (e) => {
+        const input = e.target;
+        const oldVal = input.value;
+        const oldCursor = input.selectionStart || 0;
+
+        if (e && e.inputType === "deleteContentBackward") {
+          const digitsOnly = oldVal.replace(/\D/g, "");
+          if (digitsOnly.length <= 1 || oldVal.length <= 4) {
+            input.value = "";
+            return;
+          }
+        }
+
+        const digitsBefore = oldVal.slice(0, oldCursor).replace(/\D/g, "");
+        const formatted = formatIndianMobile(oldVal);
+        input.value = formatted;
+
+        if (formatted) {
+          let nationalDigits = digitsBefore;
+          if (nationalDigits.startsWith("91") && nationalDigits.length > 2) {
+            nationalDigits = nationalDigits.slice(2);
+          }
+          const targetDigits = 2 + nationalDigits.length;
+          let newCursor = formatted.length;
+          let count = 0;
+          for (let i = 0; i < formatted.length; i++) {
+            if (/\d/.test(formatted[i])) {
+              count++;
+              if (count === targetDigits) {
+                newCursor = i + 1;
+                break;
+              }
+            }
+          }
+          if (oldCursor >= oldVal.length) {
+            newCursor = formatted.length;
+          }
+          input.setSelectionRange(newCursor, newCursor);
+        }
+      };
+
+      mobileField.addEventListener("input", handleMobileInput);
+      mobileField.addEventListener("paste", () => {
+        setTimeout(() => handleMobileInput({ target: mobileField }), 0);
+      });
+      mobileField.addEventListener("blur", () => {
+        if (mobileField.value) {
+          mobileField.value = formatIndianMobile(mobileField.value);
+        }
+      });
+      if (mobileField.value) {
+        mobileField.value = formatIndianMobile(mobileField.value);
+      }
+    }
 
     fields.forEach((field) => {
       const eventName = field.tagName === "SELECT" ? "change" : "input";

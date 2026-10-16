@@ -1118,7 +1118,7 @@ button {
 /* Floating 3D Video on top of radar center */
 .video-container {
   position: relative;
-  width: 82%;
+  width: 112%;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -1135,14 +1135,15 @@ button {
   object-fit: contain;
   mix-blend-mode: screen;
   pointer-events: none;
+  transform: scale(1.36);
 }
 
 @keyframes float-3d {
   0% {
-    transform: scale(1.06) translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg);
   }
   100% {
-    transform: scale(1.06) translateY(-14px) rotate(1deg);
+    transform: translateY(-16px) rotate(1deg);
   }
 }
 
@@ -4357,9 +4358,13 @@ input[type="range"]::-moz-range-thumb {
   color: var(--ink);
 }
 .contact-heading em {
+  color: var(--green);
   font-family: var(--font-serif);
+  font-style: italic;
   font-weight: 400;
-  color: #087455;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  padding-right: 0.08em;
 }
 .contact-lede {
   max-width: 46ch;
