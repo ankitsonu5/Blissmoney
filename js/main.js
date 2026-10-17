@@ -2310,4 +2310,26 @@
 
   /* ---------- Footer year ---------- */
   $("#year").textContent = new Date().getFullYear();
+
+  /* ---------- Floating Scroll to Top ---------- */
+  const backToTopBtn = $("#backToTop");
+  if (backToTopBtn) {
+    const handleScrollTopVisibility = () => {
+      if (window.scrollY > 320) {
+        backToTopBtn.classList.add("is-visible");
+      } else {
+        backToTopBtn.classList.remove("is-visible");
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollTopVisibility, { passive: true });
+    handleScrollTopVisibility();
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 })();
