@@ -396,20 +396,32 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Scroll-pinned stepping: the section sticks while each scroll step advances one card
+    // Scroll-pinned stepping: stickyBox sticks while each scroll step advances one card
     const scroller = document.getElementById('disciplinesScroll');
-    const section = scroller ? scroller.querySelector('.disciplines-section') : null;
+    const stickyBox = scroller ? (scroller.querySelector('.disciplines-sticky-box') || scroller) : null;
     let stepPx = 0;
     let pinTop = 0;
     let clickLockUntil = 0;
 
     function layoutPin() {
-      if (!scroller || !section) return;
+      if (!scroller || !stickyBox) return;
+      const section = scroller.closest('.disciplines-section') || scroller.parentElement;
+      const stage = scroller.querySelector('.disciplines-stage');
       stepPx = Math.max(260, Math.round(window.innerHeight * 0.55));
-      // Taller-than-viewport section pins with its bottom edge aligned to the viewport bottom
-      pinTop = Math.min(0, window.innerHeight - section.offsetHeight);
-      section.style.setProperty('--disciplines-pin-top', pinTop + 'px');
-      scroller.style.height = (section.offsetHeight + stepPx * cards.length) + 'px';
+      const boxHeight = stage ? stage.offsetHeight : (stickyBox.offsetHeight || 500);
+
+      // Vertically center the showcase card in the viewport
+      pinTop = Math.max(10, Math.round((window.innerHeight - boxHeight) / 2));
+      stickyBox.style.setProperty('--disciplines-pin-top', pinTop + 'px');
+
+      // Pin through cards 1 to 9 (indices 0 to 8), then smoothly unpin right after card 9
+      scroller.style.height = (boxHeight + stepPx * (cards.length - 1 + 0.6)) + 'px';
+
+      // Ensure bottom clearance so next section stays below the viewport when card unpins
+      if (section) {
+        const bottomClearance = Math.max(120, window.innerHeight - pinTop - boxHeight + 80);
+        section.style.paddingBottom = bottomClearance + 'px';
+      }
     }
 
     function syncToScroll() {
@@ -445,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
           clickLockUntil = Date.now() + 900;
           const scrollerTop = scroller.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
-            top: scrollerTop - pinTop + (targetIndex + 0.5) * stepPx,
+            top: scrollerTop - pinTop + (targetIndex + 0.2) * stepPx,
             behavior: 'smooth'
           });
         }
@@ -667,8 +679,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!siteHeader || !siteMenuWrap) return;
 
-    // Toggle dropdown open/close state on click
+    // Toggle dropdown open/close state on click (disabled when dropdown is hidden)
     const toggleMenu = (forceState) => {
+      if (!siteMenuDropdown || window.getComputedStyle(siteMenuDropdown).display === "none") {
+        return;
+      }
       const willOpen = typeof forceState === "boolean" ? forceState : !siteMenuWrap.classList.contains("is-open");
       if (willOpen) {
         siteMenuWrap.classList.add("is-open");
