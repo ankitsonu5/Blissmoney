@@ -1909,6 +1909,18 @@ body {
    Section 05: Nine Disciplines. One Advisor Relationship.
    ========================================================================== */
 
+/* Scroll-pinned wrapper: height is set in JS (section height + one scroll step per card) */
+.disciplines-scroll {
+  position: relative;
+  width: 100%;
+  background-color: #F2F2F2;
+}
+
+.disciplines-scroll > .disciplines-section {
+  position: sticky;
+  top: var(--disciplines-pin-top, 0px);
+}
+
 .disciplines-section {
   position: relative;
   background-color: #F2F2F2;
@@ -2079,6 +2091,14 @@ body {
   object-fit: cover;
   object-position: center;
   display: block;
+  transform: scale(1.08);
+  transition: transform 0s linear 0.6s;
+  will-change: transform;
+}
+
+.discipline-card.active .discipline-img {
+  transform: scale(1);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Card 7 (Alternative Investment Strategies) - Align top so face is fully visible */
@@ -2095,52 +2115,25 @@ body {
   z-index: 1;
 }
 
-/* Geometric SVG / Stroke Overlay - Progressive Lazy-Loading Effect on Card Switch */
-.discipline-geom-svg {
+/* Shared vector overlay - geometry is interpolated in JS so shapes morph between cards */
+.discipline-geom {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: right center;
-  display: block;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
-  opacity: 0;
-  transform: scale(0.97) translateX(12px);
-  filter: blur(5px);
-  transition: opacity 0.25s ease-out,
-              transform 0.25s ease-out,
-              filter 0.25s ease-out;
-  will-change: opacity, transform, filter;
+  overflow: hidden;
 }
 
-.discipline-card.active .discipline-geom-svg {
-  opacity: 1;
-  transform: scale(1) translateX(0);
-  filter: blur(0px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
-              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+.discipline-geom .geom-stroke {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1;
 }
 
-/* Card 5 specialized stroke scale to match 822px design slice with lazy-loading */
-.discipline-geom-svg--card5 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: auto;
-  bottom: auto;
-  width: auto;
-  height: 194%;
-  max-width: none;
-  transform: translateY(-50%) scale(0.97) translateX(12px);
-  object-fit: contain;
-  object-position: right center;
-}
-
-.discipline-card.active .discipline-geom-svg--card5 {
-  transform: translateY(-50%) scale(1) translateX(0);
+.discipline-geom .geom-dot {
+  fill: #FFFFFF;
 }
 
 /* Card Text Content */
@@ -2182,6 +2175,46 @@ body {
   margin: 0;
 }
 
+.discipline-title,
+.discipline-desc {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.discipline-card.active .discipline-title,
+.discipline-card.active .discipline-desc {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.discipline-card.active .discipline-desc {
+  transition-delay: 0.28s;
+}
+
+/* Desktop pin: keep header + card within one viewport where possible */
+@media (min-width: 993px) {
+  .disciplines-scroll .disciplines-section {
+    padding: clamp(80px, 7vw, 110px) 0 clamp(40px, 4vw, 60px);
+  }
+
+  .disciplines-scroll .disciplines-stage {
+    height: clamp(380px, min(38vw, calc(100vh - 440px)), 580px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discipline-img,
+  .discipline-card.active .discipline-img,
+  .discipline-title,
+  .discipline-desc {
+    transform: none;
+    transition: opacity 0.3s ease-out;
+  }
+}
+
 /* Responsive adjustments for Section 05 */
 @media (max-width: 992px) {
   .disciplines-container {
@@ -2207,6 +2240,7 @@ body {
   }
 
   .disciplines-stage {
+    flex: none;
     width: 100%;
     height: 420px;
     order: 1;

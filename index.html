@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.7">
 </head>
 <body>
 
@@ -512,6 +512,8 @@
   </section>
 
   <!-- Section 05: Nine Disciplines. One Advisor Relationship -->
+  <!-- Scroll-pinned wrapper: section sticks while scroll steps through the 9 cards -->
+  <div class="disciplines-scroll" id="disciplinesScroll">
   <section class="disciplines-section" id="nine-disciplines">
     <div class="disciplines-container">
       <!-- Section Header -->
@@ -543,13 +545,14 @@
 
         <!-- Showcase Card Stage -->
         <div class="disciplines-stage">
+          <!-- Shared vector overlay: circles, lines and dots morph between cards (drawn in main.js) -->
+          <svg class="discipline-geom" aria-hidden="true" focusable="false"></svg>
+
           <!-- Card 1: Wealth management -->
           <article class="discipline-card active" data-card="0" role="tabpanel">
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/wealth_management_01.png" alt="Wealth management" class="discipline-img" loading="eager">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/wealth_management_stroke_01.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Wealth<br>management</h3>
@@ -564,8 +567,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Financial planning" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/financial_planning_stroke_02.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Financial<br>planning</h3>
@@ -580,8 +581,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Tax architecture" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/financial_plan_stroke_03.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Financial <br> planning</h3>
@@ -596,8 +595,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png" alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/risk_protection_04.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
@@ -612,8 +609,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png" alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/estate_succession_svg_05.png" alt="" class="discipline-geom-svg discipline-geom-svg--card5" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Estate &amp; Succession<br>Planning</h3>
@@ -628,8 +623,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/tax_planning_06.png" alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/tax_planning_svg_06.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Tax Planning &amp; CA<br>Coordination</h3>
@@ -644,8 +637,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/alternative_investment_svg_07.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Alternative Investment<br>Strategies</h3>
@@ -660,8 +651,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/alternative_investment_08.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/alternative_investment_svg_08.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Alternative Investment<br>Strategies</h3>
@@ -676,8 +665,6 @@
             <div class="discipline-media">
               <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Investment Advisory" class="discipline-img" loading="lazy">
               <div class="discipline-overlay"></div>
-              <!-- Geometric Stroke Overlay -->
-              <img src="assets/images/nine_displine/stroke/investment_advisory_svg_icon_09.png" alt="" class="discipline-geom-svg" aria-hidden="true">
             </div>
             <div class="discipline-content">
               <h3 class="discipline-title">Investment<br>Advisory</h3>
@@ -690,6 +677,7 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- Section 06: Investor Corner (Tools) -->
   <section class="investor-corner-section" id="investor-corner">
@@ -1056,6 +1044,6 @@
   </aside>
 
   <!-- Main JavaScript -->
-  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/main.js?v=1.6"></script>
 </body>
 </html>

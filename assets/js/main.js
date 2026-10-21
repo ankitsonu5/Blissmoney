@@ -198,6 +198,166 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initStepsDeck();
 
+  // Section 05: Morphing vector overlay for the nine discipline cards.
+  // Geometry is in each original stroke artwork's pixel space (w x h), placed like
+  // object-fit: contain anchored right-center; "tall" scales to 194% of stage height.
+  // c: circles [cx, cy, r] | l: lines [x1, y1, x2, y2] | d: dots [x, y]
+  const DISCIPLINE_GEOMS = [
+    { w: 1357, h: 815, c: [[950, 406, 407], [117, 406, 116]], l: [[233, 406, 950, 406], [950, 406, 950, 815]], d: [[233, 406], [950, 406]] },
+    { w: 1164, h: 793, c: [[608, 340, 213]], l: [[8, 127, 608, 127], [608, 0, 608, 793], [608, 553, 1164, 553], [8, 127, 8, 793]], d: [[608, 127], [8, 468]] },
+    { w: 1104, h: 818, c: [[1095, 409, 409], [415, 407, 270]], l: [[0, 407, 1104, 407]], d: [[686, 407], [8, 407]] },
+    { w: 1178, h: 923, c: [[345, 901, 345], [985, 364, 192]], l: [[360, 556, 1178, 0], [360, 556, 985, 556]], d: [[360, 556], [876, 208]] },
+    { w: 1096, h: 1598, tall: true, c: [[529, 529, 397], [700, 1201, 297]], l: [[529, 521, 674, 1088]], d: [[529, 521]] },
+    { w: 887, h: 843, c: [[486, 457, 273], [64, 775, 45]], l: [[884, 184, 64, 778], [486, 0, 486, 820], [486, 184, 884, 184]], d: [[486, 184], [227, 662]] },
+    { w: 1526, h: 815, c: [[1118, 406, 407], [117, 406, 116]], l: [[233, 406, 1112, 406], [1112, 406, 1112, 815]], d: [[233, 406], [1112, 406]] },
+    { w: 1162, h: 797, c: [[602, 342, 214]], l: [[0, 128, 602, 128], [602, 0, 602, 797], [602, 556, 1162, 556]], d: [[602, 128], [24, 128]] },
+    { w: 1275, h: 818, c: [[1092, 409, 409], [414, 407, 270]], l: [[8, 407, 812, 407]], d: [[8, 407]] }
+  ];
+
+  function createDisciplineGeometry(svg, stage) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const POOL = { c: 2, l: 4, d: 2 };
+    const DOT_R = 8;
+    const DURATION = 1000;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const els = { c: [], l: [], d: [] };
+    ['c', 'l', 'd'].forEach((type) => {
+      for (let i = 0; i < POOL[type]; i++) {
+        const el = document.createElementNS(NS, type === 'l' ? 'line' : 'circle');
+        el.setAttribute('class', type === 'd' ? 'geom-dot' : 'geom-stroke');
+        svg.appendChild(el);
+        els[type].push(el);
+      }
+    });
+
+    let current = null;
+    let targetIndex = 0;
+    let rafId = 0;
+
+    // Map one card's artwork geometry into stage pixels; unused pool slots come back as null
+    function layoutFor(index) {
+      const g = DISCIPLINE_GEOMS[index];
+      const W = stage.clientWidth;
+      const H = stage.clientHeight;
+      const k = g.tall ? (H * 1.94) / g.h : Math.min(W / g.w, H / g.h);
+      const ox = W - g.w * k;
+      const oy = (H - g.h * k) / 2;
+      const X = (x) => ox + x * k;
+      const Y = (y) => oy + y * k;
+      const pad = (arr, n, fn) => Array.from({ length: n }, (_, i) => (arr[i] ? fn(arr[i]) : null));
+      return {
+        c: pad(g.c, POOL.c, ([cx, cy, r]) => ({ cx: X(cx), cy: Y(cy), r: r * k, o: 1 })),
+        l: pad(g.l, POOL.l, ([x1, y1, x2, y2]) => ({ x1: X(x1), y1: Y(y1), x2: X(x2), y2: Y(y2), o: 1 })),
+        d: pad(g.d, POOL.d, ([x, y]) => ({ cx: X(x), cy: Y(y), r: Math.max(3, DOT_R * k), o: 1 }))
+      };
+    }
+
+    // Hidden state of a shape: circles/dots shrink to their centre, lines retract to their start
+    function collapse(type, s) {
+      if (type === 'l') return { x1: s.x1, y1: s.y1, x2: s.x1, y2: s.y1, o: 0 };
+      return { cx: s.cx, cy: s.cy, r: 0, o: 0 };
+    }
+
+    function render(state) {
+      ['c', 'l', 'd'].forEach((type) => {
+        state[type].forEach((s, i) => {
+          const el = els[type][i];
+          if (type === 'l') {
+            el.setAttribute('x1', s.x1.toFixed(2));
+            el.setAttribute('y1', s.y1.toFixed(2));
+            el.setAttribute('x2', s.x2.toFixed(2));
+            el.setAttribute('y2', s.y2.toFixed(2));
+          } else {
+            el.setAttribute('cx', s.cx.toFixed(2));
+            el.setAttribute('cy', s.cy.toFixed(2));
+            el.setAttribute('r', Math.max(0, s.r).toFixed(2));
+          }
+          el.style.opacity = s.o.toFixed(3);
+        });
+      });
+    }
+
+    // Resolve null slots against the other side so every shape has a start and end
+    function resolve(from, to) {
+      const start = { c: [], l: [], d: [] };
+      const end = { c: [], l: [], d: [] };
+      ['c', 'l', 'd'].forEach((type) => {
+        for (let i = 0; i < POOL[type]; i++) {
+          const a = from[type][i];
+          const b = to[type][i];
+          if (b) {
+            end[type][i] = b;
+            start[type][i] = a && a.o > 0.001 ? a : collapse(type, b);
+          } else {
+            start[type][i] = a;
+            end[type][i] = collapse(type, a);
+          }
+        }
+      });
+      return { start, end };
+    }
+
+    function lerpState(a, b, t) {
+      const out = { c: [], l: [], d: [] };
+      ['c', 'l', 'd'].forEach((type) => {
+        a[type].forEach((sa, i) => {
+          const sb = b[type][i];
+          const o = {};
+          Object.keys(sb).forEach((key) => { o[key] = sa[key] + (sb[key] - sa[key]) * t; });
+          out[type][i] = o;
+        });
+      });
+      return out;
+    }
+
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+    // First frame: nothing visible yet, so seed every slot as collapsed
+    function emptyState(layout) {
+      const st = { c: [], l: [], d: [] };
+      ['c', 'l', 'd'].forEach((type) => {
+        layout[type].forEach((s, i) => {
+          st[type][i] = collapse(type, s || { cx: 0, cy: 0, x1: 0, y1: 0 });
+        });
+      });
+      return st;
+    }
+
+    function morphTo(index) {
+      targetIndex = index;
+      const to = layoutFor(index);
+      if (!current) current = emptyState(to);
+      const { start, end } = resolve(current, to);
+      cancelAnimationFrame(rafId);
+
+      if (reduceMotion) {
+        current = end;
+        render(current);
+        return;
+      }
+
+      const t0 = performance.now();
+      const step = (now) => {
+        const t = Math.min(1, (now - t0) / DURATION);
+        current = lerpState(start, end, ease(t));
+        render(current);
+        if (t < 1) rafId = requestAnimationFrame(step);
+      };
+      rafId = requestAnimationFrame(step);
+    }
+
+    // Snap to the active card's geometry when the stage resizes
+    function relayout() {
+      cancelAnimationFrame(rafId);
+      const to = layoutFor(targetIndex);
+      current = resolve(current || emptyState(to), to).end;
+      render(current);
+    }
+
+    return { morphTo, relayout };
+  }
+
   // Section 05: Nine Disciplines Interactive Showcase
   function initDisciplinesShowcase() {
     const buttons = document.querySelectorAll('.discipline-btn');
@@ -206,8 +366,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!buttons.length || !cards.length) return;
 
+    const geomSvg = document.querySelector('.discipline-geom');
+    const geom = geomSvg ? createDisciplineGeometry(geomSvg, geomSvg.parentElement) : null;
+
     function updateDiscipline(targetIndex) {
       currentIndex = targetIndex;
+      if (geom) geom.morphTo(targetIndex);
 
       // Update active state on buttons
       buttons.forEach((btn, idx) => {
@@ -232,18 +396,72 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Attach click events to numbered buttons
+    // Scroll-pinned stepping: the section sticks while each scroll step advances one card
+    const scroller = document.getElementById('disciplinesScroll');
+    const section = scroller ? scroller.querySelector('.disciplines-section') : null;
+    let stepPx = 0;
+    let pinTop = 0;
+    let clickLockUntil = 0;
+
+    function layoutPin() {
+      if (!scroller || !section) return;
+      stepPx = Math.max(260, Math.round(window.innerHeight * 0.55));
+      // Taller-than-viewport section pins with its bottom edge aligned to the viewport bottom
+      pinTop = Math.min(0, window.innerHeight - section.offsetHeight);
+      section.style.setProperty('--disciplines-pin-top', pinTop + 'px');
+      scroller.style.height = (section.offsetHeight + stepPx * cards.length) + 'px';
+    }
+
+    function syncToScroll() {
+      if (!scroller || !stepPx || Date.now() < clickLockUntil) return;
+      const scrolled = pinTop - scroller.getBoundingClientRect().top;
+      const idx = Math.min(cards.length - 1, Math.max(0, Math.floor(scrolled / stepPx)));
+      if (idx !== currentIndex) updateDiscipline(idx);
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        syncToScroll();
+        ticking = false;
+      });
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      layoutPin();
+      syncToScroll();
+      if (geom) geom.relayout();
+    });
+
+    // Numbered buttons scroll to the matching step so scroll position and card stay in sync
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const targetIndex = parseInt(btn.getAttribute('data-discipline'), 10);
-        if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
-          updateDiscipline(targetIndex);
+        if (isNaN(targetIndex) || targetIndex === currentIndex) return;
+        if (scroller && stepPx) {
+          // Skip intermediate cards while the smooth scroll travels to the target step
+          clickLockUntil = Date.now() + 900;
+          const scrollerTop = scroller.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: scrollerTop - pinTop + (targetIndex + 0.5) * stepPx,
+            behavior: 'smooth'
+          });
         }
+        updateDiscipline(targetIndex);
       });
     });
 
     // Initialize with first discipline active
     updateDiscipline(0);
+    layoutPin();
+    syncToScroll();
+    window.addEventListener('load', () => {
+      layoutPin();
+      syncToScroll();
+      if (geom) geom.relayout();
+    });
   }
 
   initDisciplinesShowcase();
