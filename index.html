@@ -1,1510 +1,1043 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlissMoney — Financial Bliss, Built on Trust</title>
-  <meta name="description"
-    content="BlissMoney is a modern wealth management brand. Portfolios, plans and an advisory relationship that holds up long after the first meeting.">
-  <link rel="icon" type="image/png" href="aseets/images/bm_faicon.png">
+  <meta name="description" content="BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.">
+  <title>BlissMoney — Wealth Management</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="assets/images/bm_faicon.png">
+  <link rel="shortcut icon" href="assets/images/bm_faicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/bm_faicon.png">
+
+  <!-- Google Fonts: Raleway (Weights 300, 400, 500, 600, 700, 800) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 </head>
 <body>
 
-  <!-- ======================= HEADER ======================= -->
+  <!-- Fixed Site Header with Brand Logo & Interactive Dropdown Menu -->
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="#top" class="brand" aria-label="BlissMoney home">
-        <img src="aseets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo">
+      <a href="#hero" class="site-logo" aria-label="BlissMoney Home">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="site-logo-img">
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <div class="nav-item"><a href="#top" class="nav-link active">Home</a></div>
-
-        <div class="nav-item has-sub">
-          <a href="#serve" class="nav-link" aria-haspopup="true">Who we serve<i class="caret"
-              aria-hidden="true"></i></a>
-          <div class="dropdown">
-            <a href="#serve" class="dd-link lead">Overview<span>Who we serve</span></a>
-            <a href="#serve" class="dd-link">Business Owners &amp; Entrepreneurs</a>
-            <a href="#serve" class="dd-link">CXOs &amp; Senior Professionals</a>
-            <a href="#serve" class="dd-link">Families &amp; Next Generation</a>
-            <a href="#serve" class="dd-link">Affluent Individuals</a>
-          </div>
-        </div>
-
-        <div class="nav-item has-sub">
-          <a href="#offerings" class="nav-link" aria-haspopup="true">Our offerings<i class="caret"
-              aria-hidden="true"></i></a>
-          <div class="dropdown wide">
-            <a href="#offerings" class="dd-link lead span2">Overview<span>Nine disciplines, one relationship</span></a>
-            <a href="#offerings" class="dd-link">Wealth Management</a>
-            <a href="#offerings" class="dd-link">Investment Solutions</a>
-            <a href="#offerings" class="dd-link">Alternative Investment Strategies</a>
-            <a href="#offerings" class="dd-link">Comprehensive Financial Planning</a>
-            <a href="#offerings" class="dd-link">Risk &amp; Protection Planning</a>
-            <a href="#offerings" class="dd-link">Estate &amp; Succession Planning</a>
-            <a href="#offerings" class="dd-link">Tax Planning &amp; CA Coordination</a>
-            <a href="#offerings" class="dd-link">Loan &amp; Liability Advisory</a>
-            <a href="#offerings" class="dd-link">Investment Advisory</a>
-            <a href="#tools" class="dd-link accent">Investor Corner — Tools</a>
-          </div>
-        </div>
-
-        <div class="nav-item has-sub">
-          <a href="#approach" class="nav-link" aria-haspopup="true">Our approach<i class="caret"
-              aria-hidden="true"></i></a>
-          <div class="dropdown">
-            <a href="#approach" class="dd-link lead">Overview<span>How we think</span></a>
-            <a href="#approach" class="dd-link">Five-Pillar Portfolio Framework</a>
-            <a href="#process" class="dd-link">Client Journey</a>
-            <a href="#approach" class="dd-link">Investment Philosophy</a>
-          </div>
-        </div>
-
-        <div class="nav-item has-sub">
-          <a href="#insights" class="nav-link" aria-haspopup="true">Insights<i class="caret" aria-hidden="true"></i></a>
-          <div class="dropdown">
-            <a href="#insights" class="dd-link lead">All Insights<span>Thinking, put in writing</span></a>
-            <a href="#insights" class="dd-link">Market Perspectives</a>
-            <a href="#insights" class="dd-link">Wealth Planning Guides</a>
-            <a href="#insights" class="dd-link">FAQs</a>
-          </div>
-        </div>
-
-        <div class="nav-item has-sub">
-          <a href="#contact" class="nav-link" aria-haspopup="true">About us<i class="caret" aria-hidden="true"></i></a>
-          <div class="dropdown right">
-            <a href="#contact" class="dd-link lead">About BlissMoney<span>Financial bliss, built on trust</span></a>
-            <a href="#contact" class="dd-link">Leadership &amp; Team</a>
-            <a href="#contact" class="dd-link">Why BlissMoney</a>
-            <a href="#contact" class="dd-link">Careers</a>
-            <a href="#contact" class="dd-link">Contact &amp; Offices</a>
-          </div>
-        </div>
-
-        <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
-      </nav>
-
-      <div class="header-cta">
-        <a href="#contact" class="btn btn-solid btn-sm">Book a consultation</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span>
+      <!-- Menu Wrapper (Handles Hover & Click Toggle) -->
+      <div class="site-menu-wrap" id="siteMenuWrap">
+        <!-- Default State Menu Button -->
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-haspopup="true">
+          <span class="site-menu-text">Menu</span>
+          <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
         </button>
+
+        <!-- Dropdown Menu Panel (Appears on Hover and Click, matching Image 3) -->
+        <div class="site-menu-dropdown" id="siteMenuDropdown" role="menu" aria-label="Main Navigation">
+          <button class="site-menu-btn site-menu-btn-inside" id="siteMenuBtnInside" aria-label="Close navigation menu">
+            <span class="site-menu-text">Menu</span>
+            <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+          </button>
+          <nav class="site-menu-nav">
+            <a href="#hero" class="site-nav-link" role="menuitem">Home</a>
+            <a href="#who-we-serve" class="site-nav-link" role="menuitem">Who we serve</a>
+            <a href="#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
+            <a href="#how-we-work" class="site-nav-link" role="menuitem">Our approach</a>
+            <a href="#latest-blogs" class="site-nav-link" role="menuitem">Insights</a>
+            <a href="#five-questions" class="site-nav-link" role="menuitem">About us</a>
+            <a href="#footer" class="site-nav-link" role="menuitem">Contact</a>
+            <a href="#footer" class="site-nav-link site-nav-cta" role="menuitem">Book a consultation</a>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Mobile overlay menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <div class="m-item"><a href="#top" class="m-link">Home</a></div>
+  <!-- Hero Section with Scroll Zoom-Out Effect -->
+  <div class="hero-scroll" id="heroScroll">
+    <section class="hero-section" id="hero">
+      <!-- Background Circle Graphic behind text -->
+      <div class="hero-circle-bg" id="heroCircleBg" aria-hidden="true">
+        <svg class="hero-circle-svg" width="1033" height="970" viewBox="0 0 1033 970" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M204.5 867.5C204.5 923.833 158.833 969.5 102.5 969.5C46.167 969.5 0.5 923.833 0.5 867.5C0.5 811.167 46.167 765.5 102.5 765.5C158.833 765.5 204.5 811.167 204.5 867.5Z" stroke="#0CAF80"/>
+          <path d="M110.664 875.515L261.336 724.486" stroke="#0CAF80"/>
+          <path d="M1032.5 485C1032.5 752.582 815.582 969.5 548 969.5C280.418 969.5 63.5 752.582 63.5 485C63.5 217.418 280.418 0.5 548 0.5C815.582 0.5 1032.5 217.418 1032.5 485Z" stroke="#0CAF80"/>
+          <!-- Smooth 360 deg Orbiting Dot on Large Circle -->
+          <g class="hero-orbit-large">
+            <circle class="hero-dot hero-dot-large" cx="845" cy="104" r="8" fill="#0CAF80"/>
+          </g>
+          <!-- Smooth 360 deg Orbiting Dot on Small Circle -->
+          <g class="hero-orbit-small">
+            <circle class="hero-dot hero-dot-small" cx="181" cy="803" r="8" fill="#0CAF80"/>
+          </g>
+        </svg>
 
-      <div class="m-item">
-        <button class="m-link m-toggle" aria-expanded="false"><sup>01</sup>Who we serve<i class="caret"
-            aria-hidden="true"></i></button>
-        <div class="m-sub">
-          <a href="#serve">Overview</a>
-          <a href="#serve">Business Owners &amp; Entrepreneurs</a>
-          <a href="#serve">CXOs &amp; Senior Professionals</a>
-          <a href="#serve">Families &amp; Next Generation</a>
-          <a href="#serve">Affluent Individuals</a>
+        <!-- 3D BlissMoney Logo in Center of Circle Graphic (Shown on Scroll) -->
+        <div class="hero-logo-center" id="heroLogoCenter">
+          <img src="assets/images/bliss_money_logo.png" alt="BlissMoney Logo" class="hero-3d-logo">
         </div>
       </div>
 
-      <div class="m-item">
-        <button class="m-link m-toggle" aria-expanded="false"><sup>02</sup>Our offerings<i class="caret"
-            aria-hidden="true"></i></button>
-        <div class="m-sub">
-          <a href="#offerings">Overview</a>
-          <a href="#offerings">Wealth Management</a>
-          <a href="#offerings">Investment Solutions</a>
-          <a href="#offerings">Alternative Investment Strategies</a>
-          <a href="#offerings">Comprehensive Financial Planning</a>
-          <a href="#offerings">Risk &amp; Protection Planning</a>
-          <a href="#offerings">Estate &amp; Succession Planning</a>
-          <a href="#offerings">Tax Planning &amp; CA Coordination</a>
-          <a href="#offerings">Loan &amp; Liability Advisory</a>
-          <a href="#offerings">Investment Advisory</a>
-          <a href="#tools" class="accent">Investor Corner — Tools</a>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Wealth, run on</span>
+            <span class="hero-title-line">discipline <span class="light-text">- not instinct.</span></span>
+          </h1>
+          <p class="hero-description">
+            BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy. We build portfolios, plans, and a working relationship that holds up long after the first meeting.
+          </p>
+          <div class="hero-actions">
+            <a href="#how-it-works" class="btn btn-primary" id="btn-see-how-we-work">See how we work</a>
+            <a href="#consultation" class="btn btn-outline" id="btn-book-consultation">Book a consultation</a>
+          </div>
         </div>
       </div>
-
-      <div class="m-item">
-        <button class="m-link m-toggle" aria-expanded="false"><sup>03</sup>Our approach<i class="caret"
-            aria-hidden="true"></i></button>
-        <div class="m-sub">
-          <a href="#approach">Overview</a>
-          <a href="#approach">Five-Pillar Portfolio Framework</a>
-          <a href="#process">Client Journey</a>
-          <a href="#approach">Investment Philosophy</a>
-        </div>
-      </div>
-
-      <div class="m-item">
-        <button class="m-link m-toggle" aria-expanded="false"><sup>04</sup>Insights<i class="caret"
-            aria-hidden="true"></i></button>
-        <div class="m-sub">
-          <a href="#insights">All Insights</a>
-          <a href="#insights">Market Perspectives</a>
-          <a href="#insights">Wealth Planning Guides</a>
-          <a href="#insights">FAQs</a>
-        </div>
-      </div>
-
-      <div class="m-item">
-        <button class="m-link m-toggle" aria-expanded="false"><sup>05</sup>About us<i class="caret"
-            aria-hidden="true"></i></button>
-        <div class="m-sub">
-          <a href="#contact">About BlissMoney</a>
-          <a href="#contact">Leadership &amp; Team</a>
-          <a href="#contact">Why BlissMoney</a>
-          <a href="#contact">Careers</a>
-          <a href="#contact">Contact &amp; Offices</a>
-        </div>
-      </div>
-
-      <div class="m-item"><a href="#contact" class="m-link">Contact</a></div>
-
-      <div class="m-item"><a href="#contact" class="m-link menu-cta">Book a consultation</a></div>
-    </nav>
-    <p class="menu-foot">Financial Bliss, Built on Trust.</p>
+    </section>
   </div>
 
-  <main id="top">
+  <!-- Section 01: Who We Serve (Stacked Cards Deck with 4 Dots) -->
+  <section class="serve-section" id="who-we-serve">
+    <!-- Top-Right Brand Decorative Element with Rotating Orbiting Dot -->
+    <div class="serve-decor" aria-hidden="true">
+      <svg class="serve-decor-svg" width="297" height="466" viewBox="0 0 297 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circular Line & Orbiting Dot (Shifted slightly to the right, rotation preserved) -->
+        <g class="serve-circle-wrapper" transform="translate(30, 0)">
+          <!-- Circular Line -->
+          <circle cx="150" cy="307" r="137" stroke="#0D251E" stroke-width="1.2" fill="none" opacity="0.9"/>
+          <!-- Smooth 360 deg Orbiting Dot on Circle Line -->
+          <g transform="translate(150, 307)">
+            <g class="serve-orbit-group">
+              <circle class="serve-decor-dot" cx="41" cy="-130.7" r="8" fill="#0D251E"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
 
-    <!-- ======================= HERO ======================= -->
-    <div class="hero-scroll" id="heroScroll">
-    <section class="hero" aria-label="Introduction">
-      <div class="aurora" aria-hidden="true">
-        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <div class="serve-container">
+      <!-- Section Header -->
+      <div class="serve-header">
+        <span class="serve-eyebrow">01 - Who we serve</span>
+        <h2 class="serve-title">
+          Built around how<br>
+          your wealth actually<br>
+          behaves.
+        </h2>
       </div>
-      <div class="grain" aria-hidden="true"></div>
-      <div class="hero-diagonal-beam" aria-hidden="true"></div>
-      <div class="hero-diagonal-beam beam-2" aria-hidden="true"></div>
 
-      <div class="hero-inner">
-        <div class="hero-content">
-          <h1 class="reveal d1">
-            Wealth run on<br>
-            <span class="discipline-wrap">
-              <span class="discipline-text">discipline</span>
-              <svg class="discipline-curve" viewBox="0 0 200 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <path d="M3 10C55 2.5 145 2.5 197 9" stroke="url(#discGrad)" stroke-width="3" stroke-linecap="round" />
-                <defs>
-                  <linearGradient id="discGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#0CAF80" />
-                    <stop offset="50%" stop-color="#0CAF80" />
-                    <stop offset="100%" stop-color="#0CAF80" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span><br>
-            <span class="hero-nowrap">not instinct.</span>
-          </h1>
-          <p class="hero-sub reveal d2">We build portfolios, plans and an advisory relationship that holds up long after
-            the first meeting.</p>
-          <div class="hero-actions reveal d3">
-            <a href="#contact" class="btn btn-pill-solid">
-              <span>Book a consultation</span>
-              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"
-                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="#process" class="btn btn-pill-ghost">See how we work</a>
-          </div>
-          <div class="hero-trust reveal d4">
-            <div class="trust-item">
-              <span class="trust-dot" aria-hidden="true"></span>
-              <span>Research-Led</span>
-            </div>
-            <span class="trust-sep" aria-hidden="true">·</span>
-            <div class="trust-item">
-              <span class="trust-dot" aria-hidden="true"></span>
-              <span>Five-Pillar Framework</span>
-            </div>
-            <span class="trust-sep" aria-hidden="true">·</span>
-            <div class="trust-item">
-              <span class="trust-dot" aria-hidden="true"></span>
-              <span>Pure Advisory</span>
-            </div>
-          </div>
+      <!-- Interactive 4 Cards Showcase Area -->
+      <div class="serve-deck-wrapper">
+        <!-- 4 Vertical Control Dots -->
+        <div class="deck-controls" role="tablist" aria-label="Who we serve profiles">
+          <button class="deck-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Card 1: Business owners & entrepreneurs"></button>
+          <button class="deck-dot" data-index="1" role="tab" aria-selected="false" aria-label="Card 2: Corporate leaders & executives"></button>
+          <button class="deck-dot" data-index="2" role="tab" aria-selected="false" aria-label="Card 3: Next-gen wealth & families"></button>
+          <button class="deck-dot" data-index="3" role="tab" aria-selected="false" aria-label="Card 4: Tech founders & innovators"></button>
         </div>
 
-        <div class="hero-visual visible">
-          <!-- Animated Wealth Architecture Graphic (caring-code-caretaker) underneath video -->
-          <div class="wealth-architecture-visual visual-grid" aria-hidden="true">
-            <svg viewBox="0 0 700 700" class="arch-svg">
-              <g fill="none" stroke="currentColor" class="arch-grid-lines">
-                <circle cx="350" cy="350" r="224"></circle>
-                <circle cx="350" cy="350" r="160"></circle>
-                <circle cx="350" cy="350" r="96"></circle>
-                <path d="M350 36v628M36 350h628"></path>
-              </g>
-              <g class="orbit-slow" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M350 126a224 224 0 0 1 218 174" class="arch-brand-stroke"></path>
-                <circle cx="568" cy="300" r="7" class="arch-brand-dot"></circle>
-              </g>
-              <g class="orbit-reverse" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M190 350a160 160 0 0 1 276-110" class="arch-ink-stroke"></path>
-                <circle cx="466" cy="240" r="5" class="arch-ink-dot"></circle>
+        <!-- Stacked Cards Container -->
+        <div class="stacked-deck">
+          <!-- Card 1 -->
+          <article class="card-item" data-card="0">
+            <div class="card-left">
+              <span class="card-num">01</span>
+              <div class="card-text-content">
+                <h3 class="card-title">Business owners<br>&amp; entrepreneurs</h3>
+                <p class="card-desc">
+                  Concentrated holdings, lumpy cash flows and a business that is also the biggest asset. We plan around all three.
+                </p>
+              </div>
+            </div>
+            <div class="card-right">
+              <img src="assets/images/who_we_serve/business_owner.jpg" alt="Business owners &amp; entrepreneurs" class="card-img card-img--business" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card-item" data-card="1">
+            <div class="card-left">
+              <span class="card-num">02</span>
+              <div class="card-text-content">
+                <h3 class="card-title">CXOs &amp; Senior<br>Professionals</h3>
+                <p class="card-desc">
+                  ESOPs, RSUs and high savings with little time. Structure, tax discipline and a portfolio that runs without you.
+                </p>
+              </div>
+            </div>
+            <div class="card-right">
+              <img src="assets/images/who_we_serve/seniorprofessionals.jpg" alt="CXOs &amp; Senior Professionals" class="card-img card-img--executive" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card-item" data-card="2">
+            <div class="card-left">
+              <span class="card-num">03</span>
+              <div class="card-text-content">
+                <h3 class="card-title">CXOs & Senior<br>&amp; Professionals</h3>
+                <p class="card-desc">
+                  Wealth that must survive transitions: succession, education, and values passed on without confusion.
+                </p>
+              </div>
+            </div>
+            <div class="card-right">
+              <img src="assets/images/who_we_serve/nextgen_family.jpg" alt="Next-gen wealth &amp; families" class="card-img card-img--family" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card-item" data-card="3">
+            <div class="card-left">
+              <span class="card-num">04</span>
+              <div class="card-text-content">
+                <h3 class="card-title">Tech founders<br>&amp; innovators</h3>
+                <p class="card-desc">
+                  High-earning partners and tech visionaries balancing rapid liquidity events, private investments, and multi-asset wealth.
+                </p>
+              </div>
+            </div>
+            <div class="card-right">
+              <img src="assets/images/who_we_serve/techfounder.jpg" alt="Tech founders &amp; innovators" class="card-img card-img--founder" loading="lazy">
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 02: Disciplined Investing / Long-term Thinking -->
+  <section class="investing-section" id="disciplined-investing">
+    <!-- Big Arc with Dot SVG -->
+    <div class="investing-decor" aria-hidden="true">
+      <svg class="investing-decor-svg" width="1828" height="1823" viewBox="0 0 1828 1823" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1827.4 911.5C1827.4 1414.58 1419.58 1822.4 916.5 1822.4C413.424 1822.4 5.6 1414.58 5.6 911.5C5.6 408.424 413.424 0.6 916.5 0.6C1419.58 0.6 1827.4 408.424 1827.4 911.5Z" stroke-width="1.2" stroke="#09D59F"/>
+        <!-- 180-Degree Smooth Orbiting Dot on Arc -->
+        <g transform="translate(916.5, 911.5)">
+          <g class="investing-orbit-group">
+            <circle class="investing-decor-dot" cx="0" cy="-910.9" r="8" fill="#09D59F"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="investing-container">
+      <!-- Section Title -->
+      <h2 class="investing-title">
+        Disciplined investing.<br>
+        Long-term thinking.
+      </h2>
+
+      <!-- 3 Columns: 05 pillars, 06 steps, 09 disciplines -->
+      <div class="investing-grid">
+        <!-- Item 1: 05 pillars -->
+        <div class="investing-card">
+          <div class="investing-icon-box">
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="05 pillars">
+              <path d="M0.253391 0.253391H19.0642V129.116H0.253391V0.253391Z" stroke-width="0.506781" stroke="white"/>
+              <path d="M31.8642 40.0594H50.6751V129.116H31.8642V40.0594Z" stroke-width="0.506781" stroke="white"/>
+              <path d="M85.134 40.0594H103.359V129.116H85.134V40.0594Z" stroke-width="0.506781" stroke="white"/>
+              <path d="M58.792 65.2315H77.0174V129.117H58.792V65.2315Z" stroke-width="0.506781" stroke="white"/>
+              <path d="M110.305 0.253391H129.116V129.116H110.305V0.253391Z" stroke-width="0.506781" stroke="white"/>
+              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
+              <!-- Dot moving strictly up and down along Pillar 2 line -->
+              <g class="pillar-dot-group">
+                <circle cx="33.5222" cy="39.7346" r="4.68306" fill="#09D59F"/>
               </g>
             </svg>
           </div>
+          <h3 class="investing-card-title">05 pillars</h3>
+          <p class="investing-card-desc">
+            every portfolio is<br>stress-tested against
+          </p>
+        </div>
 
-          <div class="video-container">
-            <video class="hero-video" src="aseets/videos/blissmoney.mp4" autoplay loop muted playsinline preload="auto">
-              <source src="aseets/videos/blissmoney.mp4" type="video/mp4">
-              <source src="aseets/blissmoney.mp4" type="video/mp4">
-            </video>
+        <!-- Item 2: 06 steps -->
+        <div class="investing-card">
+          <div class="investing-icon-box">
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="06 steps">
+              <path d="M0.292935 0.292691H129.077V129.077H0.292935V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
+              <path d="M0 120.589H17.7943V106.199H39.917V91.4901H61.5587V77.2604H85.9257V62.551H106.125V48.0016H129.369" stroke-width="0.585382" stroke="white"/>
+              <path d="M0 88.3932H17.7943V73.8876H39.917V59.0597H61.5587V44.7152H85.9257V29.8872H106.125V15.2205H129.369" stroke-width="0.585382" stroke="white"/>
+              <!-- Dot moving along staircase line from top to bottom -->
+              <circle class="step-dot-climber" cx="0" cy="0" r="4.68306" fill="#09D59F"/>
+            </svg>
           </div>
+          <h3 class="investing-card-title">06 steps</h3>
+          <p class="investing-card-desc">
+            from discovery to<br>a portfolio in motion
+          </p>
+        </div>
+
+        <!-- Item 3: 09 disciplines -->
+        <div class="investing-card">
+          <div class="investing-icon-box">
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="09 disciplines">
+              <path d="M117.369 64.6846C117.369 93.7814 93.7811 117.369 64.6844 117.369C35.5876 117.369 12 93.7814 12 64.6846C12 35.5878 35.5876 12.0002 64.6844 12.0002C93.7811 12.0002 117.369 35.5878 117.369 64.6846Z" stroke-width="0.585382" stroke="white"/>
+              <path d="M103.32 64.6848C103.32 86.0224 86.0222 103.32 64.6845 103.32C43.3469 103.32 26.0493 86.0224 26.0493 64.6848C26.0493 43.3471 43.3469 26.0495 64.6845 26.0495C86.0222 26.0495 103.32 43.3471 103.32 64.6848Z" stroke-width="0.585382" stroke="white"/>
+              <path d="M89.8558 64.6854C89.8558 78.5872 78.5861 89.8569 64.6843 89.8569C50.7825 89.8569 39.5129 78.5872 39.5129 64.6854C39.5129 50.7836 50.7825 39.514 64.6843 39.514C78.5861 39.514 89.8558 50.7836 89.8558 64.6854Z" stroke-width="0.585382" stroke="white"/>
+              <path d="M74.6359 64.9781C74.6359 70.3125 70.3115 74.6369 64.9771 74.6369C59.6427 74.6369 55.3183 70.3125 55.3183 64.9781C55.3183 59.6437 59.6427 55.3193 64.9771 55.3193C70.3115 55.3193 74.6359 59.6437 74.6359 64.9781Z" stroke-width="0.585382" stroke="white"/>
+              <path d="M65.5624 64.9781L0.584961 128.785" stroke-width="0.585382" stroke="white"/>
+              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
+              <!-- Dot orbiting strictly along the concentric circle line -->
+              <g transform="translate(64.6845, 64.6848)">
+                <g class="discipline-orbit-group">
+                  <circle cx="-36.2519" cy="9.8263" r="4.68306" fill="#09D59F"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h3 class="investing-card-title">09 disciplines</h3>
+          <p class="investing-card-desc">
+            under one advisor<br>relationship
+          </p>
         </div>
       </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- Section 03: Five Questions Framework -->
+  <section class="questions-section" id="five-questions">
+    <!-- Top-Right Decorative Overlapping Circles SVG -->
+    <div class="questions-decor" aria-hidden="true">
+      <svg class="questions-decor-svg" width="692" height="781" viewBox="0 0 692 781" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+        <!-- Circle 1 (Large, right, extending out of screen) -->
+        <circle cx="528.39" cy="388.64" r="242.20" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85" fill="none"/>
+        <g transform="translate(528.39, 388.64)">
+          <g class="q-dot-orbit-1">
+            <circle cx="-122.76" cy="-208.53" r="7.6" fill="#09D59F"/>
+          </g>
+        </g>
+
+        <!-- Circle 2 (Small, left) -->
+        <circle cx="231.34" cy="288.24" r="151.51" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85" fill="none"/>
+        <g transform="translate(231.34, 288.24)">
+          <g class="q-dot-orbit-2">
+            <circle cx="-101.93" cy="111.92" r="4.8" fill="#09D59F"/>
+          </g>
+        </g>
+      </svg>
     </div>
 
-
-    <!-- ======================= CH 01 · WHO WE SERVE ======================= -->
-    <section class="section light" id="serve">
-      <div class="container">
-        <div class="section-head serve-head">
-          <div class="serve-head-main">
-            <p class="chapter serve-label">Who we serve</p>
-            <h2>Built around how your wealth <em>actually</em> behaves.</h2>
-          </div>
-          <div class="serve-head-side">
-            <p class="lede">Different balance sheets carry different risks. The advice should know the
-              difference before the portfolio does.</p>
-            <div class="serve-meta">
-              <!-- <span class="serve-meta-num">04</span> -->
-              <span class="serve-meta-text">client profiles we plan around, each with its own risks, cash flows and goals.</span>
-            </div>
-          </div>
-        </div>
+    <div class="questions-container">
+      <!-- Section Header -->
+      <div class="questions-header">
+        <h2 class="questions-title">
+          Five questions before<br>
+          a single rupee moves.
+        </h2>
+        <p class="questions-subtitle">
+          The Five-Pillar Portfolio Framework. Every idea must answer<br>
+          all five — or it does not enter the portfolio.
+        </p>
       </div>
 
-      <div class="segment-grid">
-        <article class="segment-card reveal">
-          <div class="card-top">
-            <div class="seg-meta">
-              <svg class="seg-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <g class="si-layer si-slide-left">
-                  <rect x="18" y="36" width="54" height="66"></rect>
-                  <path d="M30 49h12M30 63h12M30 77h12"></path>
-                </g>
-                <g class="si-layer si-slide-right">
-                  <path d="M72 52h36v50H72M84 65h12M84 79h12"></path>
-                </g>
-                <path class="si-accent" d="M10 102h108"></path>
-              </svg>
-              <span class="seg-num">01</span>
-            </div>
-            <h3>Business Owners &amp; Entrepreneurs</h3>
-            <p>Concentrated holdings, lumpy cash flows and a business that is also the biggest asset. We plan around
-              all three.</p>
-            <a href="#offerings" class="seg-link">See what we do <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="card-img-wrap">
-            <img src="aseets/images/business_owners_entrepreneurs_img.jpg" alt="Business Owners and Entrepreneurs"
-              loading="lazy">
-          </div>
-        </article>
-        <article class="segment-card reveal d1">
-          <div class="card-top">
-            <div class="seg-meta">
-              <svg class="seg-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <g class="si-layer si-bars">
-                  <path d="M18 98V67h18v31M48 98V45h18v53M78 98V23h18v75"></path>
-                </g>
-                <g class="si-layer si-chart-line">
-                  <path d="m14 76 31-23 22 12 39-42"></path>
-                  <circle cx="106" cy="23" r="4"></circle>
-                </g>
-                <path class="si-accent" d="M10 102h108"></path>
-              </svg>
-              <span class="seg-num">02</span>
-            </div>
-            <h3>CXOs &amp; Senior Professionals</h3>
-            <p>ESOPs, RSUs and high savings with little time. Structure, tax discipline and a portfolio that runs
-              without you.</p>
-            <a href="#offerings" class="seg-link">See what we do <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="card-img-wrap">
-            <img src="aseets/images/cxos_senior_professionals_img.jpg" alt="CXOs and Senior Professionals"
-              loading="lazy">
-          </div>
-        </article>
-        <article class="segment-card reveal d2">
-          <div class="card-top">
-            <div class="seg-meta">
-              <svg class="seg-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <g class="si-layer si-ring">
-                  <circle cx="64" cy="58" r="39"></circle>
-                  <circle cx="64" cy="58" r="24"></circle>
-                </g>
-                <g class="si-layer si-nodes">
-                  <circle cx="64" cy="19" r="5"></circle>
-                  <circle cx="103" cy="58" r="5"></circle>
-                  <circle cx="64" cy="97" r="5"></circle>
-                  <circle cx="25" cy="58" r="5"></circle>
-                </g>
-                <path class="si-accent" d="M44 58h40M64 38v40"></path>
-              </svg>
-              <span class="seg-num">03</span>
-            </div>
-            <h3>Families &amp; Next Generation</h3>
-            <p>Wealth that must survive transitions: succession, education, and values passed on without confusion.
-            </p>
-            <a href="#offerings" class="seg-link">See what we do <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="card-img-wrap">
-            <img src="aseets/images/families_next_generation_img.jpg" alt="Families and Next Generation"
-              loading="lazy">
-          </div>
-        </article>
-        <article class="segment-card reveal d3">
-          <div class="card-top">
-            <div class="seg-meta">
-              <svg class="seg-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <g class="si-layer si-fold">
-                  <path d="M18 95 42 25l22 52 19-36 27 54Z"></path>
-                </g>
-                <g class="si-layer si-pulse">
-                  <path d="M9 72h27l8-20 14 40 13-31 9 11h39"></path>
-                </g>
-                <circle class="si-accent" cx="64" cy="77" r="6"></circle>
-              </svg>
-              <span class="seg-num">04</span>
-            </div>
-            <h3>Affluent Individuals</h3>
-            <p>A full-picture plan that ties investments, protection and goals into one coherent, reviewable strategy.
-            </p>
-            <a href="#offerings" class="seg-link">See what we do <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="card-img-wrap">
-            <img src="aseets/images/affluent_individuals_img.jpg" alt="Affluent Individuals" loading="lazy">
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ======================= CH 02 · OFFERINGS ======================= -->
-    <section class="section dark" id="offerings">
-      <div class="grain" aria-hidden="true"></div>
-      <div class="offerings-bg-glow" aria-hidden="true">
-        <img src="aseets/images/bg_glow_effect.jpg" alt="" loading="lazy">
-      </div>
-      <div class="offerings-pin-stage" id="offeringsPinStage">
-        <div class="container">
-          <div class="section-head offerings-head reveal">
-            <h2>Nine disciplines.<br>One advisor <em>relationship.</em></h2>
-            <p class="lede">Most of what happens to your money touches more than one discipline.
-              That is why we do not hand you off between departments.</p>
-          </div>
-        </div>
-
-        <div class="offerings-slider-wrap">
-          <div class="offerings-track" id="offeringsTrack" aria-label="Nine disciplines">
-            <article class="discipline-card" data-index="0">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/wealth_management.jpg" alt="Wealth Management" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Wealth Management</h3>
-                  <p>The whole balance sheet, managed as one.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="1">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/comprehensive_financial.jpg" alt="Comprehensive Financial Planning" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Comprehensive Financial Planning</h3>
-                  <p>Goals, cash flows and contingencies, mapped.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="2">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/investment_solutions.jpg" alt="Investment Solutions" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Investment Solutions</h3>
-                  <p>Curated instruments, matched to mandate.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="3">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/riskprotectionplanning.jpg" alt="Risk and Protection Planning" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Risk &amp; Protection Planning</h3>
-                  <p>Cover sized to reality, not to products.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="4">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/estatesuccessionplanning.jpg" alt="Estate and Succession Planning" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Estate &amp; Succession Planning</h3>
-                  <p>Transfers that are orderly and intended.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="5">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/taxplanningcoordination.jpg" alt="Tax Planning and CA Coordination" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Tax Planning &amp; CA Coordination</h3>
-                  <p>Advice that talks to your accountant.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="6">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/alternative_investment_strategies.jpg"
-                  alt="Alternative Investment Strategies" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Alternative Investment Strategies</h3>
-                  <p>Beyond the listed market, with discipline.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="7">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/loanliabilityadvisory.jpg" alt="Loan and Liability Advisory" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Loan &amp; Liability Advisory</h3>
-                  <p>The other side of the balance sheet, optimised.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="discipline-card" data-index="8">
-              <div class="card-img-bg">
-                <img src="aseets/images/ninedisciplinesimg/investmentadvisory.jpg" alt="Investment Advisory" loading="lazy">
-                <div class="card-overlay"></div>
-              </div>
-              <div class="card-inner-content">
-                <div class="card-bottom-info">
-                  <span class="card-accent-bar" aria-hidden="true"></span>
-                  <h3>Investment Advisory</h3>
-                  <p>Research-backed calls, clearly explained.</p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" style="padding-bottom: clamp(44px, 5.5vw, 72px);">
-        <div class="stat-band reveal">
-          <div class="stat">
-            <span class="stat-num" data-count="5">05</span>
-            <p>pillars every portfolio is stress-tested against</p>
-          </div>
-          <div class="stat">
-            <span class="stat-num" data-count="6">06</span>
-            <p>steps from discovery to a portfolio in motion</p>
-          </div>
-          <div class="stat">
-            <span class="stat-num" data-count="9">09</span>
-            <p>disciplines under one advisor relationship</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= CH 03 · APPROACH ======================= -->
-    <section class="section light" id="approach">
-      <div class="container">
-        <div class="approach-wrap">
-          <div class="section-head reveal">
-            <h2>Five questions before a single <em>rupee</em> moves.</h2>
-            <p class="lede">The Five-Pillar Portfolio Framework. Every idea must answer all five —
-              or it does not enter the portfolio.</p>
-          </div>
-
-          <div class="accordion" id="pillars">
-            <div class="acc-item reveal">
-              <button class="acc-head" aria-expanded="true">
-                Fundamental reality
-                <span class="acc-icon" aria-hidden="true"></span>
-              </button>
-              <div class="acc-body" style="max-height:200px">
-                <p>Is the underlying business, asset or strategy sound — earnings, balance sheet,
-                  governance — without the story attached to it?</p>
-              </div>
-            </div>
-            <div class="acc-item reveal">
-              <button class="acc-head" aria-expanded="false">
-                Valuation forensics
-                <span class="acc-icon" aria-hidden="true"></span>
-              </button>
-              <div class="acc-body">
-                <p>What are we paying versus what we are getting — and what has to go right for
-                  that price to make sense?</p>
-              </div>
-            </div>
-            <div class="acc-item reveal">
-              <button class="acc-head" aria-expanded="false">
-                Risk architecture
-                <span class="acc-icon" aria-hidden="true"></span>
-              </button>
-              <div class="acc-body">
-                <p>How does it behave in a drawdown? Position sizing, correlation and the exit —
-                  decided before entry, not during panic.</p>
-              </div>
-            </div>
-            <div class="acc-item reveal">
-              <button class="acc-head" aria-expanded="false">
-                Institutional footprint
-                <span class="acc-icon" aria-hidden="true"></span>
-              </button>
-              <div class="acc-body">
-                <p>Where is informed money positioned — and are we early, aligned, or the
-                  liquidity someone else is waiting for?</p>
-              </div>
-            </div>
-            <div class="acc-item reveal">
-              <button class="acc-head" aria-expanded="false">
-                Technical structure
-                <span class="acc-icon" aria-hidden="true"></span>
-              </button>
-              <div class="acc-body">
-                <p>Does price structure confirm the thesis? Entries are timed, staged and
-                  documented — never improvised.</p>
-              </div>
-            </div>
-          </div>
-
-          <aside class="approach-quote reveal">
-            <div class="quote-card">
-              <div class="grain" aria-hidden="true"></div>
-              <div class="quote-card-glow" aria-hidden="true"></div>
-              <div class="quote-card-inner">
-                <div class="quote-card-main">
-                  <p class="q-eyebrow">Investment philosophy</p>
-                  <p class="q-text">“Disciplined investing. <em>Long-term</em> thinking.”</p>
-                  <p class="q-sub">A portfolio should be understandable in calm markets and defensible
-                    in difficult ones.</p>
-                </div>
-                <div class="quote-card-action">
-                  <a href="#contact" class="btn btn-ghost btn-sm">Our client journey <span
-                      aria-hidden="true">→</span></a>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= CH 04 · PROCESS ======================= -->
-    <section class="section light alt" id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Six steps. <em>No surprises.</em></h2>
-          <p class="lede">A working relationship, not a handover.</p>
-        </div>
-
-        <div class="steps-carousel-wrap reveal">
-          <div class="steps-track" id="stepsTrack" aria-label="Six steps process carousel" tabindex="0">
-            <article class="step-card" data-step="0">
-              <div class="step-card-top">
-                <span class="step-icon ic-users" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer si-slide-left">
-                      <circle cx="40" cy="44" r="12"></circle>
-                      <path d="M18 94v-8a22 22 0 0 1 44 0v8"></path>
-                    </g>
-                    <g class="si-layer si-slide-right">
-                      <circle cx="88" cy="44" r="12"></circle>
-                      <path d="M66 94v-8a22 22 0 0 1 44 0v8"></path>
-                    </g>
-                    <path class="si-accent" d="M10 102h108"></path>
-                  </svg>
-                </span>
-                <span class="step-number">01</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Discovery meeting</h3>
-                <p>The full picture — assets, liabilities, goals, worries.</p>
-              </div>
-            </article>
-
-            <article class="step-card" data-step="1">
-              <div class="step-card-top">
-                <span class="step-icon ic-shield" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer">
-                      <path d="M22 88a42 42 0 0 1 84 0"></path>
-                      <path d="M34 88a30 30 0 0 1 60 0" stroke-dasharray="3 6"></path>
-                      <path d="M22 88h10M96 88h10M64 46v8M34.3 58.3l5.6 5.6M93.7 58.3l-5.6 5.6"></path>
-                    </g>
-                    <g class="si-layer si-needle">
-                      <path d="M64 88 64 52"></path>
-                    </g>
-                    <circle class="si-accent si-accent-fill" cx="64" cy="88" r="4"></circle>
-                    <path class="si-accent" d="M10 102h108"></path>
-                  </svg>
-                </span>
-                <span class="step-number">02</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Risk profiling</h3>
-                <p>What you can afford to risk, and what you can live with.</p>
-              </div>
-            </article>
-
-            <article class="step-card" data-step="2">
-              <div class="step-card-top">
-                <span class="step-icon ic-layers" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer si-ring">
-                      <circle cx="64" cy="58" r="40"></circle>
-                      <circle cx="64" cy="58" r="25" stroke-dasharray="26 7"></circle>
-                    </g>
-                    <g class="si-layer si-nodes">
-                      <circle cx="64" cy="18" r="5"></circle>
-                      <circle cx="104" cy="58" r="5"></circle>
-                      <circle cx="64" cy="98" r="5"></circle>
-                      <circle cx="24" cy="58" r="5"></circle>
-                    </g>
-                    <path class="si-accent" d="M50 58h28M64 44v28"></path>
-                  </svg>
-                </span>
-                <span class="step-number">03</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Portfolio design</h3>
-                <p>A written plan, stress-tested against the five pillars.</p>
-              </div>
-            </article>
-
-            <article class="step-card" data-step="3">
-              <div class="step-card-top">
-                <span class="step-icon ic-bolt" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer si-doc">
-                      <rect x="30" y="12" width="68" height="86"></rect>
-                      <path d="M54 34h30M54 55h30M54 76h30"></path>
-                    </g>
-                    <g class="si-layer si-checks">
-                      <path class="si-check si-check-1" d="m38 34 4 4 6-8"></path>
-                      <path class="si-check si-check-2" d="m38 55 4 4 6-8"></path>
-                      <path class="si-check si-check-3" d="m38 76 4 4 6-8"></path>
-                    </g>
-                    <path class="si-accent" d="M10 108h108"></path>
-                  </svg>
-                </span>
-                <span class="step-number">04</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Execution</h3>
-                <p>Staged, documented, and explained before it happens.</p>
-              </div>
-            </article>
-
-            <article class="step-card" data-step="4">
-              <div class="step-card-top">
-                <span class="step-icon ic-trend" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer si-bars">
-                      <path d="M18 98V70h16v28M44 98V56h16v42M70 98V44h16v54M96 98V30h16v68"></path>
-                    </g>
-                    <g class="si-layer si-chart-line">
-                      <path d="m14 72 30-22 24 12 38-40"></path>
-                      <circle cx="106" cy="22" r="4"></circle>
-                    </g>
-                    <path class="si-accent" d="M10 102h108"></path>
-                  </svg>
-                </span>
-                <span class="step-number">05</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Reporting &amp; monitoring</h3>
-                <p>You always know what you own, and why.</p>
-              </div>
-            </article>
-
-            <article class="step-card" data-step="5">
-              <div class="step-card-top">
-                <span class="step-icon ic-cycle" aria-hidden="true">
-                  <svg class="step-svg" viewBox="0 0 128 120" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                    <g class="si-layer si-orbit">
-                      <path d="M28 58a36 36 0 0 1 61-26"></path>
-                      <path d="m89 20 0 12-12 0"></path>
-                      <path d="M100 58a36 36 0 0 1-61 26"></path>
-                      <path d="m39 96 0-12 12 0"></path>
-                    </g>
-                    <g class="si-layer si-pulse">
-                      <path d="M30 60h14l6-12 9 26 8-20 6 8h25"></path>
-                    </g>
-                    <circle class="si-accent si-accent-fill" cx="64" cy="58" r="3"></circle>
-                  </svg>
-                </span>
-                <span class="step-number">06</span>
-              </div>
-              <div class="step-card-bottom">
-                <h3>Periodic reviews</h3>
-                <p>Life changes. The plan is rebalanced with it.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="steps-controls">
-            <div class="steps-indicators" id="stepsIndicators" aria-label="Step indicators">
-              <button type="button" class="step-indicator active" data-step="0" aria-label="Go to step 1"></button>
-              <button type="button" class="step-indicator" data-step="1" aria-label="Go to step 2"></button>
-              <button type="button" class="step-indicator" data-step="2" aria-label="Go to step 3"></button>
-              <button type="button" class="step-indicator" data-step="3" aria-label="Go to step 4"></button>
-              <button type="button" class="step-indicator" data-step="4" aria-label="Go to step 5"></button>
-              <button type="button" class="step-indicator" data-step="5" aria-label="Go to step 6"></button>
-            </div>
-            <div class="steps-nav-btns">
-              <button type="button" class="steps-btn steps-prev" id="stepsPrev" aria-label="Previous step">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-              </button>
-              <button type="button" class="steps-btn steps-next" id="stepsNext" aria-label="Next step">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= INVESTOR CORNER · CALCULATORS ======================= -->
-    <section class="section dark" id="tools" style="background-color: #000000;">
-      <div class="grain" aria-hidden="true"></div>
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Clarity, in <em>numbers.</em></h2>
-          <p class="lede">Practical calculators. No forms, no sign-ups — just a first, honest
-            estimate before a real conversation.</p>
-        </div>
-
-        <div class="tabs reveal" role="tablist" aria-label="Calculators">
-          <button class="tab active" role="tab" aria-selected="true" data-tab="sip">
-            <span class="tab-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="13" rx="2"></rect>
-                <circle cx="12" cy="10.5" r="2.5"></circle>
-                <path d="M6 10.5h.01M18 10.5h.01"></path>
-                <path d="M6 20h12"></path>
-              </svg>
-            </span>
-            <span class="tab-title">FINANCIAL CALCULATOR</span>
+      <!-- 5 Questions Accordion List (from Blissmoney.zip) -->
+      <div class="accordion" id="pillars" role="region" aria-label="Five questions framework">
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false" aria-controls="acc-body-1" id="acc-head-1">
+            <span class="acc-title">Fundamental reality</span>
+            <span class="acc-icon" aria-hidden="true"></span>
           </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="risk">
-            <span class="tab-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 7V4h16v3"></path>
-                <rect x="4" y="7" width="16" height="13" rx="2"></rect>
-                <path d="M8 12h8M8 16h5"></path>
-              </svg>
-            </span>
-            <span class="tab-title">RISK PLANNING CALCULATOR</span>
+          <div class="acc-body" id="acc-body-1" role="region" aria-labelledby="acc-head-1">
+            <p>Is the underlying business, asset or strategy sound — earnings, balance sheet, governance — without the story attached to it?</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false" aria-controls="acc-body-2" id="acc-head-2">
+            <span class="acc-title">Valuation forensics</span>
+            <span class="acc-icon" aria-hidden="true"></span>
           </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="roi">
-            <span class="tab-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                <line x1="2" y1="10" x2="22" y2="10"></line>
-                <path d="M6 15h4"></path>
-                <polyline points="14 16 17 13 20 16"></polyline>
-              </svg>
-            </span>
-            <span class="tab-title">ROI CALCULATOR</span>
+          <div class="acc-body" id="acc-body-2" role="region" aria-labelledby="acc-head-2">
+            <p>What are we paying versus what we are getting — and what has to go right for that price to make sense?</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false" aria-controls="acc-body-3" id="acc-head-3">
+            <span class="acc-title">Risk architecture</span>
+            <span class="acc-icon" aria-hidden="true"></span>
           </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="emi">
-            <span class="tab-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 12c-.5-3.5-3.5-6-7.5-6-4.5 0-8 3.5-8 8 0 1.5.5 3 1.5 4.5L5 20h3l1-1h6l1 1h3l-.5-1.5c1-1 1.5-2.5 1.5-4z"></path>
-                <path d="M16 6l1.5-2.5"></path>
-                <circle cx="15" cy="11" r="1"></circle>
-              </svg>
-            </span>
-            <span class="tab-title">MORTGAGE CALCULATOR</span>
+          <div class="acc-body" id="acc-body-3" role="region" aria-labelledby="acc-head-3">
+            <p>How does it behave in a drawdown? Position sizing, correlation and the exit — decided before entry, not during panic.</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false" aria-controls="acc-body-4" id="acc-head-4">
+            <span class="acc-title">Institutional footprint</span>
+            <span class="acc-icon" aria-hidden="true"></span>
           </button>
-        </div>
-
-        <!-- FINANCIAL GOAL CALCULATORS -->
-        <div class="calc-panel financial-goal-panel active reveal" id="panel-sip">
-          <div class="goal-tabs" role="tablist" aria-label="Financial planning calculators">
-            <button class="goal-tab active" type="button" role="tab" aria-selected="true" data-goal="marriage">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="28" r="11"/><circle cx="30" cy="28" r="11"/><path d="M20 11h8l-4 7-4-7Z"/></svg>
-              </span>
-              <span>Marriage Expense Calculator</span>
-            </button>
-            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="education">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M7 13c8-2 13 1 17 5v22c-4-4-9-7-17-5V13Z"/><path d="M41 13c-8-2-13 1-17 5v22c4-4 9-7 17-5V13Z"/><path d="M24 8v6M20 10h8"/></svg>
-              </span>
-              <span>Education Cost Calculator</span>
-            </button>
-            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="home">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/><path d="M34 10v8"/></svg>
-              </span>
-              <span>Home Loan Calculator</span>
-            </button>
-            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="car">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="m9 29 4-11h22l4 11"/><path d="M6 29h36v10H6V29Z"/><circle cx="13" cy="39" r="3"/><circle cx="35" cy="39" r="3"/><path d="M13 29h22"/></svg>
-              </span>
-              <span>Car Purchase Calculator</span>
-            </button>
-            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="vacation">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="27" rx="4"/><path d="M19 14V9h10v5M17 20v15M31 20v15M7 24h3M38 24h3"/></svg>
-              </span>
-              <span>Vacation Budget Calculator</span>
-            </button>
-          </div>
-
-          <div class="goal-calculator">
-            <div class="goal-calculator-head">
-              <div>
-                <p class="goal-calculator-kicker">Financial goal planner</p>
-                <h3 id="goalCalcTitle">Marriage Expense Calculator</h3>
-                <p id="goalCalcDescription">Estimate the future cost and the investment needed to prepare for the celebration.</p>
-              </div>
-              <span class="goal-timeline" id="goalTimeline">8 years to goal</span>
-            </div>
-
-            <div class="calc-inputs goal-inputs">
-              <div class="field goal-field" data-goal-field="1">
-                <label id="goalLabel1" for="goalValue1">Current age</label>
-                <input class="goal-number-input" type="text" id="goalValue1Out" value="10 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel1">
-                <input type="range" id="goalValue1" min="1" max="30" step="1" value="10" aria-labelledby="goalLabel1">
-              </div>
-              <div class="field goal-field" data-goal-field="2">
-                <label id="goalLabel2" for="goalValue2">Age at the start of marriage</label>
-                <input class="goal-number-input" type="text" id="goalValue2Out" value="18 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel2">
-                <input type="range" id="goalValue2" min="10" max="50" step="1" value="18" aria-labelledby="goalLabel2">
-              </div>
-              <div class="field goal-field" data-goal-field="3">
-                <label id="goalLabel3" for="goalValue3">Current marriage expenses</label>
-                <input class="goal-number-input" type="text" id="goalValue3Out" value="₹5,00,000" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel3">
-                <input type="range" id="goalValue3" min="100000" max="10000000" step="1000" value="500000" aria-labelledby="goalLabel3">
-              </div>
-              <div class="field goal-field" data-goal-field="4">
-                <label id="goalLabel4" for="goalValue4">Rate of return</label>
-                <input class="goal-number-input" type="text" id="goalValue4Out" value="7%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel4">
-                <input type="range" id="goalValue4" min="1" max="30" step="1" value="7" aria-labelledby="goalLabel4">
-              </div>
-              <div class="field goal-field" data-goal-field="5">
-                <label id="goalLabel5" for="goalValue5">Inflation rate</label>
-                <input class="goal-number-input" type="text" id="goalValue5Out" value="5%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel5">
-                <input type="range" id="goalValue5" min="1" max="30" step="1" value="5" aria-labelledby="goalLabel5">
-              </div>
-            </div>
-
-            <aside class="calc-result goal-result" aria-live="polite">
-              <p class="r-label" id="goalFutureLabel">Future marriage expenses</p>
-              <p class="r-big" id="goalFuture">₹0</p>
-              <div class="r-rows goal-result-rows">
-                <div><span id="goalCurrentLabel">Current marriage expenses</span><b id="goalCurrent">₹0</b></div>
-                <div><span>Planning through lump sum</span><b id="goalLumpSum">₹0</b></div>
-                <div><span>Planning through monthly SIP</span><b class="pos" id="goalSip">₹0</b></div>
-              </div>
-              <div class="goal-comparison" aria-label="Current and future cost comparison">
-                <div class="goal-comparison-head"><span>Cost comparison</span><b id="goalIncrease">+0%</b></div>
-                <div class="goal-bar-row"><span>Today</span><i><b id="goalCurrentBar"></b></i></div>
-                <div class="goal-bar-row"><span>Future</span><i><b class="future" id="goalFutureBar"></b></i></div>
-              </div>
-              <p class="r-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice. Actual results may vary with market performance.</p>
-            </aside>
+          <div class="acc-body" id="acc-body-4" role="region" aria-labelledby="acc-head-4">
+            <p>Where is informed money positioned — and are we early, aligned, or the liquidity someone else is waiting for?</p>
           </div>
         </div>
-
-        <!-- RISK PLANNING CALCULATORS -->
-        <div class="calc-panel native-calc-panel" id="panel-risk" data-native-group="risk">
-          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Risk planning calculators">
-            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="retirement">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M24 6v6M14 10l4 5M34 10l-4 5"/><circle cx="24" cy="28" r="14"/><path d="M24 19v10l7 4"/></svg>
-              </span>
-              <span>Retirement Corpus Calculator</span>
-            </button>
-            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="life">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M24 42S8 34 8 20V9l16-4 16 4v11c0 14-16 22-16 22Z"/><path d="M17 23h14M24 16v14"/></svg>
-              </span>
-              <span>Life Insurance Calculator</span>
-            </button>
-            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="health">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M24 41S8 31 8 18a9 9 0 0 1 16-6 9 9 0 0 1 16 6c0 13-16 23-16 23Z"/><path d="M15 24h6l3-6 4 12 3-6h5"/></svg>
-              </span>
-              <span>Health Insurance Calculator</span>
-            </button>
-          </div>
-          <div class="native-calculator">
-            <div class="goal-calculator-head native-calculator-head">
-              <div>
-                <p class="goal-calculator-kicker native-tool-kicker">Risk planning</p>
-                <h3 class="native-tool-title">Retirement Corpus Calculator</h3>
-                <p class="native-tool-description">Build the retirement corpus required to protect your future lifestyle.</p>
-              </div>
-              <span class="goal-timeline native-tool-timeline">31 years to retirement</span>
-            </div>
-            <div class="calc-inputs native-tool-inputs"></div>
-            <aside class="calc-result native-tool-result" aria-live="polite">
-              <p class="r-label native-primary-label">Required corpus at retirement</p>
-              <p class="r-big native-primary-value">₹0</p>
-              <div class="r-rows native-result-rows"></div>
-              <div class="goal-comparison native-comparison">
-                <div class="goal-comparison-head"><span class="native-comparison-title">Cost comparison</span><b class="native-comparison-stat">+0%</b></div>
-                <div class="goal-bar-row"><span class="native-bar-label-one">Today</span><i><b class="native-bar-one"></b></i></div>
-                <div class="goal-bar-row"><span class="native-bar-label-two">Future</span><i><b class="future native-bar-two"></b></i></div>
-              </div>
-              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice.</p>
-            </aside>
-          </div>
-        </div>
-
-        <!-- ROI / MUTUAL FUND PERFORMANCE CALCULATORS -->
-        <div class="calc-panel roi-planning-panel" id="panel-roi">
-          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mutual fund performance calculators">
-            <button class="goal-tab roi-tool-tab active" type="button" role="tab" aria-selected="true" data-roi-tool="sip-performance">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M8 39h32M12 34l8-9 7 5 10-15"/><path d="m30 15 7-1 1 7"/><circle cx="15" cy="13" r="5"/></svg>
-              </span>
-              <span>SIP Performance</span>
-            </button>
-            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="stp-performance">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="9" width="14" height="30" rx="3"/><rect x="28" y="9" width="14" height="30" rx="3"/><path d="M18 19h13l-4-4M30 29H17l4 4"/></svg>
-              </span>
-              <span>STP Performance</span>
-            </button>
-            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="swp-performance">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="M8 14h32v24H8zM8 20h32"/><path d="M17 29h14M27 25l4 4-4 4"/></svg>
-              </span>
-              <span>SWP Performance</span>
-            </button>
-          </div>
-
-          <div class="roi-calculator">
-            <div class="goal-calculator-head roi-calculator-head">
-              <div>
-                <p class="goal-calculator-kicker">Mutual fund performance</p>
-                <h3 class="roi-tool-title">SIP Performance</h3>
-                <p class="roi-tool-description">Compare a monthly SIP against your selected fund, dates and expected return.</p>
-              </div>
-              <span class="goal-timeline roi-tool-timeline">5 year performance window</span>
-            </div>
-
-            <div class="roi-workspace">
-              <section class="roi-form-card" aria-label="Mutual fund performance inputs">
-                <div class="roi-mode-switch" role="tablist" aria-label="Select funds by">
-                  <button type="button" class="roi-mode-btn active" role="tab" aria-selected="true" data-roi-mode="fund-house">Fund House</button>
-                  <button type="button" class="roi-mode-btn" role="tab" aria-selected="false" data-roi-mode="asset-category">Asset Category</button>
-                </div>
-
-                <div class="roi-filter-head">
-                  <div>
-                    <p class="roi-field-eyebrow">Choose universe</p>
-                    <h4 class="roi-filter-title">Select AMC</h4>
-                  </div>
-                  <span class="roi-selection-count">0 selected</span>
-                </div>
-
-                <div class="roi-filter-search-wrap">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-                  <input type="search" class="roi-filter-search" placeholder="Search fund house" aria-label="Search fund house">
-                </div>
-                <div class="roi-filter-options" role="group" aria-label="Available fund houses"></div>
-
-                <div class="roi-fields-grid"></div>
-                <p class="roi-form-message" aria-live="polite"></p>
-                <button type="button" class="roi-calculate-btn">
-                  <span>Calculate performance</span>
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </button>
-              </section>
-
-              <aside class="calc-result roi-performance-result" aria-live="polite">
-                <p class="r-label roi-primary-label">Projected value</p>
-                <p class="r-big roi-primary-value">₹0</p>
-                <div class="r-rows roi-result-rows"></div>
-
-                <div class="roi-result-toolbar" role="tablist" aria-label="Result view">
-                  <button type="button" class="roi-result-view active" role="tab" aria-selected="true" data-result-view="graph">Graph</button>
-                  <button type="button" class="roi-result-view" role="tab" aria-selected="false" data-result-view="table">Table</button>
-                  <span class="roi-result-scheme">Select a scheme</span>
-                </div>
-
-                <div class="roi-result-graph" data-result-panel="graph">
-                  <div class="roi-chart-head"><span>Value comparison</span><b class="roi-chart-stat">+0%</b></div>
-                  <div class="roi-chart-bars">
-                    <div class="roi-chart-column"><i><b class="roi-chart-bar-one"></b></i><span class="roi-chart-label-one">Invested</span><strong class="roi-chart-value-one">₹0</strong></div>
-                    <div class="roi-chart-column"><i><b class="roi-chart-bar-two"></b></i><span class="roi-chart-label-two">Projected</span><strong class="roi-chart-value-two">₹0</strong></div>
-                  </div>
-                </div>
-
-                <div class="roi-result-table" data-result-panel="table" hidden></div>
-                <p class="r-note roi-result-note">The calculation uses your selected return assumption. Actual scheme performance may vary with market conditions.</p>
-              </aside>
-            </div>
-          </div>
-        </div>
-
-        <!-- MORTGAGE CALCULATORS -->
-        <div class="calc-panel native-calc-panel" id="panel-emi" data-native-group="mortgage">
-          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mortgage calculators">
-            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="property-value">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/></svg>
-              </span>
-              <span>Property Value Calculator</span>
-            </button>
-            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="emi-plan">
-              <span class="goal-tab-icon" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="8" width="34" height="32" rx="4"/><path d="M13 16h22M14 24h4M22 24h4M30 24h4M14 31h4M22 31h4M30 31h4"/></svg>
-              </span>
-              <span>EMI Calculator</span>
-            </button>
-          </div>
-          <div class="native-calculator">
-            <div class="goal-calculator-head native-calculator-head">
-              <div>
-                <p class="goal-calculator-kicker native-tool-kicker">Home finance</p>
-                <h3 class="native-tool-title">Property Value Calculator</h3>
-                <p class="native-tool-description">Understand the monthly EMI and full borrowing cost before you commit.</p>
-              </div>
-              <span class="goal-timeline native-tool-timeline">5 year tenure</span>
-            </div>
-            <div class="calc-inputs native-tool-inputs"></div>
-            <aside class="calc-result native-tool-result" aria-live="polite">
-              <p class="r-label native-primary-label">Loan EMI</p>
-              <p class="r-big native-primary-value">₹0</p>
-              <div class="r-rows native-result-rows"></div>
-              <div class="goal-comparison native-comparison">
-                <div class="goal-comparison-head"><span class="native-comparison-title">Payment breakdown</span><b class="native-comparison-stat">0%</b></div>
-                <div class="goal-bar-row"><span class="native-bar-label-one">Principal</span><i><b class="native-bar-one"></b></i></div>
-                <div class="goal-bar-row"><span class="native-bar-label-two">Interest</span><i><b class="future native-bar-two"></b></i></div>
-              </div>
-              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only. Actual lending terms may vary.</p>
-            </aside>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false" aria-controls="acc-body-5" id="acc-head-5">
+            <span class="acc-title">Technical structure</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body" id="acc-body-5" role="region" aria-labelledby="acc-head-5">
+            <p>Does price structure confirm the thesis? Entries are timed, staged and documented — never improvised.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ======================= TESTIMONIALS ======================= -->
-    <section class="testimonials section" id="testimonials" aria-labelledby="testimonialsTitle">
-      <div class="testimonial-orbit" aria-hidden="true"></div>
-      <div class="container">
-        <div class="testimonials-head reveal">
+  <!-- Section 04: How We Work (Six steps. No surprises. 6-card interactive deck) -->
+  <section class="steps-section" id="how-we-work">
+    <div class="steps-container">
+      <!-- Section Header -->
+      <div class="steps-header">
+        <span class="steps-eyebrow">02 - How we work</span>
+        <h2 class="steps-title">Six steps. No surprises.</h2>
+        <p class="steps-subtitle">A working relationship, not a handover.</p>
+      </div>
+
+      <!-- Interactive 6 Cards Showcase Area -->
+      <div class="steps-deck-wrapper">
+        <!-- 6 Vertical Control Dots -->
+        <div class="steps-controls" role="tablist" aria-label="How we work steps">
+          <button class="steps-dot active" data-step="0" role="tab" aria-selected="true" aria-label="Step 1: Discovery Meeting"></button>
+          <button class="steps-dot" data-step="1" role="tab" aria-selected="false" aria-label="Step 2: Risk Profiling"></button>
+          <button class="steps-dot" data-step="2" role="tab" aria-selected="false" aria-label="Step 3: Portfolio Design"></button>
+          <button class="steps-dot" data-step="3" role="tab" aria-selected="false" aria-label="Step 4: Execution"></button>
+          <button class="steps-dot" data-step="4" role="tab" aria-selected="false" aria-label="Step 5: Reporting &amp; Monitoring"></button>
+          <button class="steps-dot" data-step="5" role="tab" aria-selected="false" aria-label="Step 6: Periodic Reviews"></button>
+        </div>
+
+        <!-- Stacked 6 Cards Container -->
+        <div class="steps-stacked-deck">
+          <!-- Card 1 -->
+          <article class="steps-card-item" data-card="0">
+            <div class="steps-card-left">
+              <span class="steps-card-num">1</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Discovery Meeting</h3>
+                <p class="steps-card-desc">
+                  Understanding your goals, current portfolio, and expectations.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/discovery_meeting.jpg" alt="Discovery Meeting" class="steps-card-img steps-card-img--discovery" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="steps-card-item" data-card="1">
+            <div class="steps-card-left">
+              <span class="steps-card-num">2</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Risk Profiling</h3>
+                <p class="steps-card-desc">
+                  Evaluating your risk appetite and investment horizon.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/risk_profiling.jpg" alt="Risk Profiling" class="steps-card-img steps-card-img--risk" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="steps-card-item" data-card="2">
+            <div class="steps-card-left">
+              <span class="steps-card-num">3</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Portfolio Design</h3>
+                <p class="steps-card-desc">
+                  Building a customised asset allocation strategy.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/portfolio_design.jpg" alt="Portfolio Design" class="steps-card-img steps-card-img--portfolio" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="steps-card-item" data-card="3">
+            <div class="steps-card-left">
+              <span class="steps-card-num">4</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Execution</h3>
+                <p class="steps-card-desc">
+                  A structured onboarding and implementation process.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/excution.jpg" alt="Execution" class="steps-card-img steps-card-img--execution" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="steps-card-item" data-card="4">
+            <div class="steps-card-left">
+              <span class="steps-card-num">5</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Reporting &amp; Monitoring</h3>
+                <p class="steps-card-desc">
+                  Transparent tracking and regular communication.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/monitoring.jpg" alt="Reporting &amp; Monitoring" class="steps-card-img steps-card-img--monitoring" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="steps-card-item" data-card="5">
+            <div class="steps-card-left">
+              <span class="steps-card-num">6</span>
+              <div class="steps-card-text-content">
+                <h3 class="steps-card-title">Periodic Reviews</h3>
+                <p class="steps-card-desc">
+                  Continuous alignment as markets and life change.
+                </p>
+              </div>
+            </div>
+            <div class="steps-card-right">
+              <img src="assets/images/six_steps/periodic_review.jpg" alt="Periodic Reviews" class="steps-card-img steps-card-img--reviews" loading="lazy">
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: Nine Disciplines. One Advisor Relationship -->
+  <section class="disciplines-section" id="nine-disciplines">
+    <div class="disciplines-container">
+      <!-- Section Header -->
+      <div class="disciplines-header">
+        <span class="disciplines-eyebrow">03 - One relationship</span>
+        <h2 class="disciplines-title">
+          Nine disciplines.<br>
+          One advisor relationship.
+        </h2>
+        <p class="disciplines-subtitle">
+          Most of what happens to your money touches more than one discipline. That is why we do not hand you off between departments.
+        </p>
+      </div>
+
+      <!-- Interactive 9 Disciplines Showcase -->
+      <div class="disciplines-wrapper">
+        <!-- 9 Vertical Numbered Buttons -->
+        <nav class="disciplines-nav" role="tablist" aria-label="Nine disciplines">
+          <button class="discipline-btn active" data-discipline="0" role="tab" aria-selected="true" aria-label="1. Wealth management">1</button>
+          <button class="discipline-btn" data-discipline="1" role="tab" aria-selected="false" aria-label="2. Financial planning">2</button>
+          <button class="discipline-btn" data-discipline="2" role="tab" aria-selected="false" aria-label="3. Tax architecture">3</button>
+          <button class="discipline-btn" data-discipline="3" role="tab" aria-selected="false" aria-label="4. Risk &amp; protection planning">4</button>
+          <button class="discipline-btn" data-discipline="4" role="tab" aria-selected="false" aria-label="5. Estate &amp; succession planning">5</button>
+          <button class="discipline-btn" data-discipline="5" role="tab" aria-selected="false" aria-label="6. Tax planning &amp; CA coordination">6</button>
+          <button class="discipline-btn" data-discipline="6" role="tab" aria-selected="false" aria-label="7. Alternative investment strategies">7</button>
+          <button class="discipline-btn" data-discipline="7" role="tab" aria-selected="false" aria-label="8. Alternative investment strategies">8</button>
+          <button class="discipline-btn" data-discipline="8" role="tab" aria-selected="false" aria-label="9. Investment advisory">9</button>
+        </nav>
+
+        <!-- Showcase Card Stage -->
+        <div class="disciplines-stage">
+          <!-- Card 1: Wealth management -->
+          <article class="discipline-card active" data-card="0" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/wealth_management_01.png" alt="Wealth management" class="discipline-img" loading="eager">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/wealth_management_stroke_01.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Wealth<br>management</h3>
+              <p class="discipline-desc">
+                The core mandate: build, protect,<br>and grow what you've earned.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Financial planning -->
+          <article class="discipline-card" data-card="1" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Financial planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/financial_planning_stroke_02.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Financial<br>planning</h3>
+              <p class="discipline-desc">
+                Comprehensive cash flow, milestone<br>planning, and liquidity mapping.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Tax architecture -->
+          <article class="discipline-card" data-card="2" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Tax architecture" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/financial_plan_stroke_03.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Financial <br> planning</h3>
+              <p class="discipline-desc">
+                The core mandate: build, protect, and grow what you've earned.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4: Risk & Protection Planning -->
+          <article class="discipline-card discipline-card--center" data-card="3" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png" alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/risk_protection_04.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
+              <p class="discipline-desc">
+                Cover sized to reality,<br>not to products.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5: Estate & Succession Planning -->
+          <article class="discipline-card discipline-card--center" data-card="4" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png" alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/estate_succession_svg_05.png" alt="" class="discipline-geom-svg discipline-geom-svg--card5" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Estate &amp; Succession<br>Planning</h3>
+              <p class="discipline-desc">
+                Transfers that are<br>orderly and intended.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 6: Tax Planning & CA Coordination -->
+          <article class="discipline-card discipline-card--center" data-card="5" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/tax_planning_06.png" alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/tax_planning_svg_06.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Tax Planning &amp; CA<br>Coordination</h3>
+              <p class="discipline-desc">
+                Advice that talks to<br>your accountant.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 7: Alternative Investment Strategies -->
+          <article class="discipline-card discipline-card--bottom" data-card="6" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/alternative_investment_svg_07.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Alternative Investment<br>Strategies</h3>
+              <p class="discipline-desc">
+                Beyond the listed market,<br>with discipline.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 8: Loan & Liability Advisory (Alternative Investment Strategies) -->
+          <article class="discipline-card discipline-card--bottom" data-card="7" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/alternative_investment_08.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/alternative_investment_svg_08.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Alternative Investment<br>Strategies</h3>
+              <p class="discipline-desc">
+                The other side of the balance sheet,<br>optimised.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 9: Investment Advisory -->
+          <article class="discipline-card discipline-card--bottom" data-card="8" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Investment Advisory" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+              <!-- Geometric Stroke Overlay -->
+              <img src="assets/images/nine_displine/stroke/investment_advisory_svg_icon_09.png" alt="" class="discipline-geom-svg" aria-hidden="true">
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Investment<br>Advisory</h3>
+              <p class="discipline-desc">
+                Research-backed calls,<br>clearly explained.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Investor Corner (Tools) -->
+  <section class="investor-corner-section" id="investor-corner">
+    <div class="investor-corner-container">
+      <!-- Section Header -->
+      <div class="investor-corner-header">
+        <h2 class="investor-corner-title">Investor Corner</h2>
+        <span class="investor-corner-subtitle">Tools</span>
+      </div>
+
+      <!-- 4 Tools Grid -->
+      <div class="investor-corner-grid">
+        <!-- Tool 1: Financial Calculator -->
+        <a class="investor-card" href="calculator.html#financial-calculator" aria-label="Financial Calculator">
+          <div class="investor-card-media">
+            <img src="assets/images/investor_corner/financial.svg" alt="Financial Calculator" class="investor-card-svg" loading="lazy">
+          </div>
+          <h3 class="investor-card-title">Financial<br>Calculator</h3>
+          <div class="investor-card-arrow-wrap">
+            <img src="assets/images/investor_corner/icon_bm.png" alt="Open calculator" class="investor-card-arrow">
+          </div>
+        </a>
+
+        <!-- Tool 2: Risk Planning Calculator -->
+        <a class="investor-card" href="calculator.html#risk-planning-calculator" aria-label="Risk Planning Calculator">
+          <div class="investor-card-media">
+            <img src="assets/images/investor_corner/risk_planning.svg" alt="Risk Planning Calculator" class="investor-card-svg" loading="lazy">
+          </div>
+          <h3 class="investor-card-title">Risk Planning<br>Calculator</h3>
+          <div class="investor-card-arrow-wrap">
+            <img src="assets/images/investor_corner/icon_bm.png" alt="Open calculator" class="investor-card-arrow">
+          </div>
+        </a>
+
+        <!-- Tool 3: Roi Calculator -->
+        <a class="investor-card" href="calculator.html#roi-calculator" aria-label="Roi Calculator">
+          <div class="investor-card-media">
+            <img src="assets/images/investor_corner/roi_cal.svg" alt="Roi Calculator" class="investor-card-svg" loading="lazy">
+          </div>
+          <h3 class="investor-card-title">Roi<br>Calculator</h3>
+          <div class="investor-card-arrow-wrap">
+            <img src="assets/images/investor_corner/icon_bm.png" alt="Open calculator" class="investor-card-arrow">
+          </div>
+        </a>
+
+        <!-- Tool 4: Mortgage Calculator -->
+        <a class="investor-card" href="calculator.html#mortgage-calculator" aria-label="Mortgage Calculator">
+          <div class="investor-card-media">
+            <img src="assets/images/investor_corner/mortage.svg" alt="Mortgage Calculator" class="investor-card-svg" loading="lazy">
+          </div>
+          <h3 class="investor-card-title">Mortgage<br>Calculator</h3>
+          <div class="investor-card-arrow-wrap">
+            <img src="assets/images/investor_corner/icon_bm.png" alt="Open calculator" class="investor-card-arrow">
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 07: Testimonial Showcase -->
+  <section class="testimonial-section" id="testimonials">
+    <div class="testimonial-container">
+      <!-- Section Header -->
+      <div class="testimonial-header">
+        <span class="testimonial-eyebrow">Testimonial</span>
+        <h2 class="testimonial-title">What Our Investors Says</h2>
+      </div>
+
+      <!-- Testimonial Showcase Area -->
+      <div class="testimonial-showcase-wrap">
+        <!-- Anchored Decorative SVG: testimonial_says.svg (Stays anchored in place) -->
+        <div class="testimonial-decor-svg" aria-hidden="true">
+          <img src="assets/images/testimonial_says.svg" alt="" class="testimonial-decor-img">
+        </div>
+
+        <!-- Slider Viewport -->
+        <div class="testimonial-viewport" id="testimonialViewport">
+          <div class="testimonial-track" id="testimonialTrack">
+            
+            <!-- Card 1: Mr. Udit Agarwal -->
+            <article class="testimonial-card" data-index="0">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_one.png" alt="Mr. Udit Agarwal" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Mr. Udit Agarwal</h3>
+                  <span class="testimonial-author-role">Business Manager</span>
+                </div>
+                <p class="testimonial-quote-text">
+                  I have good experience with BlissMoney. also they provide me good suggestion on time to time and very supportive team.
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+            <!-- Card 2: Ashwini Ashu -->
+            <article class="testimonial-card" data-index="1">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_three.jpg" alt="Ashwini Ashu" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Ashwini Ashu</h3>
+                </div>
+                <p class="testimonial-quote-text">
+                  Impressive wealth management service! They provide personalized advice, explain options clearly, and handle everything with professionalism.
+                </p>
+                <p class="testimonial-quote-text">
+                  My portfolio performance has improved, and I feel secure about my financial future
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+            <!-- Card 3: Mr. Gaurav Varshney -->
+            <article class="testimonial-card" data-index="2">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_two.jpg" alt="Mr. Gaurav Varshney" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Mr. Gaurav Varshney</h3>
+                  <span class="testimonial-author-role">Business Manager</span>
+                </div>
+                <p class="testimonial-quote-text">
+                  It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+            <!-- Card 4: Amulya R -->
+            <article class="testimonial-card" data-index="3">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_four.jpg" alt="Amulya R" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Kavita R</h3>
+                </div>
+                <p class="testimonial-quote-text">
+                  Working with this wealth management team feels like having a financial compass. They navigate complex investments with clarity and foresight, making my financial journey surprisingly smooth and confident
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+            <!-- Card 5: Dhanush -->
+            <article class="testimonial-card" data-index="4">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_five.jpg" alt="Dhanush" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Dhanush</h3>
+                </div>
+                <p class="testimonial-quote-text">
+                  Bliss money is more than wealth management - it's a partner in building security, growth, and true financial peace.
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+            <!-- Card 6: Shreyas KJ -->
+            <article class="testimonial-card" data-index="5">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/testimonial/testimonial_six.jpg" alt="Shreyas KJ" class="testimonial-avatar-img" loading="lazy">
+              </div>
+              <div class="testimonial-card-body">
+                <div class="testimonial-card-top">
+                  <h3 class="testimonial-author-name">Shreyas KJ</h3>
+                </div>
+                <p class="testimonial-quote-text">
+                  Really receptive and thorough. Should be your go to financial advisory spot for long term wealth planning
+                </p>
+              </div>
+              <div class="testimonial-card-brand-icon">
+                <img src="assets/images/icon_bm.png" alt="" class="testimonial-bm-icon" aria-hidden="true">
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrow Controls -->
+      <div class="testimonial-nav-controls">
+        <button type="button" class="testimonial-nav-btn prev" id="testimonialPrevBtn" aria-label="Previous testimonial">
+          <img src="assets/images/icon_bm.png" alt="Previous" class="testimonial-nav-icon prev-icon">
+        </button>
+        <button type="button" class="testimonial-nav-btn next" id="testimonialNextBtn" aria-label="Next testimonial">
+          <img src="assets/images/icon_bm.png" alt="Next" class="testimonial-nav-icon next-icon">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 08: Latest Blogs -->
+  <section class="latest-blogs-section" id="latest-blogs">
+    <div class="latest-blogs-container">
+      <!-- Section Title -->
+      <h2 class="latest-blogs-title">Latest Blogs</h2>
+
+      <!-- 3-Card Grid -->
+      <div class="latest-blogs-grid">
+        <!-- Card 1 -->
+        <article class="blog-card">
+          <a href="#blog-market-briefing" class="blog-card-link" aria-label="BlissMoney Weekly Market Briefing: 22–26 June 2026">
+            <div class="blog-card-media">
+              <img src="assets/images/blog_1.jpg" alt="BlissMoney Weekly Market Briefing" class="blog-card-img" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <h3 class="blog-card-title">BlissMoney Weekly Market Briefing:<br class="title-break"> 22–26 June 2026</h3>
+              <div class="blog-card-action">
+                <span class="blog-card-arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card">
+          <a href="#blog-market-wrap-may" class="blog-card-link" aria-label="Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
+            <div class="blog-card-media">
+              <img src="assets/images/blog_2.jpg" alt="Market Wrap-Up 5 May 2026" class="blog-card-img" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <h3 class="blog-card-title">Market Wrap-Up | 5 May 2026:<br class="title-break"> Indian Markets Close Lower Amid<br class="title-break"> Global Uncertainty</h3>
+              <div class="blog-card-action">
+                <span class="blog-card-arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card">
+          <a href="#blog-market-wrap-april" class="blog-card-link" aria-label="Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
+            <div class="blog-card-media">
+              <img src="assets/images/blog_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <h3 class="blog-card-title">Market Wrap-Up April 15, 2026: Nifty<br class="title-break"> Up 1.63% on US-Iran Hopes</h3>
+              <div class="blog-card-action">
+                <span class="blog-card-arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Bottom Button -->
+      <div class="latest-blogs-action">
+        <a href="#how-we-work" class="btn-see-how">See how we work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer" id="footer">
+    <div class="foot-accent-bar" aria-hidden="true"></div>
+    <div class="container">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="#hero" class="brand"><img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo"></a>
+          <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
+          <div class="foot-socials">
+            <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="foot-cols">
           <div>
-            <p class="chapter">Testimonial</p>
-            <h2 id="testimonialsTitle">What Our Investors <em>Says.</em></h2>
-            <p class="testimonials-intro">Real experiences from people building clearer, more confident financial lives with BlissMoney.</p>
+            <h4>Company</h4>
+            <a href="#">About BlissMoney</a>
+            <a href="#">Why BlissMoney</a>
+            <a href="#">Leadership &amp; team</a>
+            <a href="#">Careers</a>
+            <a href="#contact">Contact &amp; offices</a>
           </div>
-          <div class="testimonial-nav" aria-label="Testimonial navigation">
-            <!-- <span class="testimonial-count" id="testimonialCount" aria-live="polite">01–02 / 16</span> -->
-            <button type="button" class="testimonial-nav-btn" id="testimonialPrev" aria-label="Previous testimonial">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M19 12H5M11 18L5 12L11 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-            <button type="button" class="testimonial-nav-btn" id="testimonialNext" aria-label="Next testimonial">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="testimonial-viewport reveal d1">
-          <div class="testimonial-track" id="testimonialTrack" aria-label="Client testimonials" tabindex="0">
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AV</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
-              <footer><strong>Mr. Alok Vashishtha</strong><span>Area Business Manager : Zydus Cadila</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AT</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>I have good experience with BlissMoney, also they provide me good suggestion on time to time and very supportive team.</p></blockquote>
-              <footer><strong>Mr. Akash Thakur</strong><span>IT Developer : Innovaccer</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SU</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
-              <footer><strong>Dr. Shubham Upadhyay</strong><span>JNMC</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">GV</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
-              <footer><strong>Mr. Gaurav Varshney</strong><span>HR Manager</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">UA</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>I have good experience with BlissMoney, also they provide me good suggestion on time to time and very supportive team.</p></blockquote>
-              <footer><strong>Mr. Udit Agarwal</strong><span>Business Manager</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">DT</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.</p></blockquote>
-              <footer><strong>Mr. Dushyant Tomar</strong><span>Chief Engineer, Merchant Navy</span></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AA</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Impressive wealth management service! They provide personalized advice, explain options clearly, and handle everything with professionalism. My portfolio performance has improved, and I feel secure about my financial future</p></blockquote>
-              <footer><strong>Ashwini Ashu</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SB</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Professional and prompt support whenever needed</p></blockquote>
-              <footer><strong>Sridhar Balakrishnan</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">R</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Amazing team at bliss money. They listens to the requirements and tailor it as per your need. They also make you understand things in simple terms for your financial planning,so that it becomes easier for you to take decisions.</p></blockquote>
-              <footer><strong>Rashi</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CC</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>BlissMoney has made financial planning so much easier for me. The team explains things clearly, gives honest advice, and helps me stay on track with my wealth management goals. I really appreciate how responsive they are whenever I have questions. Truly a reliable partner for building financial security</p></blockquote>
-              <footer><strong>Chethan Chethu</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">VR</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Great experience with their wealth management team. They provide clear financial guidance, regular updates, and help align my investments with long-term goals. Transparent, professional, and highly reliable for anyone seeking financial growth</p></blockquote>
-              <footer><strong>Vaishnavi Reddy</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CS</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Thank you for being such amazing Financial Advisor! You are so understanding, compassionate, kind and helpful.</p></blockquote>
-              <footer><strong>Chandan Kumar Sharma</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">CH</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>A team with extreme professionalism, highly experienced and carries detailed understanding on the client requirements which helps them to achieve their goals.</p></blockquote>
-              <footer><strong>Channaraj hattiholi</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">SK</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Really receptive and thorough. Should be your go to financial advisory spot for long term wealth planning</p></blockquote>
-              <footer><strong>Shreyas KJ</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">AR</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Working with this wealth management team feels like having a financial compass. They navigate complex investments with clarity and foresight, making my financial joumey surprisingly smooth and confident</p></blockquote>
-              <footer><strong>Amulya R</strong></footer>
-            </article>
-
-            <article class="testimonial-card">
-              <div class="testimonial-card-top"><span class="testimonial-avatar" aria-hidden="true">D</span><span class="testimonial-quote" aria-hidden="true">“</span></div>
-              <blockquote><p>Bliss money is more than wealth management - ifs a partner in building security, growth, and true financial peace.</p></blockquote>
-              <footer><strong>Dhanush</strong></footer>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= LATEST BLOGS ======================= -->
-    <section class="latest-blogs section" id="insights" aria-labelledby="latestBlogsTitle">
-      <div class="container">
-        <div class="latest-blogs-head reveal">
           <div>
-            <p class="chapter">Fresh perspectives</p>
-            <h2 id="latestBlogsTitle">Latest <em>blogs.</em></h2>
-            <p class="latest-blogs-intro">Clear thinking on markets, planning and the decisions that shape long-term wealth.</p>
+            <h4>Explore</h4>
+            <a href="#serve">Who we serve</a>
+            <a href="#offerings">Our offerings</a>
+            <a href="#investor-corner">Investor corner</a>
+            <a href="#latest-blogs">Insights &amp; Blogs</a>
           </div>
-          <a href="#" class="btn btn-outline btn-sm latest-blogs-all">View all blogs <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="latest-blog-grid">
-          <a href="#" class="latest-blog-card reveal" aria-label="Read: Staying disciplined when market headlines turn noisy">
-            <div class="latest-blog-art">
-              <img src="aseets/images/disciplines/disc_3.jpg" width="600" height="400" loading="lazy"
-                alt="Market price chart showing changing trends">
-              <span class="latest-blog-art-label">Market outlook</span>
-            </div>
-            <div class="latest-blog-body">
-              <p class="latest-blog-meta"><span>Market perspective</span><span>6 min read</span></p>
-              <h3>Staying disciplined when market headlines turn noisy</h3>
-              <p class="latest-blog-excerpt">A practical framework for separating portfolio decisions from short-term market emotion.</p>
-              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-
-          <a href="#" class="latest-blog-card reveal d1" aria-label="Read: Five signs your financial plan needs a reset">
-            <div class="latest-blog-art">
-              <img src="aseets/images/disciplines/disc_2.jpg" width="600" height="400" loading="lazy"
-                alt="Advisors reviewing a financial plan together">
-              <span class="latest-blog-art-label">Financial planning</span>
-            </div>
-            <div class="latest-blog-body">
-              <p class="latest-blog-meta"><span>Financial planning</span><span>7 min read</span></p>
-              <h3>Five signs your financial plan needs a reset</h3>
-              <p class="latest-blog-excerpt">Life changes faster than most plans. Here is when to revisit the assumptions behind yours.</p>
-              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-
-          <a href="#" class="latest-blog-card reveal d2" aria-label="Read: Preparing wealth for the next generation">
-            <div class="latest-blog-art">
-              <img src="aseets/images/disciplines/disc_5.jpg" width="600" height="400" loading="lazy"
-                alt="Family home representing long-term legacy planning">
-              <span class="latest-blog-art-label">Legacy planning</span>
-            </div>
-            <div class="latest-blog-body">
-              <p class="latest-blog-meta"><span>Legacy planning</span><span>8 min read</span></p>
-              <h3>Preparing wealth for the next generation</h3>
-              <p class="latest-blog-excerpt">The conversations and structures that make succession clearer for the whole family.</p>
-              <span class="latest-blog-link">Read article <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= CTA ======================= -->
-    <section class="cta" id="contact">
-      <div class="aurora" aria-hidden="true">
-        <span class="blob b1"></span><span class="blob b2"></span>
-      </div>
-      <div class="grain" aria-hidden="true"></div>
-      <div class="container">
-        <div class="cta-inner">
-          <h2 class="cta-heading reveal d1">Bring us the <em>full picture.</em></h2>
-          <p class="cta-sub reveal d2">One conversation. No obligation. We will tell you honestly whether we can add value — and where.</p>
-          <div class="cta-actions reveal d3">
-            <a href="#contact-form" class="btn btn-solid">Book a consultation</a>
+          <div>
+            <h4>Legal</h4>
+            <a href="#">Disclosures &amp; registrations</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Investor grievance</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ======================= GET IN TOUCH (CONTACT FORM) ======================= -->
-    <section class="contact-form-section" id="contact-form" aria-labelledby="contactFormTitle">
-      <div class="contact-orbit contact-orbit-one" aria-hidden="true"></div>
-      <div class="contact-orbit contact-orbit-two" aria-hidden="true"></div>
-      <div class="grain contact-grain" aria-hidden="true"></div>
-
-      <div class="container contact-shell">
-        <div class="contact-intro reveal">
-          <p class="contact-kicker"><span aria-hidden="true"></span>Start a conversation</p>
-          <h2 class="contact-heading" id="contactFormTitle">Let’s make your wealth feel <em>clearer.</em></h2>
-          <p class="contact-lede">Share the context, not just the numbers. We’ll begin with the full picture and keep the next step straightforward.</p>
-
-          <div class="contact-direct">
-            <span>Prefer email?</span>
-            <a href="mailto:hello@blissmoney.in">hello@blissmoney.in <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-
-        <div class="contact-card reveal d1">
-          <div class="contact-card-head">
-            <h3>Tell us where you’d like clarity.</h3>
-          </div>
-
-          <form class="contact-form" id="contactForm" autocomplete="on" novalidate>
-            <div class="contact-form-grid">
-              <div class="form-group">
-                <label for="formName">Full name <span aria-hidden="true">*</span></label>
-                <input type="text" name="name" id="formName" class="form-control" placeholder="Your full name"
-                  autocomplete="name" minlength="2" maxlength="80" aria-describedby="formNameError" required>
-                <p class="form-error" id="formNameError" aria-live="polite"></p>
-              </div>
-
-              <div class="form-group">
-                <label for="formMobile">Mobile number <span aria-hidden="true">*</span></label>
-                <input type="tel" name="mobile" id="formMobile" class="form-control" placeholder="+91 98765 43210"
-                  autocomplete="tel" inputmode="tel" maxlength="16" aria-describedby="formMobileError" required>
-                <p class="form-error" id="formMobileError" aria-live="polite"></p>
-              </div>
-
-              <div class="form-group">
-                <label for="formEmail">Email address <span aria-hidden="true">*</span></label>
-                <input type="email" name="email" id="formEmail" class="form-control" placeholder="you@example.com"
-                  autocomplete="email" inputmode="email" maxlength="254" aria-describedby="formEmailError" required>
-                <p class="form-error" id="formEmailError" aria-live="polite"></p>
-              </div>
-
-              <div class="form-group">
-                <label for="formService">Services <span aria-hidden="true">*</span></label>
-                <select name="service" id="formService" class="form-control form-select"
-                  aria-describedby="formServiceError" required>
-                  <option value="" disabled selected>Services *</option>
-                  <option value="Mutual Funds">Mutual Funds</option>
-                  <option value="Fixed Instruments">Fixed Instruments</option>
-                  <option value="Portfolio Management System">Portfolio Management System</option>
-                  <option value="Alternate Investment Plans">Alternate Investment Plans</option>
-                  <option value="Health Insurance">Health Insurance</option>
-                  <option value="Life Insurance">Life Insurance</option>
-                </select>
-                <p class="form-error" id="formServiceError" aria-live="polite"></p>
-              </div>
-
-              <div class="form-group form-group-wide">
-                <div class="form-label-row">
-                  <label for="formMessage">How can we help? <span aria-hidden="true">*</span></label>
-                  <span class="message-count" id="formMessageCount">0 / 1000</span>
-                </div>
-                <textarea name="message" id="formMessage" class="form-control form-textarea"
-                  placeholder="Tell us briefly about your goals, priorities or the decision you’re considering."
-                  rows="5" minlength="20" maxlength="1000" aria-describedby="formMessageError formMessageCount"
-                  required></textarea>
-                <p class="form-error" id="formMessageError" aria-live="polite"></p>
-              </div>
-            </div>
-
-            <div class="form-action">
-              <button type="submit" class="btn-contact-submit" id="formSubmitBtn">
-                <span>Send enquiry</span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.7"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
-          </form>
-        </div>
+      <div class="foot-bottom">
+        <p>© <span id="year">2026</span> BlissMoney. All rights reserved. Bangalore, India.</p>
+        <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
       </div>
-    </section>
-
-    <!-- ======================= FOOTER ======================= -->
-    <footer class="footer" id="footer">
-      <div class="foot-accent-bar" aria-hidden="true"></div>
-      <div class="container">
-        <div class="foot-top">
-          <div class="foot-brand">
-            <a href="#top" class="brand"><img src="aseets/images/blissmoney_logo.png" alt="BlissMoney Logo"
-                class="brand-logo"></a>
-            <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
-            <div class="foot-socials">
-              <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Facebook" title="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Instagram" title="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </a>
-              <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="X (Twitter)" title="X (Twitter)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="YouTube" title="YouTube">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-            </div>
-          </div>
-          <div class="foot-cols">
-            <div>
-              <h4>Company</h4>
-              <a href="#">About BlissMoney</a>
-              <a href="#">Why BlissMoney</a>
-              <a href="#">Leadership &amp; team</a>
-              <a href="#">Careers</a>
-              <a href="#contact">Contact &amp; offices</a>
-            </div>
-            <div>
-              <h4>Explore</h4>
-              <a href="#serve">Who we serve</a>
-              <a href="#offerings">Our offerings</a>
-              <a href="#tools">Investor corner</a>
-              <a href="#insights">Insights</a>
-            </div>
-            <div>
-              <h4>Legal</h4>
-              <a href="#">Disclosures &amp; registrations</a>
-              <a href="#">Privacy policy</a>
-              <a href="#">Terms of use</a>
-              <a href="#">Investor grievance</a>
-            </div>
-          </div>
-        </div>
-        <div class="foot-bottom">
-          <p>© <span id="year">2026</span> BlissMoney. All rights reserved. Bangalore, India.</p>
-          <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
-        </div>
-      </div>
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
   <!-- ======================= FLOATING ACTION BUTTONS ======================= -->
   <aside class="floating-actions" aria-label="Quick actions">
-    <!-- WhatsApp Button with Ripple Effect (Top) -->
+    <!-- WhatsApp Button with Ripple Effect -->
     <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
       <span class="whatsapp-ripple-wave" aria-hidden="true"></span>
       <span class="whatsapp-ripple-wave delay-1" aria-hidden="true"></span>
@@ -1514,7 +1047,7 @@
       </svg>
     </a>
 
-    <!-- Go to Top Button (Bottom) -->
+    <!-- Go to Top Button -->
     <button type="button" class="floating-scroll-top" id="backToTop" aria-label="Go to top" title="Go to top">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M18 15l-6-6-6 6" />
@@ -1522,9 +1055,7 @@
     </button>
   </aside>
 
-  <script src="js/gsap.min.js"></script>
-  <script src="js/ScrollTrigger.min.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js?v=1.4"></script>
 </body>
-
 </html>

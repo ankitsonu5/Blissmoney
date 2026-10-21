@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BlissMoney Investor Corner — Interactive calculators for financial goals, risk planning, mutual fund ROI performance, and mortgage EMI planning.">
+  <title>Investor Corner Calculators — BlissMoney</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="assets/images/bm_faicon.png">
+  <link rel="shortcut icon" href="assets/images/bm_faicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/bm_faicon.png">
+
+  <!-- Google Fonts: Raleway (Weights 300, 400, 500, 600, 700, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Dedicated Stylesheet -->
+  <link rel="stylesheet" href="assets/css/calculator.css">
+</head>
+<body class="calculator-page">
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="BlissMoney home">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="index.html#who-we-serve" class="nav-link">Who We Serve</a></div>
+        <div class="nav-item"><a href="index.html#offerings" class="nav-link">Our Offerings</a></div>
+        <div class="nav-item"><a href="index.html#investor-corner" class="nav-link active">Investor Corner</a></div>
+        <div class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></div>
+      </nav>
+
+      <div class="header-cta">
+        <a href="index.html#investor-corner" class="btn btn-ghost btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Back to Overview</span>
+        </a>
+        <a href="index.html#contact" class="btn btn-solid btn-sm">Book a Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= MAIN CONTENT ======================= -->
+  <main>
+    <section class="section dark" id="tools" >
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head reveal"><p class="chapter">Investor Corner · Calculators</p>
+          <h2>Clarity, in <em>numbers.</em></h2>
+          <p class="lede">Practical calculators. No forms, no sign-ups — just a first, honest
+            estimate before a real conversation.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Calculators">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="sip">
+            <span class="tab-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="13" rx="2"></rect>
+                <circle cx="12" cy="10.5" r="2.5"></circle>
+                <path d="M6 10.5h.01M18 10.5h.01"></path>
+                <path d="M6 20h12"></path>
+              </svg>
+            </span>
+            <span class="tab-title">FINANCIAL CALCULATOR</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="risk">
+            <span class="tab-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7V4h16v3"></path>
+                <rect x="4" y="7" width="16" height="13" rx="2"></rect>
+                <path d="M8 12h8M8 16h5"></path>
+              </svg>
+            </span>
+            <span class="tab-title">RISK PLANNING CALCULATOR</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="roi">
+            <span class="tab-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+                <path d="M6 15h4"></path>
+                <polyline points="14 16 17 13 20 16"></polyline>
+              </svg>
+            </span>
+            <span class="tab-title">ROI CALCULATOR</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="emi">
+            <span class="tab-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12c-.5-3.5-3.5-6-7.5-6-4.5 0-8 3.5-8 8 0 1.5.5 3 1.5 4.5L5 20h3l1-1h6l1 1h3l-.5-1.5c1-1 1.5-2.5 1.5-4z"></path>
+                <path d="M16 6l1.5-2.5"></path>
+                <circle cx="15" cy="11" r="1"></circle>
+              </svg>
+            </span>
+            <span class="tab-title">MORTGAGE CALCULATOR</span>
+          </button>
+        </div>
+
+        <!-- FINANCIAL GOAL CALCULATORS -->
+        <div class="calc-panel financial-goal-panel active reveal" id="panel-sip">
+          <div class="goal-tabs" role="tablist" aria-label="Financial planning calculators">
+            <button class="goal-tab active" type="button" role="tab" aria-selected="true" data-goal="marriage">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="28" r="11"/><circle cx="30" cy="28" r="11"/><path d="M20 11h8l-4 7-4-7Z"/></svg>
+              </span>
+              <span>Marriage Expense Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="education">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M7 13c8-2 13 1 17 5v22c-4-4-9-7-17-5V13Z"/><path d="M41 13c-8-2-13 1-17 5v22c4-4 9-7 17-5V13Z"/><path d="M24 8v6M20 10h8"/></svg>
+              </span>
+              <span>Education Cost Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="home">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/><path d="M34 10v8"/></svg>
+              </span>
+              <span>Home Loan Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="car">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m9 29 4-11h22l4 11"/><path d="M6 29h36v10H6V29Z"/><circle cx="13" cy="39" r="3"/><circle cx="35" cy="39" r="3"/><path d="M13 29h22"/></svg>
+              </span>
+              <span>Car Purchase Calculator</span>
+            </button>
+            <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="vacation">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="27" rx="4"/><path d="M19 14V9h10v5M17 20v15M31 20v15M7 24h3M38 24h3"/></svg>
+              </span>
+              <span>Vacation Budget Calculator</span>
+            </button>
+          </div>
+
+          <div class="goal-calculator">
+            <div class="goal-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker">Financial goal planner</p>
+                <h3 id="goalCalcTitle">Marriage Expense Calculator</h3>
+                <p id="goalCalcDescription">Estimate the future cost and the investment needed to prepare for the celebration.</p>
+              </div>
+              <span class="goal-timeline" id="goalTimeline">8 years to goal</span>
+            </div>
+
+            <div class="calc-inputs goal-inputs">
+              <div class="field goal-field" data-goal-field="1">
+                <label id="goalLabel1" for="goalValue1">Current age</label>
+                <input class="goal-number-input" type="text" id="goalValue1Out" value="10 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel1">
+                <input type="range" id="goalValue1" min="1" max="30" step="1" value="10" aria-labelledby="goalLabel1">
+              </div>
+              <div class="field goal-field" data-goal-field="2">
+                <label id="goalLabel2" for="goalValue2">Age at the start of marriage</label>
+                <input class="goal-number-input" type="text" id="goalValue2Out" value="18 yrs" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel2">
+                <input type="range" id="goalValue2" min="10" max="50" step="1" value="18" aria-labelledby="goalLabel2">
+              </div>
+              <div class="field goal-field" data-goal-field="3">
+                <label id="goalLabel3" for="goalValue3">Current marriage expenses</label>
+                <input class="goal-number-input" type="text" id="goalValue3Out" value="₹5,00,000" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel3">
+                <input type="range" id="goalValue3" min="100000" max="10000000" step="1000" value="500000" aria-labelledby="goalLabel3">
+              </div>
+              <div class="field goal-field" data-goal-field="4">
+                <label id="goalLabel4" for="goalValue4">Rate of return</label>
+                <input class="goal-number-input" type="text" id="goalValue4Out" value="7%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel4">
+                <input type="range" id="goalValue4" min="1" max="30" step="1" value="7" aria-labelledby="goalLabel4">
+              </div>
+              <div class="field goal-field" data-goal-field="5">
+                <label id="goalLabel5" for="goalValue5">Inflation rate</label>
+                <input class="goal-number-input" type="text" id="goalValue5Out" value="5%" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-labelledby="goalLabel5">
+                <input type="range" id="goalValue5" min="1" max="30" step="1" value="5" aria-labelledby="goalLabel5">
+              </div>
+            </div>
+
+            <aside class="calc-result goal-result" aria-live="polite">
+              <p class="r-label" id="goalFutureLabel">Future marriage expenses</p>
+              <p class="r-big" id="goalFuture">₹0</p>
+              <div class="r-rows goal-result-rows">
+                <div><span id="goalCurrentLabel">Current marriage expenses</span><b id="goalCurrent">₹0</b></div>
+                <div><span>Planning through lump sum</span><b id="goalLumpSum">₹0</b></div>
+                <div><span>Planning through monthly SIP</span><b class="pos" id="goalSip">₹0</b></div>
+              </div>
+              <div class="goal-comparison" aria-label="Current and future cost comparison">
+                <div class="goal-comparison-head"><span>Cost comparison</span><b id="goalIncrease">+0%</b></div>
+                <div class="goal-bar-row"><span>Today</span><i><b id="goalCurrentBar"></b></i></div>
+                <div class="goal-bar-row"><span>Future</span><i><b class="future" id="goalFutureBar"></b></i></div>
+              </div>
+              <p class="r-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice. Actual results may vary with market performance.</p>
+            </aside>
+          </div>
+        </div>
+
+        <!-- RISK PLANNING CALCULATORS -->
+        <div class="calc-panel native-calc-panel" id="panel-risk" data-native-group="risk">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Risk planning calculators">
+            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="retirement">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 6v6M14 10l4 5M34 10l-4 5"/><circle cx="24" cy="28" r="14"/><path d="M24 19v10l7 4"/></svg>
+              </span>
+              <span>Retirement Corpus Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="life">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 42S8 34 8 20V9l16-4 16 4v11c0 14-16 22-16 22Z"/><path d="M17 23h14M24 16v14"/></svg>
+              </span>
+              <span>Life Insurance Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="health">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M24 41S8 31 8 18a9 9 0 0 1 16-6 9 9 0 0 1 16 6c0 13-16 23-16 23Z"/><path d="M15 24h6l3-6 4 12 3-6h5"/></svg>
+              </span>
+              <span>Health Insurance Calculator</span>
+            </button>
+          </div>
+          <div class="native-calculator">
+            <div class="goal-calculator-head native-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker native-tool-kicker">Risk planning</p>
+                <h3 class="native-tool-title">Retirement Corpus Calculator</h3>
+                <p class="native-tool-description">Build the retirement corpus required to protect your future lifestyle.</p>
+              </div>
+              <span class="goal-timeline native-tool-timeline">31 years to retirement</span>
+            </div>
+            <div class="calc-inputs native-tool-inputs"></div>
+            <aside class="calc-result native-tool-result" aria-live="polite">
+              <p class="r-label native-primary-label">Required corpus at retirement</p>
+              <p class="r-big native-primary-value">₹0</p>
+              <div class="r-rows native-result-rows"></div>
+              <div class="goal-comparison native-comparison">
+                <div class="goal-comparison-head"><span class="native-comparison-title">Cost comparison</span><b class="native-comparison-stat">+0%</b></div>
+                <div class="goal-bar-row"><span class="native-bar-label-one">Today</span><i><b class="native-bar-one"></b></i></div>
+                <div class="goal-bar-row"><span class="native-bar-label-two">Future</span><i><b class="future native-bar-two"></b></i></div>
+              </div>
+              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only and does not constitute investment advice.</p>
+            </aside>
+          </div>
+        </div>
+
+        <!-- ROI / MUTUAL FUND PERFORMANCE CALCULATORS -->
+        <div class="calc-panel roi-planning-panel" id="panel-roi">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mutual fund performance calculators">
+            <button class="goal-tab roi-tool-tab active" type="button" role="tab" aria-selected="true" data-roi-tool="sip-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M8 39h32M12 34l8-9 7 5 10-15"/><path d="m30 15 7-1 1 7"/><circle cx="15" cy="13" r="5"/></svg>
+              </span>
+              <span>SIP Performance</span>
+            </button>
+            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="stp-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="9" width="14" height="30" rx="3"/><rect x="28" y="9" width="14" height="30" rx="3"/><path d="M18 19h13l-4-4M30 29H17l4 4"/></svg>
+              </span>
+              <span>STP Performance</span>
+            </button>
+            <button class="goal-tab roi-tool-tab" type="button" role="tab" aria-selected="false" data-roi-tool="swp-performance">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="M8 14h32v24H8zM8 20h32"/><path d="M17 29h14M27 25l4 4-4 4"/></svg>
+              </span>
+              <span>SWP Performance</span>
+            </button>
+          </div>
+
+          <div class="roi-calculator">
+            <div class="goal-calculator-head roi-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker">Mutual fund performance</p>
+                <h3 class="roi-tool-title">SIP Performance</h3>
+                <p class="roi-tool-description">Compare a monthly SIP against your selected fund, dates and expected return.</p>
+              </div>
+              <span class="goal-timeline roi-tool-timeline">5 year performance window</span>
+            </div>
+
+            <div class="roi-workspace">
+              <section class="roi-form-card" aria-label="Mutual fund performance inputs">
+                <div class="roi-mode-switch" role="tablist" aria-label="Select funds by">
+                  <button type="button" class="roi-mode-btn active" role="tab" aria-selected="true" data-roi-mode="fund-house">Fund House</button>
+                  <button type="button" class="roi-mode-btn" role="tab" aria-selected="false" data-roi-mode="asset-category">Asset Category</button>
+                </div>
+
+                <div class="roi-filter-head">
+                  <div>
+                    <p class="roi-field-eyebrow">Choose universe</p>
+                    <h4 class="roi-filter-title">Select AMC</h4>
+                  </div>
+                  <span class="roi-selection-count">0 selected</span>
+                </div>
+
+                <div class="roi-filter-search-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                  <input type="search" class="roi-filter-search" placeholder="Search fund house" aria-label="Search fund house">
+                </div>
+                <div class="roi-filter-options" role="group" aria-label="Available fund houses"></div>
+
+                <div class="roi-fields-grid"></div>
+                <p class="roi-form-message" aria-live="polite"></p>
+                <button type="button" class="roi-calculate-btn">
+                  <span>Calculate performance</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </section>
+
+              <aside class="calc-result roi-performance-result" aria-live="polite">
+                <p class="r-label roi-primary-label">Projected value</p>
+                <p class="r-big roi-primary-value">₹0</p>
+                <div class="r-rows roi-result-rows"></div>
+
+                <div class="roi-result-toolbar" role="tablist" aria-label="Result view">
+                  <button type="button" class="roi-result-view active" role="tab" aria-selected="true" data-result-view="graph">Graph</button>
+                  <button type="button" class="roi-result-view" role="tab" aria-selected="false" data-result-view="table">Table</button>
+                  <span class="roi-result-scheme">Select a scheme</span>
+                </div>
+
+                <div class="roi-result-graph" data-result-panel="graph">
+                  <div class="roi-chart-head"><span>Value comparison</span><b class="roi-chart-stat">+0%</b></div>
+                  <div class="roi-chart-bars">
+                    <div class="roi-chart-column"><i><b class="roi-chart-bar-one"></b></i><span class="roi-chart-label-one">Invested</span><strong class="roi-chart-value-one">₹0</strong></div>
+                    <div class="roi-chart-column"><i><b class="roi-chart-bar-two"></b></i><span class="roi-chart-label-two">Projected</span><strong class="roi-chart-value-two">₹0</strong></div>
+                  </div>
+                </div>
+
+                <div class="roi-result-table" data-result-panel="table" hidden></div>
+                <p class="r-note roi-result-note">The calculation uses your selected return assumption. Actual scheme performance may vary with market conditions.</p>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <!-- MORTGAGE CALCULATORS -->
+        <div class="calc-panel native-calc-panel" id="panel-emi" data-native-group="mortgage">
+          <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mortgage calculators">
+            <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="property-value">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/></svg>
+              </span>
+              <span>Property Value Calculator</span>
+            </button>
+            <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="emi-plan">
+              <span class="goal-tab-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="8" width="34" height="32" rx="4"/><path d="M13 16h22M14 24h4M22 24h4M30 24h4M14 31h4M22 31h4M30 31h4"/></svg>
+              </span>
+              <span>EMI Calculator</span>
+            </button>
+          </div>
+          <div class="native-calculator">
+            <div class="goal-calculator-head native-calculator-head">
+              <div>
+                <p class="goal-calculator-kicker native-tool-kicker">Home finance</p>
+                <h3 class="native-tool-title">Property Value Calculator</h3>
+                <p class="native-tool-description">Understand the monthly EMI and full borrowing cost before you commit.</p>
+              </div>
+              <span class="goal-timeline native-tool-timeline">5 year tenure</span>
+            </div>
+            <div class="calc-inputs native-tool-inputs"></div>
+            <aside class="calc-result native-tool-result" aria-live="polite">
+              <p class="r-label native-primary-label">Loan EMI</p>
+              <p class="r-big native-primary-value">₹0</p>
+              <div class="r-rows native-result-rows"></div>
+              <div class="goal-comparison native-comparison">
+                <div class="goal-comparison-head"><span class="native-comparison-title">Payment breakdown</span><b class="native-comparison-stat">0%</b></div>
+                <div class="goal-bar-row"><span class="native-bar-label-one">Principal</span><i><b class="native-bar-one"></b></i></div>
+                <div class="goal-bar-row"><span class="native-bar-label-two">Interest</span><i><b class="future native-bar-two"></b></i></div>
+              </div>
+              <p class="r-note native-tool-note">This calculator is for informational and illustrative purposes only. Actual lending terms may vary.</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer" id="footer">
+      <div class="foot-accent-bar" aria-hidden="true"></div>
+      <div class="container">
+        <div class="foot-top">
+          <div class="foot-brand">
+            <a href="index.html" class="brand"><img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo"></a>
+            <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
+            <div class="foot-socials">
+              <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Facebook" title="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Instagram" title="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="X (Twitter)" title="X (Twitter)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="YouTube" title="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="foot-cols">
+            <div>
+              <h4>Company</h4>
+              <a href="index.html">About BlissMoney</a>
+              <a href="index.html#who-we-serve">Why BlissMoney</a>
+              <a href="index.html#contact">Leadership &amp; team</a>
+              <a href="index.html#contact">Careers</a>
+              <a href="index.html#contact">Contact &amp; offices</a>
+            </div>
+            <div>
+              <h4>Explore</h4>
+              <a href="index.html#who-we-serve">Who we serve</a>
+              <a href="index.html#offerings">Our offerings</a>
+              <a href="index.html#investor-corner">Investor corner</a>
+              <a href="index.html#latest-blogs">Insights &amp; Blogs</a>
+            </div>
+            <div>
+              <h4>Legal</h4>
+              <a href="#">Disclosures &amp; registrations</a>
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms of use</a>
+              <a href="#">Investor grievance</a>
+            </div>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© <span id="year">2026</span> BlissMoney. All rights reserved. Bangalore, India.</p>
+          <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ======================= FLOATING ACTION BUTTONS ======================= -->
+  <aside class="floating-actions" aria-label="Quick actions">
+    <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+      <span class="whatsapp-ripple-wave" aria-hidden="true"></span>
+      <span class="whatsapp-ripple-wave delay-1" aria-hidden="true"></span>
+      <span class="floating-whatsapp-tooltip" aria-hidden="true">Chat with us</span>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+
+    <button type="button" class="floating-scroll-top" id="backToTop" aria-label="Go to top" title="Go to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Dedicated Calculator Engine Script -->
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>
