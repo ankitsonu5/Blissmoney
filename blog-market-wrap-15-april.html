@@ -22,7 +22,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css?v=2.2">
-  <link rel="stylesheet" href="assets/css/blog.css">
+  <link rel="stylesheet" href="assets/css/blog.css?v=3.0">
 </head>
 
 <body class="blog-detail-page">
@@ -61,23 +61,23 @@
     </div>
   </header>
 
-  <!-- Top Hero Banner with Waves (Old Site Structure) -->
-  <section class="top-banner-section">
+  <!-- Article Hero (brand: dark aurora + glowing logomark) -->
+  <section class="top-banner-section article-hero">
     <div class="banner-box">
-      <div class="banner-badge">Market Wrap</div>
-      <h1>Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes</h1>
       <ul class="breadcrumb-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li class="text-truncate">Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes</li>
       </ul>
+      <div class="banner-badge">Market Wrap</div>
+      <h1>Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes</h1>
+      <div class="banner-meta">
+        <span class="post-meta-date"> <i class="bi bi-calendar3"></i> <span>April 15, 2026</span> </span>
+        <span class="post-meta-readtime"> <i class="bi bi-clock"></i> <span>4 min read</span> </span>
+      </div>
     </div>
-
-    <!-- Animated Wave Layers -->
-    <div class="wave-container" aria-hidden="true">
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
-      <div class="wave wave3"></div>
+    <div class="article-hero-mark" aria-hidden="true">
+      <img src="assets/images/bliss_money_logo.png" alt="" width="911" height="911">
     </div>
   </section>
 
@@ -88,18 +88,6 @@
 
         <!-- Left Column: Article Detail (.post-detail) -->
         <article class="post-detail">
-          <div class="post-detail-header">
-            <div class="post-meta-badges">
-              <span class="post-meta-tag">Market Wrap</span>
-              <span class="post-meta-date">
-                <i class="bi bi-calendar3"></i> <span>April 15, 2026</span>
-              </span>
-              <span class="post-meta-readtime">
-                <i class="bi bi-clock"></i> <span>4 min read</span>
-              </span>
-            </div>
-            <h2 class="post-detail-title">Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes</h2>
-          </div>
 
           <!-- Featured Image (.view_img) -->
           <div class="view_img">
@@ -494,6 +482,7 @@ This is for informational purposes only and not investment advice. Markets are i
       }
     })();
   </script>
+  <script src="assets/js/blog-article.js?v=1.0"></script>
 </body>
 
 </html>

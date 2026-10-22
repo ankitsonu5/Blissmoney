@@ -807,3 +807,418 @@
     max-width: 100%;
   }
 }
+
+/* ==========================================================================
+   7. Blog Detail - Brand Guideline Layer
+   Brand book: green #0CAF80, black #1E1E1E, white; dark aurora backgrounds;
+   glowing "B" logomark; bold headline / light sub-head / quiet body copy.
+   Scoped to .blog-detail-page so the blog index keeps its own hero.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.blog-detail-page .article-hero {
+  background:
+    radial-gradient(ellipse 40% 70% at 0% 55%, rgba(0, 77, 58, 0.55), transparent 70%),
+    radial-gradient(ellipse 55% 60% at 40% -10%, rgba(0, 62, 30, 0.65), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgba(0, 72, 58, 0.6), transparent 70%),
+    #03211A;
+  padding: clamp(120px, 11vw, 168px) 0 clamp(110px, 10vw, 150px);
+}
+
+.blog-detail-page .article-hero .banner-box {
+  z-index: 3;
+}
+
+.blog-detail-page .article-hero ul.breadcrumb-list {
+  margin-bottom: 28px;
+  flex-wrap: nowrap;
+  max-width: 760px;
+}
+
+.blog-detail-page .article-hero ul.breadcrumb-list li {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+.blog-detail-page .article-hero ul.breadcrumb-list li.text-truncate {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.blog-detail-page .article-hero .banner-badge {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+
+.blog-detail-page .article-hero h1 {
+  max-width: 860px;
+  font-size: clamp(2rem, 3.7vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+
+.banner-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 26px;
+}
+
+.banner-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #AAAAAA;
+}
+
+.banner-meta i {
+  color: #0CAF80;
+}
+
+/* Glowing logomark bleeding off the right edge (brand book cover) */
+.article-hero-mark {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: max(-60px, calc((100vw - 1280px) / 2 - 120px));
+  width: clamp(300px, 34vw, 540px);
+  aspect-ratio: 1;
+  transform: translateY(-46%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.article-hero-mark::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(12, 175, 128, 0.32), transparent 65%);
+}
+
+.article-hero-mark img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 32px rgba(12, 175, 128, 0.45));
+}
+
+/* ---------- Layout: cards rise over the hero ---------- */
+.blog-detail-page .blog-main-section {
+  display: flow-root; /* keep the grid's negative margin from collapsing through */
+  background-color: #F4F7F6;
+  padding-top: 0;
+}
+
+.blog-detail-page .blog-detail-grid {
+  position: relative;
+  z-index: 5;
+  margin-top: -72px;
+}
+
+.blog-detail-page .post-detail,
+.blog-detail-page .sidebar-card {
+  border-radius: 20px;
+  border: 1px solid #E3EBE7;
+  box-shadow: 0 18px 40px rgba(3, 33, 26, 0.06);
+}
+
+.blog-detail-page .post-detail {
+  padding: clamp(24px, 4vw, 56px);
+}
+
+.blog-detail-page .view_img {
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  border-radius: 14px;
+  box-shadow: none;
+  background: #03211A;
+}
+
+.blog-detail-page .view_img img {
+  max-height: none;
+  aspect-ratio: 3 / 2;
+}
+
+/* ---------- Article typography ---------- */
+.blog-detail-page .post-detail .info {
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: #3D4B46;
+  line-height: 1.85;
+}
+
+.blog-detail-page .post-detail .info p {
+  margin: 0 0 1.1em;
+}
+
+.blog-detail-page .post-detail .info p.lead {
+  font-size: clamp(1.12rem, 1.5vw, 1.26rem);
+  font-weight: 500;
+  color: #0D251E;
+  line-height: 1.65;
+  margin-bottom: 1.4em;
+}
+
+.blog-detail-page .post-detail .info > h3 {
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  font-weight: 800;
+  color: #0D251E;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 2.2em 0 0.75em;
+  border: 0;
+  padding: 0;
+}
+
+.blog-detail-page .post-detail .info > h3::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: #0CAF80;
+  margin-bottom: 16px;
+}
+
+.blog-detail-page .post-detail .info h4 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0D251E;
+  line-height: 1.35;
+  margin: 1.6em 0 0.5em;
+}
+
+.blog-detail-page .post-detail .info h4 .h-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 6px;
+  border-radius: 8px;
+  background: #1E1E1E;
+  color: #0CAF80;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.blog-detail-page .post-detail .info strong {
+  color: #0D251E;
+}
+
+.blog-detail-page .post-detail .info a {
+  color: #0A9C72;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Bullets: small rounded squares, echoing the logomark geometry */
+.blog-detail-page .post-detail .info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-detail-page .post-detail .info ul li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.blog-detail-page .post-detail .info ul li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #0CAF80;
+}
+
+.blog-detail-page .post-detail .info ol {
+  padding-left: 26px;
+}
+
+.blog-detail-page .post-detail .info ol li::marker {
+  color: #0CAF80;
+  font-weight: 800;
+}
+
+/* Imported newsletter tables: brand font, no overflow on phones */
+.blog-detail-page .post-detail .info [style*="font-family"] {
+  font-family: inherit !important;
+}
+
+.blog-detail-page .post-detail .info .table-scroll {
+  overflow-x: auto;
+  margin: 28px 0;
+  border-radius: 14px;
+}
+
+.blog-detail-page .post-detail .info table[width="700"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.blog-detail-page .post-detail .info .table-scroll > table {
+  margin: 0;
+  box-shadow: none;
+}
+
+.blog-detail-page .post-detail .info .table-scroll ul li {
+  padding-left: 0;
+}
+
+.blog-detail-page .post-detail .info .table-scroll ul li::before {
+  content: none;
+}
+
+/* ---------- Share ---------- */
+.blog-detail-page .social-media-share {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #E3EBE7;
+}
+
+.blog-detail-page .social-share-btn {
+  border-color: #D9E3DE;
+  color: #0D251E;
+}
+
+/* ---------- Sidebar ---------- */
+.blog-detail-page .blog-sidebar-sticky {
+  top: 110px;
+}
+
+.blog-detail-page .related-post-img-wrap {
+  border-radius: 10px;
+  background-color: #03211A;
+}
+
+.blog-detail-page .sidebar-cta-box {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  border-radius: 20px;
+  padding: 32px 28px;
+  background:
+    radial-gradient(ellipse 80% 70% at 100% 0%, rgba(12, 175, 128, 0.28), transparent 65%),
+    #03211A;
+}
+
+.blog-detail-page .sidebar-cta-box::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -30px;
+  width: 170px;
+  height: 170px;
+  background: url("../images/bliss_money_logo.png") center / contain no-repeat;
+  opacity: 0.35;
+  filter: drop-shadow(0 0 18px rgba(12, 175, 128, 0.5));
+  pointer-events: none;
+}
+
+.blog-detail-page .sidebar-cta-box h4,
+.blog-detail-page .sidebar-cta-box p,
+.blog-detail-page .sidebar-cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-detail-page .sidebar-cta-box h4 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  max-width: 220px;
+}
+
+.blog-detail-page .sidebar-cta-box p {
+  color: #AAAAAA;
+  max-width: 250px;
+  margin-bottom: 22px;
+}
+
+.blog-detail-page .sidebar-cta-btn {
+  color: #FFFFFF;
+  border-radius: 999px;
+  padding: 12px 26px;
+  box-shadow: 0 8px 22px rgba(12, 175, 128, 0.3);
+}
+
+.blog-detail-page .sidebar-cta-btn::after {
+  content: " \2192";
+}
+
+.blog-detail-page .sidebar-cta-btn:hover {
+  background-color: #0A9C72;
+}
+
+@media (max-width: 1040px) {
+  .blog-detail-page .blog-detail-grid {
+    margin-top: -56px;
+  }
+
+  .article-hero-mark {
+    right: -90px;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 650px) {
+  .blog-detail-page .article-hero {
+    padding: 104px 0 96px;
+  }
+
+  .blog-detail-page .article-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .article-hero-mark {
+    width: 240px;
+    right: -100px;
+    top: 34%;
+    opacity: 0.22;
+  }
+
+  .blog-detail-page .blog-detail-grid {
+    margin-top: -48px;
+  }
+
+  .blog-detail-page .post-detail {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .blog-detail-page .post-detail .info > h3 {
+    font-size: 1.28rem;
+  }
+
+  /* Newsletter layout tables: stack cells instead of squeezing columns */
+  .blog-detail-page .post-detail .info .table-scroll tr,
+  .blog-detail-page .post-detail .info .table-scroll td {
+    display: block;
+    width: auto !important;
+  }
+
+  .blog-detail-page .post-detail .info .table-scroll td[align="right"] {
+    text-align: left !important;
+  }
+}
