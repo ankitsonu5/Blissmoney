@@ -13,16 +13,16 @@
   <link rel="shortcut icon" href="assets/images/bm_faicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/bm_faicon.png">
 
-  <!-- Google Fonts: Raleway & Playfair Display -->
+  <!-- Google Fonts: Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
     rel="stylesheet">
 
   <!-- Main Stylesheet & Lead Popup Widget -->
   <link rel="stylesheet" href="assets/css/style.css?v=2.4">
-  <link rel="stylesheet" href="assets/css/lead-popup.css?v=1.1">
+  <link rel="stylesheet" href="assets/css/lead-popup.css?v=2.0">
 </head>
 
 <body>
@@ -1005,7 +1005,7 @@
           <a href="blog-weekly-market-briefing.html" class="blog-card-link"
             aria-label="Read BlissMoney Weekly Market Briefing: 22–26 June 2026">
             <div class="blog-card-media">
-              <img src="assets/images/blogs/blog_1.png" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026"
+              <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026"
                 class="blog-card-img" loading="lazy"
                 onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/640007440.png';">
             </div>
@@ -1031,7 +1031,7 @@
           <a href="blog-market-wrap-5-may.html" class="blog-card-link"
             aria-label="Read Market Wrap-Up 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
             <div class="blog-card-media">
-              <img src="assets/images/blogs/blog_2.png" alt="Market Wrap-Up 5 May 2026" class="blog-card-img"
+              <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up 5 May 2026" class="blog-card-img"
                 loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/274006207.png';">
             </div>
             <div class="blog-card-content">
@@ -1056,7 +1056,7 @@
           <a href="blog-market-wrap-15-april.html" class="blog-card-link"
             aria-label="Read Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
             <div class="blog-card-media">
-              <img src="assets/images/blogs/blog_3.png" alt="Market Wrap-Up April 15, 2026" class="blog-card-img"
+              <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img"
                 loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/133003125.png';">
             </div>
             <div class="blog-card-content">
@@ -1376,12 +1376,32 @@
   <div id="bmLeadPopup" class="bm-lead-popup" role="dialog" aria-modal="true" aria-label="Personalised Wealth Guidance">
     <!-- STEP 1: "Turn your today into a brighter tomorrow" -->
     <div id="bmPopupStep1" class="bm-popup-step-1">
-      <button type="button" class="bm-popup-close-btn" id="bmPopupClose1" aria-label="Close popup"></button>
-      <div class="bm-popup-media-wrap">
-        <img src="assets/images/popup-step1.jpg" alt="Turn your today into a brighter tomorrow - BlissMoney" class="bm-popup-cover-img" width="715" height="973" />
-        <button type="button" id="bmPopupGetStarted" class="bm-popup-btn-start" aria-label="Get started"></button>
-        <button type="button" id="bmPopupMaybeLater" class="bm-popup-btn-later" aria-label="Maybe later"></button>
+      <div class="bm-popup-glow" aria-hidden="true">
+        <img src="assets/images/bliss_money_logo.png" alt="" width="911" height="911">
       </div>
+      <div class="bm-popup-header">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-popup-logo" width="444" height="93">
+        <button type="button" class="bm-popup-close-btn" id="bmPopupClose1" aria-label="Close popup">&times;</button>
+      </div>
+
+      <span class="bm-popup-eyebrow">Financial Bliss, Built on Trust</span>
+      <h3 class="bm-popup-title">Turn your today into a brighter <em>tomorrow</em></h3>
+      <p class="bm-popup-subtitle">Personalised wealth guidance to help you grow, protect and achieve what matters to you.</p>
+
+      <ol class="bm-popup-journey" aria-label="Your wealth journey">
+        <li>Today</li>
+        <li>Grow</li>
+        <li>Protect</li>
+        <li>Achieve</li>
+      </ol>
+
+      <button type="button" id="bmPopupGetStarted" class="bm-popup-btn-primary">
+        <span>Get started</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <button type="button" id="bmPopupMaybeLater" class="bm-popup-btn-later">Maybe later</button>
     </div>
 
     <!-- STEP 2: "Let's plan your next chapter" -->
@@ -1389,12 +1409,12 @@
       <!-- Header with Brand & Close -->
       <div class="bm-popup-header">
         <div class="bm-popup-brand">
-          <img src="assets/images/blissmoney_logo.png" alt="BlissMoney" style="height: 30px; width: auto; object-fit: contain;">
+          <img src="assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-popup-logo" width="444" height="93">
         </div>
         <button type="button" class="bm-popup-close-btn" id="bmPopupClose2" aria-label="Close popup">&times;</button>
       </div>
 
-      <h3 class="bm-popup-title">Let's plan<br>your next chapter</h3>
+      <h3 class="bm-popup-title">Let's plan your next <em>chapter</em></h3>
       <p class="bm-popup-subtitle">Choose a convenient way to connect with our wealth advisory team.</p>
 
       <!-- Option 1: WhatsApp -->
@@ -1418,7 +1438,7 @@
       <form id="bmPopupConsultForm" class="bm-popup-consult-box" novalidate>
         <div class="bm-popup-consult-top">
           <div class="bm-popup-cal-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C29B38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
               <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -1455,28 +1475,28 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Select date &amp; time &rarr;</span>
+          <span>Select date &amp; time</span>
         </button>
       </form>
 
       <!-- Trust Badges Row -->
       <div class="bm-popup-trust-row">
         <div class="bm-popup-trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B88A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M23 7l-7 5 7 5V7z"></path>
             <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
           </svg>
           <span>Virtual or<br>in-person</span>
         </div>
         <div class="bm-popup-trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B88A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             <path d="M9 12l2 2 4-4"></path>
           </svg>
           <span>No-obligation<br>discussion</span>
         </div>
         <div class="bm-popup-trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B88A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
@@ -1489,7 +1509,7 @@
   <!-- Main JavaScript -->
   <script src="assets/js/main.js?v=2.0"></script>
   <!-- Lead Generation Popup Widget -->
-  <script src="assets/js/lead-popup.js?v=1.2"></script>
+  <script src="assets/js/lead-popup.js?v=2.0"></script>
 </body>
 
 </html>
