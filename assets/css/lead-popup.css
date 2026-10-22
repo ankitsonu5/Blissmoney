@@ -1,0 +1,465 @@
+/* ==========================================================================
+   BlissMoney - Bottom-Right Dual-State Lead Popup Widget
+   Matches POP-UP.jpeg:
+   - State 1: "Turn your today into a brighter tomorrow" (Graphic + Get Started)
+   - State 2: "Let's plan your next chapter" (WhatsApp + Consultation + Badges)
+   ========================================================================== */
+
+/* Main Popup Container */
+.bm-lead-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  background: #FAF8F5;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22), 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 999999;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s;
+  font-family: var(--font-family-base, 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif);
+}
+
+.bm-lead-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* When popup is active, hide background floating whatsapp to avoid overlap */
+body.bm-popup-active .floating-actions {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Prevent hero title from extending underneath bottom-right popup on desktop */
+@media (min-width: 1024px) {
+  .hero-title {
+    max-width: calc(100% - 320px) !important;
+  }
+  .hero-title-line {
+    white-space: normal !important;
+  }
+}
+
+/* ==========================================================================
+   STATE 1: "Turn your today into a brighter tomorrow"
+   Image already contains the graphics, button, text, and close "✕".
+   Hit targets are completely transparent so NO duplicate text/overlay occurs.
+   ========================================================================== */
+.bm-popup-step-1 {
+  position: relative;
+  width: 100%;
+  display: block;
+  user-select: none;
+}
+
+.bm-popup-media-wrap {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.bm-popup-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Step 1 Close Button: transparent target over the image's top-right "✕" */
+.bm-popup-step-1 .bm-popup-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bm-popup-step-1 .bm-popup-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.08);
+}
+
+/* Step 1 "Get started →": transparent click target positioned exactly over the button */
+.bm-popup-btn-start {
+  position: absolute;
+  top: 81.5%;
+  left: 4%;
+  width: 58%;
+  height: 9%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  font-size: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  z-index: 5;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bm-popup-btn-start:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Step 1 "Maybe later": transparent click target positioned exactly over the text */
+.bm-popup-btn-later {
+  position: absolute;
+  top: 91.5%;
+  left: 4%;
+  width: 58%;
+  height: 6%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 5;
+  transition: background-color 0.2s ease;
+}
+
+.bm-popup-btn-later:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   STATE 2: "Let's plan your next chapter"
+   ========================================================================== */
+.bm-popup-step-2 {
+  position: relative;
+  width: 100%;
+  background: #FAF8F5;
+  padding: 18px 16px 14px 16px;
+  box-sizing: border-box;
+  animation: bmPopupSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bmPopupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Top Header */
+.bm-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.bm-popup-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Close Button (Step 2) */
+.bm-popup-step-2 .bm-popup-close-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #3B4B45;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bm-popup-step-2 .bm-popup-close-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #07261E;
+}
+
+/* Headline & Subtitle */
+.bm-popup-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #07261E;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 10px 0 4px 0;
+}
+
+.bm-popup-subtitle {
+  font-size: 0.76rem;
+  color: #5E726B;
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+}
+
+/* WhatsApp Option Card */
+.bm-popup-whatsapp-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #EDF7F2;
+  border: 1px solid #D6EDE0;
+  border-radius: 14px;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.bm-popup-whatsapp-box:hover {
+  background-color: #E2F4EC;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.12);
+}
+
+.bm-popup-wa-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.25);
+}
+
+.bm-popup-wa-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.bm-popup-wa-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-popup-wa-text strong {
+  font-size: 0.82rem;
+  color: #0C2821;
+  font-weight: 700;
+}
+
+.bm-popup-wa-text span {
+  font-size: 0.68rem;
+  color: #5B726A;
+  margin-top: 1px;
+  line-height: 1.25;
+}
+
+.bm-popup-wa-arrow {
+  color: #0C2821;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.bm-popup-whatsapp-box:hover .bm-popup-wa-arrow {
+  transform: translateX(2px);
+}
+
+/* Consultation Card with Form */
+.bm-popup-consult-box {
+  background: #FFFFFF;
+  border: 1px solid #EAE5DD;
+  border-radius: 14px;
+  padding: 10px 12px 10px 12px;
+  box-shadow: 0 3px 12px rgba(11, 37, 30, 0.04);
+}
+
+.bm-popup-consult-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.bm-popup-cal-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FBF6ED;
+  border: 1px solid #EADDC6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bm-popup-cal-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bm-popup-consult-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-popup-consult-text strong {
+  font-size: 0.82rem;
+  color: #0C2821;
+  font-weight: 700;
+}
+
+.bm-popup-consult-text span {
+  font-size: 0.68rem;
+  color: #687C75;
+  margin-top: 1px;
+  line-height: 1.25;
+}
+
+/* Inputs Row - Two stacked compact inputs for comfortable typing */
+.bm-popup-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.bm-popup-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bm-popup-input-wrap .bm-input-icon {
+  position: absolute;
+  left: 8px;
+  pointer-events: none;
+  color: #879992;
+}
+
+.bm-popup-input-wrap input {
+  width: 100%;
+  background: #FAFAFA;
+  border: 1px solid #DCD8D0;
+  border-radius: 6px;
+  padding: 6px 8px 6px 26px;
+  font-size: 0.78rem;
+  color: #0C2821;
+  font-family: inherit;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.bm-popup-input-wrap input::placeholder {
+  color: #8C9C95;
+}
+
+.bm-popup-input-wrap input:focus {
+  outline: none;
+  background: #FFFFFF;
+  border-color: #0CAF80;
+  box-shadow: 0 0 0 2px rgba(12, 175, 128, 0.12);
+}
+
+/* Select date & time Button */
+.bm-popup-btn-select-time {
+  width: 100%;
+  height: 38px;
+  background-color: #063A2F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(6, 58, 47, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bm-popup-btn-select-time:hover {
+  background-color: #094F40;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(6, 58, 47, 0.35);
+}
+
+.bm-popup-btn-select-time:active {
+  transform: translateY(0);
+}
+
+/* Trust Badges Footer Row */
+.bm-popup-trust-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid #ECE7DF;
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.bm-popup-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+  padding: 0 2px;
+}
+
+.bm-popup-trust-item:not(:last-child) {
+  border-right: 1px solid #ECE7DF;
+}
+
+.bm-popup-trust-item svg {
+  color: #B88A2E;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.bm-popup-trust-item span {
+  font-size: 0.6rem;
+  color: #6C7F77;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 440px) {
+  .bm-lead-popup {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .bm-popup-title {
+    font-size: 1.35rem;
+  }
+}

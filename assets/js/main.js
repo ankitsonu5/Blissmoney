@@ -8,111 +8,116 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.card-item');
-  const dots = document.querySelectorAll('.deck-dot');
-  let currentIndex = 0;
+  // Section 01: Who We Serve - Interactive Stacked Deck
+  function initWhoWeServeDeck() {
+    const cards = document.querySelectorAll('.card-item');
+    const dots = document.querySelectorAll('.deck-dot');
+    let currentIndex = 0;
 
-  if (!cards.length || !dots.length) return;
+    if (!cards.length || !dots.length) return;
 
-  function updateDeck(activeIndex) {
-    currentIndex = activeIndex;
+    function updateDeck(activeIndex) {
+      currentIndex = activeIndex;
 
-    // Update active state on dots
-    dots.forEach((dot, idx) => {
-      if (idx === activeIndex) {
-        dot.classList.add('active');
-        dot.setAttribute('aria-selected', 'true');
-      } else {
-        dot.classList.remove('active');
-        dot.setAttribute('aria-selected', 'false');
-      }
-    });
-
-    // Update dot section step for smooth upward/return animation
-    const deckControls = document.querySelector('.deck-controls');
-    if (deckControls) {
-      deckControls.style.setProperty('--dot-step', activeIndex);
-    }
-
-    // Update cards: cards before activeIndex peel off to the bottom-left;
-    // remaining cards stay in their fixed stacked positions (last card stays anchored!)
-    cards.forEach((card, idx) => {
-      card.classList.remove('is-dropped', 'is-dropped-far');
-
-      if (idx < activeIndex) {
-        // Previous card has peeled down-left and exited
-        if (activeIndex - idx > 1) {
-          card.classList.add('is-dropped-far');
+      // Update active state on dots
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add('active');
+          dot.setAttribute('aria-selected', 'true');
         } else {
-          card.classList.add('is-dropped');
+          dot.classList.remove('active');
+          dot.setAttribute('aria-selected', 'false');
         }
-        card.setAttribute('aria-hidden', 'true');
-      } else {
-        // Card stays at its fixed base stack position
-        card.setAttribute('aria-hidden', idx === activeIndex ? 'false' : 'true');
+      });
+
+      // Update dot section step for smooth upward/return animation
+      const deckControls = document.querySelector('.deck-controls');
+      if (deckControls) {
+        deckControls.style.setProperty('--dot-step', activeIndex);
       }
-    });
-  }
 
-  // Attach click events to dots
-  dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
-      if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
-        updateDeck(targetIndex);
-      }
-    });
-  });
+      // Update cards: cards before activeIndex peel off to the bottom-left;
+      // remaining cards stay in their fixed stacked positions (last card stays anchored!)
+      cards.forEach((card, idx) => {
+        card.classList.remove('is-dropped', 'is-dropped-far');
 
-  // Allow clicking cards to slide through the deck (cycle forward and loop back up)
-  cards.forEach((card, idx) => {
-    card.addEventListener('click', () => {
-      if (idx === currentIndex) {
-        // Clicking active front card slides it down to reveal the next card
-        const nextIndex = (currentIndex + 1) % cards.length;
-        updateDeck(nextIndex);
-      } else if (idx > currentIndex) {
-        // Clicking any visible card behind brings it to the front
-        updateDeck(idx);
-      }
-    });
-  });
-
-  const stackedDeck = document.querySelector('.stacked-deck');
-  if (stackedDeck) {
-    stackedDeck.addEventListener('click', (e) => {
-      if (e.target === stackedDeck) {
-        const nextIndex = (currentIndex + 1) % cards.length;
-        updateDeck(nextIndex);
-      }
-    });
-  }
-
-  // Function to ensure card deck's top-right card (Card 4) touches the bottom of serve-decor SVG
-  function alignDeckWithDecor() {
-    const decor = document.querySelector('.serve-decor');
-    const header = document.querySelector('.serve-header');
-    const wrapper = document.querySelector('.serve-deck-wrapper');
-    if (!decor || !header || !wrapper) return;
-
-    if (window.innerWidth > 900) {
-      const decorBottom = decor.getBoundingClientRect().bottom;
-      const headerBottom = header.getBoundingClientRect().bottom;
-      const style = getComputedStyle(document.documentElement);
-      const offsetY = parseFloat(style.getPropertyValue('--card-stack-offset-y')) || 60;
-      const targetMargin = Math.max(30, (decorBottom - headerBottom) + offsetY);
-      wrapper.style.marginTop = `${targetMargin}px`;
-    } else {
-      wrapper.style.marginTop = '';
+        if (idx < activeIndex) {
+          // Previous card has peeled down-left and exited
+          if (activeIndex - idx > 1) {
+            card.classList.add('is-dropped-far');
+          } else {
+            card.classList.add('is-dropped');
+          }
+          card.setAttribute('aria-hidden', 'true');
+        } else {
+          // Card stays at its fixed base stack position
+          card.setAttribute('aria-hidden', idx === activeIndex ? 'false' : 'true');
+        }
+      });
     }
+
+    // Attach click events to dots
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+        if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
+          updateDeck(targetIndex);
+        }
+      });
+    });
+
+    // Allow clicking cards to slide through the deck (cycle forward and loop back up)
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        if (idx === currentIndex) {
+          // Clicking active front card slides it down to reveal the next card
+          const nextIndex = (currentIndex + 1) % cards.length;
+          updateDeck(nextIndex);
+        } else if (idx > currentIndex) {
+          // Clicking any visible card behind brings it to the front
+          updateDeck(idx);
+        }
+      });
+    });
+
+    const stackedDeck = document.querySelector('.stacked-deck');
+    if (stackedDeck) {
+      stackedDeck.addEventListener('click', (e) => {
+        if (e.target === stackedDeck) {
+          const nextIndex = (currentIndex + 1) % cards.length;
+          updateDeck(nextIndex);
+        }
+      });
+    }
+
+    // Function to ensure card deck's top-right card (Card 4) touches the bottom of serve-decor SVG
+    function alignDeckWithDecor() {
+      const decor = document.querySelector('.serve-decor');
+      const header = document.querySelector('.serve-header');
+      const wrapper = document.querySelector('.serve-deck-wrapper');
+      if (!decor || !header || !wrapper) return;
+
+      if (window.innerWidth > 900) {
+        const decorBottom = decor.getBoundingClientRect().bottom;
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const style = getComputedStyle(document.documentElement);
+        const offsetY = parseFloat(style.getPropertyValue('--card-stack-offset-y')) || 60;
+        const targetMargin = Math.max(30, (decorBottom - headerBottom) + offsetY);
+        wrapper.style.marginTop = `${targetMargin}px`;
+      } else {
+        wrapper.style.marginTop = '';
+      }
+    }
+
+    // Initialize Section 01 deck with first card active (all 4 cards present)
+    updateDeck(0);
+    alignDeckWithDecor();
+
+    window.addEventListener('resize', alignDeckWithDecor);
+    window.addEventListener('load', alignDeckWithDecor);
   }
 
-  // Initialize Section 01 deck with first card active (all 4 cards present)
-  updateDeck(0);
-  alignDeckWithDecor();
-
-  window.addEventListener('resize', alignDeckWithDecor);
-  window.addEventListener('load', alignDeckWithDecor);
+  initWhoWeServeDeck();
 
   // Section 04: How We Work - 6 Steps Interactive Deck
   function initStepsDeck() {
@@ -796,6 +801,130 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initPillarsAccordion();
+
+  /* ---------- Consultation Booking Modal Controller ---------- */
+  function initConsultationModal() {
+    const modal = document.getElementById("consultationModal");
+    if (!modal) return;
+
+    const closeBtn = document.getElementById("closeConsultModal");
+    const form = document.getElementById("consultationForm");
+    const successState = document.getElementById("consultSuccessState");
+    const successCloseBtn = document.getElementById("successCloseBtn");
+    const successSummary = document.getElementById("successSummaryText");
+
+    const openModal = () => {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const nameInput = document.getElementById("consultName");
+      if (nameInput) {
+        setTimeout(() => nameInput.focus(), 150);
+      }
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      // Reset form and state after close transition
+      setTimeout(() => {
+        if (form && successState) {
+          form.style.display = "flex";
+          successState.style.display = "none";
+          form.reset();
+        }
+      }, 300);
+    };
+
+    window.openConsultationModal = openModal;
+
+    // Attach to all consultation triggers across the page
+    const triggers = document.querySelectorAll(
+      '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]'
+    );
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    // Document-level event delegation for 100% click capture reliability
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest(
+        '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]'
+      );
+      if (trigger) {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    // Auto-open modal if URL hash or query requests it
+    if (
+      window.location.hash === "#book-consultation" ||
+      window.location.hash === "#consultationModal" ||
+      window.location.search.includes("consultation=open") ||
+      window.location.search.includes("openConsultation=true")
+    ) {
+      setTimeout(openModal, 300);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeModal);
+    }
+
+    if (successCloseBtn) {
+      successCloseBtn.addEventListener("click", closeModal);
+    }
+
+    // Close when clicking on backdrop
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+
+    // Handle consultation form submission
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById("consultSubmitBtn");
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting Request...";
+        }
+
+        const nameVal = document.getElementById("consultName")?.value || "there";
+        const phoneVal = document.getElementById("consultPhone")?.value || "";
+
+        // Simulated high-end submission feedback
+        setTimeout(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirm Consultation Request";
+          }
+          if (form && successState) {
+            form.style.display = "none";
+            successState.style.display = "flex";
+            if (successSummary) {
+              successSummary.textContent = `Thank you, ${nameVal}! Our Senior Wealth Advisory team has received your request and will reach out to you at ${phoneVal || "your provided contact"} within 24 business hours.`;
+            }
+          }
+        }, 600);
+      });
+    }
+  }
+
+  initConsultationModal();
 });
 
 
