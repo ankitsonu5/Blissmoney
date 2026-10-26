@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Explore BlissMoney's top financial planning and market insight blogs covering SIPs, mutual funds, macroeconomics, and wealth creation strategies.">
+  <title>Investment &amp; Financial Planning Blogs | BlissMoney</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="assets/images/bm_faicon.png">
+  <link rel="shortcut icon" href="assets/images/bm_faicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/bm_faicon.png">
+
+  <!-- Google Fonts: Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Main Stylesheet & Blog Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+
+<body class="blog-archive-page">
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="BlissMoney Home">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="site-logo-img">
+      </a>
+
+      <!-- Menu Wrapper -->
+      <div class="site-menu-wrap" id="siteMenuWrap">
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-haspopup="true">
+          <span class="site-menu-text">Menu</span>
+          <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+        </button>
+
+        <div class="site-menu-dropdown" id="siteMenuDropdown" role="menu" aria-label="Main Navigation">
+          <button class="site-menu-btn site-menu-btn-inside" id="siteMenuBtnInside" aria-label="Close navigation menu">
+            <span class="site-menu-text">Menu</span>
+            <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+          </button>
+          <nav class="site-menu-nav">
+            <a href="index.html" class="site-nav-link" role="menuitem">Home</a>
+            <a href="index.html#who-we-serve" class="site-nav-link" role="menuitem">Who we serve</a>
+            <a href="index.html#how-we-work" class="site-nav-link" role="menuitem">Our approach</a>
+            <a href="index.html#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
+            <a href="calculator.html" class="site-nav-link" role="menuitem">Financial Tools</a>
+            <a href="blog.html" class="site-nav-link active" role="menuitem">Insights &amp; Blogs</a>
+            <a href="index.html#five-questions" class="site-nav-link" role="menuitem">About us</a>
+            <a href="index.html#consultation" class="site-nav-link" role="menuitem">Contact</a>
+            <a href="#consultationModal" class="site-nav-link site-nav-cta" role="menuitem" data-open-consultation="true">Book a consultation</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Hero Banner with Waves (Old Site Structure) -->
+  <section class="top-banner-section">
+    <div class="banner-box">
+      <div class="banner-badge">Knowledge &amp; Intelligence</div>
+      <h1>Blogs &amp; Market Insights</h1>
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li>Blogs</li>
+      </ul>
+    </div>
+
+    <!-- Animated Wave Layers -->
+    <div class="wave-container" aria-hidden="true">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+    </div>
+  </section>
+
+  <!-- Main Archive Section -->
+  <main class="blog-archive-section">
+    <div class="blog-detail-container">
+
+      <!-- Filter & Search Bar -->
+      <div class="blog-filter-bar">
+        <!-- Category Filter Pills -->
+        <div class="blog-category-pills" id="categoryPills">
+          <button type="button" class="cat-pill active" data-category="all">All Insights</button>
+          <button type="button" class="cat-pill" data-category="Market Insights">Market Insights</button>
+          <button type="button" class="cat-pill" data-category="Daily Wrap">Daily Wrap</button>
+          <button type="button" class="cat-pill" data-category="Mutual Funds">Mutual Funds</button>
+          <button type="button" class="cat-pill" data-category="Global Macro">Global Macro</button>
+          <button type="button" class="cat-pill" data-category="Regulations">Regulations</button>
+        </div>
+
+        <!-- Live Instant Search Box -->
+        <div class="blog-search-box">
+          <input type="text" id="blogSearchInput" placeholder="Search blogs &amp; topics..." aria-label="Search blogs">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 3-Column Blog Cards Grid (Pre-rendered Static HTML with Dynamic Filter Support) -->
+      <div class="blog-archive-grid" id="blogCardsGrid">
+        <!-- Card 1 -->
+        <article class="blog-card-item" data-category="Market Insights">
+          <a href="blog-weekly-market-briefing.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read BlissMoney Weekly Market Briefing: 22–26 June 2026">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/640007440.png';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Market Insights</span>
+                  <span class="date">June 26, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">BlissMoney Weekly Market Briefing: 22–26 June 2026</h6>
+                <p class="excerpt">Weekly market wrap covering crude oil easing, benchmark rallies, FII/DII institutional flows, sectoral shifts, and portfolio allocation recommendations.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card-item" data-category="Daily Wrap">
+          <a href="blog-market-wrap-5-may.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read Market Wrap-Up | 5 May 2026">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up | 5 May 2026" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/274006207.png';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Daily Wrap</span>
+                  <span class="date">May 5, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty</h6>
+                <p class="excerpt">Indian benchmark indices closed lower amid heightened geopolitical tensions in the Middle East and rising crude oil volatility. Key sectoral highlights and outlook.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card-item" data-category="Daily Wrap">
+          <a href="blog-market-wrap-15-april.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read Market Wrap-Up April 15, 2026">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/133003125.png';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Daily Wrap</span>
+                  <span class="date">April 15, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes</h6>
+                <p class="excerpt">Nifty and Sensex staged a massive relief rally, jumping over 1.6% as geopolitical de-escalation hopes eased oil prices and spurred broad-based equity buying.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card-item" data-category="Global Macro">
+          <a href="blog-us-economy.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read The State of the US Economy in April 2026">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_4.jpg" alt="The State of the US Economy in April 2026" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/188004642.jpeg';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Global Macro</span>
+                  <span class="date">April 10, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">The State of the US Economy in April 2026: Resilient Growth Amid Global Challenges</h6>
+                <p class="excerpt">An in-depth macroeconomic analysis of the US economy entering Q2 2026 - labor market resilience, Federal Reserve rate paths, inflation dynamics, and global spillover.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-card-item" data-category="Mutual Funds">
+          <a href="blog-thematic-mutual-funds.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read Thematic Mutual Funds">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_5.jpg" alt="Thematic Mutual Funds" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/372009756.jpeg';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Mutual Funds</span>
+                  <span class="date">April 4, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">Thematic Mutual Funds: Meaning, Types, Benefits and Investment Strategy</h6>
+                <p class="excerpt">Complete guide to thematic mutual funds in India: key characteristics, major structural themes (tech, infra, energy transition), sector funds vs thematic funds, and portfolio allocation rules.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-card-item" data-category="Regulations">
+          <a href="blog-sebi-mutual-fund-rules.html" style="text-decoration: none; color: inherit; display: block; height: 100%;" aria-label="Read SEBI New Equity Mutual Fund Classification Rules 2026">
+            <div class="blogcontent">
+              <div class="images">
+                <img src="assets/images/blogs/thumb_6.jpg" alt="SEBI New Equity Mutual Fund Rules 2026" loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/473008422.jpeg';">
+              </div>
+              <div class="client-info">
+                <div class="blog-card-meta-top">
+                  <span class="category">Regulations</span>
+                  <span class="date">March 28, 2026</span>
+                </div>
+                <h6 class="text-line" style="--textline: 2;">SEBI New Equity Mutual Fund Classification Rules 2026: What Has Changed</h6>
+                <p class="excerpt">Understanding SEBI new categorisation and rationalisation circular for equity mutual fund schemes - what changes for multi-cap, large-cap, and thematic funds, and what investors must do.</p>
+                <span class="read-more-link">
+                  Read Article 
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Empty State -->
+      <div id="noResultsState" style="display: none; text-align: center; padding: 60px 20px;">
+        <h3 style="font-family: var(--font-family-base); color: #0D251E; font-size: 1.4rem;">No matching articles found</h3>
+        <p style="color: #64746E; font-size: 0.95rem; margin-top: 8px;">Try searching for another keyword or reset the filter.</p>
+        <button type="button" id="btnResetFilter" class="cat-pill active" style="margin-top: 14px;">Reset Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="footer" id="footer">
+    <div class="foot-accent-bar" aria-hidden="true"></div>
+    <div class="container">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="index.html" class="brand">
+            <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo">
+          </a>
+          <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
+          <div class="foot-socials">
+            <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link"
+              aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/company/105003627/" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="foot-cols">
+          <div>
+            <h4>Company</h4>
+            <a href="index.html#five-questions">About BlissMoney</a>
+            <a href="index.html#who-we-serve">Why BlissMoney</a>
+            <a href="index.html#consultation">Contact &amp; Offices</a>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="index.html#nine-disciplines">Our Offerings</a>
+            <a href="calculator.html">Financial Tools</a>
+            <a href="blog.html">Insights &amp; Blogs</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <a href="https://www.blissmoney.in/sabi/privacy-policy.php" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="https://www.blissmoney.in/sabi/terms-conditions.php" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+            <a href="https://www.blissmoney.in/sabi/investor-grievance-redressal.php" target="_blank" rel="noopener noreferrer">Investor Grievance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <p>© 2026 BlissMoney. All rights reserved. Bangalore, India.</p>
+        <p class="disclaimer">AMFI Registered Mutual Fund Distributor | ARN : 259356. Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <aside class="floating-actions" aria-label="Quick actions">
+    <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+      <span class="whatsapp-ripple-wave" aria-hidden="true"></span>
+      <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
+    </a>
+    <button type="button" class="floating-scroll-top" id="backToTop" aria-label="Go to top" title="Go to top">
+      <i class="bi bi-chevron-up" style="font-size: 18px;"></i>
+    </button>
+  </aside>
+
+  <!-- ======================= CONSULTATION MODAL ======================= -->
+  <div class="consult-modal-backdrop" id="consultationModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle">
+    <div class="consult-modal-container">
+      <button type="button" class="consult-modal-close" id="closeConsultModal"
+        aria-label="Close consultation modal">&times;</button>
+
+      <div class="consult-modal-header">
+        <span class="consult-modal-badge">Private Wealth Advisory</span>
+        <h3 class="consult-modal-title" id="modalTitle">Book a Consultation</h3>
+        <p class="consult-modal-subtitle">Schedule a confidential 1-on-1 strategy conversation with our senior advisory team.</p>
+      </div>
+
+      <!-- Quick Direct Connect Options -->
+      <div class="consult-modal-quick-connect">
+        <a href="https://wa.me/916364833952?text=Hello%20BlissMoney%2C%20I%20would%20like%20to%20book%20a%20wealth%20consultation."
+          target="_blank" rel="noopener noreferrer" class="quick-connect-btn quick-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Instant WhatsApp Chat
+        </a>
+        <a href="mailto:hello@blissmoney.in?subject=Consultation%20Booking%20Request"
+          class="quick-connect-btn quick-email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          hello@blissmoney.in
+        </a>
+      </div>
+
+      <div class="consult-divider">
+        <span>or request a scheduled callback</span>
+      </div>
+
+      <!-- Form -->
+      <form class="consult-modal-form" id="consultationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultName">Your Name *</label>
+            <input type="text" id="consultName" name="name" required placeholder="e.g. Rahul Sharma"
+              autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="consultPhone">Phone / WhatsApp *</label>
+            <input type="tel" id="consultPhone" name="phone" required placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultEmail">Email Address *</label>
+            <input type="email" id="consultEmail" name="email" required placeholder="rahul@example.com"
+              autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="consultPortfolio">Portfolio / Investable Assets</label>
+            <select id="consultPortfolio" name="portfolio">
+              <option value="25L-50L">₹25 Lakhs – ₹50 Lakhs</option>
+              <option value="50L-1Cr" selected>₹50 Lakhs – ₹1 Crore</option>
+              <option value="1Cr-5Cr">₹1 Crore – ₹5 Crores</option>
+              <option value="5Cr+">₹5 Crores+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="consultMode">Preferred Mode</label>
+          <select id="consultMode" name="mode">
+            <option value="Virtual Video Meeting">Virtual Meeting (Google Meet / Zoom)</option>
+            <option value="Phone Call">Direct Phone Call</option>
+            <option value="WhatsApp Discussion">WhatsApp Advisory</option>
+            <option value="In-Person Bangalore">In-Person Meeting (Bangalore Office)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="consultMessage">Key Questions or Goals (Optional)</label>
+          <textarea id="consultMessage" name="message" rows="3"
+            placeholder="Tell us about your portfolio goals, time horizon, or questions..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary consult-submit-btn" id="consultSubmitBtn">
+          Confirm Consultation Request
+        </button>
+      </form>
+
+      <!-- Success State Message (Hidden by default) -->
+      <div class="consult-success-state" id="consultSuccessState" style="display: none;">
+        <div class="success-icon-wrap">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0CAF80" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h4 class="success-title">Consultation Request Confirmed</h4>
+        <p class="success-text" id="successSummaryText">Thank you! A Senior Wealth Advisor from BlissMoney will reach
+          out to you within 24 business hours.</p>
+        <button type="button" class="btn btn-primary" id="successCloseBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Blogs Database and Main Script -->
+  <script src="assets/js/blogs-data.js"></script>
+  <script src="assets/js/main.js?v=2.0"></script>
+
+  <!-- Blog Archive Grid Filter Logic -->
+  <script>
+    (function () {
+      const searchInput = document.getElementById('blogSearchInput');
+      const pillsContainer = document.getElementById('categoryPills');
+      const noResults = document.getElementById('noResultsState');
+      const resetBtn = document.getElementById('btnResetFilter');
+      const cardElements = document.querySelectorAll('.blog-card-item');
+
+      let currentCategory = 'all';
+      let searchQuery = '';
+
+      function filterCards() {
+        let visibleCount = 0;
+        cardElements.forEach(card => {
+          const cat = (card.getAttribute('data-category') || '').toLowerCase();
+          const titleEl = card.querySelector('h6');
+          const excerptEl = card.querySelector('.excerpt');
+          const text = ((titleEl ? titleEl.textContent : '') + ' ' + (excerptEl ? excerptEl.textContent : '') + ' ' + cat).toLowerCase();
+
+          const matchesCat = (currentCategory === 'all') || (cat === currentCategory.toLowerCase());
+          const matchesSearch = !searchQuery || text.includes(searchQuery.toLowerCase());
+
+          if (matchesCat && matchesSearch) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+
+      if (pillsContainer) {
+        pillsContainer.addEventListener('click', function (e) {
+          const pill = e.target.closest('.cat-pill');
+          if (!pill) return;
+          pillsContainer.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentCategory = pill.dataset.category || 'all';
+          filterCards();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          searchQuery = this.value.trim();
+          filterCards();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          currentCategory = 'all';
+          searchQuery = '';
+          if (searchInput) searchInput.value = '';
+          pillsContainer.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+          pillsContainer.querySelector('[data-category="all"]').classList.add('active');
+          filterCards();
+        });
+      }
+
+      // Initial filter check
+      filterCards();
+    })();
+  </script>
+</body>
+
+</html>

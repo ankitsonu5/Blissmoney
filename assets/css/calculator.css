@@ -1,5 +1,5 @@
 /* ============================================================
-   BlissMoney — Homepage redesign
+   BlissMoney - Homepage redesign
    Brand: #0CAF80 · deep forest surfaces · Acumin-style grotesque
    ============================================================ */
 
@@ -39,7 +39,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--green-dim) var(--forest-950);
 }
-/* Smooth anchor scrolling handled in JS — CSS smooth scroll breaks GSAP ScrollTrigger pin measurements */
+/* Smooth anchor scrolling handled in JS - CSS smooth scroll breaks GSAP ScrollTrigger pin measurements */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -1210,7 +1210,7 @@ button {
 }
 
 /* ============================================================
-   SECTIONS — shared
+   SECTIONS - shared
    ============================================================ */
 .section {
   position: relative;
@@ -1344,7 +1344,7 @@ button {
 }
 
 /* ============================================================
-   CH 01 — SEGMENTS
+   CH 01 - SEGMENTS
    ============================================================ */
 .segment-grid {
   display: grid;
@@ -1552,7 +1552,7 @@ button {
 }
 
 /* ============================================================
-   CH 02 — DISCIPLINES + STATS
+   CH 02 - DISCIPLINES + STATS
    ============================================================ */
 #offerings {
   position: relative;
@@ -1861,7 +1861,7 @@ button {
 }
 
 /* ============================================================
-   CH 03 — APPROACH
+   CH 03 - APPROACH
    ============================================================ */
 .approach-wrap {
   width: 100%;
@@ -2096,7 +2096,7 @@ button {
 }
 
 /* ============================================================
-   CH 04 — SIX STEPS CAROUSEL (AS PER REFERENCE #OFFERINGS)
+   CH 04 - SIX STEPS CAROUSEL (AS PER REFERENCE #OFFERINGS)
    ============================================================ */
 #process {
   position: relative;
@@ -2538,7 +2538,7 @@ button {
 }
 
 /* ============================================================
-   INVESTOR CORNER — CALCULATORS
+   INVESTOR CORNER - CALCULATORS
    ============================================================ */
 #tools {
   position: relative;
@@ -2555,8 +2555,8 @@ button {
 .tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 44px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 .tab {
   position: relative;
@@ -2566,14 +2566,14 @@ button {
     rgba(4, 18, 14, 0.75) 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 24px 18px 22px;
+  border-radius: 16px;
+  padding: 18px 14px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 14px;
+  gap: 10px;
   cursor: pointer;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -2677,14 +2677,14 @@ button {
 
 .calc-inputs {
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 28px;
+  border-radius: 20px;
   background: rgba(6, 27, 21, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  padding: clamp(28px, 3.4vw, 44px);
+  padding: clamp(20px, 2.4vw, 30px);
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 12px;
   box-shadow: 0 24px 55px -20px rgba(0, 0, 0, 0.6);
 }
 .field {
@@ -2693,12 +2693,12 @@ button {
   grid-template-areas:
     "label output"
     "input input";
-  row-gap: 16px;
+  row-gap: 8px;
   align-items: center;
-  padding: 20px 22px;
+  padding: 13px 18px;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 18px;
+  border-radius: 14px;
   transition: all 0.3s var(--ease);
 }
 .field:hover,
@@ -2710,25 +2710,26 @@ button {
 .field label {
   grid-area: label;
   display: block;
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.7);
+  color: rgba(244, 241, 234, 0.82);
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.3;
 }
 .field output,
 .goal-number-input {
   grid-area: output;
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 1.22rem;
+  font-size: 1.08rem;
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--green-bright);
   background: rgba(12, 175, 128, 0.12);
   border: 1px solid rgba(25, 215, 159, 0.28);
-  padding: 4px 16px;
+  padding: 3px 14px;
   border-radius: 999px;
   margin: 0;
   font-variant-numeric: tabular-nums;
@@ -2939,13 +2940,32 @@ input[type="range"]::-moz-range-thumb {
 }
 .goal-tabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+}
+.financial-goal-panel .goal-tabs {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.native-calc-panel .goal-tabs,
+.roi-planning-panel .goal-tabs {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1100px) {
+  .financial-goal-panel .goal-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .financial-goal-panel .goal-tabs,
+  .native-calc-panel .goal-tabs,
+  .roi-planning-panel .goal-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .goal-tab {
-  min-height: 68px;
-  padding: 10px 13px;
+  min-height: 56px;
+  padding: 9px 13px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -3149,11 +3169,13 @@ input[type="range"]::-moz-range-thumb {
 .native-field:nth-child(5) { animation-delay: 0.1s; }
 .native-field:nth-child(6) { animation-delay: 0.125s; }
 .native-field:nth-child(7) { animation-delay: 0.15s; }
+.native-field:nth-child(8) { animation-delay: 0.175s; }
 .native-field[hidden] {
   display: none;
 }
 .native-number-input {
-  width: clamp(98px, 12vw, 164px);
+  width: clamp(110px, 14vw, 180px);
+  font-variant-numeric: tabular-nums;
 }
 .native-tool-result .r-big {
   font-size: clamp(2.15rem, 3.7vw, 3.25rem);
@@ -4674,7 +4696,10 @@ input[type="range"]::-moz-range-thumb {
     radial-gradient(circle at 92% 84%, rgba(10, 140, 103, 0.11), transparent 31%),
     linear-gradient(135deg, #04120e 0%, #062119 56%, #03100c 100%);
   border-top: 1px solid var(--line-dark);
-  padding: 0 0 clamp(26px, 3vw, 38px);
+  padding: 0 0 16px;
+  margin-top: auto;
+  margin-bottom: 0 !important;
+  width: 100%;
 }
 .footer::before {
   content: "";
@@ -5282,8 +5307,19 @@ html {
 body.calculator-page {
   background: var(--forest-950);
   min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
+}
+
+body.calculator-page main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .site-header {
@@ -5305,7 +5341,7 @@ body.calculator-page {
 
 #tools {
   position: relative !important;
-  padding: 130px 0 100px !important;
+  padding: 110px 0 44px !important;
   background:
     radial-gradient(
       90% 70% at 50% 20%,
@@ -5329,7 +5365,7 @@ body.calculator-page {
 
 .section-head {
   max-width: 760px;
-  margin-bottom: clamp(32px, 4.5vw, 54px);
+  margin-bottom: clamp(24px, 3.5vw, 42px);
 }
 
 .section-head .chapter {
@@ -5382,10 +5418,16 @@ body.calculator-page {
 }
 
 .tabs {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 /* Footer layout */
 .footer {
-  margin-top: auto;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 16px !important;
+}
+
+.foot-bottom {
+  margin-bottom: 0 !important;
 }

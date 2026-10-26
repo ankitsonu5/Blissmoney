@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.">
-  <title>BlissMoney — Wealth Management</title>
+  <meta name="description"
+    content="BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.">
+  <title>BlissMoney | Wealth Management</title>
 
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/png" href="assets/images/bm_faicon.png">
   <link rel="shortcut icon" href="assets/images/bm_faicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/bm_faicon.png">
 
-  <!-- Google Fonts: Raleway (Weights 300, 400, 500, 600, 700, 800) -->
+  <!-- Google Fonts: Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <!-- Main Stylesheet & Lead Popup Widget -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
+  <link rel="stylesheet" href="assets/css/lead-popup.css?v=2.0">
 </head>
+
 <body>
 
   <!-- Fixed Site Header with Brand Logo & Interactive Dropdown Menu -->
@@ -28,15 +34,14 @@
         <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="site-logo-img">
       </a>
 
-      <!-- Menu Wrapper (Handles Hover & Click Toggle) -->
+      <!-- Menu Wrapper -->
       <div class="site-menu-wrap" id="siteMenuWrap">
-        <!-- Default State Menu Button -->
-        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-haspopup="true">
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-haspopup="true">
           <span class="site-menu-text">Menu</span>
           <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
         </button>
 
-        <!-- Dropdown Menu Panel (Appears on Hover and Click, matching Image 3) -->
         <div class="site-menu-dropdown" id="siteMenuDropdown" role="menu" aria-label="Main Navigation">
           <button class="site-menu-btn site-menu-btn-inside" id="siteMenuBtnInside" aria-label="Close navigation menu">
             <span class="site-menu-text">Menu</span>
@@ -45,34 +50,45 @@
           <nav class="site-menu-nav">
             <a href="#hero" class="site-nav-link" role="menuitem">Home</a>
             <a href="#who-we-serve" class="site-nav-link" role="menuitem">Who we serve</a>
-            <a href="#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
             <a href="#how-we-work" class="site-nav-link" role="menuitem">Our approach</a>
-            <a href="#latest-blogs" class="site-nav-link" role="menuitem">Insights</a>
+            <a href="#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
+            <a href="calculator.html" class="site-nav-link" role="menuitem">Financial Tools</a>
+            <a href="blog.html" class="site-nav-link" role="menuitem">Insights &amp; Blogs</a>
             <a href="#five-questions" class="site-nav-link" role="menuitem">About us</a>
-            <a href="#footer" class="site-nav-link" role="menuitem">Contact</a>
-            <a href="#footer" class="site-nav-link site-nav-cta" role="menuitem">Book a consultation</a>
+            <a href="#consultation" class="site-nav-link" role="menuitem">Contact</a>
+            <a href="#consultation" class="site-nav-link site-nav-cta" role="menuitem"
+              data-open-consultation="true">Book a consultation</a>
           </nav>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Top anchor for Home / Hero navigation (ensures scroll to initial state) -->
+  <div id="top" style="position: absolute; top: 0; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
+  <div id="hero" style="position: absolute; top: 0; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
+
   <!-- Hero Section with Scroll Zoom-Out Effect -->
   <div class="hero-scroll" id="heroScroll">
-    <section class="hero-section" id="hero">
+    <section class="hero-section">
       <!-- Background Circle Graphic behind text -->
       <div class="hero-circle-bg" id="heroCircleBg" aria-hidden="true">
-        <svg class="hero-circle-svg" width="1033" height="970" viewBox="0 0 1033 970" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M204.5 867.5C204.5 923.833 158.833 969.5 102.5 969.5C46.167 969.5 0.5 923.833 0.5 867.5C0.5 811.167 46.167 765.5 102.5 765.5C158.833 765.5 204.5 811.167 204.5 867.5Z" stroke="#0CAF80"/>
-          <path d="M110.664 875.515L261.336 724.486" stroke="#0CAF80"/>
-          <path d="M1032.5 485C1032.5 752.582 815.582 969.5 548 969.5C280.418 969.5 63.5 752.582 63.5 485C63.5 217.418 280.418 0.5 548 0.5C815.582 0.5 1032.5 217.418 1032.5 485Z" stroke="#0CAF80"/>
+        <svg class="hero-circle-svg" width="1033" height="970" viewBox="0 0 1033 970" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M204.5 867.5C204.5 923.833 158.833 969.5 102.5 969.5C46.167 969.5 0.5 923.833 0.5 867.5C0.5 811.167 46.167 765.5 102.5 765.5C158.833 765.5 204.5 811.167 204.5 867.5Z"
+            stroke="#0CAF80" />
+          <path d="M110.664 875.515L261.336 724.486" stroke="#0CAF80" />
+          <path
+            d="M1032.5 485C1032.5 752.582 815.582 969.5 548 969.5C280.418 969.5 63.5 752.582 63.5 485C63.5 217.418 280.418 0.5 548 0.5C815.582 0.5 1032.5 217.418 1032.5 485Z"
+            stroke="#0CAF80" />
           <!-- Smooth 360 deg Orbiting Dot on Large Circle -->
           <g class="hero-orbit-large">
-            <circle class="hero-dot hero-dot-large" cx="845" cy="104" r="8" fill="#0CAF80"/>
+            <circle class="hero-dot hero-dot-large" cx="845" cy="104" r="8" fill="#0CAF80" />
           </g>
           <!-- Smooth 360 deg Orbiting Dot on Small Circle -->
           <g class="hero-orbit-small">
-            <circle class="hero-dot hero-dot-small" cx="181" cy="803" r="8" fill="#0CAF80"/>
+            <circle class="hero-dot hero-dot-small" cx="181" cy="803" r="8" fill="#0CAF80" />
           </g>
         </svg>
 
@@ -85,15 +101,18 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
-            <span class="hero-title-line">Wealth, run on</span>
-            <span class="hero-title-line">discipline <span class="light-text">- not instinct.</span></span>
+            <span class="hero-title-line">Wealth runs on</span>
+            <span class="hero-title-line">discipline, <span class="light-text"> not instinct.</span></span>
           </h1>
           <p class="hero-description">
-            BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy. We build portfolios, plans, and a working relationship that holds up long after the first meeting.
+            BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.
+            We build portfolios, plans, and a working relationship that holds up long after the first meeting.
           </p>
           <div class="hero-actions">
-            <a href="#how-it-works" class="btn btn-primary" id="btn-see-how-we-work">See how we work</a>
-            <a href="#consultation" class="btn btn-outline" id="btn-book-consultation">Book a consultation</a>
+            <!-- "See how we work" button (Temporarily removed - can be restored later) -->
+            <!-- <a href="#how-we-work" class="btn btn-primary" id="btn-see-how-we-work">See how we work</a> -->
+            <a href="#consultation" class="btn btn-primary" id="btn-book-consultation"
+              data-open-consultation="true">Book a consultation</a>
           </div>
         </div>
       </div>
@@ -104,15 +123,16 @@
   <section class="serve-section" id="who-we-serve">
     <!-- Top-Right Brand Decorative Element with Rotating Orbiting Dot -->
     <div class="serve-decor" aria-hidden="true">
-      <svg class="serve-decor-svg" width="297" height="466" viewBox="0 0 297 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="serve-decor-svg" width="297" height="466" viewBox="0 0 297 466" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
         <!-- Circular Line & Orbiting Dot (Shifted slightly to the right, rotation preserved) -->
         <g class="serve-circle-wrapper" transform="translate(30, 0)">
           <!-- Circular Line -->
-          <circle cx="150" cy="307" r="137" stroke="#0D251E" stroke-width="1.2" fill="none" opacity="0.9"/>
+          <circle cx="150" cy="307" r="137" stroke="#0D251E" stroke-width="1.2" fill="none" opacity="0.9" />
           <!-- Smooth 360 deg Orbiting Dot on Circle Line -->
           <g transform="translate(150, 307)">
             <g class="serve-orbit-group">
-              <circle class="serve-decor-dot" cx="41" cy="-130.7" r="8" fill="#0D251E"/>
+              <circle class="serve-decor-dot" cx="41" cy="-130.7" r="8" fill="#0D251E" />
             </g>
           </g>
         </g>
@@ -134,10 +154,14 @@
       <div class="serve-deck-wrapper">
         <!-- 4 Vertical Control Dots -->
         <div class="deck-controls" role="tablist" aria-label="Who we serve profiles">
-          <button class="deck-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Card 1: Business owners & entrepreneurs"></button>
-          <button class="deck-dot" data-index="1" role="tab" aria-selected="false" aria-label="Card 2: Corporate leaders & executives"></button>
-          <button class="deck-dot" data-index="2" role="tab" aria-selected="false" aria-label="Card 3: Next-gen wealth & families"></button>
-          <button class="deck-dot" data-index="3" role="tab" aria-selected="false" aria-label="Card 4: Tech founders & innovators"></button>
+          <button class="deck-dot active" data-index="0" role="tab" aria-selected="true"
+            aria-label="Card 1: Business owners & entrepreneurs"></button>
+          <button class="deck-dot" data-index="1" role="tab" aria-selected="false"
+            aria-label="Card 2: Corporate leaders & executives"></button>
+          <button class="deck-dot" data-index="2" role="tab" aria-selected="false"
+            aria-label="Card 3: Next-gen wealth & families"></button>
+          <button class="deck-dot" data-index="3" role="tab" aria-selected="false"
+            aria-label="Card 4: Affluent individuals & founders"></button>
         </div>
 
         <!-- Stacked Cards Container -->
@@ -149,12 +173,14 @@
               <div class="card-text-content">
                 <h3 class="card-title">Business Owners<br>&amp; Entrepreneurs</h3>
                 <p class="card-desc">
-                  Wealth tied up in the business, income that isn't a steady paycheck, and an eventual exit that needs a plan of its own.
+                  Wealth tied up in the business, income that isn't a steady paycheck, and an eventual exit that needs a
+                  plan of its own.
                 </p>
               </div>
             </div>
             <div class="card-right">
-              <img src="assets/images/who_we_serve/business_owner.jpg" alt="Business owners &amp; entrepreneurs" class="card-img card-img--business" loading="eager">
+              <img src="assets/images/who_we_serve/business_owner.jpg" alt="Business owners &amp; entrepreneurs"
+                class="card-img card-img--business" loading="eager">
             </div>
           </article>
 
@@ -170,7 +196,8 @@
               </div>
             </div>
             <div class="card-right">
-              <img src="assets/images/who_we_serve/seniorprofessionals.jpg" alt="CXOs &amp; Senior Professionals" class="card-img card-img--executive" loading="lazy">
+              <img src="assets/images/who_we_serve/seniorprofessionals.jpg" alt="CXOs &amp; Senior Professionals"
+                class="card-img card-img--executive" loading="lazy">
             </div>
           </article>
 
@@ -179,14 +206,16 @@
             <div class="card-left">
               <span class="card-num">03</span>
               <div class="card-text-content">
-                <h3 class="card-title">Families & <br>&amp; Next Generation</h3>
+                <h3 class="card-title">Families &amp;<br>Next-Gen Wealth</h3>
                 <p class="card-desc">
-                  Wealth that needs to move between generations cleanly — and stay a family asset, not a family argument.
+                  Wealth that needs to move between generations cleanly, staying a family asset rather than a family
+                  argument.
                 </p>
               </div>
             </div>
             <div class="card-right">
-              <img src="assets/images/who_we_serve/nextgen_family.jpg" alt="Next-gen wealth &amp; families" class="card-img card-img--family" loading="lazy">
+              <img src="assets/images/who_we_serve/nextgen_family.jpg" alt="Next-gen wealth &amp; families"
+                class="card-img card-img--family" loading="lazy">
             </div>
           </article>
 
@@ -195,14 +224,15 @@
             <div class="card-left">
               <span class="card-num">04</span>
               <div class="card-text-content">
-                <h3 class="card-title">Affluent<br>&amp; Individuals</h3>
+                <h3 class="card-title">Affluent Individuals<br>&amp; Founders</h3>
                 <p class="card-desc">
                   A portfolio that's outgrown what a single fund or a single advisor conversation can manage well.
                 </p>
               </div>
             </div>
             <div class="card-right">
-              <img src="assets/images/who_we_serve/techfounder.jpg" alt="Tech founders &amp; innovators" class="card-img card-img--founder" loading="lazy">
+              <img src="assets/images/who_we_serve/techfounder.jpg" alt="Affluent individuals &amp; founders"
+                class="card-img card-img--founder" loading="lazy">
             </div>
           </article>
         </div>
@@ -214,12 +244,15 @@
   <section class="investing-section" id="disciplined-investing">
     <!-- Big Arc with Dot SVG -->
     <div class="investing-decor" aria-hidden="true">
-      <svg class="investing-decor-svg" width="1828" height="1823" viewBox="0 0 1828 1823" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1827.4 911.5C1827.4 1414.58 1419.58 1822.4 916.5 1822.4C413.424 1822.4 5.6 1414.58 5.6 911.5C5.6 408.424 413.424 0.6 916.5 0.6C1419.58 0.6 1827.4 408.424 1827.4 911.5Z" stroke-width="1.2" stroke="#09D59F"/>
+      <svg class="investing-decor-svg" width="1828" height="1823" viewBox="0 0 1828 1823" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1827.4 911.5C1827.4 1414.58 1419.58 1822.4 916.5 1822.4C413.424 1822.4 5.6 1414.58 5.6 911.5C5.6 408.424 413.424 0.6 916.5 0.6C1419.58 0.6 1827.4 408.424 1827.4 911.5Z"
+          stroke-width="1.2" stroke="#09D59F" />
         <!-- 180-Degree Smooth Orbiting Dot on Arc -->
         <g transform="translate(916.5, 911.5)">
           <g class="investing-orbit-group">
-            <circle class="investing-decor-dot" cx="0" cy="-910.9" r="8" fill="#09D59F"/>
+            <circle class="investing-decor-dot" cx="0" cy="-910.9" r="8" fill="#09D59F" />
           </g>
         </g>
       </svg>
@@ -237,16 +270,18 @@
         <!-- Item 1: 05 pillars -->
         <div class="investing-card">
           <div class="investing-icon-box">
-            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="05 pillars">
-              <path d="M0.253391 0.253391H19.0642V129.116H0.253391V0.253391Z" stroke-width="0.506781" stroke="white"/>
-              <path d="M31.8642 40.0594H50.6751V129.116H31.8642V40.0594Z" stroke-width="0.506781" stroke="white"/>
-              <path d="M85.134 40.0594H103.359V129.116H85.134V40.0594Z" stroke-width="0.506781" stroke="white"/>
-              <path d="M58.792 65.2315H77.0174V129.117H58.792V65.2315Z" stroke-width="0.506781" stroke="white"/>
-              <path d="M110.305 0.253391H129.116V129.116H110.305V0.253391Z" stroke-width="0.506781" stroke="white"/>
-              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none"
+              xmlns="http://www.w3.org/2000/svg" aria-label="05 pillars">
+              <path d="M0.253391 0.253391H19.0642V129.116H0.253391V0.253391Z" stroke-width="0.506781" stroke="white" />
+              <path d="M31.8642 40.0594H50.6751V129.116H31.8642V40.0594Z" stroke-width="0.506781" stroke="white" />
+              <path d="M85.134 40.0594H103.359V129.116H85.134V40.0594Z" stroke-width="0.506781" stroke="white" />
+              <path d="M58.792 65.2315H77.0174V129.117H58.792V65.2315Z" stroke-width="0.506781" stroke="white" />
+              <path d="M110.305 0.253391H129.116V129.116H110.305V0.253391Z" stroke-width="0.506781" stroke="white" />
+              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382"
+                stroke="#FFFEFE" />
               <!-- Dot moving strictly up and down along Pillar 2 line -->
               <g class="pillar-dot-group">
-                <circle cx="33.5222" cy="39.7346" r="4.68306" fill="#09D59F"/>
+                <circle cx="33.5222" cy="39.7346" r="4.68306" fill="#09D59F" />
               </g>
             </svg>
           </div>
@@ -259,12 +294,17 @@
         <!-- Item 2: 06 steps -->
         <div class="investing-card">
           <div class="investing-icon-box">
-            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="06 steps">
-              <path d="M0.292935 0.292691H129.077V129.077H0.292935V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
-              <path d="M0 120.589H17.7943V106.199H39.917V91.4901H61.5587V77.2604H85.9257V62.551H106.125V48.0016H129.369" stroke-width="0.585382" stroke="white"/>
-              <path d="M0 88.3932H17.7943V73.8876H39.917V59.0597H61.5587V44.7152H85.9257V29.8872H106.125V15.2205H129.369" stroke-width="0.585382" stroke="white"/>
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none"
+              xmlns="http://www.w3.org/2000/svg" aria-label="06 steps">
+              <path d="M0.292935 0.292691H129.077V129.077H0.292935V0.292691Z" stroke-width="0.585382"
+                stroke="#FFFEFE" />
+              <path d="M0 120.589H17.7943V106.199H39.917V91.4901H61.5587V77.2604H85.9257V62.551H106.125V48.0016H129.369"
+                stroke-width="0.585382" stroke="white" />
+              <path
+                d="M0 88.3932H17.7943V73.8876H39.917V59.0597H61.5587V44.7152H85.9257V29.8872H106.125V15.2205H129.369"
+                stroke-width="0.585382" stroke="white" />
               <!-- Dot moving along staircase line from top to bottom -->
-              <circle class="step-dot-climber" cx="0" cy="0" r="4.68306" fill="#09D59F"/>
+              <circle class="step-dot-climber" cx="0" cy="0" r="4.68306" fill="#09D59F" />
             </svg>
           </div>
           <h3 class="investing-card-title">06 steps</h3>
@@ -276,17 +316,27 @@
         <!-- Item 3: 09 disciplines -->
         <div class="investing-card">
           <div class="investing-icon-box">
-            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="09 disciplines">
-              <path d="M117.369 64.6846C117.369 93.7814 93.7811 117.369 64.6844 117.369C35.5876 117.369 12 93.7814 12 64.6846C12 35.5878 35.5876 12.0002 64.6844 12.0002C93.7811 12.0002 117.369 35.5878 117.369 64.6846Z" stroke-width="0.585382" stroke="white"/>
-              <path d="M103.32 64.6848C103.32 86.0224 86.0222 103.32 64.6845 103.32C43.3469 103.32 26.0493 86.0224 26.0493 64.6848C26.0493 43.3471 43.3469 26.0495 64.6845 26.0495C86.0222 26.0495 103.32 43.3471 103.32 64.6848Z" stroke-width="0.585382" stroke="white"/>
-              <path d="M89.8558 64.6854C89.8558 78.5872 78.5861 89.8569 64.6843 89.8569C50.7825 89.8569 39.5129 78.5872 39.5129 64.6854C39.5129 50.7836 50.7825 39.514 64.6843 39.514C78.5861 39.514 89.8558 50.7836 89.8558 64.6854Z" stroke-width="0.585382" stroke="white"/>
-              <path d="M74.6359 64.9781C74.6359 70.3125 70.3115 74.6369 64.9771 74.6369C59.6427 74.6369 55.3183 70.3125 55.3183 64.9781C55.3183 59.6437 59.6427 55.3193 64.9771 55.3193C70.3115 55.3193 74.6359 59.6437 74.6359 64.9781Z" stroke-width="0.585382" stroke="white"/>
-              <path d="M65.5624 64.9781L0.584961 128.785" stroke-width="0.585382" stroke="white"/>
-              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382" stroke="#FFFEFE"/>
+            <svg class="investing-icon" width="130" height="130" viewBox="0 0 130 130" fill="none"
+              xmlns="http://www.w3.org/2000/svg" aria-label="09 disciplines">
+              <path
+                d="M117.369 64.6846C117.369 93.7814 93.7811 117.369 64.6844 117.369C35.5876 117.369 12 93.7814 12 64.6846C12 35.5878 35.5876 12.0002 64.6844 12.0002C93.7811 12.0002 117.369 35.5878 117.369 64.6846Z"
+                stroke-width="0.585382" stroke="white" />
+              <path
+                d="M103.32 64.6848C103.32 86.0224 86.0222 103.32 64.6845 103.32C43.3469 103.32 26.0493 86.0224 26.0493 64.6848C26.0493 43.3471 43.3469 26.0495 64.6845 26.0495C86.0222 26.0495 103.32 43.3471 103.32 64.6848Z"
+                stroke-width="0.585382" stroke="white" />
+              <path
+                d="M89.8558 64.6854C89.8558 78.5872 78.5861 89.8569 64.6843 89.8569C50.7825 89.8569 39.5129 78.5872 39.5129 64.6854C39.5129 50.7836 50.7825 39.514 64.6843 39.514C78.5861 39.514 89.8558 50.7836 89.8558 64.6854Z"
+                stroke-width="0.585382" stroke="white" />
+              <path
+                d="M74.6359 64.9781C74.6359 70.3125 70.3115 74.6369 64.9771 74.6369C59.6427 74.6369 55.3183 70.3125 55.3183 64.9781C55.3183 59.6437 59.6427 55.3193 64.9771 55.3193C70.3115 55.3193 74.6359 59.6437 74.6359 64.9781Z"
+                stroke-width="0.585382" stroke="white" />
+              <path d="M65.5624 64.9781L0.584961 128.785" stroke-width="0.585382" stroke="white" />
+              <path d="M0.292691 0.292691H129.077V129.077H0.292691V0.292691Z" stroke-width="0.585382"
+                stroke="#FFFEFE" />
               <!-- Dot orbiting strictly along the concentric circle line -->
               <g transform="translate(64.6845, 64.6848)">
                 <g class="discipline-orbit-group">
-                  <circle cx="-36.2519" cy="9.8263" r="4.68306" fill="#09D59F"/>
+                  <circle cx="-36.2519" cy="9.8263" r="4.68306" fill="#09D59F" />
                 </g>
               </g>
             </svg>
@@ -304,20 +354,23 @@
   <section class="questions-section" id="five-questions">
     <!-- Top-Right Decorative Overlapping Circles SVG -->
     <div class="questions-decor" aria-hidden="true">
-      <svg class="questions-decor-svg" width="692" height="781" viewBox="0 0 692 781" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+      <svg class="questions-decor-svg" width="692" height="781" viewBox="0 0 692 781" fill="none"
+        xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
         <!-- Circle 1 (Large, right, extending out of screen) -->
-        <circle cx="528.39" cy="388.64" r="242.20" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85" fill="none"/>
+        <circle cx="528.39" cy="388.64" r="242.20" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85"
+          fill="none" />
         <g transform="translate(528.39, 388.64)">
           <g class="q-dot-orbit-1">
-            <circle cx="-122.76" cy="-208.53" r="7.6" fill="#09D59F"/>
+            <circle cx="-122.76" cy="-208.53" r="7.6" fill="#09D59F" />
           </g>
         </g>
 
         <!-- Circle 2 (Small, left) -->
-        <circle cx="231.34" cy="288.24" r="151.51" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85" fill="none"/>
+        <circle cx="231.34" cy="288.24" r="151.51" stroke="#46DBB1" stroke-width="1.6" stroke-opacity="0.85"
+          fill="none" />
         <g transform="translate(231.34, 288.24)">
           <g class="q-dot-orbit-2">
-            <circle cx="-101.93" cy="111.92" r="4.8" fill="#09D59F"/>
+            <circle cx="-101.93" cy="111.92" r="4.8" fill="#09D59F" />
           </g>
         </g>
       </svg>
@@ -332,7 +385,7 @@
         </h2>
         <p class="questions-subtitle">
           The Five-Pillar Portfolio Framework. Every idea must answer<br>
-          all five — or it does not enter the portfolio.
+          all five before it enters the portfolio.
         </p>
       </div>
 
@@ -344,7 +397,8 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-1" role="region" aria-labelledby="acc-head-1">
-            <p>Is the underlying business, asset or strategy sound — earnings, balance sheet, governance — without the story attached to it?</p>
+            <p>Is the underlying business, asset or strategy sound (earnings, balance sheet, governance) without the
+              story attached to it?</p>
           </div>
         </div>
         <div class="acc-item">
@@ -353,7 +407,8 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-2" role="region" aria-labelledby="acc-head-2">
-            <p>What are we paying versus what we are getting — and what has to go right for that price to make sense?</p>
+            <p>What are we paying versus what we are getting, and what must go right for that price to make sense?
+            </p>
           </div>
         </div>
         <div class="acc-item">
@@ -362,7 +417,8 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-3" role="region" aria-labelledby="acc-head-3">
-            <p>How does it behave in a drawdown? Position sizing, correlation and the exit — decided before entry, not during panic.</p>
+            <p>How does it behave in a drawdown? Position sizing, correlation and the exit are decided before entry,
+              never during panic.</p>
           </div>
         </div>
         <div class="acc-item">
@@ -371,7 +427,8 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-4" role="region" aria-labelledby="acc-head-4">
-            <p>Where is informed money positioned — and are we early, aligned, or the liquidity someone else is waiting for?</p>
+            <p>Where is informed money positioned, and are we early, aligned, or the liquidity someone else is waiting
+              for?</p>
           </div>
         </div>
         <div class="acc-item">
@@ -380,7 +437,7 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-5" role="region" aria-labelledby="acc-head-5">
-            <p>Does price structure confirm the thesis? Entries are timed, staged and documented — never improvised.</p>
+            <p>Does price structure confirm the thesis? Entries are timed, staged and documented, never improvised.</p>
           </div>
         </div>
       </div>
@@ -401,12 +458,18 @@
       <div class="steps-deck-wrapper">
         <!-- 6 Vertical Control Dots -->
         <div class="steps-controls" role="tablist" aria-label="How we work steps">
-          <button class="steps-dot active" data-step="0" role="tab" aria-selected="true" aria-label="Step 1: Discovery Meeting"></button>
-          <button class="steps-dot" data-step="1" role="tab" aria-selected="false" aria-label="Step 2: Risk Profiling"></button>
-          <button class="steps-dot" data-step="2" role="tab" aria-selected="false" aria-label="Step 3: Portfolio Design"></button>
-          <button class="steps-dot" data-step="3" role="tab" aria-selected="false" aria-label="Step 4: Execution"></button>
-          <button class="steps-dot" data-step="4" role="tab" aria-selected="false" aria-label="Step 5: Reporting &amp; Monitoring"></button>
-          <button class="steps-dot" data-step="5" role="tab" aria-selected="false" aria-label="Step 6: Periodic Reviews"></button>
+          <button class="steps-dot active" data-step="0" role="tab" aria-selected="true"
+            aria-label="Step 1: Discovery Meeting"></button>
+          <button class="steps-dot" data-step="1" role="tab" aria-selected="false"
+            aria-label="Step 2: Risk Profiling"></button>
+          <button class="steps-dot" data-step="2" role="tab" aria-selected="false"
+            aria-label="Step 3: Portfolio Design"></button>
+          <button class="steps-dot" data-step="3" role="tab" aria-selected="false"
+            aria-label="Step 4: Execution"></button>
+          <button class="steps-dot" data-step="4" role="tab" aria-selected="false"
+            aria-label="Step 5: Reporting &amp; Monitoring"></button>
+          <button class="steps-dot" data-step="5" role="tab" aria-selected="false"
+            aria-label="Step 6: Periodic Reviews"></button>
         </div>
 
         <!-- Stacked 6 Cards Container -->
@@ -423,7 +486,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/discovery_meeting.jpg" alt="Discovery Meeting" class="steps-card-img steps-card-img--discovery" loading="eager">
+              <img src="assets/images/six_steps/discovery_meeting.jpg" alt="Discovery Meeting"
+                class="steps-card-img steps-card-img--discovery" loading="eager">
             </div>
           </article>
 
@@ -439,7 +503,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/risk_profiling.jpg" alt="Risk Profiling" class="steps-card-img steps-card-img--risk" loading="lazy">
+              <img src="assets/images/six_steps/risk_profiling.jpg" alt="Risk Profiling"
+                class="steps-card-img steps-card-img--risk" loading="lazy">
             </div>
           </article>
 
@@ -455,7 +520,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/portfolio_design.jpg" alt="Portfolio Design" class="steps-card-img steps-card-img--portfolio" loading="lazy">
+              <img src="assets/images/six_steps/portfolio_design.jpg" alt="Portfolio Design"
+                class="steps-card-img steps-card-img--portfolio" loading="lazy">
             </div>
           </article>
 
@@ -471,7 +537,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/excution.jpg" alt="Execution" class="steps-card-img steps-card-img--execution" loading="lazy">
+              <img src="assets/images/six_steps/excution.jpg" alt="Execution"
+                class="steps-card-img steps-card-img--execution" loading="lazy">
             </div>
           </article>
 
@@ -487,7 +554,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/monitoring.jpg" alt="Reporting &amp; Monitoring" class="steps-card-img steps-card-img--monitoring" loading="lazy">
+              <img src="assets/images/six_steps/monitoring.jpg" alt="Reporting &amp; Monitoring"
+                class="steps-card-img steps-card-img--monitoring" loading="lazy">
             </div>
           </article>
 
@@ -503,7 +571,8 @@
               </div>
             </div>
             <div class="steps-card-right">
-              <img src="assets/images/six_steps/periodic_review.jpg" alt="Periodic Reviews" class="steps-card-img steps-card-img--reviews" loading="lazy">
+              <img src="assets/images/six_steps/periodic_review.jpg" alt="Periodic Reviews"
+                class="steps-card-img steps-card-img--reviews" loading="lazy">
             </div>
           </article>
         </div>
@@ -522,7 +591,8 @@
           One advisor relationship.
         </h2>
         <p class="disciplines-subtitle">
-          Most of what happens to your money touches more than one discipline. That is why we do not hand you off between departments.
+          Most of what happens to your money touches more than one discipline. That is why we do not hand you off
+          between departments.
         </p>
       </div>
     </div>
@@ -533,155 +603,173 @@
         <div class="disciplines-container disciplines-container--showcase">
           <!-- Interactive 9 Disciplines Showcase -->
           <div class="disciplines-wrapper">
-        <!-- 9 Vertical Numbered Buttons -->
-        <nav class="disciplines-nav" role="tablist" aria-label="Nine disciplines">
-          <button class="discipline-btn active" data-discipline="0" role="tab" aria-selected="true" aria-label="1. Wealth management">1</button>
-          <button class="discipline-btn" data-discipline="1" role="tab" aria-selected="false" aria-label="2. Financial planning">2</button>
-          <button class="discipline-btn" data-discipline="2" role="tab" aria-selected="false" aria-label="3. Tax architecture">3</button>
-          <button class="discipline-btn" data-discipline="3" role="tab" aria-selected="false" aria-label="4. Risk &amp; protection planning">4</button>
-          <button class="discipline-btn" data-discipline="4" role="tab" aria-selected="false" aria-label="5. Estate &amp; succession planning">5</button>
-          <button class="discipline-btn" data-discipline="5" role="tab" aria-selected="false" aria-label="6. Tax planning &amp; CA coordination">6</button>
-          <button class="discipline-btn" data-discipline="6" role="tab" aria-selected="false" aria-label="7. Alternative investment strategies">7</button>
-          <button class="discipline-btn" data-discipline="7" role="tab" aria-selected="false" aria-label="8. Alternative investment strategies">8</button>
-          <button class="discipline-btn" data-discipline="8" role="tab" aria-selected="false" aria-label="9. Investment advisory">9</button>
-        </nav>
+            <!-- 9 Vertical Numbered Buttons -->
+            <nav class="disciplines-nav" role="tablist" aria-label="Nine disciplines">
+              <button class="discipline-btn active" data-discipline="0" role="tab" aria-selected="true"
+                aria-label="1. Wealth management">1</button>
+              <button class="discipline-btn" data-discipline="1" role="tab" aria-selected="false"
+                aria-label="2. Investment solutions">2</button>
+              <button class="discipline-btn" data-discipline="2" role="tab" aria-selected="false"
+                aria-label="3. Alternative investment strategies">3</button>
+              <button class="discipline-btn" data-discipline="3" role="tab" aria-selected="false"
+                aria-label="4. Comprehensive financial planning">4</button>
+              <button class="discipline-btn" data-discipline="4" role="tab" aria-selected="false"
+                aria-label="5. Risk &amp; protection planning">5</button>
+              <button class="discipline-btn" data-discipline="5" role="tab" aria-selected="false"
+                aria-label="6. Estate &amp; succession planning">6</button>
+              <button class="discipline-btn" data-discipline="6" role="tab" aria-selected="false"
+                aria-label="7. Tax planning &amp; CA coordination">7</button>
+              <button class="discipline-btn" data-discipline="7" role="tab" aria-selected="false"
+                aria-label="8. Loan syndication &amp; funding">8</button>
+              <button class="discipline-btn" data-discipline="8" role="tab" aria-selected="false"
+                aria-label="9. Global &amp; cross-border investing">9</button>
+            </nav>
 
-        <!-- Showcase Card Stage -->
-        <div class="disciplines-stage">
-          <!-- Shared vector overlay: circles, lines and dots morph between cards (drawn in main.js) -->
-          <svg class="discipline-geom" aria-hidden="true" focusable="false"></svg>
+            <!-- Showcase Card Stage -->
+            <div class="disciplines-stage">
+              <!-- Shared vector overlay: circles, lines and dots morph between cards (drawn in main.js) -->
+              <svg class="discipline-geom" aria-hidden="true" focusable="false"></svg>
 
-          <!-- Card 1: Wealth management -->
-          <article class="discipline-card active" data-card="0" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/wealth_management_01.png" alt="Wealth management" class="discipline-img" loading="eager">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Wealth<br>management</h3>
-              <p class="discipline-desc">
-                The core mandate: build, protect,<br>and grow what you've earned.
-              </p>
-            </div>
-          </article>
+              <!-- Card 1: Wealth management -->
+              <article class="discipline-card active" data-card="0" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/wealth_management_01.png" alt="Wealth management"
+                    class="discipline-img" loading="eager">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Wealth<br>management</h3>
+                  <p class="discipline-desc">
+                    The core mandate: build, protect,<br>and grow what you've earned.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 2: Financial planning -->
-          <article class="discipline-card" data-card="1" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Financial planning" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Investment<br>Solutions</h3>
-              <p class="discipline-desc">
-                Access to instruments and strategies that fit your goals — not just what's easy to sell.
-              </p>
-            </div>
-          </article>
+              <!-- Card 2: Investment solutions -->
+              <article class="discipline-card" data-card="1" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Investment solutions"
+                    class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Investment<br>Solutions</h3>
+                  <p class="discipline-desc">
+                    Access to instruments and strategies built around your goals, not what is easy to distribute.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 3: Tax architecture -->
-          <article class="discipline-card" data-card="2" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Tax architecture" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Alternative <br> Investment Strategies</h3>
-              <p class="discipline-desc">
-                Beyond listed markets, for portfolios that can carry the complexity.
-              </p>
-            </div>
-          </article>
+              <!-- Card 3: Alternative investment strategies -->
+              <article class="discipline-card" data-card="2" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Alternative investment strategies"
+                    class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Alternative <br> Investment Strategies</h3>
+                  <p class="discipline-desc">
+                    Beyond listed markets, for portfolios that can carry the complexity.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 4: Risk & Protection Planning -->
-          <article class="discipline-card discipline-card--center" data-card="3" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png" alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Comprehensive &amp; Financial<br>Planning</h3>
-              <p class="discipline-desc">
-                Every goal you're funding, mapped against every rupee you have.
-              </p>
-            </div>
-          </article>
+              <!-- Card 4: Comprehensive Financial Planning -->
+              <article class="discipline-card discipline-card--center" data-card="3" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png"
+                    alt="Comprehensive Financial Planning" class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Comprehensive<br>Financial Planning</h3>
+                  <p class="discipline-desc">
+                    Every goal you're funding, mapped against every rupee you have.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 5: Estate & Succession Planning -->
-          <article class="discipline-card discipline-card--center" data-card="4" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png" alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
-              <p class="discipline-desc">
-                The safeguards that keep one bad year from becoming a bad decade.
-              </p>
-            </div>
-          </article>
+              <!-- Card 5: Risk & Protection Planning -->
+              <article class="discipline-card discipline-card--center" data-card="4" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png"
+                    alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
+                  <p class="discipline-desc">
+                    The safeguards that keep one bad year from becoming a bad decade.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 6: Tax Planning & CA Coordination -->
-          <article class="discipline-card discipline-card--center" data-card="5" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/tax_planning_06.png" alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Estate &amp; Succession <br>Planning</h3>
-              <p class="discipline-desc">
-                Making sure what you've built transfers the way you intend it to.
-              </p>
-            </div>
-          </article>
+              <!-- Card 6: Estate & Succession Planning -->
+              <article class="discipline-card discipline-card--center" data-card="5" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/tax_planning_06.png"
+                    alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Estate &amp; Succession <br>Planning</h3>
+                  <p class="discipline-desc">
+                    Making sure what you've built transfers the way you intend it to.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 7: Alternative Investment Strategies -->
-          <article class="discipline-card discipline-card--bottom" data-card="6" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Tax Planning &amp; CA <br>Coordination</h3>
-              <p class="discipline-desc">
-                Working alongside your CA, not around them.
-              </p>
-            </div>
-          </article>
+              <!-- Card 7: Tax Planning & CA Coordination -->
+              <article class="discipline-card discipline-card--bottom" data-card="6" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/alternative_investment_07.png"
+                    alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Tax Planning &amp; CA <br>Coordination</h3>
+                  <p class="discipline-desc">
+                    Working alongside your CA, not around them.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 8: Loan & Liability Advisory (Alternative Investment Strategies) -->
-          <article class="discipline-card discipline-card--bottom" data-card="7" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/alternative_investment_08.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
-            </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Loan &amp; Liability <br>Advisory</h3>
-              <p class="discipline-desc">
-               Debt structured as deliberately as your investments.
-              </p>
-            </div>
-          </article>
+              <!-- Card 8: Loan Syndication & Funding -->
+              <article class="discipline-card discipline-card--bottom" data-card="7" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/alternative_investment_08.png"
+                    alt="Loan Syndication &amp; Funding" class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Loan Syndication<br>&amp; Funding</h3>
+                  <p class="discipline-desc">
+                    Debt structured as deliberately as your investments, from corporate syndication to private credit.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Card 9: Investment Advisory -->
-          <article class="discipline-card discipline-card--bottom" data-card="8" role="tabpanel">
-            <div class="discipline-media">
-              <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Investment Advisory" class="discipline-img" loading="lazy">
-              <div class="discipline-overlay"></div>
+              <!-- Card 9: Global & Cross-Border Investing -->
+              <article class="discipline-card discipline-card--bottom" data-card="8" role="tabpanel">
+                <div class="discipline-media">
+                  <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Global &amp; Cross-Border Investing"
+                    class="discipline-img" loading="lazy">
+                  <div class="discipline-overlay"></div>
+                </div>
+                <div class="discipline-content">
+                  <h3 class="discipline-title">Global &amp; Cross-Border<br>Investing</h3>
+                  <p class="discipline-desc">
+                    Access to global markets through LRS and GIFT City corridors, fully compliant with cross-border regulations.
+                  </p>
+                </div>
+              </article>
             </div>
-            <div class="discipline-content">
-              <h3 class="discipline-title">Investment<br>Advisory</h3>
-              <p class="discipline-desc">
-                Ongoing, research-backed guidance on the calls that actually move a portfolio.
-              </p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
   <!-- Section 06: Investor Corner (Tools) -->
   <section class="investor-corner-section" id="investor-corner">
@@ -697,7 +785,8 @@
         <!-- Tool 1: Financial Calculator -->
         <a class="investor-card" href="calculator.html#financial-calculator" aria-label="Financial Calculator">
           <div class="investor-card-media">
-            <img src="assets/images/investor_corner/financial.svg?v=2" alt="Financial Calculator" class="investor-card-svg" loading="lazy">
+            <img src="assets/images/investor_corner/financial.svg?v=2" alt="Financial Calculator"
+              class="investor-card-svg" loading="lazy">
           </div>
           <h3 class="investor-card-title">Financial<br>Calculator</h3>
           <div class="investor-card-arrow-wrap">
@@ -708,7 +797,8 @@
         <!-- Tool 2: Risk Planning Calculator -->
         <a class="investor-card" href="calculator.html#risk-planning-calculator" aria-label="Risk Planning Calculator">
           <div class="investor-card-media">
-            <img src="assets/images/investor_corner/risk_planning.svg?v=2" alt="Risk Planning Calculator" class="investor-card-svg" loading="lazy">
+            <img src="assets/images/investor_corner/risk_planning.svg?v=2" alt="Risk Planning Calculator"
+              class="investor-card-svg" loading="lazy">
           </div>
           <h3 class="investor-card-title">Risk Planning<br>Calculator</h3>
           <div class="investor-card-arrow-wrap">
@@ -719,7 +809,8 @@
         <!-- Tool 3: Roi Calculator -->
         <a class="investor-card" href="calculator.html#roi-calculator" aria-label="Roi Calculator">
           <div class="investor-card-media">
-            <img src="assets/images/investor_corner/roi_cal.svg?v=3" alt="Roi Calculator" class="investor-card-svg" loading="lazy">
+            <img src="assets/images/investor_corner/roi_cal.svg?v=3" alt="Roi Calculator" class="investor-card-svg"
+              loading="lazy">
           </div>
           <h3 class="investor-card-title">Roi<br>Calculator</h3>
           <div class="investor-card-arrow-wrap">
@@ -730,7 +821,8 @@
         <!-- Tool 4: Mortgage Calculator -->
         <a class="investor-card" href="calculator.html#mortgage-calculator" aria-label="Mortgage Calculator">
           <div class="investor-card-media">
-            <img src="assets/images/investor_corner/mortage.svg?v=2" alt="Mortgage Calculator" class="investor-card-svg" loading="lazy">
+            <img src="assets/images/investor_corner/mortage.svg?v=2" alt="Mortgage Calculator" class="investor-card-svg"
+              loading="lazy">
           </div>
           <h3 class="investor-card-title">Mortgage<br>Calculator</h3>
           <div class="investor-card-arrow-wrap">
@@ -747,7 +839,7 @@
       <!-- Section Header -->
       <div class="testimonial-header">
         <span class="testimonial-eyebrow">Testimonial</span>
-        <h2 class="testimonial-title">What Our Investors Says</h2>
+        <h2 class="testimonial-title">What Our Investors Say</h2>
       </div>
 
       <!-- Testimonial Showcase Area -->
@@ -760,11 +852,12 @@
         <!-- Slider Viewport -->
         <div class="testimonial-viewport" id="testimonialViewport">
           <div class="testimonial-track" id="testimonialTrack">
-            
+
             <!-- Card 1: Mr. Udit Agarwal -->
             <article class="testimonial-card" data-index="0">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_one.png" alt="Mr. Udit Agarwal" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_one.png" alt="Mr. Udit Agarwal"
+                  class="testimonial-avatar-img" loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
@@ -772,7 +865,8 @@
                   <span class="testimonial-author-role">Business Manager</span>
                 </div>
                 <p class="testimonial-quote-text">
-                  I have good experience with BlissMoney. also they provide me good suggestion on time to time and very supportive team.
+                  I have good experience with BlissMoney. also they provide me good suggestion on time to time and very
+                  supportive team.
                 </p>
               </div>
               <div class="testimonial-card-brand-icon">
@@ -783,14 +877,16 @@
             <!-- Card 2: Ashwini Ashu -->
             <article class="testimonial-card" data-index="1">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_three.jpg" alt="Ashwini Ashu" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_three.jpg" alt="Ashwini Ashu"
+                  class="testimonial-avatar-img" loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
                   <h3 class="testimonial-author-name">Ashwini Ashu</h3>
                 </div>
                 <p class="testimonial-quote-text">
-                  Impressive wealth management service! They provide personalized advice, explain options clearly, and handle everything with professionalism.
+                  Impressive wealth management service! They provide personalized advice, explain options clearly, and
+                  handle everything with professionalism.
                 </p>
                 <p class="testimonial-quote-text">
                   My portfolio performance has improved, and I feel secure about my financial future
@@ -804,7 +900,8 @@
             <!-- Card 3: Mr. Gaurav Varshney -->
             <article class="testimonial-card" data-index="2">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_two.jpg" alt="Mr. Gaurav Varshney" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_two.jpg" alt="Mr. Gaurav Varshney"
+                  class="testimonial-avatar-img" loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
@@ -812,7 +909,8 @@
                   <span class="testimonial-author-role">Business Manager</span>
                 </div>
                 <p class="testimonial-quote-text">
-                  It was a great experience to be associated with BlissMoney I wanted to let you know that my family and I, are very impressed with the quality and level of service that are received from BlissMoney.
+                  It was a great experience to be associated with BlissMoney I wanted to let you know that my family and
+                  I, are very impressed with the quality and level of service that are received from BlissMoney.
                 </p>
               </div>
               <div class="testimonial-card-brand-icon">
@@ -823,14 +921,16 @@
             <!-- Card 4: Amulya R -->
             <article class="testimonial-card" data-index="3">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_four.jpg" alt="Amulya R" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_four.jpg" alt="Amulya R" class="testimonial-avatar-img"
+                  loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
                   <h3 class="testimonial-author-name">Kavita R</h3>
                 </div>
                 <p class="testimonial-quote-text">
-                  Working with this wealth management team feels like having a financial compass. They navigate complex investments with clarity and foresight, making my financial journey surprisingly smooth and confident
+                  Working with this wealth management team feels like having a financial compass. They navigate complex
+                  investments with clarity and foresight, making my financial journey surprisingly smooth and confident
                 </p>
               </div>
               <div class="testimonial-card-brand-icon">
@@ -841,14 +941,16 @@
             <!-- Card 5: Dhanush -->
             <article class="testimonial-card" data-index="4">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_five.jpg" alt="Dhanush" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_five.jpg" alt="Dhanush" class="testimonial-avatar-img"
+                  loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
                   <h3 class="testimonial-author-name">Dhanush</h3>
                 </div>
                 <p class="testimonial-quote-text">
-                  Bliss money is more than wealth management - it's a partner in building security, growth, and true financial peace.
+                  Bliss money is more than wealth management - it's a partner in building security, growth, and true
+                  financial peace.
                 </p>
               </div>
               <div class="testimonial-card-brand-icon">
@@ -859,14 +961,16 @@
             <!-- Card 6: Shreyas KJ -->
             <article class="testimonial-card" data-index="5">
               <div class="testimonial-avatar-wrap">
-                <img src="assets/images/testimonial/testimonial_six.jpg" alt="Shreyas KJ" class="testimonial-avatar-img" loading="lazy">
+                <img src="assets/images/testimonial/testimonial_six.jpg" alt="Shreyas KJ" class="testimonial-avatar-img"
+                  loading="lazy">
               </div>
               <div class="testimonial-card-body">
                 <div class="testimonial-card-top">
                   <h3 class="testimonial-author-name">Shreyas KJ</h3>
                 </div>
                 <p class="testimonial-quote-text">
-                  Really receptive and thorough. Should be your go to financial advisory spot for long term wealth planning
+                  Really receptive and thorough. Should be your go to financial advisory spot for long term wealth
+                  planning
                 </p>
               </div>
               <div class="testimonial-card-brand-icon">
@@ -880,7 +984,8 @@
 
       <!-- Navigation Arrow Controls -->
       <div class="testimonial-nav-controls">
-        <button type="button" class="testimonial-nav-btn prev" id="testimonialPrevBtn" aria-label="Previous testimonial">
+        <button type="button" class="testimonial-nav-btn prev" id="testimonialPrevBtn"
+          aria-label="Previous testimonial">
           <img src="assets/images/icon_bm.png" alt="Previous" class="testimonial-nav-icon prev-icon">
         </button>
         <button type="button" class="testimonial-nav-btn next" id="testimonialNextBtn" aria-label="Next testimonial">
@@ -896,19 +1001,24 @@
       <!-- Section Title -->
       <h2 class="latest-blogs-title">Latest Blogs</h2>
 
-      <!-- 3-Card Grid -->
+      <!-- 3-Card Responsive Grid Linking to Dedicated Internal Blog Pages -->
       <div class="latest-blogs-grid">
         <!-- Card 1 -->
         <article class="blog-card">
-          <a href="#blog-market-briefing" class="blog-card-link" aria-label="BlissMoney Weekly Market Briefing: 22–26 June 2026">
+          <a href="blog-weekly-market-briefing.html" class="blog-card-link"
+            aria-label="Read BlissMoney Weekly Market Briefing: 22–26 June 2026">
             <div class="blog-card-media">
-              <img src="assets/images/blog_1.jpg" alt="BlissMoney Weekly Market Briefing" class="blog-card-img" loading="lazy">
+              <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026"
+                class="blog-card-img" loading="lazy"
+                onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/640007440.png';">
             </div>
             <div class="blog-card-content">
-              <h3 class="blog-card-title">BlissMoney Weekly Market Briefing:<br class="title-break"> 22–26 June 2026</h3>
+              <h3 class="blog-card-title">BlissMoney Weekly Market Briefing:<br class="title-break"> 22–26 June 2026
+              </h3>
               <div class="blog-card-action">
                 <span class="blog-card-arrow" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -921,15 +1031,19 @@
 
         <!-- Card 2 -->
         <article class="blog-card">
-          <a href="#blog-market-wrap-may" class="blog-card-link" aria-label="Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
+          <a href="blog-market-wrap-5-may.html" class="blog-card-link"
+            aria-label="Read Market Wrap-Up 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
             <div class="blog-card-media">
-              <img src="assets/images/blog_2.jpg" alt="Market Wrap-Up 5 May 2026" class="blog-card-img" loading="lazy">
+              <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up 5 May 2026" class="blog-card-img"
+                loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/274006207.png';">
             </div>
             <div class="blog-card-content">
-              <h3 class="blog-card-title">Market Wrap-Up | 5 May 2026:<br class="title-break"> Indian Markets Close Lower Amid<br class="title-break"> Global Uncertainty</h3>
+              <h3 class="blog-card-title">Market Wrap-Up | 5 May 2026:<br class="title-break"> Indian Markets Close
+                Lower Amid Global Uncertainty</h3>
               <div class="blog-card-action">
                 <span class="blog-card-arrow" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -942,15 +1056,19 @@
 
         <!-- Card 3 -->
         <article class="blog-card">
-          <a href="#blog-market-wrap-april" class="blog-card-link" aria-label="Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
+          <a href="blog-market-wrap-15-april.html" class="blog-card-link"
+            aria-label="Read Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
             <div class="blog-card-media">
-              <img src="assets/images/blog_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img" loading="lazy">
+              <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img"
+                loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/133003125.png';">
             </div>
             <div class="blog-card-content">
-              <h3 class="blog-card-title">Market Wrap-Up April 15, 2026: Nifty<br class="title-break"> Up 1.63% on US-Iran Hopes</h3>
+              <h3 class="blog-card-title">Market Wrap-Up April 15, 2026:<br class="title-break"> Nifty Up 1.63% on
+                US-Iran Hopes</h3>
               <div class="blog-card-action">
                 <span class="blog-card-arrow" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -964,7 +1082,84 @@
 
       <!-- Bottom Button -->
       <div class="latest-blogs-action">
-        <a href="#how-we-work" class="btn-see-how">See how we work</a>
+        <a href="blog.html" class="btn-see-how" aria-label="Explore all BlissMoney blogs">
+          <span>Explore All Blogs</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SECTION 09: CONSULTATION & CONTACT ======================= -->
+  <section class="consultation-section" id="consultation">
+    <div id="contact" class="consultation-anchor" aria-hidden="true"></div>
+    <div class="consultation-container">
+      <div class="consultation-card">
+        <div class="consultation-glow" aria-hidden="true"></div>
+        <div class="consultation-content">
+          <span class="consultation-eyebrow">09 - Private Wealth Advisory</span>
+          <h2 class="consultation-title">Bring us the <em>full picture.</em></h2>
+          <p class="consultation-description">
+            One structured conversation. No obligation. We will tell you honestly whether we can add value, and where.
+          </p>
+          <div class="consultation-actions">
+            <button type="button" class="btn btn-primary btn-consult-primary" data-open-consultation="true"
+              id="btn-consult-open">
+              Book a consultation
+            </button>
+            <a href="https://wa.me/916364833952?text=Hello%20BlissMoney%2C%20I%20would%20like%20to%20book%20a%20wealth%20consultation."
+              target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-consult-whatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                style="margin-right: 8px;">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Chat on WhatsApp
+            </a>
+            <a href="mailto:hello@blissmoney.in?subject=Consultation%20Inquiry%20-%20BlissMoney"
+              class="btn btn-outline btn-consult-email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right: 8px;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              hello@blissmoney.in
+            </a>
+          </div>
+          <div class="consultation-direct-info">
+            <span class="direct-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0CAF80" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              +91 63648 33952
+            </span>
+            <span class="direct-dot">·</span>
+            <span class="direct-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0CAF80" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Bangalore, India
+            </span>
+            <span class="direct-dot">·</span>
+            <span class="direct-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0CAF80" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Mon – Fri: 9:30 AM – 6:30 PM IST
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -975,23 +1170,44 @@
     <div class="container">
       <div class="foot-top">
         <div class="foot-brand">
-          <a href="#hero" class="brand"><img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo"></a>
+          <a href="#hero" class="brand"><img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo"
+              class="brand-logo"></a>
           <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
           <div class="foot-socials">
-            <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Facebook" title="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z"/></svg>
+            <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z" />
+              </svg>
             </a>
-            <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="Instagram" title="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
             </a>
-            <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="X (Twitter)" title="X (Twitter)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link"
+              aria-label="X (Twitter)" title="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
             </a>
-            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="YouTube" title="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank" rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank"
+              rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
             </a>
           </div>
         </div>
@@ -1002,14 +1218,14 @@
             <a href="#">Why BlissMoney</a>
             <a href="#">Leadership &amp; team</a>
             <a href="#">Careers</a>
-            <a href="#contact">Contact &amp; offices</a>
+            <a href="#consultation">Contact &amp; offices</a>
           </div>
           <div>
             <h4>Explore</h4>
-            <a href="#serve">Who we serve</a>
-            <a href="#offerings">Our offerings</a>
-            <a href="#investor-corner">Investor corner</a>
-            <a href="#latest-blogs">Insights &amp; Blogs</a>
+            <a href="#who-we-serve">Who we serve</a>
+            <a href="#nine-disciplines">Our offerings</a>
+            <a href="calculator.html">Financial Tools</a>
+            <a href="blog.html">Insights &amp; Blogs</a>
           </div>
           <div>
             <h4>Legal</h4>
@@ -1022,7 +1238,8 @@
       </div>
       <div class="foot-bottom">
         <p>© <span id="year">2026</span> BlissMoney. All rights reserved. Bangalore, India.</p>
-        <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
+        <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents
+          carefully.</p>
       </div>
     </div>
   </footer>
@@ -1030,24 +1247,272 @@
   <!-- ======================= FLOATING ACTION BUTTONS ======================= -->
   <aside class="floating-actions" aria-label="Quick actions">
     <!-- WhatsApp Button with Ripple Effect -->
-    <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
       <span class="whatsapp-ripple-wave" aria-hidden="true"></span>
       <span class="whatsapp-ripple-wave delay-1" aria-hidden="true"></span>
       <span class="floating-whatsapp-tooltip" aria-hidden="true">Chat with us</span>
       <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
       </svg>
     </a>
 
     <!-- Go to Top Button -->
     <button type="button" class="floating-scroll-top" id="backToTop" aria-label="Go to top" title="Go to top">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M18 15l-6-6-6 6" />
       </svg>
     </button>
   </aside>
 
+  <!-- ======================= CONSULTATION MODAL ======================= -->
+  <div class="consult-modal-backdrop" id="consultationModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle">
+    <div class="consult-modal-container">
+      <button type="button" class="consult-modal-close" id="closeConsultModal"
+        aria-label="Close consultation modal">&times;</button>
+
+      <div class="consult-modal-header">
+        <span class="consult-modal-badge">Private Wealth Advisory</span>
+        <h3 class="consult-modal-title" id="modalTitle">Book a Consultation</h3>
+        <p class="consult-modal-subtitle">Schedule a confidential 1-on-1 strategy conversation with our senior advisory
+          team.</p>
+      </div>
+
+      <!-- Quick Direct Connect Options -->
+      <div class="consult-modal-quick-connect">
+        <a href="https://wa.me/916364833952?text=Hello%20BlissMoney%2C%20I%20would%20like%20to%20book%20a%20wealth%20consultation."
+          target="_blank" rel="noopener noreferrer" class="quick-connect-btn quick-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Instant WhatsApp Chat
+        </a>
+        <a href="mailto:hello@blissmoney.in?subject=Consultation%20Booking%20Request"
+          class="quick-connect-btn quick-email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          hello@blissmoney.in
+        </a>
+      </div>
+
+      <div class="consult-divider">
+        <span>or request a scheduled callback</span>
+      </div>
+
+      <!-- Form -->
+      <form class="consult-modal-form" id="consultationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultName">Your Name *</label>
+            <input type="text" id="consultName" name="name" required placeholder="e.g. Rahul Sharma"
+              autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="consultPhone">Phone / WhatsApp *</label>
+            <input type="tel" id="consultPhone" name="phone" required placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultEmail">Email Address *</label>
+            <input type="email" id="consultEmail" name="email" required placeholder="rahul@example.com"
+              autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="consultPortfolio">Portfolio / Investable Assets</label>
+            <select id="consultPortfolio" name="portfolio">
+              <option value="25L-50L">₹25 Lakhs – ₹50 Lakhs</option>
+              <option value="50L-1Cr" selected>₹50 Lakhs – ₹1 Crore</option>
+              <option value="1Cr-5Cr">₹1 Crore – ₹5 Crores</option>
+              <option value="5Cr+">₹5 Crores+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="consultMode">Preferred Mode</label>
+          <select id="consultMode" name="mode">
+            <option value="Virtual Video Meeting">Virtual Meeting (Google Meet / Zoom)</option>
+            <option value="Phone Call">Direct Phone Call</option>
+            <option value="WhatsApp Discussion">WhatsApp Advisory</option>
+            <option value="In-Person Bangalore">In-Person Meeting (Bangalore Office)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="consultMessage">Key Questions or Goals (Optional)</label>
+          <textarea id="consultMessage" name="message" rows="3"
+            placeholder="Tell us about your portfolio goals, time horizon, or questions..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary consult-submit-btn" id="consultSubmitBtn">
+          Confirm Consultation Request
+        </button>
+      </form>
+
+      <!-- Success State Message (Hidden by default) -->
+      <div class="consult-success-state" id="consultSuccessState" style="display: none;">
+        <div class="success-icon-wrap">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0CAF80" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h4 class="success-title">Consultation Request Confirmed</h4>
+        <p class="success-text" id="successSummaryText">Thank you! A Senior Wealth Advisor from BlissMoney will reach
+          out to you within 24 business hours.</p>
+        <button type="button" class="btn btn-primary" id="successCloseBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= BOTTOM-RIGHT DUAL-STATE LEAD POPUP ======================= -->
+  <div id="bmLeadPopup" class="bm-lead-popup" role="dialog" aria-modal="true" aria-label="Personalised Wealth Guidance">
+    <!-- STEP 1: "Turn your today into a brighter tomorrow" -->
+    <div id="bmPopupStep1" class="bm-popup-step-1">
+      <div class="bm-popup-glow" aria-hidden="true">
+        <img src="assets/images/bliss_money_logo.png" alt="" width="911" height="911">
+      </div>
+      <div class="bm-popup-header">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-popup-logo" width="444" height="93">
+        <button type="button" class="bm-popup-close-btn" id="bmPopupClose1" aria-label="Close popup">&times;</button>
+      </div>
+
+      <span class="bm-popup-eyebrow">Financial Bliss, Built on Trust</span>
+      <h3 class="bm-popup-title">Turn your today into a brighter <em>tomorrow</em></h3>
+      <p class="bm-popup-subtitle">Personalised wealth guidance to help you grow, protect and achieve what matters to you.</p>
+
+      <ol class="bm-popup-journey" aria-label="Your wealth journey">
+        <li>Today</li>
+        <li>Grow</li>
+        <li>Protect</li>
+        <li>Achieve</li>
+      </ol>
+
+      <button type="button" id="bmPopupGetStarted" class="bm-popup-btn-primary">
+        <span>Get started</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <button type="button" id="bmPopupMaybeLater" class="bm-popup-btn-later">Maybe later</button>
+    </div>
+
+    <!-- STEP 2: "Let's plan your next chapter" -->
+    <div id="bmPopupStep2" class="bm-popup-step-2" style="display: none;">
+      <!-- Header with Brand & Close -->
+      <div class="bm-popup-header">
+        <div class="bm-popup-brand">
+          <img src="assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-popup-logo" width="444" height="93">
+        </div>
+        <button type="button" class="bm-popup-close-btn" id="bmPopupClose2" aria-label="Close popup">&times;</button>
+      </div>
+
+      <h3 class="bm-popup-title">Let's plan your next <em>chapter</em></h3>
+      <p class="bm-popup-subtitle">Choose a convenient way to connect with our wealth advisory team.</p>
+
+      <!-- Option 1: WhatsApp -->
+      <a href="https://wa.me/916364833952?text=Hello%20BlissMoney%2C%20I%20would%20like%20to%20plan%20my%20wealth%20and%20consultation." 
+         target="_blank" rel="noopener noreferrer" class="bm-popup-whatsapp-box" id="bmPopupWhatsApp">
+        <div class="bm-popup-wa-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+        </div>
+        <div class="bm-popup-wa-text">
+          <strong>Chat with us on WhatsApp</strong>
+          <span>Get quick answers and discuss your goals with our team.</span>
+        </div>
+        <svg class="bm-popup-wa-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Option 2: Consultation Card Form -->
+      <form id="bmPopupConsultForm" class="bm-popup-consult-box" novalidate>
+        <div class="bm-popup-consult-top">
+          <div class="bm-popup-cal-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="bm-popup-consult-text">
+            <strong>Book a consultation</strong>
+            <span>Select a date and time that works for you. Our advisor will get in touch.</span>
+          </div>
+        </div>
+
+        <div class="bm-popup-inputs-row">
+          <div class="bm-popup-input-wrap">
+            <svg class="bm-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" id="bmPopupName" name="name" placeholder="Your name *" required autocomplete="name" />
+          </div>
+          <div class="bm-popup-input-wrap">
+            <svg class="bm-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="email" id="bmPopupEmail" name="email" placeholder="Your email *" required autocomplete="email" />
+          </div>
+        </div>
+
+        <button type="submit" id="bmPopupBtnSelectTime" class="bm-popup-btn-select-time">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Select date &amp; time</span>
+        </button>
+      </form>
+
+      <!-- Trust Badges Row -->
+      <div class="bm-popup-trust-row">
+        <div class="bm-popup-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 7l-7 5 7 5V7z"></path>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          </svg>
+          <span>Virtual or<br>in-person</span>
+        </div>
+        <div class="bm-popup-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+          <span>No-obligation<br>discussion</span>
+        </div>
+        <div class="bm-popup-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Your information<br>is confidential</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main JavaScript -->
-  <script src="assets/js/main.js?v=1.8"></script>
+  <script src="assets/js/main.js?v=2.0"></script>
+  <!-- Lead Generation Popup Widget -->
+  <script src="assets/js/lead-popup.js?v=2.0"></script>
 </body>
+
 </html>
