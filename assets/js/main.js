@@ -806,12 +806,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Logo click also scrolls smoothly to the very top (Hero initial state)
+    // Logo click: on the homepage, scroll smoothly to top; on all other pages, navigate to index.html
     const siteLogo = document.querySelector(".site-logo");
     if (siteLogo) {
       siteLogo.addEventListener("click", (e) => {
-        const href = siteLogo.getAttribute("href");
-        if (href === "#hero" || href === "#top" || href === "index.html" || href === "#") {
+        const isIndexPage = window.location.pathname.endsWith("index.html") || 
+                            window.location.pathname.endsWith("/") || 
+                            !window.location.pathname.includes(".html");
+        if (isIndexPage) {
           e.preventDefault();
           window.scrollTo({
             top: 0,
@@ -821,6 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
             history.pushState(null, null, window.location.pathname);
           }
         }
+        // On other pages (blog.html, blog details, etc.), default navigation to index.html takes place!
       });
     }
 

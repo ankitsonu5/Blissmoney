@@ -1,5 +1,5 @@
 /* ============================================================
-   BlissMoney — Dedicated Calculator Controller & Hash Navigation
+   BlissMoney - Dedicated Calculator Controller & Hash Navigation
    ============================================================ */
 (function () {
   "use strict";
@@ -1020,9 +1020,9 @@
       return selected.flatMap((name) => {
         if (filterMode === "asset-category") {
           return [
-            `${name} portfolio — Direct Growth`,
-            `${name} portfolio — Regular Growth`,
-            `${name} portfolio — IDCW`,
+            `${name} portfolio - Direct Growth`,
+            `${name} portfolio - Regular Growth`,
+            `${name} portfolio - IDCW`,
           ];
         }
         const shortName = name
@@ -1030,9 +1030,9 @@
           .replace(/\s+-\s+SIF.*$/i, "")
           .trim();
         return [
-          `${shortName} — Direct Growth scheme`,
-          `${shortName} — Regular Growth scheme`,
-          `${shortName} — IDCW scheme`,
+          `${shortName} - Direct Growth scheme`,
+          `${shortName} - Regular Growth scheme`,
+          `${shortName} - IDCW scheme`,
         ];
       });
     };

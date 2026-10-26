@@ -1,5 +1,5 @@
 /* ============================================================
-   BlissMoney — Homepage redesign
+   BlissMoney - Homepage redesign
    Brand: #0CAF80 · deep forest surfaces · Acumin-style grotesque
    ============================================================ */
 
@@ -39,7 +39,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--green-dim) var(--forest-950);
 }
-/* Smooth anchor scrolling handled in JS — CSS smooth scroll breaks GSAP ScrollTrigger pin measurements */
+/* Smooth anchor scrolling handled in JS - CSS smooth scroll breaks GSAP ScrollTrigger pin measurements */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -1210,7 +1210,7 @@ button {
 }
 
 /* ============================================================
-   SECTIONS — shared
+   SECTIONS - shared
    ============================================================ */
 .section {
   position: relative;
@@ -1344,7 +1344,7 @@ button {
 }
 
 /* ============================================================
-   CH 01 — SEGMENTS
+   CH 01 - SEGMENTS
    ============================================================ */
 .segment-grid {
   display: grid;
@@ -1552,7 +1552,7 @@ button {
 }
 
 /* ============================================================
-   CH 02 — DISCIPLINES + STATS
+   CH 02 - DISCIPLINES + STATS
    ============================================================ */
 #offerings {
   position: relative;
@@ -1861,7 +1861,7 @@ button {
 }
 
 /* ============================================================
-   CH 03 — APPROACH
+   CH 03 - APPROACH
    ============================================================ */
 .approach-wrap {
   width: 100%;
@@ -2096,7 +2096,7 @@ button {
 }
 
 /* ============================================================
-   CH 04 — SIX STEPS CAROUSEL (AS PER REFERENCE #OFFERINGS)
+   CH 04 - SIX STEPS CAROUSEL (AS PER REFERENCE #OFFERINGS)
    ============================================================ */
 #process {
   position: relative;
@@ -2538,7 +2538,7 @@ button {
 }
 
 /* ============================================================
-   INVESTOR CORNER — CALCULATORS
+   INVESTOR CORNER - CALCULATORS
    ============================================================ */
 #tools {
   position: relative;
