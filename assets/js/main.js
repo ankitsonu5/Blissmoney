@@ -727,13 +727,100 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking on any navigation link
+    // Navigation link handling: smooth scroll for in-page anchors, instant close & navigate for pages
     if (siteMenuDropdown) {
       const navLinks = siteMenuDropdown.querySelectorAll(".site-nav-link");
       navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href") || "";
+
+          // Consultation modal trigger
+          if (link.getAttribute("data-open-consultation") === "true" || href === "#consultationModal") {
+            e.preventDefault();
+            toggleMenu(false);
+            if (window.openConsultationModal) {
+              window.openConsultationModal();
+            }
+            return;
+          }
+
+          // Top / Hero scroll
+          if (href === "#hero" || href === "#top") {
+            e.preventDefault();
+            toggleMenu(false);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+            if (history.pushState) {
+              history.pushState(null, null, window.location.pathname);
+            }
+            return;
+          }
+
+          // In-page hash link on the current page (e.g. #who-we-serve, #how-we-work, etc.)
+          if (href.startsWith("#") && href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              toggleMenu(false);
+              const headerOffset = 70;
+              const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+              window.scrollTo({
+                top: Math.max(0, targetY),
+                behavior: "smooth"
+              });
+              if (history.pushState) {
+                history.pushState(null, null, href);
+              }
+              return;
+            }
+          }
+
+          // In-page link formatted as index.html#... when already on index.html
+          const isIndexPage = window.location.pathname.endsWith("index.html") || 
+                              window.location.pathname.endsWith("/") || 
+                              !window.location.pathname.includes(".html");
+          if (isIndexPage && href.includes("#") && href.startsWith("index.html#")) {
+            const hash = href.substring(href.indexOf("#"));
+            const target = document.querySelector(hash);
+            if (target) {
+              e.preventDefault();
+              toggleMenu(false);
+              const headerOffset = 70;
+              const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+              window.scrollTo({
+                top: Math.max(0, targetY),
+                behavior: "smooth"
+              });
+              if (history.pushState) {
+                history.pushState(null, null, hash);
+              }
+              return;
+            }
+          }
+
+          // For external pages (e.g. calculator.html, blog.html), close menu and let browser navigate
           toggleMenu(false);
         });
+      });
+    }
+
+    // Logo click also scrolls smoothly to the very top (Hero initial state)
+    const siteLogo = document.querySelector(".site-logo");
+    if (siteLogo) {
+      siteLogo.addEventListener("click", (e) => {
+        const href = siteLogo.getAttribute("href");
+        if (href === "#hero" || href === "#top" || href === "index.html" || href === "#") {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+          if (history.pushState) {
+            history.pushState(null, null, window.location.pathname);
+          }
+        }
       });
     }
 

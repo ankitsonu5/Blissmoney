@@ -137,7 +137,7 @@
       ],
     },
     home: {
-      title: "Home Loan Calculator",
+      title: "House Purchase Plan",
       description:
         "Plan for a future home purchase by accounting for inflation and expected investment growth.",
       mode: "years",
@@ -184,7 +184,7 @@
       currentLabel: "Current Cost of Vacation",
       futureLabel: "Future Cost of Vacation",
       fields: [
-        { label: "Current Vacation Expenses (₹)", min: 10000, max: 200000, step: 100, value: 10000, format: "currency" },
+        { label: "Current Vacation Expenses (₹)", min: 25000, max: 5000000, step: 25000, value: 500000, format: "currency" },
         { label: "After How Many Years Do You Wish To Plan Your Holiday?", min: 1, max: 40, step: 1, value: 5, format: "years" },
         { label: "Rate of Return (%)", min: 1, max: 30, step: 1, value: 5, format: "percent" },
         { label: "Inflation Rate (%)", min: 0, max: 30, step: 1, value: 5, format: "percent" },
@@ -398,41 +398,6 @@
     return { invested, value };
   };
 
-  const insuranceFields = () => [
-    { label: "Loan Amount (₹)", min: 0, max: 10000000, step: 1000, value: 100000, format: "currency" },
-    { label: "Current FD Rate (%)", min: 1, max: 15, step: 1, value: 5, format: "percent" },
-    { label: "Inflation Rate (%)", min: 1, max: 30, step: 1, value: 5, format: "percent" },
-    { label: "Protection Duration (Years)", min: 1, max: 40, step: 1, value: 5, format: "years" },
-    { label: "Monthly Expenses (₹)", min: 0, max: 500000, step: 1000, value: 10000, format: "currency" },
-  ];
-
-  const calculateInsurance = (values) => {
-    const [loan, fdRate, inflation, years, monthlyExpenses] = values;
-    const household = sumGrowingExpenses(
-      monthlyExpenses * 12,
-      inflation / 100,
-      fdRate / 100,
-      years,
-    );
-    const total = loan + household;
-    return {
-      timeline: years + (years === 1 ? " year protection" : " years protection"),
-      primaryLabel: "Total insurance cover",
-      primaryValue: inr(total),
-      rows: [
-        ["Loan repayment", inr(loan)],
-        ["Household expenses", inr(household)],
-        ["Monthly expenses protected", inr(monthlyExpenses)],
-      ],
-      comparisonTitle: "Cover composition",
-      comparisonStat: total ? Math.round((household / total) * 100) + "% expenses" : "0%",
-      bars: [
-        ["Loan", loan],
-        ["Expenses", household],
-      ],
-    };
-  };
-
   const nativeToolConfigs = {
     retirement: {
       kicker: "Risk planning",
@@ -440,18 +405,19 @@
       description: "Build the retirement corpus required to protect your future lifestyle.",
       note: "This calculator is for informational and illustrative purposes only and does not constitute investment advice. Actual results may vary with market performance.",
       fields: [
-        { label: "Current Age (Y)", min: 0, max: 100, step: 1, value: 30, format: "age" },
-        { label: "Retirement Age (Y)", min: 35, max: 100, step: 1, value: 60, format: "age" },
-        { label: "Life Expectancy (Y)", min: 35, max: 100, step: 1, value: 85, format: "age" },
-        { label: "Current Monthly Expenses (₹)", min: 1000, max: 10000000, step: 1000, value: 40000, format: "currency" },
-        { label: "Inflation Rate (%)", min: 1, max: 30, step: 1, value: 7, format: "percent" },
-        { label: "Expected Return Pre-Retirement (%)", min: 1, max: 30, step: 1, value: 14, format: "percent" },
-        { label: "Expected Return Post-Retirement (%)", min: 1, max: 30, step: 1, value: 7, format: "percent" },
+        { label: "Current Age (Y)", min: 18, max: 80, step: 1, value: 30, format: "age" },
+        { label: "Retirement Age (Y)", min: 35, max: 85, step: 1, value: 60, format: "age" },
+        { label: "Life Expectancy (Y)", min: 50, max: 100, step: 1, value: 85, format: "age" },
+        { label: "Current Monthly Expenses (₹)", min: 10000, max: 2000000, step: 5000, value: 50000, format: "currency" },
+        { label: "Inflation Rate (%)", min: 1, max: 20, step: 0.5, value: 7, format: "percent" },
+        { label: "Expected Return Pre-Retirement (%)", min: 1, max: 25, step: 0.5, value: 14, format: "percent" },
+        { label: "Expected Return Post-Retirement (%)", min: 1, max: 20, step: 0.5, value: 7, format: "percent" },
       ],
       calculate(values) {
         const [currentAge, retirementAge, lifeExpectancy, monthlyExpenses, inflationRate, preReturnRate, postReturnRate] = values;
-        const yearsToRetirement = Math.max(retirementAge - currentAge + 1, 1);
-        const retirementYears = Math.max(lifeExpectancy - retirementAge + 1, 1);
+        // Fix off-by-one bug: remove "+ 1" per client feedback
+        const yearsToRetirement = Math.max(retirementAge - currentAge, 1);
+        const retirementYears = Math.max(lifeExpectancy - retirementAge, 1);
         const inflation = inflationRate / 100;
         const preReturn = preReturnRate / 100;
         const postReturn = postReturnRate / 100;
@@ -464,8 +430,9 @@
         );
         const months = yearsToRetirement * 12;
         const monthlyReturn = preReturn / 12;
+        // Standard SIP annuity-due formula (investment at beginning of each month)
         const sipFactor = monthlyReturn
-          ? (Math.pow(1 + monthlyReturn, months) - 1) / monthlyReturn
+          ? ((Math.pow(1 + monthlyReturn, months) - 1) / monthlyReturn) * (1 + monthlyReturn)
           : months;
         const monthlySip = corpus / Math.max(sipFactor, 1);
         const lumpSum = corpus / Math.pow(1 + preReturn, yearsToRetirement);
@@ -476,7 +443,7 @@
           primaryValue: inr(corpus),
           rows: [
             ["Future monthly expenses", inr(futureMonthlyExpenses)],
-            ["Planning through SIP", inr(monthlySip)],
+            ["Planning through monthly SIP", inr(monthlySip)],
             ["Planning through lump sum", inr(lumpSum)],
           ],
           comparisonTitle: "Monthly expense comparison",
@@ -491,32 +458,139 @@
     life: {
       kicker: "Risk planning",
       title: "Life Insurance Calculator",
-      description: "Estimate the cover needed for liabilities and ongoing household expenses.",
-      note: "This is an indicative protection estimate. Product suitability and underwriting require a detailed review.",
-      fields: insuranceFields(),
-      calculate: calculateInsurance,
+      description: "Human Life Value & Needs Analysis: size protection across liabilities, living costs, and milestone goals.",
+      note: "This is an indicative protection needs estimate. Term insurance underwriting and final cover depend on medicals and financial eligibility.",
+      fields: [
+        { label: "Outstanding Loans & Liabilities (₹)", min: 0, max: 250000000, step: 500000, value: 10000000, format: "currency" },
+        { label: "Monthly Household Expenses (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
+        { label: "Protection Duration (Years)", min: 1, max: 40, step: 1, value: 20, format: "years" },
+        { label: "Expected Inflation Rate (%)", min: 1, max: 15, step: 0.5, value: 6, format: "percent" },
+        { label: "Current FD / Post-Tax Return Rate (%)", min: 1, max: 15, step: 0.5, value: 6, format: "percent" },
+        { label: "One-Time Future Milestones (Children Edu/Marriage) (₹)", min: 0, max: 50000000, step: 250000, value: 5000000, format: "currency" },
+        { label: "Existing Life Cover & Liquid Assets (₹)", min: 0, max: 100000000, step: 250000, value: 2500000, format: "currency" },
+      ],
+      calculate(values) {
+        const [loan, monthlyExpenses, years, inflationRate, fdRate, futureGoals, existingAssets] = values;
+        const livingExpensesCorpus = sumGrowingExpenses(
+          monthlyExpenses * 12,
+          inflationRate / 100,
+          fdRate / 100,
+          years,
+        );
+        const grossCover = loan + livingExpensesCorpus + futureGoals;
+        const netCoverNeeded = Math.max(0, grossCover - existingAssets);
+        return {
+          timeline: years + (years === 1 ? " year protection horizon" : " years protection horizon"),
+          primaryLabel: "Net Additional Life Cover Needed",
+          primaryValue: inr(netCoverNeeded),
+          rows: [
+            ["Gross cover requirement", inr(grossCover)],
+            ["Living expenses corpus", inr(livingExpensesCorpus)],
+            ["Liabilities & loans", inr(loan)],
+            ["One-time family milestones", inr(futureGoals)],
+            ["Less: Existing cover & assets", "-" + inr(existingAssets)],
+          ],
+          comparisonTitle: "Needs analysis breakdown",
+          comparisonStat: grossCover ? Math.round((livingExpensesCorpus / grossCover) * 100) + "% living expenses" : "0%",
+          bars: [
+            ["Living Expenses", livingExpensesCorpus],
+            ["Loans & Milestones", loan + futureGoals],
+          ],
+        };
+      },
     },
     health: {
       kicker: "Risk planning",
       title: "Health Insurance Calculator",
-      description: "Estimate a protection buffer for liabilities and essential family expenses.",
-      note: "This indicative estimate follows the reference calculator inputs. Medical cover should be finalised after a needs assessment.",
-      fields: insuranceFields(),
-      calculate: calculateInsurance,
+      description: "Size your base indemnity cover and super top-up deductible buffer against medical inflation.",
+      note: "Indian medical inflation averages 11%–14% annually. A combination of base cover + super top-up maximizes protection at optimal premiums.",
+      fields: [
+        { label: "Eldest Member's Current Age (Years)", min: 18, max: 75, step: 1, value: 35, format: "age" },
+        { label: "Current Base Hospitalisation Cover Needed Today (₹)", min: 500000, max: 5000000, step: 100000, value: 1500000, format: "currency" },
+        { label: "Desired Total Health Cover Today (Base + Super Top-up) (₹)", min: 1000000, max: 20000000, step: 500000, value: 5000000, format: "currency" },
+        { label: "Medical Inflation Rate (%)", min: 8, max: 16, step: 0.5, value: 11, format: "percent" },
+        { label: "Projection Horizon (Years)", min: 5, max: 35, step: 1, value: 15, format: "years" },
+      ],
+      calculate(values) {
+        const [eldestAge, baseCoverToday, desiredTotalToday, medicalInflation, horizonYears] = values;
+        const totalToday = Math.max(baseCoverToday, desiredTotalToday);
+        const topUpToday = totalToday - baseCoverToday;
+        const inflationFactor = Math.pow(1 + medicalInflation / 100, horizonYears);
+        const futureTotal = Math.round(totalToday * inflationFactor);
+        const futureBase = Math.round(baseCoverToday * inflationFactor);
+        const futureTopUp = futureTotal - futureBase;
+        return {
+          timeline: horizonYears + " years horizon (" + medicalInflation + "% medical inflation)",
+          primaryLabel: "Future Health Cover Needed",
+          primaryValue: inr(futureTotal),
+          rows: [
+            ["Total cover recommended today", inr(totalToday)],
+            ["Base indemnity cover today", inr(baseCoverToday)],
+            ["Super top-up buffer today", inr(topUpToday)],
+            ["Projected future base cover", inr(futureBase)],
+            ["Projected future super top-up", inr(futureTopUp)],
+          ],
+          comparisonTitle: "Medical inflation impact",
+          comparisonStat: "+" + Math.round((inflationFactor - 1) * 100) + "% cost rise",
+          bars: [
+            ["Cover Today", totalToday],
+            ["Future Cover (Age " + (eldestAge + horizonYears) + ")", futureTotal],
+          ],
+        };
+      },
     },
     "property-value": {
       kicker: "Home finance",
-      title: "Property Value Calculator",
-      description: "Understand the monthly EMI and full borrowing cost before you commit.",
+      title: "Home Affordability Calculator",
+      description: "Determine the maximum property purchase price based on your monthly EMI budget and available savings.",
+      note: "This calculator is for informational and illustrative purposes only. Final loan sanction depends on bank underwriting and credit eligibility.",
+      fields: [
+        { label: "Comfortable Monthly EMI (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
+        { label: "Down Payment Available (₹)", min: 500000, max: 100000000, step: 250000, value: 2500000, format: "currency" },
+        { label: "Loan Tenure (Years)", min: 1, max: 30, step: 1, value: 20, format: "years" },
+        { label: "Interest Rate (%)", min: 5, max: 20, step: 0.1, value: 8.5, format: "percent" },
+      ],
+      calculate(values) {
+        const [comfortableEmi, downPayment, years, annualRate] = values;
+        const monthlyRate = (annualRate / 100) / 12;
+        const months = years * 12;
+        const loanEligibility = monthlyRate
+          ? (comfortableEmi * (1 - Math.pow(1 + monthlyRate, -months))) / monthlyRate
+          : comfortableEmi * months;
+        const maxProperty = loanEligibility + downPayment;
+        const downPaymentPercent = maxProperty > 0 ? Math.round((downPayment / maxProperty) * 100) : 0;
+        return {
+          timeline: years + " year loan tenure @ " + annualRate + "%",
+          primaryLabel: "Max Affordable Property Value",
+          primaryValue: inr(maxProperty),
+          rows: [
+            ["Eligible loan amount", inr(loanEligibility)],
+            ["Down payment available", inr(downPayment)],
+            ["Comfortable monthly EMI", inr(comfortableEmi)],
+            ["Total loan repayment (P + I)", inr(comfortableEmi * months)],
+          ],
+          comparisonTitle: "Property funding ratio",
+          comparisonStat: downPaymentPercent + "% down payment",
+          bars: [
+            ["Loan (Eligible)", loanEligibility],
+            ["Down Payment", downPayment],
+          ],
+        };
+      },
+    },
+    "emi-plan": {
+      kicker: "Home finance",
+      title: "EMI Calculator",
+      description: "Calculate the monthly instalment, total interest and complete loan repayment.",
       note: "This calculator is for informational and illustrative purposes only. Actual lending terms may vary.",
       fields: [
-        { label: "Loan Amount (₹)", min: 100000, max: 100000000, step: 1000, value: 100000, format: "currency" },
-        { label: "Loan Tenure (Years)", min: 1, max: 40, step: 1, value: 5, format: "years" },
-        { label: "Interest Rate (%)", min: 1, max: 30, step: 1, value: 7, format: "percent" },
+        { label: "Loan Amount (₹)", min: 500000, max: 250000000, step: 250000, value: 7500000, format: "currency" },
+        { label: "Loan Tenure (Years)", min: 1, max: 30, step: 1, value: 20, format: "years" },
+        { label: "Interest Rate (%)", min: 5, max: 20, step: 0.1, value: 8.5, format: "percent" },
       ],
       calculate(values) {
         const [principal, years, annualRate] = values;
-        const monthlyRate = annualRate / 1200;
+        const monthlyRate = (annualRate / 100) / 12;
         const months = years * 12;
         const compound = Math.pow(1 + monthlyRate, months);
         const emiAmount = monthlyRate
@@ -525,13 +599,13 @@
         const total = emiAmount * months;
         const interest = total - principal;
         return {
-          timeline: years + (years === 1 ? " year tenure" : " year tenure"),
-          primaryLabel: "Loan EMI",
+          timeline: years + (years === 1 ? " year tenure" : " years tenure"),
+          primaryLabel: "Monthly Loan EMI",
           primaryValue: inr(emiAmount),
           rows: [
             ["Principal loan amount", inr(principal)],
             ["Total interest payable", inr(interest)],
-            ["Total payment", inr(total)],
+            ["Total payment (P + I)", inr(total)],
           ],
           comparisonTitle: "Payment breakdown",
           comparisonStat: total ? Math.round((interest / total) * 100) + "% interest" : "0%",
@@ -542,11 +616,6 @@
         };
       },
     },
-  };
-  nativeToolConfigs["emi-plan"] = {
-    ...nativeToolConfigs["property-value"],
-    title: "EMI Calculator",
-    description: "Calculate the monthly instalment, total interest and complete loan repayment.",
   };
 
   const formatNativeValue = (field, value) => {
@@ -560,7 +629,7 @@
   const initializeNativeCalculator = (panel) => {
     const tabs = $$(".native-tool-tab", panel);
     const inputsContainer = $(".native-tool-inputs", panel);
-    const maxFields = 7;
+    const maxFields = 8;
     inputsContainer.innerHTML = Array.from({ length: maxFields }, (_, index) => `
       <div class="field native-field" data-native-field="${index}" hidden>
         <label class="native-field-label">Calculator input</label>

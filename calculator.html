@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BlissMoney Investor Corner — Interactive calculators for financial goals, risk planning, mutual fund ROI performance, and mortgage EMI planning.">
-  <title>Investor Corner Calculators — BlissMoney</title>
+  <meta name="description" content="BlissMoney Investor Corner | Interactive calculators for financial goals, risk planning, mutual fund ROI performance, and mortgage EMI planning.">
+  <title>Investor Corner Calculators | BlissMoney</title>
 
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/png" href="assets/images/bm_faicon.png">
@@ -31,19 +31,21 @@
       <nav class="main-nav" aria-label="Primary">
         <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
         <div class="nav-item"><a href="index.html#who-we-serve" class="nav-link">Who We Serve</a></div>
-        <div class="nav-item"><a href="index.html#offerings" class="nav-link">Our Offerings</a></div>
-        <div class="nav-item"><a href="index.html#investor-corner" class="nav-link active">Investor Corner</a></div>
-        <div class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></div>
+        <div class="nav-item"><a href="index.html#how-we-work" class="nav-link">Our Approach</a></div>
+        <div class="nav-item"><a href="index.html#nine-disciplines" class="nav-link">Our Offerings</a></div>
+        <div class="nav-item"><a href="calculator.html" class="nav-link active">Financial Tools</a></div>
+        <div class="nav-item"><a href="blog.html" class="nav-link">Insights &amp; Blogs</a></div>
+        <div class="nav-item"><a href="index.html#consultation" class="nav-link">Contact</a></div>
       </nav>
 
       <div class="header-cta">
-        <a href="index.html#investor-corner" class="btn btn-ghost btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
+        <a href="index.html" class="btn btn-ghost btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          <span>Back to Overview</span>
+          <span>Back to Home</span>
         </a>
-        <a href="index.html#contact" class="btn btn-solid btn-sm">Book a Consultation</a>
+        <a href="index.html#consultation" class="btn btn-solid btn-sm">Book a Consultation</a>
       </div>
     </div>
   </header>
@@ -55,8 +57,7 @@
       <div class="container">
         <div class="section-head reveal"><p class="chapter">Investor Corner · Calculators</p>
           <h2>Clarity, in <em>numbers.</em></h2>
-          <p class="lede">Practical calculators. No forms, no sign-ups — just a first, honest
-            estimate before a real conversation.</p>
+          <p class="lede">Practical calculators. No forms or sign-ups. Just a clear initial estimate before a real conversation.</p>
         </div>
 
         <div class="tabs reveal" role="tablist" aria-label="Calculators">
@@ -105,6 +106,7 @@
         </div>
 
         <!-- FINANCIAL GOAL CALCULATORS -->
+        <div id="financial-calculator" class="calc-anchor-target"></div>
         <div class="calc-panel financial-goal-panel active reveal" id="panel-sip">
           <div class="goal-tabs" role="tablist" aria-label="Financial planning calculators">
             <button class="goal-tab active" type="button" role="tab" aria-selected="true" data-goal="marriage">
@@ -123,7 +125,7 @@
               <span class="goal-tab-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/><path d="M34 10v8"/></svg>
               </span>
-              <span>Home Loan Calculator</span>
+              <span>House Purchase Plan</span>
             </button>
             <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="car">
               <span class="goal-tab-icon" aria-hidden="true">
@@ -196,6 +198,7 @@
         </div>
 
         <!-- RISK PLANNING CALCULATORS -->
+        <div id="risk-planning-calculator" class="calc-anchor-target"></div>
         <div class="calc-panel native-calc-panel" id="panel-risk" data-native-group="risk">
           <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Risk planning calculators">
             <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="retirement">
@@ -242,6 +245,7 @@
         </div>
 
         <!-- ROI / MUTUAL FUND PERFORMANCE CALCULATORS -->
+        <div id="roi-calculator" class="calc-anchor-target"></div>
         <div class="calc-panel roi-planning-panel" id="panel-roi">
           <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mutual fund performance calculators">
             <button class="goal-tab roi-tool-tab active" type="button" role="tab" aria-selected="true" data-roi-tool="sip-performance">
@@ -330,13 +334,14 @@
         </div>
 
         <!-- MORTGAGE CALCULATORS -->
+        <div id="mortgage-calculator" class="calc-anchor-target"></div>
         <div class="calc-panel native-calc-panel" id="panel-emi" data-native-group="mortgage">
           <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Mortgage calculators">
             <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="property-value">
               <span class="goal-tab-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/></svg>
               </span>
-              <span>Property Value Calculator</span>
+              <span>Home Affordability Calculator</span>
             </button>
             <button class="goal-tab native-tool-tab" type="button" role="tab" aria-selected="false" data-native-tool="emi-plan">
               <span class="goal-tab-icon" aria-hidden="true">
@@ -349,8 +354,8 @@
             <div class="goal-calculator-head native-calculator-head">
               <div>
                 <p class="goal-calculator-kicker native-tool-kicker">Home finance</p>
-                <h3 class="native-tool-title">Property Value Calculator</h3>
-                <p class="native-tool-description">Understand the monthly EMI and full borrowing cost before you commit.</p>
+                <h3 class="native-tool-title">Home Affordability Calculator</h3>
+                <p class="native-tool-description">Determine the maximum property purchase price based on your EMI budget and savings.</p>
               </div>
               <span class="goal-timeline native-tool-timeline">5 year tenure</span>
             </div>
@@ -402,16 +407,16 @@
               <h4>Company</h4>
               <a href="index.html">About BlissMoney</a>
               <a href="index.html#who-we-serve">Why BlissMoney</a>
-              <a href="index.html#contact">Leadership &amp; team</a>
+              <a href="index.html#how-we-work">Leadership &amp; team</a>
               <a href="index.html#contact">Careers</a>
-              <a href="index.html#contact">Contact &amp; offices</a>
+              <a href="index.html#consultation">Contact &amp; offices</a>
             </div>
             <div>
               <h4>Explore</h4>
               <a href="index.html#who-we-serve">Who we serve</a>
-              <a href="index.html#offerings">Our offerings</a>
-              <a href="index.html#investor-corner">Investor corner</a>
-              <a href="index.html#latest-blogs">Insights &amp; Blogs</a>
+              <a href="index.html#nine-disciplines">Our offerings</a>
+              <a href="calculator.html">Financial Tools</a>
+              <a href="blog.html">Insights &amp; Blogs</a>
             </div>
             <div>
               <h4>Legal</h4>

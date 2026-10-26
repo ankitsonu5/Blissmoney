@@ -3169,11 +3169,13 @@ input[type="range"]::-moz-range-thumb {
 .native-field:nth-child(5) { animation-delay: 0.1s; }
 .native-field:nth-child(6) { animation-delay: 0.125s; }
 .native-field:nth-child(7) { animation-delay: 0.15s; }
+.native-field:nth-child(8) { animation-delay: 0.175s; }
 .native-field[hidden] {
   display: none;
 }
 .native-number-input {
-  width: clamp(98px, 12vw, 164px);
+  width: clamp(110px, 14vw, 180px);
+  font-variant-numeric: tabular-nums;
 }
 .native-tool-result .r-big {
   font-size: clamp(2.15rem, 3.7vw, 3.25rem);
