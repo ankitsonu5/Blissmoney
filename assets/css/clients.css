@@ -109,9 +109,7 @@
 }
 
 .page-clients .clients-profile-card:nth-child(4) {
-  background:
-    radial-gradient(circle at 100% 100%, rgba(12, 175, 128, 0.1), transparent 18rem),
-    #ffffff;
+  background: rgba(255, 255, 255, 0.94);
 }
 
 /* ========================================================================== 

@@ -7634,6 +7634,46 @@ body.page-reach-us {
   box-shadow: none;
   backdrop-filter: blur(8px);
   transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icon Wrap for Connected View Facets */
+.financial-facet-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(25, 215, 159, 0.16) 0%, rgba(12, 175, 128, 0.06) 100%);
+  border: 1px solid rgba(25, 215, 159, 0.28);
+  color: #19D79F;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 20px rgba(9, 45, 34, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.financial-facet-card:hover .financial-facet-icon-wrap {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, rgba(25, 215, 159, 0.25) 0%, rgba(12, 175, 128, 0.12) 100%);
+  border-color: rgba(25, 215, 159, 0.55);
+  box-shadow: 0 8px 24px rgba(25, 215, 159, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #52e2b5;
+}
+
+@media (max-width: 640px) {
+  .financial-facet-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
 }
 
 .page-financial-planning .financial-facets-section .financial-facet-card:hover {
@@ -12341,36 +12381,34 @@ body.page-clients {
   transform: translate(-10px, -8px) scale(1.06);
 }
 
-/* Profile 01: Featured Signature Card (Business Owners & Entrepreneurs) */
+/* Profile 01: Featured Signature Card (Business Owners & Entrepreneurs) - Neutralized */
 .page-clients .clients-profile-card.clients-profile-featured {
-  border-color: rgba(25, 215, 159, 0.16);
-  background:
-    radial-gradient(circle at 92% 10%, rgba(25, 215, 159, 0.22), transparent 20rem),
-    linear-gradient(145deg, #0c382b 0%, #08241c 70%, #061913 100%);
-  box-shadow: 0 26px 58px rgba(9, 48, 36, 0.18);
+  border-color: #dce8e2;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 38px rgba(22, 60, 48, 0.055);
 }
 
 .page-clients .clients-profile-card.clients-profile-featured::before {
-  background: linear-gradient(90deg, #52e2b5, rgba(82, 226, 181, 0));
+  background: linear-gradient(90deg, #0caf80, rgba(12, 175, 128, 0));
 }
 
 .page-clients .clients-profile-card.clients-profile-featured:hover {
-  border-color: rgba(82, 226, 181, 0.42);
-  box-shadow: 0 32px 70px rgba(9, 48, 36, 0.26);
+  border-color: rgba(12, 175, 128, 0.42);
+  box-shadow: 0 24px 50px rgba(22, 60, 48, 0.11);
 }
 
 .page-clients .clients-profile-card.clients-profile-featured .client-profile-badge {
-  border-color: rgba(82, 226, 181, 0.35);
-  background: rgba(82, 226, 181, 0.12);
-  color: #52e2b5;
+  border-color: rgba(12, 175, 128, 0.24);
+  background: rgba(12, 175, 128, 0.08);
+  color: #087958;
 }
 
 .page-clients .clients-profile-card.clients-profile-featured .client-profile-title {
-  color: #ffffff;
+  color: #17372d;
 }
 
 .page-clients .clients-profile-card.clients-profile-featured .client-profile-desc {
-  color: #b8d0c7;
+  color: #586d65;
 }
 
 .page-clients .client-profile-badge {
