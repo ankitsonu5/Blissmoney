@@ -21,8 +21,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="assets/css/blog.css?v=3.0">
+  <link rel="stylesheet" href="assets/css/about.css?v=1.4">
 </head>
 
 <body class="blog-detail-page">
@@ -48,14 +49,269 @@
           </button>
           <nav class="site-menu-nav">
             <a href="index.html" class="site-nav-link" role="menuitem">Home</a>
-            <a href="index.html#who-we-serve" class="site-nav-link" role="menuitem">Who we serve</a>
-            <a href="index.html#how-we-work" class="site-nav-link" role="menuitem">Our approach</a>
-            <a href="index.html#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
-            <a href="calculator.html" class="site-nav-link" role="menuitem">Financial Tools</a>
-            <a href="blog.html" class="site-nav-link" role="menuitem">Insights &amp; Blogs</a>
-            <a href="index.html#five-questions" class="site-nav-link" role="menuitem">About us</a>
-            <a href="index.html#consultation" class="site-nav-link" role="menuitem">Contact</a>
-            <a href="#consultationModal" class="site-nav-link site-nav-cta" role="menuitem" data-open-consultation="true">Book a consultation</a>
+            
+            <!-- About Menu -->
+            <div class="site-nav-item has-submenu" id="navItemAbout">
+              <a href="about/about.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>About</span>
+              </a>
+              <div class="site-submenu-box" id="aboutSubmenuBox" role="menu" aria-label="About Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">The Firm</span>
+                  <span class="submenu-box-title">About BlissMoney</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="about/about.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Firm philosophy &amp; approach</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/our-people.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Our People</span>
+                        <span class="sub-item-desc">Senior advisors &amp; leadership</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/brand-story.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Brand Story</span>
+                        <span class="sub-item-desc">Origins &amp; fiduciary heritage</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/press-releases.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Press Releases</span>
+                        <span class="sub-item-desc">Media coverage &amp; updates</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/events-conferences.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Events &amp; Conferences</span>
+                        <span class="sub-item-desc">Private summits &amp; sessions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Services Menu -->
+            <div class="site-nav-item has-submenu" id="navItemServices">
+              <a href="services/services.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Services</span>
+              </a>
+              <div class="site-submenu-box" id="servicesSubmenuBox" role="menu" aria-label="Services Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Our Offerings</span>
+                  <span class="submenu-box-title">Wealth Services</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="services/services.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Bespoke advisory solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/financial-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Financial Planning</span>
+                        <span class="sub-item-desc">Strategic wealth &amp; cashflow roadmaps</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/estate-succession-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Estate &amp; Succession Planning</span>
+                        <span class="sub-item-desc">Legacy architecture &amp; family trusts</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/real-estate-advisory.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Real Estate Advisory</span>
+                        <span class="sub-item-desc">Commercial &amp; high-yield property</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/lending.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Lending</span>
+                        <span class="sub-item-desc">Secured liquidity &amp; credit solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/insurance-risk-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">06</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Insurance and Risk Planning</span>
+                        <span class="sub-item-desc">Capital protection &amp; key-person cover</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/philanthropy.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">07</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Philanthropy</span>
+                        <span class="sub-item-desc">Impact endowments &amp; foundations</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clients Menu -->
+            <div class="site-nav-item has-submenu" id="navItemClients">
+              <a href="clients/clients.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Clients</span>
+              </a>
+              <div class="site-submenu-box" id="clientsSubmenuBox" role="menu" aria-label="Clients Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Partnerships</span>
+                  <span class="submenu-box-title">Who We Serve</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="clients/clients.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Who We Work With</span>
+                        <span class="sub-item-desc">Tailored wealth criteria &amp; values</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/investable-wealth.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Investable Wealth</span>
+                        <span class="sub-item-desc">Tiered portfolios &amp; allocation models</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/client-segments.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Client Segments</span>
+                        <span class="sub-item-desc">Entrepreneurs, CXOs &amp; family offices</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insights Menu -->
+            <div class="site-nav-item has-submenu" id="navItemInsights">
+              <a href="insights/articles.html" class="site-nav-link site-nav-link-parent active" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Insights</span>
+              </a>
+              <div class="site-submenu-box" id="insightsSubmenuBox" role="menu" aria-label="Insights Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Intel &amp; Media</span>
+                  <span class="submenu-box-title">Market Insights</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="insights/articles.html" class="submenu-box-item" style="background: rgba(12, 175, 128, 0.12); border-color: rgba(12, 175, 128, 0.35);" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title" style="color: #0CAF80;">Articles</span>
+                        <span class="sub-item-desc">Market analysis &amp; investment views</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/reports.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Reports</span>
+                        <span class="sub-item-desc">Quarterly whitepapers &amp; research</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/videos.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Videos</span>
+                        <span class="sub-item-desc">Advisor briefings &amp; market commentary</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/podcasts.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Podcasts</span>
+                        <span class="sub-item-desc">Conversations with global allocators</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Careers -->
+            <a href="careers.html" class="site-nav-link" role="menuitem">Careers</a>
+
+            <!-- Reach Us -->
+            <a href="reach-us.html" class="site-nav-link" role="menuitem">Reach Us</a>
+
+            <!-- Login / Portal -->
+            <a href="client-portal.html" class="site-nav-link site-nav-cta" role="menuitem">Login / Portal</a>
           </nav>
         </div>
       </div>
@@ -92,7 +348,7 @@
 
           <!-- Featured Image (.view_img) -->
           <div class="view_img">
-            <img src="assets/images/blogs/thumb_5.jpg" alt="Thematic Mutual Funds: Meaning, Types, Benefits and Investment Strategy" onerror="this.onerror=null;this.src='';">
+            <img src="assets/images/blogs/thumb_5.jpg" alt="Thematic Mutual Funds: Meaning, Types, Benefits and Investment Strategy" onerror="this.onerror=null;this.src='index.html';">
           </div>
 
           <!-- Full Article Formatted Body (.info) Retrieved From Old Site -->
@@ -341,7 +597,7 @@ For investors with a strong conviction about specific economic trends and a long
             <div class="latest-blog-loop">
                             <a href="blog-weekly-market-briefing.html" class="related-post-item" aria-label="Read BlissMoney Weekly Market Briefing: 22–26 June 2026">
                 <div class="related-post-img-wrap">
-                  <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026" loading="lazy" onerror="this.onerror=null;this.src='';">
+                  <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026" loading="lazy" onerror="this.onerror=null;this.src='index.html';">
                 </div>
                 <div class="related-post-content">
                   <span class="related-post-date">June 26, 2026</span>
@@ -349,7 +605,7 @@ For investors with a strong conviction about specific economic trends and a long
                 </div>
               </a>              <a href="blog-market-wrap-5-may.html" class="related-post-item" aria-label="Read Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
                 <div class="related-post-img-wrap">
-                  <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty" loading="lazy" onerror="this.onerror=null;this.src='';">
+                  <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty" loading="lazy" onerror="this.onerror=null;this.src='index.html';">
                 </div>
                 <div class="related-post-content">
                   <span class="related-post-date">May 5, 2026</span>
@@ -357,7 +613,7 @@ For investors with a strong conviction about specific economic trends and a long
                 </div>
               </a>              <a href="blog-market-wrap-15-april.html" class="related-post-item" aria-label="Read Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
                 <div class="related-post-img-wrap">
-                  <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes" loading="lazy" onerror="this.onerror=null;this.src='';">
+                  <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes" loading="lazy" onerror="this.onerror=null;this.src='index.html';">
                 </div>
                 <div class="related-post-content">
                   <span class="related-post-date">April 15, 2026</span>
@@ -365,7 +621,7 @@ For investors with a strong conviction about specific economic trends and a long
                 </div>
               </a>              <a href="blog-us-economy.html" class="related-post-item" aria-label="Read The State of the US Economy in April 2026: Resilient Growth Amid Global Challenges">
                 <div class="related-post-img-wrap">
-                  <img src="assets/images/blogs/thumb_4.jpg" alt="The State of the US Economy in April 2026: Resilient Growth Amid Global Challenges" loading="lazy" onerror="this.onerror=null;this.src='';">
+                  <img src="assets/images/blogs/thumb_4.jpg" alt="The State of the US Economy in April 2026: Resilient Growth Amid Global Challenges" loading="lazy" onerror="this.onerror=null;this.src='index.html';">
                 </div>
                 <div class="related-post-content">
                   <span class="related-post-date">April 10, 2026</span>
@@ -373,7 +629,7 @@ For investors with a strong conviction about specific economic trends and a long
                 </div>
               </a>              <a href="blog-sebi-mutual-fund-rules.html" class="related-post-item" aria-label="Read SEBI New Equity Mutual Fund Classification Rules 2026: What Has Changed">
                 <div class="related-post-img-wrap">
-                  <img src="assets/images/blogs/thumb_6.jpg" alt="SEBI New Equity Mutual Fund Classification Rules 2026: What Has Changed" loading="lazy" onerror="this.onerror=null;this.src='';">
+                  <img src="assets/images/blogs/thumb_6.jpg" alt="SEBI New Equity Mutual Fund Classification Rules 2026: What Has Changed" loading="lazy" onerror="this.onerror=null;this.src='index.html';">
                 </div>
                 <div class="related-post-content">
                   <span class="related-post-date">March 28, 2026</span>
@@ -449,7 +705,10 @@ For investors with a strong conviction about specific economic trends and a long
       <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
     </a>
     <button type="button" class="floating-scroll-top" id="backToTop" aria-label="Go to top" title="Go to top">
-      <i class="bi bi-chevron-up" style="font-size: 18px;"></i>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
     </button>
   </aside>
 
@@ -561,7 +820,7 @@ For investors with a strong conviction about specific economic trends and a long
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js?v=2.0"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
   <script>
     (function () {
       const pageUrl = window.location.href;

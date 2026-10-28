@@ -1222,3 +1222,55 @@
     text-align: left !important;
   }
 }
+
+/* ==========================================================================
+   1920px Screen Scaling at 100% Scale (Keeping 125% scale intact at <= 1536px)
+   ========================================================================== */
+@media (min-width: 1537px) {
+  .blog-detail-container {
+    max-width: 1560px;
+    padding: 0 48px;
+  }
+
+  .top-banner-section .banner-box {
+    max-width: 1560px;
+    padding: 0 48px;
+  }
+
+  .top-banner-section h1 {
+    font-size: clamp(2.6rem, 2.9vw, 3.4rem);
+  }
+
+  .blog-archive-grid {
+    gap: 32px;
+  }
+
+  .blog-card-item .images img {
+    height: 230px;
+  }
+
+  .blog-card-item .client-info h6 {
+    font-size: 1.25rem;
+    line-height: 1.38;
+  }
+
+  .blog-card-item .client-info .excerpt {
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .cat-pill {
+    font-size: 0.94rem;
+    padding: 9px 20px;
+  }
+
+  .blog-search-box {
+    max-width: 360px;
+  }
+
+  .blog-search-box input {
+    font-size: 0.95rem;
+    padding: 11px 42px 11px 18px;
+  }
+}
+

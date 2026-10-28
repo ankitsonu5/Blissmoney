@@ -1650,6 +1650,7 @@
   const backToTop = document.getElementById("backToTop");
   if (backToTop) {
     window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("is-visible", window.scrollY > 400);
       backToTop.classList.toggle("visible", window.scrollY > 400);
     });
     backToTop.addEventListener("click", () => {

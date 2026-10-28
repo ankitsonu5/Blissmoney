@@ -684,6 +684,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!siteHeader || !siteMenuWrap) return;
 
+    // Update submenu active state helper (syncs classes for mobile width expansion)
+    const updateSubmenuState = () => {
+      if (!siteMenuDropdown) return;
+      const hasOpenSubmenu = !!siteMenuDropdown.querySelector(".has-submenu.is-open") ||
+                             !!siteMenuDropdown.querySelector(".has-submenu.is-open-mobile");
+      siteMenuDropdown.classList.toggle("has-submenu-open", hasOpenSubmenu);
+      siteMenuWrap.classList.toggle("has-submenu-open", hasOpenSubmenu);
+    };
+
     // Toggle dropdown open/close state on click (disabled when dropdown is hidden)
     const toggleMenu = (forceState) => {
       if (!siteMenuDropdown || window.getComputedStyle(siteMenuDropdown).display === "none") {
@@ -692,10 +701,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const willOpen = typeof forceState === "boolean" ? forceState : !siteMenuWrap.classList.contains("is-open");
       if (willOpen) {
         siteMenuWrap.classList.add("is-open");
+        siteHeader.classList.add("menu-is-open");
+        document.body.classList.add("menu-is-open");
         if (siteMenuBtn) siteMenuBtn.setAttribute("aria-expanded", "true");
       } else {
         siteMenuWrap.classList.remove("is-open");
+        siteHeader.classList.remove("menu-is-open");
+        document.body.classList.remove("menu-is-open");
         if (siteMenuBtn) siteMenuBtn.setAttribute("aria-expanded", "false");
+        // Reset and close any open submenus
+        if (siteMenuDropdown) {
+          siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
+            item.classList.remove("is-open", "is-open-mobile");
+            const parentLink = item.querySelector(".site-nav-link-parent");
+            if (parentLink) parentLink.setAttribute("aria-expanded", "false");
+          });
+          updateSubmenuState();
+        }
       }
     };
 
@@ -715,8 +737,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close when clicking outside of the menu wrapper
     document.addEventListener("click", (e) => {
-      if (siteMenuWrap.classList.contains("is-open") && !siteMenuWrap.contains(e.target)) {
-        toggleMenu(false);
+      if (siteMenuWrap.classList.contains("is-open")) {
+        if (!siteMenuWrap.contains(e.target)) {
+          toggleMenu(false);
+        } else {
+          // If clicking inside menu wrap but outside any submenu item, close open submenus
+          const insideSubmenu = e.target.closest(".has-submenu") || e.target.closest(".site-submenu-box");
+          if (!insideSubmenu && siteMenuDropdown) {
+            siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
+              item.classList.remove("is-open", "is-open-mobile");
+              const parentLink = item.querySelector(".site-nav-link-parent");
+              if (parentLink) parentLink.setAttribute("aria-expanded", "false");
+            });
+            updateSubmenuState();
+          }
+        }
       }
     });
 
@@ -734,12 +769,48 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener("click", (e) => {
           const href = link.getAttribute("href") || "";
 
+          // Submenu toggle for parent items (About, Services, Clients, Insights)
+          // Opens on click, closes on second click (toggle), does not trigger on hover
+          if (link.classList.contains("site-nav-link-parent")) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentItem = link.closest(".has-submenu");
+            if (parentItem) {
+              const isOpen = parentItem.classList.contains("is-open") || parentItem.classList.contains("is-open-mobile");
+              
+              // Close any other open submenus first
+              siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
+                item.classList.remove("is-open", "is-open-mobile");
+                const pLink = item.querySelector(".site-nav-link-parent");
+                if (pLink) pLink.setAttribute("aria-expanded", "false");
+              });
+
+              // If it was not open, open it now
+              if (!isOpen) {
+                parentItem.classList.add("is-open", "is-open-mobile");
+                link.setAttribute("aria-expanded", "true");
+              }
+              updateSubmenuState();
+            }
+            return;
+          }
+
           // Consultation modal trigger
           if (link.getAttribute("data-open-consultation") === "true" || href === "#consultationModal") {
             e.preventDefault();
             toggleMenu(false);
             if (window.openConsultationModal) {
               window.openConsultationModal();
+            }
+            return;
+          }
+
+          // Client Portal modal trigger
+          if (link.getAttribute("data-open-portal") === "true" || href === "#portal" || href === "#portalModal") {
+            e.preventDefault();
+            toggleMenu(false);
+            if (window.openPortalModal) {
+              window.openPortalModal();
             }
             return;
           }
@@ -778,10 +849,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           // In-page link formatted as index.html#... when already on index.html
-          const isIndexPage = window.location.pathname.endsWith("index.html") || 
-                              window.location.pathname.endsWith("/") || 
-                              !window.location.pathname.includes(".html");
-          if (isIndexPage && href.includes("#") && href.startsWith("index.html#")) {
+          const isHomePage = !!document.getElementById("heroScroll");
+          if (isHomePage && href.includes("#") && href.startsWith("index.html#")) {
             const hash = href.substring(href.indexOf("#"));
             const target = document.querySelector(hash);
             if (target) {
@@ -804,16 +873,22 @@ document.addEventListener('DOMContentLoaded', () => {
           toggleMenu(false);
         });
       });
+
+      // Submenu item link handling: ensure menu closes when an about submenu link is clicked
+      const subItems = siteMenuDropdown.querySelectorAll(".submenu-box-item");
+      subItems.forEach((subItem) => {
+        subItem.addEventListener("click", () => {
+          toggleMenu(false);
+        });
+      });
     }
 
     // Logo click: on the homepage, scroll smoothly to top; on all other pages, navigate to index.html
     const siteLogo = document.querySelector(".site-logo");
     if (siteLogo) {
       siteLogo.addEventListener("click", (e) => {
-        const isIndexPage = window.location.pathname.endsWith("index.html") || 
-                            window.location.pathname.endsWith("/") || 
-                            !window.location.pathname.includes(".html");
-        if (isIndexPage) {
+        const isHomePage = !!document.getElementById("heroScroll");
+        if (isHomePage) {
           e.preventDefault();
           window.scrollTo({
             top: 0,
@@ -823,7 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
             history.pushState(null, null, window.location.pathname);
           }
         }
-        // On other pages (blog.html, blog details, etc.), default navigation to index.html takes place!
+        // On other pages (menu pages, inner pages, blog, etc.), default navigation to index.html takes place!
       });
     }
 
@@ -842,10 +917,12 @@ document.addEventListener('DOMContentLoaded', () => {
           siteHeader.classList.remove("is-scrolled");
         }
       } else {
-        if (window.scrollY > 80) {
+        if (window.scrollY > 20) {
           siteHeader.classList.add("is-scrolled");
+          siteHeader.classList.remove("scrolled");
         } else {
           siteHeader.classList.remove("is-scrolled");
+          siteHeader.classList.remove("scrolled");
         }
       }
     };
@@ -1014,7 +1091,105 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Client Login / Portal Modal handler
+  function initPortalModal() {
+    function createPortalModal() {
+      let modal = document.getElementById("portalModal");
+      if (modal) return modal;
+      modal = document.createElement("div");
+      modal.className = "consult-modal-backdrop";
+      modal.id = "portalModal";
+      modal.setAttribute("role", "dialog");
+      modal.setAttribute("aria-modal", "true");
+      modal.setAttribute("aria-labelledby", "portalTitle");
+      modal.innerHTML = `
+        <div class="consult-modal-container" style="max-width: 480px;">
+          <button type="button" class="consult-modal-close" id="closePortalModal" aria-label="Close portal modal">&times;</button>
+          <div class="consult-modal-header" style="text-align: center;">
+            <span class="consult-modal-badge">Investor Access</span>
+            <h3 class="consult-modal-title" id="portalTitle" style="margin-top: 8px;">Login / Client Portal</h3>
+            <p class="consult-modal-subtitle">Secure portfolio dashboard & advisory access for BlissMoney private clients.</p>
+          </div>
+          <form class="consult-modal-form" id="portalLoginForm" style="margin-top: 18px;">
+            <div class="form-row">
+              <div class="form-group" style="width: 100%;">
+                <label for="portalClientUser">Client ID / Registered Email</label>
+                <input type="text" id="portalClientUser" placeholder="e.g. client@blissmoney.in" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group" style="width: 100%;">
+                <label for="portalClientPass">Access PIN / Password</label>
+                <input type="password" id="portalClientPass" placeholder="••••••••" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px; justify-content: center;">Sign In to Portal</button>
+            <div id="portalNotice" style="display: none; margin-top: 14px; padding: 12px 14px; background: rgba(12, 175, 128, 0.12); border: 1px solid rgba(12, 175, 128, 0.4); border-radius: 8px; font-size: 0.85rem; color: #D1E3DC; line-height: 1.5; text-align: center;">
+              Client onboarding is currently by private invitation. For immediate portfolio inquiries or access credentials, please connect with your advisory team:
+              <div style="margin-top: 10px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/916364833952" target="_blank" class="btn btn-sm btn-outline" style="font-size: 0.8rem; padding: 6px 12px; color: #0CAF80; border-color: rgba(12, 175, 128, 0.5);">WhatsApp Advisory</a>
+                <a href="mailto:hello@blissmoney.in" class="btn btn-sm btn-outline" style="font-size: 0.8rem; padding: 6px 12px; color: #0CAF80; border-color: rgba(12, 175, 128, 0.5);">Email Support</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const closeBtn = modal.querySelector("#closePortalModal");
+      if (closeBtn) closeBtn.addEventListener("click", window.closePortalModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) window.closePortalModal();
+      });
+
+      const form = modal.querySelector("#portalLoginForm");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const notice = modal.querySelector("#portalNotice");
+          if (notice) notice.style.display = "block";
+        });
+      }
+      return modal;
+    }
+
+    window.openPortalModal = function() {
+      const modal = createPortalModal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const userInput = modal.querySelector("#portalClientUser");
+      if (userInput) setTimeout(() => userInput.focus(), 150);
+    };
+
+    window.closePortalModal = function() {
+      const modal = document.getElementById("portalModal");
+      if (!modal) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const modal = document.getElementById("portalModal");
+        if (modal && modal.classList.contains("is-open")) {
+          window.closePortalModal();
+        }
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest('[data-open-portal="true"], a[href="#portal"], a[href="#portalModal"]');
+      if (trigger) {
+        e.preventDefault();
+        window.openPortalModal();
+      }
+    });
+  }
+
   initConsultationModal();
+  initPortalModal();
 });
 
 

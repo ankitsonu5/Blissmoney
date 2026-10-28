@@ -1,4 +1,190 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about/about.html"
+    },
+    {
+      "source": "/about/",
+      "destination": "/about/about.html"
+    },
+    {
+      "source": "/about/our-people",
+      "destination": "/about/our-people.html"
+    },
+    {
+      "source": "/about/our-people/",
+      "destination": "/about/our-people.html"
+    },
+    {
+      "source": "/about/brand-story",
+      "destination": "/about/brand-story.html"
+    },
+    {
+      "source": "/about/brand-story/",
+      "destination": "/about/brand-story.html"
+    },
+    {
+      "source": "/about/press-releases",
+      "destination": "/about/press-releases.html"
+    },
+    {
+      "source": "/about/press-releases/",
+      "destination": "/about/press-releases.html"
+    },
+    {
+      "source": "/about/events-conferences",
+      "destination": "/about/events-conferences.html"
+    },
+    {
+      "source": "/about/events-conferences/",
+      "destination": "/about/events-conferences.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services/services.html"
+    },
+    {
+      "source": "/services/",
+      "destination": "/services/services.html"
+    },
+    {
+      "source": "/services/financial-planning",
+      "destination": "/services/financial-planning.html"
+    },
+    {
+      "source": "/services/financial-planning/",
+      "destination": "/services/financial-planning.html"
+    },
+    {
+      "source": "/services/estate-succession-planning",
+      "destination": "/services/estate-succession-planning.html"
+    },
+    {
+      "source": "/services/estate-succession-planning/",
+      "destination": "/services/estate-succession-planning.html"
+    },
+    {
+      "source": "/services/real-estate-advisory",
+      "destination": "/services/real-estate-advisory.html"
+    },
+    {
+      "source": "/services/real-estate-advisory/",
+      "destination": "/services/real-estate-advisory.html"
+    },
+    {
+      "source": "/services/lending",
+      "destination": "/services/lending.html"
+    },
+    {
+      "source": "/services/lending/",
+      "destination": "/services/lending.html"
+    },
+    {
+      "source": "/services/insurance-risk-planning",
+      "destination": "/services/insurance-risk-planning.html"
+    },
+    {
+      "source": "/services/insurance-risk-planning/",
+      "destination": "/services/insurance-risk-planning.html"
+    },
+    {
+      "source": "/services/philanthropy",
+      "destination": "/services/philanthropy.html"
+    },
+    {
+      "source": "/services/philanthropy/",
+      "destination": "/services/philanthropy.html"
+    },
+    {
+      "source": "/clients",
+      "destination": "/clients/clients.html"
+    },
+    {
+      "source": "/clients/",
+      "destination": "/clients/clients.html"
+    },
+    {
+      "source": "/clients/investable-wealth",
+      "destination": "/clients/investable-wealth.html"
+    },
+    {
+      "source": "/clients/investable-wealth/",
+      "destination": "/clients/investable-wealth.html"
+    },
+    {
+      "source": "/clients/client-segments",
+      "destination": "/clients/client-segments.html"
+    },
+    {
+      "source": "/clients/client-segments/",
+      "destination": "/clients/client-segments.html"
+    },
+    {
+      "source": "/insights",
+      "destination": "/insights/insights.html"
+    },
+    {
+      "source": "/insights/",
+      "destination": "/insights/insights.html"
+    },
+    {
+      "source": "/insights/articles",
+      "destination": "/insights/articles.html"
+    },
+    {
+      "source": "/insights/articles/",
+      "destination": "/insights/articles.html"
+    },
+    {
+      "source": "/insights/reports",
+      "destination": "/insights/reports.html"
+    },
+    {
+      "source": "/insights/reports/",
+      "destination": "/insights/reports.html"
+    },
+    {
+      "source": "/insights/videos",
+      "destination": "/insights/videos.html"
+    },
+    {
+      "source": "/insights/videos/",
+      "destination": "/insights/videos.html"
+    },
+    {
+      "source": "/insights/podcasts",
+      "destination": "/insights/podcasts.html"
+    },
+    {
+      "source": "/insights/podcasts/",
+      "destination": "/insights/podcasts.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/careers/",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/reach-us",
+      "destination": "/reach-us.html"
+    },
+    {
+      "source": "/reach-us/",
+      "destination": "/reach-us.html"
+    },
+    {
+      "source": "/client-portal",
+      "destination": "/client-portal.html"
+    },
+    {
+      "source": "/client-portal/",
+      "destination": "/client-portal.html"
+    }
+  ]
 }

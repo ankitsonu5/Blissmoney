@@ -148,7 +148,7 @@
         popup.classList.add('is-visible');
         document.body.classList.add('bm-popup-active');
       }
-    }, 2000);
+    }, 10000);
   }
 
   if (document.readyState === 'loading') {

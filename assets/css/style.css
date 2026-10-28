@@ -17,6 +17,7 @@
   --decor-width: clamp(180px, 13.67vw, 262px);
   --card-stack-offset-x: 84px;
   --card-stack-offset-y: 60px;
+  --container-max-width: 1280px;
 }
 
 /* Reset & Base Setup */
@@ -37,12 +38,29 @@ html {
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: thin;
   scrollbar-color: #0CAF80 #091A15;
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  -moz-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 body {
   width: 100%;
   min-height: 100%;
   overflow-x: clip;
+  background-color: #F3F4F3;
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  -moz-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-feature-settings: "lnum" 1, "tnum" 1;
+  -moz-font-feature-settings: "lnum" 1, "tnum" 1;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 /* ==========================================================================
@@ -92,6 +110,18 @@ body {
               box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   border-bottom: 1px solid transparent;
+}
+
+/* When menu is open, raise header above floating actions (WhatsApp / Go to top) */
+.site-header:has(.site-menu-wrap.is-open),
+.site-header.menu-is-open {
+  z-index: 10005;
+}
+
+/* Ensure floating actions sit below menu when open */
+body:has(.site-menu-wrap.is-open) .floating-actions,
+body.menu-is-open .floating-actions {
+  z-index: 900 !important;
 }
 
 /* Frosted translucent white background on scroll */
@@ -205,6 +235,8 @@ body {
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              min-width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease,
               border-color 0.35s ease;
   flex-direction: column;
@@ -529,8 +561,26 @@ body {
   white-space: nowrap;
 }
 
-/* Hero Section Buttons Scaling for 1920px (100% scale), keeping 125% scale intact */
+/* ==========================================================================
+   1920px (100% scale) vs 125% scale Unified Layout System
+   - 125% scale on 1920px (viewport width <= 1536px): stays compact, balanced
+   - 100% scale on 1920px (viewport width >= 1537px): expands container to 1560px
+   ========================================================================== */
 @media (min-width: 1537px) {
+  :root {
+    --container-max-width: 1560px;
+  }
+
+  .header-inner {
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: clamp(18px, 1.4vw, 24px) clamp(32px, 3.5vw, 64px);
+  }
+
+  .site-logo-img {
+    height: clamp(32px, 2.1vw, 38px);
+  }
+
   .hero-actions {
     gap: clamp(20px, 1.35vw, 26px);
   }
@@ -620,6 +670,7 @@ body {
   padding: clamp(50px, 4.2vw, 85px) 0 clamp(80px, 8vw, 140px);
   overflow: hidden;
   width: 100%;
+  margin-top: -1px;
 }
 
 /* Top-Right Decorative Element (Touching top & right edges) */
@@ -969,6 +1020,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .serve-deck-wrapper {
+    margin-top: 54px;
+  }
+}
+
 @media (max-width: 640px) {
   .serve-section {
     padding: 60px 16px 80px;
@@ -980,6 +1037,11 @@ body {
 
   .serve-title {
     font-size: 2.2rem;
+  }
+
+  /* Card deck shifted lower on mobile screen */
+  .serve-deck-wrapper {
+    margin-top: 58px;
   }
 
   .stacked-deck {
@@ -3020,7 +3082,7 @@ body {
 .footer .container {
   position: relative;
   z-index: 1;
-  width: min(100% - 48px, 1240px);
+  width: min(100% - 48px, var(--container-max-width, 1240px));
   margin-inline: auto;
   box-sizing: border-box;
 }
@@ -3926,3 +3988,23 @@ body {
   max-width: 440px;
   margin: 0;
 }
+
+/* Global Wave Keyframe Animations */
+@keyframes waveAnim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveAnimReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+

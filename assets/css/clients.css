@@ -1,0 +1,857 @@
+/* ========================================================================== 
+   BlissMoney Clients
+   Page-body redesign scoped to the three Clients routes only.
+   Header, banner and footer styles intentionally remain untouched.
+   ========================================================================== */
+
+:is(body.page-clients, body.page-investable-wealth, body.page-client-segments) {
+  --client-ink: #15372d;
+  --client-copy: #526b62;
+  --client-soft-copy: #6f837c;
+  --client-green: #0caf80;
+  --client-mint: #52e2b5;
+  --client-deep: #06251b;
+  --client-deeper: #031811;
+  --client-line: #dce9e3;
+  --client-surface: #ffffff;
+  --client-wash: #f3f8f6;
+  background: var(--client-wash);
+}
+
+/* Shared content rhythm. The selectors deliberately begin below the banner. */
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container {
+  max-width: 1280px;
+  padding: clamp(56px, 7vw, 92px) clamp(22px, 4vw, 58px) clamp(72px, 8vw, 110px);
+}
+
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container > .about-section {
+  position: relative;
+  padding: 0;
+  border: 0;
+}
+
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container > .about-section + .about-section {
+  margin-top: clamp(72px, 9vw, 118px);
+}
+
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container > .about-section > .about-section-header {
+  max-width: 890px;
+  margin-bottom: clamp(30px, 4vw, 46px);
+}
+
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container > .about-section
+  > .about-section-header .about-section-title {
+  max-width: 820px;
+  margin: 0;
+  color: var(--client-ink);
+  font-size: clamp(1.9rem, 3.4vw, 3.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.042em;
+  text-wrap: balance;
+}
+
+:is(.page-investable-wealth, .page-client-segments)
+  .about-page-wrapper > .about-container > .about-section
+  > .about-section-header::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--client-green), rgba(12, 175, 128, 0.08));
+}
+
+/* ========================================================================== 
+   Who We Work With
+   ========================================================================== */
+
+.page-clients .clients-profiles-section .about-section-title,
+.page-clients .clients-faq-section .about-section-title {
+  max-width: 820px;
+  color: var(--client-ink);
+  font-size: clamp(1.9rem, 3.4vw, 3.15rem);
+  line-height: 1.1;
+  letter-spacing: -0.042em;
+  text-wrap: balance;
+}
+
+.page-clients .clients-profiles-section .about-section-header::after,
+.page-clients .clients-faq-section .about-section-header::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--client-green), rgba(12, 175, 128, 0.08));
+}
+
+.page-clients .clients-profiles-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.page-clients .clients-profile-card:nth-child(1),
+.page-clients .clients-profile-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.page-clients .clients-profile-card:nth-child(2),
+.page-clients .clients-profile-card:nth-child(3) {
+  grid-column: span 5;
+}
+
+.page-clients .clients-profile-card:nth-child(4) {
+  background:
+    radial-gradient(circle at 100% 100%, rgba(12, 175, 128, 0.1), transparent 18rem),
+    #ffffff;
+}
+
+/* ========================================================================== 
+   Investable Wealth
+   ========================================================================== */
+
+/* Opening definition: an editorial lead followed by two balanced viewpoints. */
+.page-investable-wealth .about-section:nth-of-type(1) .scope-intro-box {
+  position: relative;
+  margin: 0 0 28px;
+  padding: clamp(26px, 3.5vw, 38px) clamp(26px, 4vw, 44px);
+  overflow: hidden;
+  border: 1px solid rgba(12, 175, 128, 0.23);
+  border-left: 4px solid var(--client-green);
+  border-radius: 0 20px 20px 0;
+  background:
+    radial-gradient(circle at 92% 18%, rgba(82, 226, 181, 0.22), transparent 18rem),
+    linear-gradient(135deg, #e9f7f1 0%, #f7fbf9 68%);
+  box-shadow: 0 18px 42px rgba(21, 71, 55, 0.07);
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .scope-intro-box::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -85px;
+  bottom: -90px;
+  border: 1px solid rgba(12, 175, 128, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(12, 175, 128, 0.035);
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .scope-intro-text {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  color: #274e41;
+  font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillars-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px;
+  margin-top: 0 !important;
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-item {
+  position: relative;
+  min-height: 220px;
+  padding: clamp(28px, 3.2vw, 38px);
+  overflow: hidden;
+  border: 1px solid var(--client-line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(25, 66, 53, 0.055);
+  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-item::before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 3px;
+  top: 0;
+  left: 38px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--client-green), var(--client-mint));
+  transition: width 260ms ease;
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(12, 175, 128, 0.38);
+  box-shadow: 0 24px 52px rgba(25, 66, 53, 0.1);
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-item:hover::before {
+  width: 104px;
+}
+
+.page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-desc {
+  position: relative;
+  z-index: 1;
+  color: var(--client-copy) !important;
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+}
+
+/* Availability: signature dark band with three glass panels. */
+.page-investable-wealth .about-section:nth-of-type(2) {
+  padding: clamp(48px, 6.5vw, 76px);
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(82, 226, 181, 0.2), transparent 24rem),
+    radial-gradient(circle at 4% 100%, rgba(12, 175, 128, 0.13), transparent 25rem),
+    linear-gradient(145deg, #0a3528 0%, var(--client-deep) 60%, var(--client-deeper) 100%);
+  box-shadow: 0 30px 66px rgba(7, 42, 31, 0.2);
+}
+
+.page-investable-wealth .about-section:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -130px;
+  bottom: -150px;
+  border: 1px solid rgba(82, 226, 181, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 46px rgba(82, 226, 181, 0.028);
+  pointer-events: none;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) > .about-section-header .about-section-title {
+  color: #ffffff !important;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) > .about-section-header::after {
+  background: linear-gradient(90deg, var(--client-mint), rgba(82, 226, 181, 0.08));
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) .planning-pillars-grid {
+  gap: 18px;
+  margin-top: 0;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) .planning-pillar-item {
+  min-height: 230px;
+  padding: 30px 27px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(9px);
+  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) .planning-pillar-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(82, 226, 181, 0.42);
+  background: rgba(255, 255, 255, 0.085);
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) .planning-pillar-title {
+  color: #ffffff;
+  font-size: 1.16rem;
+}
+
+.page-investable-wealth .about-section:nth-of-type(2) .planning-pillar-desc {
+  color: #b9d0c7;
+  line-height: 1.72;
+}
+
+/* Comparison table: a composed data surface, not a generic browser table. */
+.page-investable-wealth .about-section:nth-of-type(3) {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table-wrap {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dbe8e2;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table {
+  font-size: 0.94rem;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table th {
+  padding: 20px 22px;
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #0a382a;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table td {
+  padding: 20px 22px;
+  border-color: #e5eee9;
+  color: var(--client-copy);
+  line-height: 1.62;
+  vertical-align: top;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table tbody tr:nth-child(even) td {
+  background: #f7faf8;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table tbody tr:hover td {
+  background: #edf8f3;
+}
+
+.page-investable-wealth .about-section:nth-of-type(3) .bm-table td strong {
+  color: var(--client-ink);
+  font-weight: 700;
+}
+
+/* The discussion and preparation notes become a deliberate two-panel spread. */
+.page-investable-wealth .about-section:nth-of-type(4) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) > .about-section-header {
+  grid-column: 1 / -1;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .scope-intro-box,
+.page-investable-wealth .about-section:nth-of-type(4) .outputs-note-box {
+  margin: 0 !important;
+  padding: clamp(28px, 3.5vw, 40px);
+  border-radius: 20px;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .scope-intro-box {
+  border: 1px solid var(--client-line);
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(21, 62, 49, 0.055);
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .scope-intro-text {
+  color: var(--client-copy);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .outputs-note-box {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(82, 226, 181, 0.24);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(82, 226, 181, 0.19), transparent 15rem),
+    linear-gradient(145deg, #0a3528 0%, #051e16 100%);
+  box-shadow: 0 20px 46px rgba(8, 42, 31, 0.18);
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .outputs-note-box::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -65px;
+  bottom: -70px;
+  border: 1px solid rgba(82, 226, 181, 0.18);
+  border-radius: 50%;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .outputs-note-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-investable-wealth .about-section:nth-of-type(4) .outputs-note-text {
+  color: #c1d8cf;
+  line-height: 1.72;
+}
+
+/* FAQ cards. */
+.page-investable-wealth .about-section:nth-of-type(5) {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-grid {
+  gap: 18px;
+  margin-top: 0;
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-item {
+  position: relative;
+  padding: 25px 24px;
+  overflow: hidden;
+  border: 1px solid #e1ebe6;
+  border-radius: 16px;
+  background: #fbfdfc;
+  transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-item::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--client-green);
+  transform: scaleY(0.24);
+  transform-origin: top;
+  transition: transform 280ms ease;
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(12, 175, 128, 0.36);
+  box-shadow: 0 16px 34px rgba(21, 62, 49, 0.08);
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-item:hover::after {
+  transform: scaleY(1);
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-q {
+  color: var(--client-ink);
+  font-size: 1.04rem;
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-q-indicator {
+  color: var(--client-green);
+}
+
+.page-investable-wealth .about-section:nth-of-type(5) .services-faq-a {
+  color: var(--client-copy);
+}
+
+/* ========================================================================== 
+   Client Segments
+   ========================================================================== */
+
+/* Profile mosaic mirrors the variety of client circumstances. */
+.page-client-segments .about-section:nth-of-type(1) .financial-facets-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 0;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card {
+  position: relative;
+  grid-column: span 5;
+  min-height: 260px;
+  padding: clamp(30px, 3.5vw, 40px);
+  overflow: hidden;
+  border: 1px solid var(--client-line);
+  border-left: 1px solid var(--client-line);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(21, 62, 49, 0.055);
+  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:nth-child(1),
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card::before {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 3px;
+  top: 0;
+  left: 40px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--client-green), var(--client-mint));
+  transition: width 280ms ease;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -95px;
+  bottom: -98px;
+  border: 1px solid rgba(12, 175, 128, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(12, 175, 128, 0.025);
+  transition: transform 400ms ease;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:first-child {
+  border-color: rgba(82, 226, 181, 0.18);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(82, 226, 181, 0.2), transparent 20rem),
+    linear-gradient(145deg, #0a382a 0%, #061e17 100%);
+  box-shadow: 0 24px 54px rgba(8, 42, 31, 0.18);
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(12, 175, 128, 0.42);
+  box-shadow: 0 24px 50px rgba(21, 62, 49, 0.11);
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:hover::before {
+  width: 106px;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:hover::after {
+  transform: translate(-8px, -8px) scale(1.06);
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-title {
+  position: relative;
+  z-index: 1;
+  color: var(--client-ink);
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  line-height: 1.35;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-desc {
+  position: relative;
+  z-index: 1;
+  color: var(--client-copy);
+  line-height: 1.75;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:first-child .financial-facet-title {
+  color: #ffffff;
+}
+
+.page-client-segments .about-section:nth-of-type(1) .financial-facet-card:first-child .financial-facet-desc {
+  color: #bdd2ca;
+}
+
+/* Life transitions: a dark, connected three-column sequence. */
+.page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-block: clamp(64px, 8vw, 104px);
+  padding-inline: clamp(24px, 4vw, 58px);
+  overflow: hidden;
+  border-radius: 0;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(82, 226, 181, 0.2), transparent 24rem),
+    radial-gradient(circle at 0% 100%, rgba(12, 175, 128, 0.13), transparent 25rem),
+    linear-gradient(145deg, #0a3528 0%, var(--client-deep) 60%, var(--client-deeper) 100%);
+  box-shadow: 0 30px 66px rgba(7, 42, 31, 0.2);
+}
+
+@media (min-width: 1281px) {
+  .page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+    padding-inline: calc((100vw - 1164px) / 2);
+  }
+}
+
+.page-client-segments .about-section:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: -140px;
+  bottom: -160px;
+  border: 1px solid rgba(82, 226, 181, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(82, 226, 181, 0.028);
+}
+
+.page-client-segments .about-section:nth-of-type(2) > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-client-segments .about-section:nth-of-type(2) > .about-section-header .about-section-title {
+  color: #ffffff !important;
+}
+
+.page-client-segments .about-section:nth-of-type(2) > .about-section-header::after {
+  background: linear-gradient(90deg, var(--client-mint), rgba(82, 226, 181, 0.08));
+}
+
+.page-client-segments .about-section:nth-of-type(2) .planning-pillars-grid {
+  gap: 18px;
+  margin-top: 0;
+}
+
+.page-client-segments .about-section:nth-of-type(2) .planning-pillar-item {
+  min-height: 230px;
+  padding: 30px 27px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(9px);
+  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
+}
+
+.page-client-segments .about-section:nth-of-type(2) .planning-pillar-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(82, 226, 181, 0.42);
+  background: rgba(255, 255, 255, 0.085);
+}
+
+.page-client-segments .about-section:nth-of-type(2) .planning-pillar-title {
+  color: #ffffff;
+  font-size: 1.16rem;
+}
+
+.page-client-segments .about-section:nth-of-type(2) .planning-pillar-desc {
+  color: #b9d0c7;
+  line-height: 1.72;
+}
+
+/* The concluding guidance is treated as an editorial statement. */
+.page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(40px, 5vw, 68px);
+  align-items: center;
+  padding: clamp(48px, 5vw, 64px) clamp(34px, 5.2vw, 64px);
+  overflow: hidden;
+  border: 1px solid var(--client-line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 100%, rgba(12, 175, 128, 0.09), transparent 22rem),
+    #ffffff;
+  box-shadow: 0 22px 54px rgba(21, 62, 49, 0.07);
+}
+
+.page-client-segments .about-section:nth-of-type(3) > .about-section-header {
+  margin: 0;
+}
+
+.page-client-segments .about-section:nth-of-type(3) > .about-section-header .about-section-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+}
+
+.page-client-segments .about-section:nth-of-type(3) .scope-intro-box {
+  position: relative;
+  margin: 0 !important;
+  padding: 16px 0 16px clamp(24px, 3vw, 34px);
+  border-left: 3px solid var(--client-green);
+}
+
+.page-client-segments .about-section:nth-of-type(3) .scope-intro-text {
+  color: var(--client-copy);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Shared closing panels for the two child pages. */
+:is(.page-investable-wealth, .page-client-segments) .services-closing-cta {
+  position: relative;
+  margin-top: clamp(72px, 9vw, 118px) !important;
+  padding: clamp(48px, 6vw, 72px) clamp(30px, 5vw, 62px);
+  overflow: hidden;
+  border: 1px solid rgba(82, 226, 181, 0.2);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(82, 226, 181, 0.18), transparent 23rem),
+    linear-gradient(135deg, #0b392b 0%, #07271e 62%, #041811 100%);
+  box-shadow: 0 28px 65px rgba(8, 42, 32, 0.22);
+  text-align: left;
+}
+
+:is(.page-investable-wealth, .page-client-segments) .services-closing-cta::before {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  top: 50%;
+  right: -90px;
+  border: 1px solid rgba(82, 226, 181, 0.22);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 50px rgba(82, 226, 181, 0.035);
+  pointer-events: none;
+}
+
+:is(.page-investable-wealth, .page-client-segments) .services-closing-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+:is(.page-investable-wealth, .page-client-segments) .services-closing-title {
+  max-width: 760px;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+:is(.page-investable-wealth, .page-client-segments) .services-closing-desc {
+  max-width: 700px;
+  margin: 0 0 30px;
+  color: #bdd2ca;
+}
+
+/* ========================================================================== 
+   Responsive behaviour
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .page-clients .clients-profile-card:nth-child(n) {
+    grid-column: span 6;
+  }
+
+  .page-client-segments .about-section:nth-of-type(1) .financial-facet-card:nth-child(n) {
+    grid-column: span 6;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(4) {
+    grid-template-columns: 1fr;
+  }
+
+  .page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(3) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 42px 36px;
+  }
+}
+
+@media (max-width: 760px) {
+  :is(.page-investable-wealth, .page-client-segments)
+    .about-page-wrapper > .about-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  :is(.page-investable-wealth, .page-client-segments)
+    .about-page-wrapper > .about-container > .about-section + .about-section {
+    margin-top: 64px;
+  }
+
+  :is(.page-investable-wealth, .page-client-segments)
+    .about-page-wrapper > .about-container > .about-section
+    > .about-section-header .about-section-title,
+  .page-clients .clients-profiles-section .about-section-title,
+  .page-clients .clients-faq-section .about-section-title {
+    font-size: clamp(1.78rem, 8vw, 2.4rem);
+  }
+
+  .page-clients .clients-profile-card:nth-child(n) {
+    grid-column: 1 / -1;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(1) .planning-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(2) {
+    padding: 40px 22px;
+    border-radius: 22px;
+  }
+
+  .page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+    padding: 52px 18px;
+    border-radius: 0;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(2) .planning-pillars-grid,
+  .page-client-segments .about-section:nth-of-type(2) .planning-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-client-segments .about-page-wrapper > .about-container > .about-section:nth-of-type(3) {
+    padding: 34px 24px;
+    border-radius: 20px;
+  }
+
+  .page-client-segments .about-section:nth-of-type(3) .scope-intro-box {
+    padding: 10px 0 10px 20px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(5) .services-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-client-segments .about-section:nth-of-type(1) .financial-facet-card:nth-child(n) {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+
+  :is(.page-investable-wealth, .page-client-segments) .services-closing-cta {
+    margin-top: 64px !important;
+    padding: 42px 24px;
+    border-radius: 22px;
+  }
+
+  :is(.page-investable-wealth, .page-client-segments) .services-closing-cta::before {
+    right: -180px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-clients .clients-profiles-grid {
+    gap: 16px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(1) .planning-pillar-item,
+  .page-investable-wealth .about-section:nth-of-type(2) .planning-pillar-item,
+  .page-client-segments .about-section:nth-of-type(1) .financial-facet-card,
+  .page-client-segments .about-section:nth-of-type(2) .planning-pillar-item {
+    min-height: auto;
+    padding: 27px 23px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(3) .bm-table-wrap {
+    overflow-x: auto;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(3) .bm-table {
+    min-width: 720px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(4) .scope-intro-box,
+  .page-investable-wealth .about-section:nth-of-type(4) .outputs-note-box {
+    padding: 26px 22px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(5) .services-faq-item {
+    padding: 23px 20px;
+  }
+
+  .page-investable-wealth .about-section:nth-of-type(5) .services-faq-a {
+    padding-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-clients .clients-profile-card,
+  .page-clients .clients-profile-card::before,
+  .page-clients .clients-profile-card::after,
+  .page-investable-wealth .planning-pillar-item,
+  .page-investable-wealth .planning-pillar-item::before,
+  .page-investable-wealth .services-faq-item,
+  .page-investable-wealth .services-faq-item::after,
+  .page-client-segments .financial-facet-card,
+  .page-client-segments .financial-facet-card::before,
+  .page-client-segments .financial-facet-card::after,
+  .page-client-segments .planning-pillar-item {
+    transition: none;
+  }
+}

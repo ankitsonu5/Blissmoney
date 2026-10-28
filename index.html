@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.">
+  <meta name="description" content="BlissMoney is an advisory-led wealth management firm for people who've decided that hope isn't a strategy.">
   <title>BlissMoney | Wealth Management</title>
 
   <!-- Favicon and App Icons -->
@@ -21,8 +20,9 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet & Lead Popup Widget -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="assets/css/lead-popup.css?v=2.0">
+  <link rel="stylesheet" href="assets/css/about.css?v=1.4">
 </head>
 
 <body>
@@ -36,8 +36,8 @@
 
       <!-- Menu Wrapper -->
       <div class="site-menu-wrap" id="siteMenuWrap">
-        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false"
-          aria-haspopup="true">
+        <!-- Default State Menu Button -->
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-haspopup="true">
           <span class="site-menu-text">Menu</span>
           <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
         </button>
@@ -48,16 +48,270 @@
             <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
           </button>
           <nav class="site-menu-nav">
-            <a href="#hero" class="site-nav-link" role="menuitem">Home</a>
-            <a href="#who-we-serve" class="site-nav-link" role="menuitem">Who we serve</a>
-            <a href="#how-we-work" class="site-nav-link" role="menuitem">Our approach</a>
-            <a href="#nine-disciplines" class="site-nav-link" role="menuitem">Our offerings</a>
-            <a href="calculator.html" class="site-nav-link" role="menuitem">Financial Tools</a>
-            <a href="blog.html" class="site-nav-link" role="menuitem">Insights &amp; Blogs</a>
-            <a href="#five-questions" class="site-nav-link" role="menuitem">About us</a>
-            <a href="#consultation" class="site-nav-link" role="menuitem">Contact</a>
-            <a href="#consultation" class="site-nav-link site-nav-cta" role="menuitem"
-              data-open-consultation="true">Book a consultation</a>
+            <a href="#hero" class="site-nav-link active" role="menuitem">Home</a>
+            
+            <!-- About Menu -->
+            <div class="site-nav-item has-submenu" id="navItemAbout">
+              <a href="about/about.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>About</span>
+              </a>
+              <div class="site-submenu-box" id="aboutSubmenuBox" role="menu" aria-label="About Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">The Firm</span>
+                  <span class="submenu-box-title">About BlissMoney</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="about/about.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Firm philosophy &amp; approach</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/our-people.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Our People</span>
+                        <span class="sub-item-desc">Senior advisors &amp; leadership</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/brand-story.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Brand Story</span>
+                        <span class="sub-item-desc">Origins &amp; fiduciary heritage</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/press-releases.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Press Releases</span>
+                        <span class="sub-item-desc">Media coverage &amp; updates</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/events-conferences.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Events &amp; Conferences</span>
+                        <span class="sub-item-desc">Private summits &amp; sessions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Services Menu -->
+            <div class="site-nav-item has-submenu" id="navItemServices">
+              <a href="services/services.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Services</span>
+              </a>
+              <div class="site-submenu-box" id="servicesSubmenuBox" role="menu" aria-label="Services Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Our Offerings</span>
+                  <span class="submenu-box-title">Wealth Services</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="services/services.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Bespoke advisory solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/financial-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Financial Planning</span>
+                        <span class="sub-item-desc">Strategic wealth &amp; cashflow roadmaps</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/estate-succession-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Estate &amp; Succession Planning</span>
+                        <span class="sub-item-desc">Legacy architecture &amp; family trusts</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/real-estate-advisory.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Real Estate Advisory</span>
+                        <span class="sub-item-desc">Commercial &amp; high-yield property</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/lending.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Lending</span>
+                        <span class="sub-item-desc">Secured liquidity &amp; credit solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/insurance-risk-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">06</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Insurance and Risk Planning</span>
+                        <span class="sub-item-desc">Capital protection &amp; key-person cover</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/philanthropy.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">07</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Philanthropy</span>
+                        <span class="sub-item-desc">Impact endowments &amp; foundations</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clients Menu -->
+            <div class="site-nav-item has-submenu" id="navItemClients">
+              <a href="clients/clients.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Clients</span>
+              </a>
+              <div class="site-submenu-box" id="clientsSubmenuBox" role="menu" aria-label="Clients Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Partnerships</span>
+                  <span class="submenu-box-title">Who We Serve</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="clients/clients.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Who We Work With</span>
+                        <span class="sub-item-desc">Tailored wealth criteria &amp; values</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/investable-wealth.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Investable Wealth</span>
+                        <span class="sub-item-desc">Tiered portfolios &amp; allocation models</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/client-segments.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Client Segments</span>
+                        <span class="sub-item-desc">Entrepreneurs, CXOs &amp; family offices</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insights Menu -->
+            <div class="site-nav-item has-submenu" id="navItemInsights">
+              <a href="insights/articles.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Insights</span>
+              </a>
+              <div class="site-submenu-box" id="insightsSubmenuBox" role="menu" aria-label="Insights Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Intel &amp; Media</span>
+                  <span class="submenu-box-title">Market Insights</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="insights/articles.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Articles</span>
+                        <span class="sub-item-desc">Market analysis &amp; investment views</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/reports.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Reports</span>
+                        <span class="sub-item-desc">Quarterly whitepapers &amp; research</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/videos.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Videos</span>
+                        <span class="sub-item-desc">Advisor briefings &amp; market commentary</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/podcasts.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Podcasts</span>
+                        <span class="sub-item-desc">Conversations with global allocators</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Careers -->
+            <a href="careers.html" class="site-nav-link" role="menuitem">Careers</a>
+
+            <!-- Reach Us -->
+            <a href="reach-us.html" class="site-nav-link" role="menuitem">Reach Us</a>
+
+            <!-- Login / Portal -->
+            <a href="client-portal.html" class="site-nav-link site-nav-cta" role="menuitem">Login / Portal</a>
           </nav>
         </div>
       </div>
@@ -119,8 +373,9 @@
     </section>
   </div>
 
-  <!-- Section 01: Who We Serve (Stacked Cards Deck with 4 Dots) -->
+  <!-- Section 01: Who We Serve (Stacked Cards Deck with 4 Dots) / Clients -->
   <section class="serve-section" id="who-we-serve">
+    <div id="clients" style="position: absolute; top: -10px; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
     <!-- Top-Right Brand Decorative Element with Rotating Orbiting Dot -->
     <div class="serve-decor" aria-hidden="true">
       <svg class="serve-decor-svg" width="297" height="466" viewBox="0 0 297 466" fill="none"
@@ -154,14 +409,10 @@
       <div class="serve-deck-wrapper">
         <!-- 4 Vertical Control Dots -->
         <div class="deck-controls" role="tablist" aria-label="Who we serve profiles">
-          <button class="deck-dot active" data-index="0" role="tab" aria-selected="true"
-            aria-label="Card 1: Business owners & entrepreneurs"></button>
-          <button class="deck-dot" data-index="1" role="tab" aria-selected="false"
-            aria-label="Card 2: Corporate leaders & executives"></button>
-          <button class="deck-dot" data-index="2" role="tab" aria-selected="false"
-            aria-label="Card 3: Next-gen wealth & families"></button>
-          <button class="deck-dot" data-index="3" role="tab" aria-selected="false"
-            aria-label="Card 4: Affluent individuals & founders"></button>
+          <button class="deck-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Card 1: Business owners & entrepreneurs"></button>
+          <button class="deck-dot" data-index="1" role="tab" aria-selected="false" aria-label="Card 2: Corporate leaders & executives"></button>
+          <button class="deck-dot" data-index="2" role="tab" aria-selected="false" aria-label="Card 3: Next-gen wealth & families"></button>
+          <button class="deck-dot" data-index="3" role="tab" aria-selected="false" aria-label="Card 4: Tech founders & innovators"></button>
         </div>
 
         <!-- Stacked Cards Container -->
@@ -208,8 +459,7 @@
               <div class="card-text-content">
                 <h3 class="card-title">Families &amp;<br>Next-Gen Wealth</h3>
                 <p class="card-desc">
-                  Wealth that needs to move between generations cleanly, staying a family asset rather than a family
-                  argument.
+                  Wealth that needs to move between generations cleanly — and stay a family asset, not a family argument.
                 </p>
               </div>
             </div>
@@ -231,8 +481,7 @@
               </div>
             </div>
             <div class="card-right">
-              <img src="assets/images/who_we_serve/techfounder.jpg" alt="Affluent individuals &amp; founders"
-                class="card-img card-img--founder" loading="lazy">
+              <img src="assets/images/who_we_serve/techfounder.jpg" alt="Tech founders &amp; innovators" class="card-img card-img--founder" loading="lazy">
             </div>
           </article>
         </div>
@@ -350,8 +599,9 @@
     </div>
   </section>
 
-  <!-- Section 03: Five Questions Framework -->
+  <!-- Section 03: Five Questions Framework / About -->
   <section class="questions-section" id="five-questions">
+    <div id="about" style="position: absolute; top: -10px; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
     <!-- Top-Right Decorative Overlapping Circles SVG -->
     <div class="questions-decor" aria-hidden="true">
       <svg class="questions-decor-svg" width="692" height="781" viewBox="0 0 692 781" fill="none"
@@ -397,8 +647,7 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-1" role="region" aria-labelledby="acc-head-1">
-            <p>Is the underlying business, asset or strategy sound (earnings, balance sheet, governance) without the
-              story attached to it?</p>
+            <p>Is the underlying business, asset or strategy sound — earnings, balance sheet, governance — without the story attached to it?</p>
           </div>
         </div>
         <div class="acc-item">
@@ -407,8 +656,7 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-2" role="region" aria-labelledby="acc-head-2">
-            <p>What are we paying versus what we are getting, and what must go right for that price to make sense?
-            </p>
+            <p>What are we paying versus what we are getting — and what has to go right for that price to make sense?</p>
           </div>
         </div>
         <div class="acc-item">
@@ -417,8 +665,7 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-3" role="region" aria-labelledby="acc-head-3">
-            <p>How does it behave in a drawdown? Position sizing, correlation and the exit are decided before entry,
-              never during panic.</p>
+            <p>How does it behave in a drawdown? Position sizing, correlation and the exit — decided before entry, not during panic.</p>
           </div>
         </div>
         <div class="acc-item">
@@ -427,8 +674,7 @@
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body" id="acc-body-4" role="region" aria-labelledby="acc-head-4">
-            <p>Where is informed money positioned, and are we early, aligned, or the liquidity someone else is waiting
-              for?</p>
+            <p>Where is informed money positioned — and are we early, aligned, or the liquidity someone else is waiting for?</p>
           </div>
         </div>
         <div class="acc-item">
@@ -580,8 +826,9 @@
     </div>
   </section>
 
-  <!-- Section 05: Nine Disciplines. One Advisor Relationship -->
+  <!-- Section 05: Nine Disciplines. One Advisor Relationship / Services -->
   <section class="disciplines-section" id="nine-disciplines">
+    <div id="services" style="position: absolute; top: -10px; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
     <div class="disciplines-container">
       <!-- Section Header (Scrolls naturally above) -->
       <div class="disciplines-header">
@@ -603,31 +850,22 @@
         <div class="disciplines-container disciplines-container--showcase">
           <!-- Interactive 9 Disciplines Showcase -->
           <div class="disciplines-wrapper">
-            <!-- 9 Vertical Numbered Buttons -->
-            <nav class="disciplines-nav" role="tablist" aria-label="Nine disciplines">
-              <button class="discipline-btn active" data-discipline="0" role="tab" aria-selected="true"
-                aria-label="1. Wealth management">1</button>
-              <button class="discipline-btn" data-discipline="1" role="tab" aria-selected="false"
-                aria-label="2. Investment solutions">2</button>
-              <button class="discipline-btn" data-discipline="2" role="tab" aria-selected="false"
-                aria-label="3. Alternative investment strategies">3</button>
-              <button class="discipline-btn" data-discipline="3" role="tab" aria-selected="false"
-                aria-label="4. Comprehensive financial planning">4</button>
-              <button class="discipline-btn" data-discipline="4" role="tab" aria-selected="false"
-                aria-label="5. Risk &amp; protection planning">5</button>
-              <button class="discipline-btn" data-discipline="5" role="tab" aria-selected="false"
-                aria-label="6. Estate &amp; succession planning">6</button>
-              <button class="discipline-btn" data-discipline="6" role="tab" aria-selected="false"
-                aria-label="7. Tax planning &amp; CA coordination">7</button>
-              <button class="discipline-btn" data-discipline="7" role="tab" aria-selected="false"
-                aria-label="8. Loan syndication &amp; funding">8</button>
-              <button class="discipline-btn" data-discipline="8" role="tab" aria-selected="false"
-                aria-label="9. Global &amp; cross-border investing">9</button>
-            </nav>
+        <!-- 9 Vertical Numbered Buttons -->
+        <nav class="disciplines-nav" role="tablist" aria-label="Nine disciplines">
+          <button class="discipline-btn active" data-discipline="0" role="tab" aria-selected="true" aria-label="1. Wealth management">1</button>
+          <button class="discipline-btn" data-discipline="1" role="tab" aria-selected="false" aria-label="2. Financial planning">2</button>
+          <button class="discipline-btn" data-discipline="2" role="tab" aria-selected="false" aria-label="3. Tax architecture">3</button>
+          <button class="discipline-btn" data-discipline="3" role="tab" aria-selected="false" aria-label="4. Risk &amp; protection planning">4</button>
+          <button class="discipline-btn" data-discipline="4" role="tab" aria-selected="false" aria-label="5. Estate &amp; succession planning">5</button>
+          <button class="discipline-btn" data-discipline="5" role="tab" aria-selected="false" aria-label="6. Tax planning &amp; CA coordination">6</button>
+          <button class="discipline-btn" data-discipline="6" role="tab" aria-selected="false" aria-label="7. Alternative investment strategies">7</button>
+          <button class="discipline-btn" data-discipline="7" role="tab" aria-selected="false" aria-label="8. Alternative investment strategies">8</button>
+          <button class="discipline-btn" data-discipline="8" role="tab" aria-selected="false" aria-label="9. Investment advisory">9</button>
+        </nav>
 
             <!-- Showcase Card Stage -->
             <div class="disciplines-stage">
-              <!-- Shared vector overlay: circles, lines and dots morph between cards (drawn in main.js) -->
+              <!-- Shared vector overlay: circles, lines and dots morph between cards (drawn in main.js?v=2.2) -->
               <svg class="discipline-geom" aria-hidden="true" focusable="false"></svg>
 
               <!-- Card 1: Wealth management -->
@@ -645,131 +883,123 @@
                 </div>
               </article>
 
-              <!-- Card 2: Investment solutions -->
-              <article class="discipline-card" data-card="1" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Investment solutions"
-                    class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Investment<br>Solutions</h3>
-                  <p class="discipline-desc">
-                    Access to instruments and strategies built around your goals, not what is easy to distribute.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 3: Alternative investment strategies -->
-              <article class="discipline-card" data-card="2" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Alternative investment strategies"
-                    class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Alternative <br> Investment Strategies</h3>
-                  <p class="discipline-desc">
-                    Beyond listed markets, for portfolios that can carry the complexity.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 4: Comprehensive Financial Planning -->
-              <article class="discipline-card discipline-card--center" data-card="3" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png"
-                    alt="Comprehensive Financial Planning" class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Comprehensive<br>Financial Planning</h3>
-                  <p class="discipline-desc">
-                    Every goal you're funding, mapped against every rupee you have.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 5: Risk & Protection Planning -->
-              <article class="discipline-card discipline-card--center" data-card="4" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png"
-                    alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
-                  <p class="discipline-desc">
-                    The safeguards that keep one bad year from becoming a bad decade.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 6: Estate & Succession Planning -->
-              <article class="discipline-card discipline-card--center" data-card="5" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/tax_planning_06.png"
-                    alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Estate &amp; Succession <br>Planning</h3>
-                  <p class="discipline-desc">
-                    Making sure what you've built transfers the way you intend it to.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 7: Tax Planning & CA Coordination -->
-              <article class="discipline-card discipline-card--bottom" data-card="6" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/alternative_investment_07.png"
-                    alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Tax Planning &amp; CA <br>Coordination</h3>
-                  <p class="discipline-desc">
-                    Working alongside your CA, not around them.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 8: Loan Syndication & Funding -->
-              <article class="discipline-card discipline-card--bottom" data-card="7" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/alternative_investment_08.png"
-                    alt="Loan Syndication &amp; Funding" class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Loan Syndication<br>&amp; Funding</h3>
-                  <p class="discipline-desc">
-                    Debt structured as deliberately as your investments, from corporate syndication to private credit.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Card 9: Global & Cross-Border Investing -->
-              <article class="discipline-card discipline-card--bottom" data-card="8" role="tabpanel">
-                <div class="discipline-media">
-                  <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Global &amp; Cross-Border Investing"
-                    class="discipline-img" loading="lazy">
-                  <div class="discipline-overlay"></div>
-                </div>
-                <div class="discipline-content">
-                  <h3 class="discipline-title">Global &amp; Cross-Border<br>Investing</h3>
-                  <p class="discipline-desc">
-                    Access to global markets through LRS and GIFT City corridors, fully compliant with cross-border regulations.
-                  </p>
-                </div>
-              </article>
+          <!-- Card 2: Financial planning -->
+          <article class="discipline-card" data-card="1" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/financial_planning_02.png" alt="Financial planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
             </div>
-          </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Investment<br>Solutions</h3>
+              <p class="discipline-desc">
+                Access to instruments and strategies that fit your goals — not just what's easy to sell.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Tax architecture -->
+          <article class="discipline-card" data-card="2" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/financial_plan_03.png" alt="Tax architecture" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Alternative <br> Investment Strategies</h3>
+              <p class="discipline-desc">
+                Beyond listed markets, for portfolios that can carry the complexity.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4: Risk & Protection Planning -->
+          <article class="discipline-card discipline-card--center" data-card="3" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/riskprotection_planning_04.png" alt="Risk &amp; Protection Planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Comprehensive &amp; Financial<br>Planning</h3>
+              <p class="discipline-desc">
+                Every goal you're funding, mapped against every rupee you have.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5: Estate & Succession Planning -->
+          <article class="discipline-card discipline-card--center" data-card="4" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/estate_successionplanning_05.png" alt="Estate &amp; Succession Planning" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Risk &amp; Protection<br>Planning</h3>
+              <p class="discipline-desc">
+                The safeguards that keep one bad year from becoming a bad decade.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 6: Tax Planning & CA Coordination -->
+          <article class="discipline-card discipline-card--center" data-card="5" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/tax_planning_06.png" alt="Tax Planning &amp; CA Coordination" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Estate &amp; Succession <br>Planning</h3>
+              <p class="discipline-desc">
+                Making sure what you've built transfers the way you intend it to.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 7: Alternative Investment Strategies -->
+          <article class="discipline-card discipline-card--bottom" data-card="6" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Tax Planning &amp; CA <br>Coordination</h3>
+              <p class="discipline-desc">
+                Working alongside your CA, not around them.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 8: Loan & Liability Advisory (Alternative Investment Strategies) -->
+          <article class="discipline-card discipline-card--bottom" data-card="7" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/alternative_investment_08.png" alt="Alternative Investment Strategies" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Loan &amp; Liability <br>Advisory</h3>
+              <p class="discipline-desc">
+               Debt structured as deliberately as your investments.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 9: Investment Advisory -->
+          <article class="discipline-card discipline-card--bottom" data-card="8" role="tabpanel">
+            <div class="discipline-media">
+              <img src="assets/images/nine_displine/imgs/investment_advisory_09.png" alt="Investment Advisory" class="discipline-img" loading="lazy">
+              <div class="discipline-overlay"></div>
+            </div>
+            <div class="discipline-content">
+              <h3 class="discipline-title">Investment<br>Advisory</h3>
+              <p class="discipline-desc">
+                Ongoing, research-backed guidance on the calls that actually move a portfolio.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+</section>
 
   <!-- Section 06: Investor Corner (Tools) -->
   <section class="investor-corner-section" id="investor-corner">
@@ -1005,12 +1235,9 @@
       <div class="latest-blogs-grid">
         <!-- Card 1 -->
         <article class="blog-card">
-          <a href="blog-weekly-market-briefing.html" class="blog-card-link"
-            aria-label="Read BlissMoney Weekly Market Briefing: 22–26 June 2026">
+          <a href="#blog-market-briefing" class="blog-card-link" aria-label="BlissMoney Weekly Market Briefing: 22–26 June 2026">
             <div class="blog-card-media">
-              <img src="assets/images/blogs/thumb_1.jpg" alt="BlissMoney Weekly Market Briefing: 22–26 June 2026"
-                class="blog-card-img" loading="lazy"
-                onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/640007440.png';">
+              <img src="assets/images/blog_1.jpg" alt="BlissMoney Weekly Market Briefing" class="blog-card-img" loading="lazy">
             </div>
             <div class="blog-card-content">
               <h3 class="blog-card-title">BlissMoney Weekly Market Briefing:<br class="title-break"> 22–26 June 2026
@@ -1031,15 +1258,13 @@
 
         <!-- Card 2 -->
         <article class="blog-card">
-          <a href="blog-market-wrap-5-may.html" class="blog-card-link"
-            aria-label="Read Market Wrap-Up 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
+          <a href="#blog-market-wrap-may" class="blog-card-link" aria-label="Market Wrap-Up | 5 May 2026: Indian Markets Close Lower Amid Global Uncertainty">
             <div class="blog-card-media">
               <img src="assets/images/blogs/thumb_2.jpg" alt="Market Wrap-Up 5 May 2026" class="blog-card-img"
                 loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/274006207.png';">
             </div>
             <div class="blog-card-content">
-              <h3 class="blog-card-title">Market Wrap-Up | 5 May 2026:<br class="title-break"> Indian Markets Close
-                Lower Amid Global Uncertainty</h3>
+              <h3 class="blog-card-title">Market Wrap-Up | 5 May 2026:<br class="title-break"> Indian Markets Close Lower Amid<br class="title-break"> Global Uncertainty</h3>
               <div class="blog-card-action">
                 <span class="blog-card-arrow" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
@@ -1056,15 +1281,12 @@
 
         <!-- Card 3 -->
         <article class="blog-card">
-          <a href="blog-market-wrap-15-april.html" class="blog-card-link"
-            aria-label="Read Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
+          <a href="#blog-market-wrap-april" class="blog-card-link" aria-label="Market Wrap-Up April 15, 2026: Nifty Up 1.63% on US-Iran Hopes">
             <div class="blog-card-media">
-              <img src="assets/images/blogs/thumb_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img"
-                loading="lazy" onerror="this.onerror=null;this.src='https://www.blissmoney.in/img/133003125.png';">
+              <img src="assets/images/blog_3.jpg" alt="Market Wrap-Up April 15, 2026" class="blog-card-img" loading="lazy">
             </div>
             <div class="blog-card-content">
-              <h3 class="blog-card-title">Market Wrap-Up April 15, 2026:<br class="title-break"> Nifty Up 1.63% on
-                US-Iran Hopes</h3>
+              <h3 class="blog-card-title">Market Wrap-Up April 15, 2026: Nifty<br class="title-break"> Up 1.63% on US-Iran Hopes</h3>
               <div class="blog-card-action">
                 <span class="blog-card-arrow" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
@@ -1094,8 +1316,10 @@
     </div>
   </section>
 
-  <!-- ======================= SECTION 09: CONSULTATION & CONTACT ======================= -->
+  <!-- ======================= SECTION 09: CONSULTATION & CONTACT / REACH US ======================= -->
   <section class="consultation-section" id="consultation">
+    <div id="careers" style="position: absolute; top: -10px; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
+    <div id="reach-us" style="position: absolute; top: -10px; left: 0; height: 1px; width: 1px; pointer-events: none;"></div>
     <div id="contact" class="consultation-anchor" aria-hidden="true"></div>
     <div class="consultation-container">
       <div class="consultation-card">
@@ -1510,7 +1734,7 @@
   </div>
 
   <!-- Main JavaScript -->
-  <script src="assets/js/main.js?v=2.0"></script>
+  <script src="assets/js/main.js?v=2.2"></script>
   <!-- Lead Generation Popup Widget -->
   <script src="assets/js/lead-popup.js?v=2.0"></script>
 </body>

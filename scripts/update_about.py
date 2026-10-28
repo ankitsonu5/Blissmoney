@@ -1,0 +1,407 @@
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+try:
+    from scripts.nav_helper import get_nav_html
+except ImportError:
+    from nav_helper import get_nav_html
+
+
+def build_about_page():
+    nav_html = get_nav_html(depth=1, active_section="about", active_item="about-overview")
+
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A considered approach. A clearer financial life. We bring your financial priorities into focus, with conversations that connect your wealth, responsibilities and plans for the years ahead.">
+  <title>About BlissMoney — A Considered Approach. A Clearer Financial Life.</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="../assets/images/bm_faicon.png">
+  <link rel="shortcut icon" href="../assets/images/bm_faicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/images/bm_faicon.png">
+
+  <!-- Google Fonts: Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.5">
+  <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
+  <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/about.css?v=2.1">
+</head>
+
+<body class="about-subpage">
+
+  <!-- Fixed Site Header with Brand Logo & Interactive Dropdown Menu -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="../" class="site-logo" aria-label="BlissMoney Home">
+        <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="site-logo-img">
+      </a>
+
+      <!-- Menu Wrapper -->
+      <div class="site-menu-wrap" id="siteMenuWrap">
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-haspopup="true">
+          <span class="site-menu-text">Menu</span>
+          <img src="../assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+        </button>
+
+        <div class="site-menu-dropdown" id="siteMenuDropdown" role="menu" aria-label="Main Navigation">
+          <button class="site-menu-btn site-menu-btn-inside" id="siteMenuBtnInside" aria-label="Close navigation menu">
+            <span class="site-menu-text">Menu</span>
+            <img src="../assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+          </button>
+          {nav_html}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="about-page-wrapper">
+    <!-- Top Hero Banner with Waves (Matching blog.html banner style) -->
+    <section class="top-banner-section">
+      <div class="banner-box">
+        <h1>A considered approach. A clearer financial life.</h1>
+        <p class="banner-subtitle">
+          We bring your financial priorities into focus, with conversations that connect your wealth, responsibilities and plans for the years ahead.
+        </p>
+
+        <!-- Banner CTAs (Compact) -->
+        <div class="about-hero-actions">
+          <a href="../reach-us/" class="btn btn-primary">
+            Book a consultation
+          </a>
+          <a href="../services/" class="btn btn-outline">
+            Explore our services
+          </a>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb-list">
+          <li><a href="../">Home</a></li>
+          <li>About</li>
+        </ul>
+      </div>
+
+      <!-- Animated Wave Layers -->
+      <div class="wave-container" aria-hidden="true">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+      </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="about-container" style="padding-top: 40px;">
+
+
+      <!-- Section 1: Your financial life deserves a connected view -->
+      <section class="connected-view-section">
+        <div class="connected-view-grid">
+          <div>
+            <span class="about-section-badge">Connected Perspective</span>
+            <h2 class="about-section-title" style="font-size: 2.1rem; line-height: 1.25; margin-bottom: 18px;">
+              Your financial life deserves a connected view
+            </h2>
+            <div class="connected-quote-box">
+              <p class="connected-quote-text">
+                “You may have built wealth through a business, a demanding career or years of patient saving. The next decisions deserve the same attention.”
+              </p>
+            </div>
+          </div>
+
+          <div class="connected-body-text">
+            <p>
+              BlissMoney is a Bengaluru-based financial services business focused on helping individuals and families organise their financial priorities. Our published offering brings together wealth planning, investments, protection and succession considerations.
+            </p>
+            <p>
+              We begin by understanding what your money needs to do: support your lifestyle, prepare for a transition, protect dependants or provide continuity across generations. That context helps make the next conversation more specific and the next decision easier to evaluate.
+            </p>
+            <div class="connected-fiduciary-badge">
+              <strong style="color: #0CAF80; display: block; margin-bottom: 4px;">Regulatory Transparency:</strong>
+              BlissMoney publicly identifies as an AMFI-registered Mutual Fund Distributor. Where a need calls for legal, tax or another specialist’s expertise, responsibilities and scope should be clear from the outset.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Clarity is a working practice -->
+      <section class="about-section">
+        <div class="about-section-header">
+          <span class="about-section-badge">Working Practice</span>
+          <h2 class="about-section-title">Clarity is a working practice</h2>
+        </div>
+
+        <div class="about-grid-3">
+          <div class="service-feature-card">
+            <div>
+              <div class="service-icon-box">01</div>
+              <h3 class="service-card-title">Start with the whole picture</h3>
+              <p class="service-card-desc">
+                Income, business interests, investments, borrowings and family responsibilities belong in the same conversation. The starting point is understanding how they affect one another.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-feature-card">
+            <div>
+              <div class="service-icon-box">02</div>
+              <h3 class="service-card-title">Make the reasoning clear</h3>
+              <p class="service-card-desc">
+                A financial decision should have a purpose, a time horizon and an explanation of the risks. We want clients to understand the role a decision plays in their wider plan.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-feature-card">
+            <div>
+              <div class="service-icon-box">03</div>
+              <h3 class="service-card-title">Keep the relationship useful</h3>
+              <p class="service-card-desc">
+                A plan needs attention when markets move, priorities change or a new responsibility arrives. Reviews create an opportunity to ask what still fits and what needs to change.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Principles you should be able to recognise in the relationship -->
+      <section class="about-section">
+        <div class="about-section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <span class="about-section-badge">Core Values</span>
+            <h2 class="about-section-title">Principles you should be able to recognise in the relationship</h2>
+            <p class="about-section-desc" style="max-width: 760px; margin: 0;">
+              BlissMoney’s published values emphasise integrity, putting clients first, thoughtful ideas, inclusion and giving back. The test is how those values influence everyday decisions.
+            </p>
+          </div>
+          <div style="margin-top: 8px;">
+            <a href="brand-story/" class="btn btn-outline" style="white-space: nowrap;">Read our brand story →</a>
+          </div>
+        </div>
+
+        <div class="about-grid-2" style="margin-top: 28px;">
+          <div class="principle-card">
+            <span class="principle-badge">01</span>
+            <h3 class="principle-title">Integrity in the conversation</h3>
+            <p class="principle-desc">
+              Discuss objectives, costs, limitations and responsibilities openly. A question that matters to the client deserves a clear answer.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-badge">02</span>
+            <h3 class="principle-title">Respect for individual priorities</h3>
+            <p class="principle-desc">
+              Family responsibilities, comfort with risk and liquidity needs differ. Financial conversations should leave room for those differences.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-badge">03</span>
+            <h3 class="principle-title">Learning before commitment</h3>
+            <p class="principle-desc">
+              Make the relevant trade-offs understandable before a decision is made. Good questions are part of the process.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-badge">04</span>
+            <h3 class="principle-title">Continuity over time</h3>
+            <p class="principle-desc">
+              Return to the plan when priorities change, and keep track of the decisions that need follow-through.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: A relationship with a clear sequence -->
+      <section class="about-section">
+        <div class="about-section-header">
+          <span class="about-section-badge">The Sequence</span>
+          <h2 class="about-section-title">A relationship with a clear sequence</h2>
+        </div>
+
+        <div class="sequence-grid">
+          <div class="sequence-card">
+            <span class="sequence-step-badge">01</span>
+            <h3 class="sequence-title">Discover</h3>
+            <p class="sequence-desc">
+              Understand your goals, present position and questions.
+            </p>
+          </div>
+
+          <div class="sequence-card">
+            <span class="sequence-step-badge">02</span>
+            <h3 class="sequence-title">Assess</h3>
+            <p class="sequence-desc">
+              Consider your time horizon, liquidity needs and capacity for risk.
+            </p>
+          </div>
+
+          <div class="sequence-card">
+            <span class="sequence-step-badge">03</span>
+            <h3 class="sequence-title">Design</h3>
+            <p class="sequence-desc">
+              Connect your priorities with an appropriate financial approach.
+            </p>
+          </div>
+
+          <div class="sequence-card">
+            <span class="sequence-step-badge">04</span>
+            <h3 class="sequence-title">Implement</h3>
+            <p class="sequence-desc">
+              Agree responsibilities and complete the relevant onboarding.
+            </p>
+          </div>
+
+          <div class="sequence-card">
+            <span class="sequence-step-badge">05</span>
+            <h3 class="sequence-title">Monitor</h3>
+            <p class="sequence-desc">
+              Keep visibility on investments and agreed actions.
+            </p>
+          </div>
+
+          <div class="sequence-card">
+            <span class="sequence-step-badge">06</span>
+            <h3 class="sequence-title">Review</h3>
+            <p class="sequence-desc">
+              Revisit the plan as circumstances and priorities change.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Closing CTA Card -->
+      <div class="about-cta-card">
+        <span class="about-eyebrow" style="margin-bottom: 14px;">Next Steps</span>
+        <h3 class="about-cta-title">Lets understand what matters to you</h3>
+        <p class="about-cta-desc">
+          Bring your questions, your priorities and any decisions you have been postponing. The first conversation helps establish where support would be useful.
+        </p>
+        <div class="about-cta-buttons">
+          <a href="../reach-us/" class="btn btn-primary btn-consult-primary">
+            Book a consultation
+          </a>
+          <a href="https://wa.me/916364833952" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================= FOOTER (Matching index.html) ======================= -->
+  <footer class="footer" id="footer">
+    <div class="foot-accent-bar" aria-hidden="true"></div>
+    <div class="container">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../#hero" class="brand"><img src="../assets/images/blissmoney_logo.png" alt="BlissMoney Logo"
+              class="brand-logo"></a>
+          <p>Structured wealth. Long-term relationships.<br>Advisory-led and built on trust.</p>
+          <div class="foot-socials">
+            <a href="https://www.facebook.com/profile.php?id=61574031891498" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M14 13.5h2.5l1-4H14v-2c0-1.03.77-1.5 1.5-1.5H18V2.3A20.2 20.2 0 0 0 15.2 2c-3 0-5.2 1.83-5.2 5.2v2.3H6.5v4H10V22h4v-8.5z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/blissmoney_official/" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://x.com/BlissmoneyL" target="_blank" rel="noopener noreferrer" class="foot-social-link"
+              aria-label="X (Twitter)" title="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer"
+              class="foot-social-link" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/105003627/admin/page-posts/published/" target="_blank"
+              rel="noopener noreferrer" class="foot-social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="foot-cols">
+          <div>
+            <h4>Company</h4>
+            <a href="./">About BlissMoney</a>
+            <a href="brand-story/">Brand Story</a>
+            <a href="our-people/">Leadership &amp; team</a>
+            <a href="../careers/">Careers</a>
+            <a href="../reach-us/">Contact &amp; offices</a>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="../clients/">Who we serve</a>
+            <a href="../services/">Our offerings</a>
+            <a href="../calculator.html">Financial Tools</a>
+            <a href="../insights/articles/">Insights &amp; Blogs</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <a href="#">Disclosures &amp; registrations</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Investor grievance</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© <span id="year">2026</span> BlissMoney. All rights reserved. Bangalore, India.</p>
+        <p class="disclaimer">Mutual fund investments are subject to market risks. Read all scheme-related documents
+          carefully.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <aside class="floating-actions" aria-label="Quick actions">
+    <a href="https://wa.me/916364833952" class="floating-whatsapp" target="_blank" rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+      <span class="floating-whatsapp-ping" aria-hidden="true"></span>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          fill="#ffffff" />
+      </svg>
+    </a>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/lead-popup.js"></script>
+</body>
+
+</html>'''
+
+    with open('about/index.html', 'w', encoding='utf-8') as f:
+        f.write(html)
+    print('about/index.html updated successfully with exact user content!')
+
+if __name__ == '__main__':
+    build_about_page()

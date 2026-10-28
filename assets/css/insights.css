@@ -1,0 +1,762 @@
+/* ========================================================================== 
+   BlissMoney Insights
+   Editorial redesign scoped below the existing banner on Insights routes.
+   Header, banner and footer rules are intentionally untouched.
+   ========================================================================== */
+
+:is(body.page-insights, body.page-articles, body.page-reports, body.page-videos, body.page-podcasts) {
+  --insight-ink: #14372c;
+  --insight-copy: #536b62;
+  --insight-soft: #71857d;
+  --insight-green: #0caf80;
+  --insight-mint: #52e2b5;
+  --insight-line: #d9e7e1;
+  --insight-paper: #f4f8f6;
+  --insight-white: #ffffff;
+  --insight-deep: #06281e;
+  --insight-deeper: #031811;
+  background: var(--insight-paper);
+}
+
+/* Shared page-body canvas and editorial rhythm. */
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container {
+  max-width: 1280px;
+  padding: clamp(58px, 7vw, 94px) clamp(22px, 4vw, 58px) clamp(76px, 8vw, 112px);
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section {
+  padding: 0;
+  border: 0;
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section + .about-section {
+  margin-top: clamp(76px, 9vw, 118px);
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section > .about-section-header {
+  max-width: 900px;
+  margin: 0 0 clamp(30px, 4vw, 46px);
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section
+  > .about-section-header .about-section-title {
+  max-width: 860px;
+  margin: 0;
+  color: var(--insight-ink);
+  font-size: clamp(1.95rem, 3.4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.044em;
+  text-wrap: balance;
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section
+  > .about-section-header::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--insight-green), rgba(12, 175, 128, 0.08));
+}
+
+/* ========================================================================== 
+   Insights Hub
+   Open index rather than a grid of boxed cards.
+   ========================================================================== */
+
+.page-insights .about-page-wrapper > .about-container {
+  max-width: 1280px;
+  padding: clamp(64px, 8vw, 104px) clamp(22px, 4vw, 58px) clamp(76px, 8vw, 112px);
+}
+
+.page-insights .about-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--insight-line);
+}
+
+.page-insights .service-feature-card {
+  position: relative;
+  min-height: 300px;
+  padding: clamp(34px, 4vw, 48px);
+  border: 0;
+  border-bottom: 1px solid var(--insight-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 240ms ease, padding-left 240ms ease;
+}
+
+.page-insights .service-feature-card:nth-child(odd) {
+  border-right: 1px solid var(--insight-line);
+}
+
+.page-insights .service-feature-card::before {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 3px;
+  top: -1px;
+  left: clamp(34px, 4vw, 48px);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--insight-green), var(--insight-mint));
+  transition: width 260ms ease;
+}
+
+.page-insights .service-feature-card:hover {
+  padding-left: clamp(40px, 4.4vw, 54px);
+  background: rgba(255, 255, 255, 0.62);
+  transform: none;
+}
+
+.page-insights .service-feature-card:hover::before {
+  width: 94px;
+}
+
+.page-insights .career-badge {
+  display: inline-flex;
+  margin-bottom: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--insight-green);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+
+.page-insights .service-card-title {
+  max-width: 480px;
+  margin-bottom: 14px;
+  color: var(--insight-ink);
+  font-size: clamp(1.35rem, 2.1vw, 1.72rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.page-insights .service-card-desc {
+  max-width: 510px;
+  color: var(--insight-copy);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.page-insights .service-card-link {
+  color: #087c5b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.page-insights .about-cta-card {
+  position: relative;
+  margin-top: clamp(72px, 9vw, 112px);
+  padding: clamp(48px, 6vw, 76px) clamp(30px, 5vw, 64px);
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(82, 226, 181, 0.2), transparent 23rem),
+    linear-gradient(135deg, #0a382a 0%, var(--insight-deep) 65%, var(--insight-deeper) 100%);
+  box-shadow: none;
+  text-align: left;
+}
+
+.page-insights .about-cta-card::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  right: -110px;
+  bottom: -160px;
+  border: 1px solid rgba(82, 226, 181, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(82, 226, 181, 0.03);
+}
+
+.page-insights .about-cta-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-insights .about-cta-title {
+  color: #ffffff;
+  font-size: clamp(1.9rem, 3vw, 2.65rem);
+  letter-spacing: -0.035em;
+}
+
+.page-insights .about-cta-desc {
+  max-width: 720px;
+  margin-right: 0;
+  margin-left: 0;
+  color: #bdd3ca;
+}
+
+.page-insights .about-cta-buttons {
+  justify-content: flex-start;
+}
+
+/* ========================================================================== 
+   Articles and Reports
+   Ruled editorial collections with one full-width context band.
+   ========================================================================== */
+
+:is(.page-articles, .page-reports)
+  .about-page-wrapper > .about-container > .outputs-note-box {
+  margin: 0 0 clamp(62px, 8vw, 94px) !important;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid rgba(12, 175, 128, 0.34);
+  border-bottom: 1px solid var(--insight-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+:is(.page-articles, .page-reports)
+  .about-page-wrapper > .about-container > .outputs-note-box .outputs-note-text {
+  max-width: 900px;
+  color: var(--insight-copy);
+  font-size: 0.92rem;
+}
+
+:is(.page-articles, .page-reports) .insights-gradient-wrap {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(.page-articles, .page-reports) .insights-gradient-wrap::before {
+  display: none;
+}
+
+:is(.page-articles, .page-reports) .insights-gradient-wrap .financial-facets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--insight-line);
+}
+
+:is(.page-articles, .page-reports) .article-gradient-card {
+  position: relative;
+  min-height: 300px;
+  padding: clamp(32px, 4vw, 46px);
+  border: 0;
+  border-bottom: 1px solid var(--insight-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 240ms ease, padding-left 240ms ease;
+}
+
+:is(.page-articles, .page-reports) .article-gradient-card:nth-child(odd) {
+  border-right: 1px solid var(--insight-line);
+}
+
+:is(.page-articles, .page-reports) .article-gradient-card::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 3px;
+  top: -1px;
+  left: clamp(32px, 4vw, 46px);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--insight-green), var(--insight-mint));
+  transition: width 260ms ease;
+}
+
+:is(.page-articles, .page-reports) .article-gradient-card:hover {
+  padding-left: clamp(38px, 4.4vw, 52px);
+  border-color: var(--insight-line);
+  background: rgba(255, 255, 255, 0.62);
+  transform: none;
+  box-shadow: none;
+}
+
+:is(.page-articles, .page-reports) .article-gradient-card:hover::before {
+  width: 92px;
+}
+
+:is(.page-articles, .page-reports) .article-gradient-title {
+  color: var(--insight-ink);
+  font-size: clamp(1.24rem, 1.8vw, 1.48rem);
+  line-height: 1.34;
+}
+
+:is(.page-articles, .page-reports) .article-gradient-desc {
+  color: var(--insight-copy);
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+/* Context section becomes the sole immersive band on these pages. */
+:is(.page-articles, .page-reports)
+  .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-block: clamp(64px, 8vw, 104px);
+  padding-inline: clamp(24px, 4vw, 58px);
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(82, 226, 181, 0.18), transparent 24rem),
+    linear-gradient(145deg, #0a3528 0%, var(--insight-deep) 62%, var(--insight-deeper) 100%);
+}
+
+@media (min-width: 1281px) {
+  :is(.page-articles, .page-reports)
+    .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+    padding-inline: calc((100vw - 1164px) / 2);
+  }
+}
+
+:is(.page-articles, .page-reports)
+  .about-page-wrapper > .about-container > .about-section:nth-of-type(2)
+  > .about-section-header .about-section-title {
+  color: #ffffff;
+}
+
+:is(.page-articles, .page-reports)
+  .about-page-wrapper > .about-container > .about-section:nth-of-type(2)
+  > .about-section-header::after {
+  background: linear-gradient(90deg, var(--insight-mint), rgba(82, 226, 181, 0.08));
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillars-grid {
+  gap: 0;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item {
+  min-height: 220px;
+  padding: 30px 26px 0;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  transform: none;
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item:first-child {
+  padding-left: 0;
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-desc {
+  color: #bdd2ca !important;
+  font-size: 0.98rem !important;
+  line-height: 1.75 !important;
+}
+
+/* CTA is an open conclusion, not another card. */
+:is(.page-articles, .page-reports) .services-closing-cta {
+  margin-top: clamp(72px, 9vw, 112px) !important;
+  padding: 42px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(12, 175, 128, 0.36);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+
+:is(.page-articles, .page-reports) .services-closing-title {
+  max-width: 780px;
+  color: var(--insight-ink);
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  letter-spacing: -0.036em;
+}
+
+:is(.page-articles, .page-reports) .services-closing-desc {
+  max-width: 700px;
+  margin: 0 0 28px;
+  color: var(--insight-copy);
+}
+
+/* ========================================================================== 
+   Videos and Podcasts
+   One strong feature, followed by open editorial sections.
+   ========================================================================== */
+
+:is(.page-videos, .page-podcasts) .video-premium-card,
+:is(.page-videos, .page-podcasts) .podcast-premium-card {
+  position: relative;
+  min-height: 340px;
+  padding: clamp(40px, 5vw, 64px) !important;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(82, 226, 181, 0.2), transparent 22rem),
+    linear-gradient(140deg, #0a382a 0%, var(--insight-deep) 64%, var(--insight-deeper) 100%);
+  box-shadow: none;
+}
+
+:is(.page-videos, .page-podcasts) .video-premium-card::after,
+:is(.page-videos, .page-podcasts) .podcast-premium-card::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -120px;
+  bottom: -160px;
+  border: 1px solid rgba(82, 226, 181, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 46px rgba(82, 226, 181, 0.03);
+}
+
+:is(.page-videos, .page-podcasts) .video-premium-card > *,
+:is(.page-videos, .page-podcasts) .podcast-premium-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+:is(.page-videos, .page-podcasts) .video-premium-card:hover,
+:is(.page-videos, .page-podcasts) .podcast-premium-card:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.page-videos .channel-feature-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 34px;
+  align-items: center;
+  padding: 30px 0;
+  border: 0;
+  border-top: 1px solid var(--insight-line);
+  border-bottom: 1px solid var(--insight-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-videos .channel-feature-desc {
+  max-width: 830px;
+  margin: 0;
+  color: var(--insight-copy);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillars-grid {
+  gap: 0;
+  margin-top: 0;
+  border-top: 1px solid var(--insight-line);
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillar-item {
+  min-height: 220px;
+  padding: 30px 26px 0;
+  border: 0;
+  border-right: 1px solid var(--insight-line);
+  background: transparent;
+  transform: none;
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillar-item:first-child {
+  padding-left: 0;
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillar-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillar-title {
+  color: var(--insight-ink);
+  font-size: 1.18rem;
+}
+
+:is(.page-videos, .page-podcasts) .planning-pillar-desc {
+  color: var(--insight-copy) !important;
+  line-height: 1.75 !important;
+}
+
+:is(.page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section:nth-of-type(2) > p,
+:is(.page-videos, .page-podcasts)
+  .about-page-wrapper > .about-container > .about-section:nth-of-type(4) > p {
+  color: var(--insight-copy) !important;
+}
+
+:is(.page-videos, .page-podcasts) .outputs-note-box {
+  margin: 28px 0 0 !important;
+  padding: 18px 0 18px 24px;
+  border: 0;
+  border-left: 3px solid var(--insight-green);
+  border-radius: 0;
+  background: transparent;
+}
+
+:is(.page-videos, .page-podcasts) .outputs-note-text {
+  max-width: 920px;
+  color: var(--insight-copy);
+  line-height: 1.75;
+}
+
+/* Podcast closing subject suggestion: remove the nested box treatment. */
+.page-podcasts .about-page-wrapper > .about-container > .about-section:nth-of-type(4) > div:not(.about-section-header) {
+  padding: 12px 0 12px 30px !important;
+  border: 0 !important;
+  border-left: 3px solid var(--insight-green) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.page-podcasts .about-page-wrapper > .about-container > .about-section:nth-of-type(4) > div p {
+  color: var(--insight-copy) !important;
+}
+
+/* ========================================================================== 
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .page-insights .about-grid-2,
+  :is(.page-articles, .page-reports) .insights-gradient-wrap .financial-facets-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-insights .service-feature-card:nth-child(odd),
+  :is(.page-articles, .page-reports) .article-gradient-card:nth-child(odd) {
+    border-right: 0;
+  }
+
+  :is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillars-grid,
+  :is(.page-videos, .page-podcasts) .planning-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item,
+  :is(.page-videos, .page-podcasts) .planning-pillar-item {
+    min-height: auto;
+    padding: 26px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(12, 175, 128, 0.18);
+  }
+
+  :is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item {
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
+  :is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item:last-child,
+  :is(.page-videos, .page-podcasts) .planning-pillar-item:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-insights .about-page-wrapper > .about-container,
+  :is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+    .about-page-wrapper > .about-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  :is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+    .about-page-wrapper > .about-container > .about-section + .about-section {
+    margin-top: 66px;
+  }
+
+  :is(.page-articles, .page-reports, .page-videos, .page-podcasts)
+    .about-page-wrapper > .about-container > .about-section
+    > .about-section-header .about-section-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .page-insights .service-feature-card,
+  :is(.page-articles, .page-reports) .article-gradient-card {
+    min-height: auto;
+    padding: 30px 22px;
+  }
+
+  .page-insights .service-feature-card::before,
+  :is(.page-articles, .page-reports) .article-gradient-card::before {
+    left: 22px;
+  }
+
+  .page-insights .service-feature-card:hover,
+  :is(.page-articles, .page-reports) .article-gradient-card:hover {
+    padding-left: 22px;
+  }
+
+  .page-insights .about-cta-card,
+  :is(.page-videos, .page-podcasts) .video-premium-card,
+  :is(.page-videos, .page-podcasts) .podcast-premium-card {
+    padding: 40px 24px !important;
+  }
+
+  :is(.page-articles, .page-reports)
+    .about-page-wrapper > .about-container > .about-section:nth-of-type(2) {
+    padding: 52px 18px;
+  }
+
+  .page-videos .channel-feature-box {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-insights .about-cta-buttons {
+    align-items: stretch;
+  }
+
+  .page-insights .about-cta-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  :is(.page-videos, .page-podcasts) .outputs-note-box {
+    padding-left: 20px;
+  }
+
+  .page-podcasts .about-page-wrapper > .about-container > .about-section:nth-of-type(4) > div:not(.about-section-header) {
+    padding-left: 22px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-insights .service-feature-card,
+  .page-insights .service-feature-card::before,
+  :is(.page-articles, .page-reports) .article-gradient-card,
+  :is(.page-articles, .page-reports) .article-gradient-card::before {
+    transition: none;
+  }
+}
+
+/* ========================================================================== 
+   v1.1 refinements
+   Consolidates the editorial accents with the shared About stylesheet.
+   ========================================================================== */
+
+:is(.page-insights, .page-articles, .page-reports, .page-videos, .page-podcasts)
+  .about-section-title::after {
+  display: none;
+}
+
+/* Numbered hub index: a restrained navigation cue instead of another icon box. */
+.page-insights .service-feature-card::before {
+  width: auto;
+  height: auto;
+  top: 18px;
+  left: clamp(34px, 4vw, 48px);
+  background: none;
+  color: var(--insight-green);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.page-insights .service-feature-card:nth-child(1)::before { content: "01"; }
+.page-insights .service-feature-card:nth-child(2)::before { content: "02"; }
+.page-insights .service-feature-card:nth-child(3)::before { content: "03"; }
+.page-insights .service-feature-card:nth-child(4)::before { content: "04"; }
+
+.page-insights .service-feature-card:hover::before {
+  width: auto;
+}
+
+/* Article cards retain one top rule; remove the secondary decorative stroke. */
+:is(.page-articles, .page-reports) .article-gradient-card::after {
+  display: none;
+}
+
+/* Give numbered principles a dedicated overline row so labels never collide. */
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillars-grid {
+  counter-reset: insight-pillars;
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillar-item {
+  counter-increment: insight-pillars;
+  padding-top: 62px;
+  padding-bottom: 28px;
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillar-item::before {
+  content: counter(insight-pillars, decimal-leading-zero);
+  position: absolute;
+  top: 28px;
+  left: 26px;
+  color: var(--insight-green);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+:is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillar-item:first-child::before {
+  left: 0;
+}
+
+:is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item::before {
+  color: var(--insight-mint);
+}
+
+/* Quiet media glyphs reinforce the featured format without another UI box. */
+.page-videos .video-premium-card::before {
+  content: "";
+  position: absolute;
+  right: 64px;
+  bottom: 54px;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 42px solid rgba(82, 226, 181, 0.2);
+}
+
+.page-podcasts .podcast-premium-card::before {
+  content: "";
+  position: absolute;
+  right: 58px;
+  bottom: 58px;
+  width: 96px;
+  height: 56px;
+  opacity: 0.22;
+  background: repeating-linear-gradient(90deg, var(--insight-mint) 0 5px, transparent 5px 13px);
+  clip-path: polygon(0 42%, 12% 25%, 24% 48%, 36% 8%, 48% 34%, 60% 0, 72% 38%, 84% 18%, 100% 45%, 100% 58%, 84% 36%, 72% 60%, 60% 24%, 48% 56%, 36% 30%, 24% 68%, 12% 48%, 0 62%);
+}
+
+@media (max-width: 900px) {
+  :is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillar-item,
+  :is(.page-articles, .page-reports) .about-section:nth-of-type(2) .planning-pillar-item {
+    padding: 58px 0 26px;
+  }
+
+  :is(.page-articles, .page-reports, .page-videos, .page-podcasts) .planning-pillar-item::before {
+    top: 26px;
+    left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-insights .service-feature-card::before {
+    left: 22px;
+  }
+
+  .page-videos .video-premium-card::before,
+  .page-podcasts .podcast-premium-card::before {
+    display: none;
+  }
+}
