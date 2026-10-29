@@ -17,36 +17,305 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <!-- Dedicated Stylesheet -->
+    <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.7">
+  <link rel="stylesheet" href="assets/css/about.css?v=1.5">
   <link rel="stylesheet" href="assets/css/calculator.css">
 </head>
 <body class="calculator-page">
 
-  <!-- ======================= HEADER ======================= -->
-  <header class="site-header scrolled" id="siteHeader">
+  <!-- Fixed Site Header with Brand Logo & Interactive Dropdown Menu -->
+  <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="brand" aria-label="BlissMoney home">
-        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="brand-logo">
+      <a href="index.html" class="site-logo" aria-label="BlissMoney Home">
+        <img src="assets/images/blissmoney_logo.png" alt="BlissMoney Logo" class="site-logo-img">
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-        <div class="nav-item"><a href="about/about.html" class="nav-link">About</a></div>
-        <div class="nav-item"><a href="services/services.html" class="nav-link">Services</a></div>
-        <div class="nav-item"><a href="clients/clients.html" class="nav-link">Clients</a></div>
-        <div class="nav-item"><a href="insights/articles.html" class="nav-link">Insights</a></div>
-        <div class="nav-item"><a href="careers.html" class="nav-link">Careers</a></div>
-        <div class="nav-item"><a href="reach-us.html" class="nav-link">Reach Us</a></div>
-        <div class="nav-item"><a href="client-portal.html" class="nav-link">Login / Portal</a></div>
-      </nav>
+      <!-- Menu Wrapper -->
+      <div class="site-menu-wrap" id="siteMenuWrap">
+        <button class="site-menu-btn" id="siteMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-haspopup="true">
+          <span class="site-menu-text">Menu</span>
+          <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+        </button>
 
-      <div class="header-cta">
-        <a href="index.html" class="btn btn-ghost btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          <span>Back to Home</span>
-        </a>
-        <a href="index.html#consultation" class="btn btn-solid btn-sm">Book a Consultation</a>
+        <div class="site-menu-dropdown" id="siteMenuDropdown" role="menu" aria-label="Main Navigation">
+          <button class="site-menu-btn site-menu-btn-inside" id="siteMenuBtnInside" aria-label="Close navigation menu">
+            <span class="site-menu-text">Menu</span>
+            <img src="assets/images/hamburger_menu_icon.svg" alt="" class="site-menu-icon" width="20" height="14">
+          </button>
+          <nav class="site-menu-nav">
+            <a href="index.html" class="site-nav-link" role="menuitem">Home</a>
+            
+            <!-- About Menu -->
+            <div class="site-nav-item has-submenu" id="navItemAbout">
+              <a href="about/about.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>About</span>
+              </a>
+              <div class="site-submenu-box" id="aboutSubmenuBox" role="menu" aria-label="About Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">The Firm</span>
+                  <span class="submenu-box-title">About BlissMoney</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="about/about.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Firm philosophy &amp; approach</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/our-people.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Our People</span>
+                        <span class="sub-item-desc">Senior advisors &amp; leadership</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/brand-story.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Brand Story</span>
+                        <span class="sub-item-desc">Origins &amp; fiduciary heritage</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/press-releases.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Press Releases</span>
+                        <span class="sub-item-desc">Media coverage &amp; updates</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="about/events-conferences.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Events &amp; Conferences</span>
+                        <span class="sub-item-desc">Private summits &amp; sessions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Services Menu -->
+            <div class="site-nav-item has-submenu" id="navItemServices">
+              <a href="services/services.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Services</span>
+              </a>
+              <div class="site-submenu-box" id="servicesSubmenuBox" role="menu" aria-label="Services Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Our Offerings</span>
+                  <span class="submenu-box-title">Wealth Services</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="services/services.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Overview</span>
+                        <span class="sub-item-desc">Bespoke advisory solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/financial-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Financial Planning</span>
+                        <span class="sub-item-desc">Strategic wealth &amp; cashflow roadmaps</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/estate-succession-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Estate &amp; Succession Planning</span>
+                        <span class="sub-item-desc">Legacy architecture &amp; family trusts</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/real-estate-advisory.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Real Estate Advisory</span>
+                        <span class="sub-item-desc">Commercial &amp; high-yield property</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/lending.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">05</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Lending</span>
+                        <span class="sub-item-desc">Secured liquidity &amp; credit solutions</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/insurance-risk-planning.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">06</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Insurance and Risk Planning</span>
+                        <span class="sub-item-desc">Capital protection &amp; key-person cover</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="services/philanthropy.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">07</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Philanthropy</span>
+                        <span class="sub-item-desc">Impact endowments &amp; foundations</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clients Menu -->
+            <div class="site-nav-item has-submenu" id="navItemClients">
+              <a href="clients/clients.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Clients</span>
+              </a>
+              <div class="site-submenu-box" id="clientsSubmenuBox" role="menu" aria-label="Clients Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Partnerships</span>
+                  <span class="submenu-box-title">Who We Serve</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="clients/clients.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Who We Work With</span>
+                        <span class="sub-item-desc">Tailored wealth criteria &amp; values</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/investable-wealth.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Investable Wealth</span>
+                        <span class="sub-item-desc">Tiered portfolios &amp; allocation models</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="clients/client-segments.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Client Segments</span>
+                        <span class="sub-item-desc">Entrepreneurs, CXOs &amp; family offices</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insights Menu -->
+            <div class="site-nav-item has-submenu" id="navItemInsights">
+              <a href="insights/articles.html" class="site-nav-link site-nav-link-parent" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                <span class="submenu-arrow-indicator" aria-hidden="true">‹</span>
+                <span>Insights</span>
+              </a>
+              <div class="site-submenu-box" id="insightsSubmenuBox" role="menu" aria-label="Insights Submenu">
+                <div class="submenu-box-header">
+                  <span class="submenu-box-eyebrow">Intel &amp; Media</span>
+                  <span class="submenu-box-title">Market Insights</span>
+                </div>
+                <div class="submenu-box-links">
+                  <a href="insights/articles.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">01</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Articles</span>
+                        <span class="sub-item-desc">Market analysis &amp; investment views</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/reports.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">02</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Reports</span>
+                        <span class="sub-item-desc">Quarterly whitepapers &amp; research</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/videos.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">03</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Videos</span>
+                        <span class="sub-item-desc">Advisor briefings &amp; market commentary</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="insights/podcasts.html" class="submenu-box-item" role="menuitem">
+                    <div class="sub-item-main">
+                      <span class="sub-item-badge">04</span>
+                      <div class="sub-item-text">
+                        <span class="sub-item-title">Podcasts</span>
+                        <span class="sub-item-desc">Conversations with global allocators</span>
+                      </div>
+                    </div>
+                    <span class="sub-item-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blogs -->
+            <a href="blog.html" class="site-nav-link" role="menuitem">Blogs</a>
+
+            <!-- Calculator -->
+            <a href="calculator.html" class="site-nav-link active" role="menuitem">Calculator</a>
+
+            <!-- Careers -->
+            <a href="careers.html" class="site-nav-link" role="menuitem">Careers</a>
+
+            <!-- Reach Us -->
+            <a href="reach-us.html" class="site-nav-link" role="menuitem">Reach Us</a>
+
+            <!-- Login / Portal -->
+            <a href="client-portal.html" class="site-nav-link site-nav-cta" role="menuitem">Login / Portal</a>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
@@ -126,7 +395,7 @@
               <span class="goal-tab-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48" fill="none"><path d="m5 23 19-16 19 16"/><path d="M10 20v21h28V20M19 41V28h10v13"/><path d="M34 10v8"/></svg>
               </span>
-              <span>House Purchase Plan</span>
+              <span>Home Purchase Savings Calculator</span>
             </button>
             <button class="goal-tab" type="button" role="tab" aria-selected="false" data-goal="car">
               <span class="goal-tab-icon" aria-hidden="true">
@@ -200,6 +469,10 @@
 
         <!-- RISK PLANNING CALCULATORS -->
         <div id="risk-planning-calculator" class="calc-anchor-target"></div>
+        <div id="life-insurance-calculator" class="calc-anchor-target"></div>
+        <div id="life-insurance" class="calc-anchor-target"></div>
+        <div id="retirement-corpus-calculator" class="calc-anchor-target"></div>
+        <div id="health-insurance-calculator" class="calc-anchor-target"></div>
         <div class="calc-panel native-calc-panel" id="panel-risk" data-native-group="risk">
           <div class="goal-tabs native-tool-tabs" role="tablist" aria-label="Risk planning calculators">
             <button class="goal-tab native-tool-tab active" type="button" role="tab" aria-selected="true" data-native-tool="retirement">
@@ -454,6 +727,8 @@
     </button>
   </aside>
 
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js?v=2.2"></script>
   <!-- Dedicated Calculator Engine Script -->
   <script src="assets/js/calculator.js"></script>
 </body>

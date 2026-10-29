@@ -137,7 +137,7 @@
       ],
     },
     home: {
-      title: "House Purchase Plan",
+      title: "Home Purchase Savings Calculator",
       description:
         "Plan for a future home purchase by accounting for inflation and expected investment growth.",
       mode: "years",
@@ -458,15 +458,15 @@
     life: {
       kicker: "Risk planning",
       title: "Life Insurance Calculator",
-      description: "Human Life Value & Needs Analysis: size protection across liabilities, living costs, and milestone goals.",
-      note: "This is an indicative protection needs estimate. Term insurance underwriting and final cover depend on medicals and financial eligibility.",
+      description: "Human Life Value & Needs Analysis: size protection across liabilities, living costs, and milestone goals, less existing liquid assets & cover.",
+      note: "Needs Analysis accounts for living expenses, debt liabilities, and major future milestones (like children's education & marriage), minus existing life cover and liquid assets to arrive at the net cover needed.",
       fields: [
-        { label: "Outstanding Loans & Liabilities (₹)", min: 0, max: 250000000, step: 500000, value: 10000000, format: "currency" },
+        { label: "Outstanding Loans & Liabilities (₹)", min: 100000000, max: 250000000, step: 100000, value: 100000000, format: "currency" },
         { label: "Monthly Household Expenses (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
         { label: "Protection Duration (Years)", min: 1, max: 40, step: 1, value: 20, format: "years" },
         { label: "Expected Inflation Rate (%)", min: 1, max: 15, step: 0.5, value: 6, format: "percent" },
         { label: "Current FD / Post-Tax Return Rate (%)", min: 1, max: 15, step: 0.5, value: 6, format: "percent" },
-        { label: "One-Time Future Milestones (Children Edu/Marriage) (₹)", min: 0, max: 50000000, step: 250000, value: 5000000, format: "currency" },
+        { label: "One-Time Future Goals (Child Education / Marriage) (₹)", min: 0, max: 50000000, step: 250000, value: 5000000, format: "currency" },
         { label: "Existing Life Cover & Liquid Assets (₹)", min: 0, max: 100000000, step: 250000, value: 2500000, format: "currency" },
       ],
       calculate(values) {
@@ -487,14 +487,14 @@
             ["Gross cover requirement", inr(grossCover)],
             ["Living expenses corpus", inr(livingExpensesCorpus)],
             ["Liabilities & loans", inr(loan)],
-            ["One-time family milestones", inr(futureGoals)],
+            ["One-time family goals", inr(futureGoals)],
             ["Less: Existing cover & assets", "-" + inr(existingAssets)],
           ],
           comparisonTitle: "Needs analysis breakdown",
           comparisonStat: grossCover ? Math.round((livingExpensesCorpus / grossCover) * 100) + "% living expenses" : "0%",
           bars: [
             ["Living Expenses", livingExpensesCorpus],
-            ["Loans & Milestones", loan + futureGoals],
+            ["Loans & Goals", loan + futureGoals],
           ],
         };
       },
@@ -545,7 +545,7 @@
       description: "Determine the maximum property purchase price based on your monthly EMI budget and available savings.",
       note: "This calculator is for informational and illustrative purposes only. Final loan sanction depends on bank underwriting and credit eligibility.",
       fields: [
-        { label: "Comfortable Monthly EMI (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
+        { label: "Monthly EMI You Can Comfortably Pay (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
         { label: "Down Payment Available (₹)", min: 500000, max: 100000000, step: 250000, value: 2500000, format: "currency" },
         { label: "Loan Tenure (Years)", min: 1, max: 30, step: 1, value: 20, format: "years" },
         { label: "Interest Rate (%)", min: 5, max: 20, step: 0.1, value: 8.5, format: "percent" },
@@ -560,13 +560,13 @@
         const maxProperty = loanEligibility + downPayment;
         const downPaymentPercent = maxProperty > 0 ? Math.round((downPayment / maxProperty) * 100) : 0;
         return {
-          timeline: years + " year loan tenure @ " + annualRate + "%",
-          primaryLabel: "Max Affordable Property Value",
+          timeline: years + (years === 1 ? " year tenure @ " : " years tenure @ ") + annualRate + "%",
+          primaryLabel: "Maximum Affordable Property Value",
           primaryValue: inr(maxProperty),
           rows: [
-            ["Eligible loan amount", inr(loanEligibility)],
+            ["Total loan eligibility", inr(loanEligibility)],
             ["Down payment available", inr(downPayment)],
-            ["Comfortable monthly EMI", inr(comfortableEmi)],
+            ["Monthly EMI you can comfortably pay", inr(comfortableEmi)],
             ["Total loan repayment (P + I)", inr(comfortableEmi * months)],
           ],
           comparisonTitle: "Property funding ratio",
