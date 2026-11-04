@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=2.8">
+  <link rel="stylesheet" href="../assets/css/about.css?v=4.6">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -305,109 +305,103 @@
 
     </section>
 
-    <!-- Main Container: Open Architectural Layout with Less Box Containers -->
-    <div class="about-container" id="articles-collection">
+    <!-- Editorial magazine layout: masthead + asymmetric article spread -->
+    <div class="ar8-collection" id="articles-collection">
 
-      <!-- Editorial Notice Box -->
-      <div class="outputs-note-box" style="margin-top: 10px; margin-bottom: 36px;">
-        <p class="outputs-note-text">
-          New original editorial copy for review; publication dates and author attributions will be added after approval.
-        </p>
+      <!-- Editorial notice as a press strip -->
+      <div class="ar8-strip">
+        <div class="ar8-wrap ar8-strip-inner">
+          <span class="ar8-strip-dot" aria-hidden="true"></span>
+          <p>
+            New original editorial copy for review; publication dates and author attributions will be added after approval.
+          </p>
+        </div>
       </div>
 
-      <!-- Section 1: Make your next discussion more specific (Modern Gradient Section) -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Make your next discussion more specific</h2>
-        </div>
+      <!-- Section 1: Make your next discussion more specific -->
+      <section class="ar8-band ar8-paper">
+        <div class="ar8-wrap">
+          <header class="ar8-masthead">
+            <span class="ar8-rule" aria-hidden="true"></span>
+            <h2 class="ar8-title">Make your next discussion more specific</h2>
+            <span class="ar8-rule ar8-rule-thin" aria-hidden="true"></span>
+          </header>
 
-        <div class="insights-gradient-wrap">
-          <div class="financial-facets-grid">
-            <!-- Article 1 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">When your career and capital share the same risk</h3>
-                <p class="article-gradient-desc">
-                  A successful company can become the centre of a family's finances: salary, bonus, employee shares and future sale proceeds all depend on the same business. Understanding that connection is the first step towards deciding how much of your financial life should move with it.
-                </p>
-              </div>
+          <div class="ar8-spread">
+            <article class="ar8-article ar8-feature">
+              <svg class="ar8-feature-art" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+                <circle cx="300" cy="0" r="220" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="300" cy="0" r="150" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+                <circle class="ar8-feature-dot" cx="80" cy="0" r="6" fill="#19D79F"/>
+              </svg>
+              <h3 class="ar8-article-title">When your career and capital share the same risk</h3>
+              <p class="ar8-article-text ar8-dropcap">
+                A successful company can become the centre of a family's finances: salary, bonus, employee shares and future sale proceeds all depend on the same business. Understanding that connection is the first step towards deciding how much of your financial life should move with it.
+              </p>
             </article>
 
-            <!-- Article 2 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">A retirement portfolio needs an income plan</h3>
-                <p class="article-gradient-desc">
-                  Accumulating a retirement corpus and drawing a dependable living from it are different planning tasks. An income plan connects spending, accessible assets and review decisions, so that retirement is organised around the household's needs rather than an assumed annual return or a single corpus number.
-                </p>
-              </div>
+            <article class="ar8-article ar8-side">
+              <h3 class="ar8-article-title">A retirement portfolio needs an income plan</h3>
+              <p class="ar8-article-text">
+                Accumulating a retirement corpus and drawing a dependable living from it are different planning tasks. An income plan connects spending, accessible assets and review decisions, so that retirement is organised around the household's needs rather than an assumed annual return or a single corpus number.
+              </p>
             </article>
 
-            <!-- Article 3 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">Review health cover beyond the premium</h3>
-                <p class="article-gradient-desc">
-                  A renewal premium is easy to compare. The circumstances in which a policy will respond take more reading. A useful health-cover review connects the family's needs with the actual policy terms, then turns unclear wording into specific questions for the insurer or an authorised insurance professional.
-                </p>
-              </div>
+            <article class="ar8-article ar8-side">
+              <h3 class="ar8-article-title">Review health cover beyond the premium</h3>
+              <p class="ar8-article-text">
+                A renewal premium is easy to compare. The circumstances in which a policy will respond take more reading. A useful health-cover review connects the family's needs with the actual policy terms, then turns unclear wording into specific questions for the insurer or an authorised insurance professional.
+              </p>
             </article>
 
-            <!-- Article 4 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">The family wealth conversation before the paperwork</h3>
-                <p class="article-gradient-desc">
-                  A family can hold substantial wealth and still lack a shared understanding of who knows what, where records are kept and which decisions remain unresolved. A considered conversation creates a useful starting brief for the qualified professionals who will help translate intentions into appropriate arrangements.
-                </p>
-              </div>
+            <article class="ar8-article ar8-wide">
+              <h3 class="ar8-article-title">The family wealth conversation before the paperwork</h3>
+              <p class="ar8-article-text">
+                A family can hold substantial wealth and still lack a shared understanding of who knows what, where records are kept and which decisions remain unresolved. A considered conversation creates a useful starting brief for the qualified professionals who will help translate intentions into appropriate arrangements.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: Take the questions into your own context -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Take the questions into your own context</h2>
-        </div>
+      <!-- Section 2: Take the questions into your own context (editor's note) -->
+      <section class="ar8-band ar8-dark">
+        <div class="ar8-wrap">
+          <h2 class="ar8-title ar8-title-green">Take the questions into your own context</h2>
 
-        <div class="planning-pillars-grid">
-          <!-- Pillar 1 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
-              Educational reading can improve the questions you ask. It cannot establish the right decision for your circumstances on its own.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
-              Use these pieces to identify what you understand, what still needs checking and which information would make a discussion more useful. Keep your goals, liquidity, responsibilities and existing arrangements in view.
-            </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
-              Sources are provided on each detail page. Product terms, legal or tax questions and any personal recommendation require the relevant assessment and qualified professional input.
-            </p>
+          <div class="ar8-note">
+            <blockquote class="ar8-pull">
+              <p>
+                Educational reading can improve the questions you ask. It cannot establish the right decision for your circumstances on its own.
+              </p>
+            </blockquote>
+            <div class="ar8-note-cols">
+              <p>
+                Use these pieces to identify what you understand, what still needs checking and which information would make a discussion more useful. Keep your goals, liquidity, responsibilities and existing arrangements in view.
+              </p>
+              <p>
+                Sources are provided on each detail page. Product terms, legal or tax questions and any personal recommendation require the relevant assessment and qualified professional input.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 3: Closing CTA -->
-      <div class="services-closing-cta" id="consultation-section" style="margin-top: 48px;">
-        <h3 class="services-closing-title">Bring the question that stayed with you</h3>
-        <p class="services-closing-desc">
-          We can discuss the circumstances behind it and identify what needs attention.
-        </p>
-        <div>
-          <a href="../reach-us.html" class="btn btn-primary btn-consult-primary">
-            Book a consultation
-          </a>
+      <!-- Section 3: Closing CTA as a letter -->
+      <section class="ar8-band ar8-paper ar8-cta" id="consultation-section">
+        <div class="ar8-wrap">
+          <div class="ar8-letter">
+            <h3 class="ar8-letter-title">Bring the question that stayed with you</h3>
+            <svg class="ar8-scribble" viewBox="0 0 320 20" fill="none" aria-hidden="true">
+              <path d="M2 14 C 60 4, 110 18, 160 10 S 260 4, 318 12" stroke="#0CAF80" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <p>
+              We can discuss the circumstances behind it and identify what needs attention.
+            </p>
+            <a href="../reach-us.html" class="btn btn-primary">Book a consultation</a>
+          </div>
         </div>
-      </div>
+      </section>
 
     </div>
   </main>

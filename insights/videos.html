@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=2.8">
+  <link rel="stylesheet" href="../assets/css/about.css?v=4.9">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -305,107 +305,115 @@
 
     </section>
 
-    <!-- Main Container -->
-    <div class="about-container" id="videos-collection">
+    <!-- Cinema / storyboard layout (no play button: the page states none is used) -->
+    <div class="vd10-collection" id="videos-collection">
 
-      <!-- Section 1: Ideas made easier to discuss -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Ideas made easier to discuss</h2>
-        </div>
+      <!-- Section 1: widescreen concept frame -->
+      <section class="vd10-band vd10-light">
+        <div class="vd10-wrap">
+          <h2 class="vd10-title">Ideas made easier to discuss</h2>
 
-        <div class="video-premium-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-              <span class="career-badge" style="background: rgba(12, 175, 128, 0.16); color: #0CAF80; border: 1px solid rgba(12, 175, 128, 0.35); padding: 6px 14px; border-radius: 20px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">
-                Proposed Video Concept
-              </span>
-              <span style="font-size: 0.85rem; color: #8BA89E;">Educational Preview</span>
+          <div class="vd10-screen">
+            <span class="vd10-perf vd10-perf-left" aria-hidden="true"></span>
+            <span class="vd10-perf vd10-perf-right" aria-hidden="true"></span>
+            <div class="vd10-screen-inner">
+              <div class="vd10-screen-top">
+                <span class="vd10-badge">Proposed Video Concept</span>
+                <span class="vd10-label">Educational Preview</span>
+              </div>
+              <h3 class="vd10-screen-title">What protects the financial plan</h3>
+              <p class="vd10-screen-text">
+                A practical explanation of liquidity, family responsibilities and the questions to ask about existing protection.
+              </p>
+              <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="btn btn-primary vd10-btn">
+                <span>Read the full video script</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
-            <h3 class="service-card-title" style="font-size: 1.6rem; color: #FFFFFF; margin-bottom: 16px; line-height: 1.35;">
-              What protects the financial plan
-            </h3>
-            <p class="service-card-desc" style="font-size: 1.05rem; color: #D5EDE4; line-height: 1.75; margin-bottom: 28px; max-width: 860px;">
-              A practical explanation of liquidity, family responsibilities and the questions to ask about existing protection.
-            </p>
-          </div>
-          <div>
-            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px;">
-              <span>Read the full video script</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <span class="vd10-corner vd10-corner-tl" aria-hidden="true"></span>
+            <span class="vd10-corner vd10-corner-tr" aria-hidden="true"></span>
+            <span class="vd10-corner vd10-corner-bl" aria-hidden="true"></span>
+            <span class="vd10-corner vd10-corner-br" aria-hidden="true"></span>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: Explore BlissMoney on YouTube -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Explore BlissMoney on YouTube</h2>
-        </div>
-
-        <div class="channel-feature-box">
-          <div class="channel-feature-info">
-            <p class="channel-feature-desc">
+      <!-- Section 2: channel strip with moving film strip -->
+      <section class="vd10-band vd10-white vd10-channel">
+        <div class="vd10-filmstrip" aria-hidden="true"><span></span></div>
+        <div class="vd10-wrap vd10-channel-grid">
+          <h2 class="vd10-title">Explore BlissMoney on YouTube</h2>
+          <div class="vd10-channel-side">
+            <p>
               The current BlissMoney website links to this YouTube channel. View the channel for any published videos and current availability.
             </p>
-          </div>
-          <div>
-            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="white-space: nowrap;">
-              Visit the official channel
-            </a>
+            <a href="https://www.youtube.com/@Blissmoneyfintech" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit the official channel</a>
           </div>
         </div>
       </section>
 
-      <!-- Section 3: A clear standard for each published video -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">A clear standard for each published video</h2>
-        </div>
+      <!-- Section 3: storyboard frames -->
+      <section class="vd10-band vd10-grey">
+        <div class="vd10-wrap">
+          <h2 class="vd10-title">A clear standard for each published video</h2>
 
-        <div class="planning-pillars-grid">
-          <!-- Pillar 1 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">A specific question</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              Start with a decision the viewer recognises and explain why it deserves attention.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">An accessible explanation</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              Use captions, clear diagrams and a written transcript to make the subject easier to follow.
-            </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">A considered next step</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              Explain what remains situation-specific and where qualified advice or provider confirmation is needed.
-            </p>
+          <div class="vd10-board">
+            <article class="vd10-frame">
+              <div class="vd10-sketch" aria-hidden="true">
+                <svg viewBox="0 0 160 90" fill="none">
+                  <rect x="22" y="18" width="78" height="40" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M40 58 L34 72 L54 58" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M54 32 c0-6 10-6 10 0 c0 5-5 5-5 10 M59 48 v1" stroke="#0CAF80" stroke-width="2"/>
+                  <circle cx="126" cy="44" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M112 76 c2-10 26-10 28 0" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3>A specific question</h3>
+              <p>Start with a decision the viewer recognises and explain why it deserves attention.</p>
+            </article>
+            <article class="vd10-frame">
+              <div class="vd10-sketch" aria-hidden="true">
+                <svg viewBox="0 0 160 90" fill="none">
+                  <rect x="18" y="14" width="124" height="52" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M30 54 L56 38 L76 46 L104 26 L130 30" stroke="#0CAF80" stroke-width="2"/>
+                  <path d="M40 76 H120 M56 82 H104" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3>An accessible explanation</h3>
+              <p>Use captions, clear diagrams and a written transcript to make the subject easier to follow.</p>
+            </article>
+            <article class="vd10-frame">
+              <div class="vd10-sketch" aria-hidden="true">
+                <svg viewBox="0 0 160 90" fill="none">
+                  <path d="M16 70 C 50 70, 60 30, 96 30 S 132 20, 144 20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 5"/>
+                  <path d="M134 12 L146 20 L134 28" stroke="#0CAF80" stroke-width="2"/>
+                  <rect x="12" y="62" width="14" height="14" stroke="currentColor" stroke-width="1.5"/>
+                  <rect x="90" y="24" width="12" height="12" fill="#0CAF80"/>
+                </svg>
+              </div>
+              <h3>A considered next step</h3>
+              <p>Explain what remains situation-specific and where qualified advice or provider confirmation is needed.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Section 4: Use the idea in your own context -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Use the idea in your own context</h2>
-        </div>
+      <!-- Section 4: subtitle-style statement + credits -->
+      <section class="vd10-band vd10-white vd10-context">
+        <div class="vd10-wrap">
+          <h2 class="vd10-title">Use the idea in your own context</h2>
 
-        <p style="font-size: 1.05rem; color: #D5EDE4; line-height: 1.8; margin-bottom: 28px; max-width: 900px;">
-          A short explanation can help identify the next question. It cannot establish which investment, policy or financial action is right for you. Use the subject to clarify your circumstances and the information you need before acting.
-        </p>
+          <div class="vd10-caption-stage">
+            <p class="vd10-caption">
+              A short explanation can help identify the next question. It cannot establish which investment, policy or financial action is right for you. Use the subject to clarify your circumstances and the information you need before acting.
+            </p>
+          </div>
 
-        <!-- Preview Notice Box -->
-        <div class="outputs-note-box" style="margin-top: 10px;">
-          <p class="outputs-note-text">
-            Only approved recordings should be added to this collection, with an accurate title, speaker, duration, publication date and accessible transcript. This preview does not use a non-functional play button to imply a video is available.
-          </p>
+          <div class="vd10-credits">
+            <p>
+              Only approved recordings should be added to this collection, with an accurate title, speaker, duration, publication date and accessible transcript. This preview does not use a non-functional play button to imply a video is available.
+            </p>
+          </div>
         </div>
       </section>
 

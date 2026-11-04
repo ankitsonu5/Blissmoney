@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=2.8">
+  <link rel="stylesheet" href="../assets/css/about.css?v=5.1">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -305,111 +305,108 @@
 
     </section>
 
-    <!-- Main Container -->
-    <div class="about-container" id="podcast-episode">
+    <!-- Studio / audio layout. Decorative waveforms only: no play button, timeline or audio control (the copy says none is used). -->
+    <div class="pd11-collection" id="podcast-episode">
 
-      <!-- Section 1: Longer conversations More room for the question -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Longer conversations More room for the question</h2>
-        </div>
+      <!-- Section 1: episode "show notes" card -->
+      <section class="pd11-band pd11-light">
+        <div class="pd11-wrap">
+          <h2 class="pd11-title">Longer conversations More room for the question</h2>
 
-        <!-- Premium Episode Card (Following Current Card Style) -->
-        <div class="service-feature-card podcast-premium-card" style="padding: 36px 32px;">
-          <div>
-            <span class="career-badge" style="background: rgba(12, 175, 128, 0.16); color: #0CAF80; border: 1px solid rgba(12, 175, 128, 0.35); padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; display: inline-block; margin-bottom: 16px;">
-              Episode Concept
-            </span>
-            <h3 class="service-card-title" style="font-size: 1.55rem; color: #FFFFFF; margin-bottom: 14px;">
-              The first family wealth conversation
-            </h3>
-            <p class="service-card-desc" style="font-size: 1.02rem; color: #D5EDE4; line-height: 1.75; margin-bottom: 22px;">
-              A practical discussion of shared intentions, useful information and the next step a family can agree.
-            </p>
-            <div style="background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(12, 175, 128, 0.28); border-radius: 10px; padding: 14px 20px; margin: 18px 0 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
-              <span style="color: #0CAF80; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: #0CAF80; display: inline-block;"></span>
-                Written Concept • First Episode
-              </span>
-              <span style="font-size: 0.82rem; color: #8BA89E;">Full Script Available</span>
+          <div class="pd11-episode">
+            <div class="pd11-studio" aria-hidden="true">
+              <svg class="pd11-mic" viewBox="0 0 120 200" fill="none">
+                <rect x="34" y="8" width="52" height="96" rx="26" stroke="currentColor" stroke-width="2"/>
+                <path d="M34 40 H52 M34 56 H52 M34 72 H52 M68 40 H86 M68 56 H86 M68 72 H86" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+                <path d="M18 82 C 18 128, 102 128, 102 82" stroke="currentColor" stroke-width="2"/>
+                <path d="M60 126 V170 M36 190 H84 M60 170 V190" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <div class="pd11-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             </div>
-          </div>
-          <div>
-            <a href="../reach-us.html" class="service-card-link" style="font-size: 0.98rem; font-weight: 600;">
-              Read the episode script <span aria-hidden="true">&rarr;</span>
-            </a>
+
+            <div class="pd11-notes">
+              <span class="pd11-badge">Episode Concept</span>
+              <h3 class="pd11-episode-title">The first family wealth conversation</h3>
+              <p class="pd11-episode-text">
+                A practical discussion of shared intentions, useful information and the next step a family can agree.
+              </p>
+              <div class="pd11-meta">
+                <span class="pd11-meta-main">
+                  <span class="pd11-meta-dot" aria-hidden="true"></span>
+                  Written Concept • First Episode
+                </span>
+                <span class="pd11-meta-side">Full Script Available</span>
+              </div>
+              <a href="../reach-us.html" class="pd11-link">
+                Read the episode script <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: Time to explore what matters -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Time to explore what matters</h2>
-        </div>
-
-        <p style="font-size: 1.05rem; color: #D5EDE4; line-height: 1.8; margin-bottom: 28px; max-width: 900px;">
-          A podcast can give a financial question enough space for context, examples and careful qualification. This proposed series is built around the questions clients and families might bring into a real discussion.
-        </p>
-
-        <!-- Preview Notice Box -->
-        <div class="outputs-note-box" style="margin-top: 10px;">
-          <p class="outputs-note-text">
+      <!-- Section 2: centred statement between wave lines -->
+      <section class="pd11-band pd11-white">
+        <div class="pd11-wrap pd11-center">
+          <h2 class="pd11-title">Time to explore what matters</h2>
+          <div class="pd11-statement-row">
+            <span class="pd11-side-wave" aria-hidden="true"></span>
+            <p class="pd11-statement">
+              A podcast can give a financial question enough space for context, examples and careful qualification. This proposed series is built around the questions clients and families might bring into a real discussion.
+            </p>
+            <span class="pd11-side-wave pd11-side-wave-r" aria-hidden="true"></span>
+          </div>
+          <p class="pd11-notice">
             No podcast catalogue or recording was supplied for the preview. The first episode is therefore available as a full written concept, with no invented speaker attribution or inactive audio control.
           </p>
         </div>
       </section>
 
-      <!-- Section 3: Listen for the question behind the decision -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Listen for the question behind the decision</h2>
-        </div>
+      <!-- Section 3: episode "chapters" along one waveform -->
+      <section class="pd11-band pd11-grey">
+        <div class="pd11-wrap">
+          <h2 class="pd11-title">Listen for the question behind the decision</h2>
 
-        <div class="planning-pillars-grid">
-          <!-- Pillar 1 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">The situation</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              Begin with a recognisable issue in a career, business or family financial life.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">The tradeoffs</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              Give room to explain what is connected, what remains uncertain and where different choices have consequences.
-            </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="planning-pillar-item">
-            <h3 class="planning-pillar-title">The next conversation</h3>
-            <p class="planning-pillar-desc" style="font-size: 0.98rem; color: #D5EDE4; line-height: 1.7;">
-              End with practical questions the listener can discuss in their own context.
-            </p>
+          <div class="pd11-chapters">
+            <div class="pd11-chapter-wave" aria-hidden="true">
+              <span class="pd11-seg pd11-seg-1"></span><span class="pd11-seg pd11-seg-2"></span><span class="pd11-seg pd11-seg-3"></span>
+            </div>
+            <article class="pd11-chapter">
+              <h3>The situation</h3>
+              <p>Begin with a recognisable issue in a career, business or family financial life.</p>
+            </article>
+            <article class="pd11-chapter">
+              <h3>The tradeoffs</h3>
+              <p>Give room to explain what is connected, what remains uncertain and where different choices have consequences.</p>
+            </article>
+            <article class="pd11-chapter">
+              <h3>The next conversation</h3>
+              <p>End with practical questions the listener can discuss in their own context.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Section 4: What deserves a longer conversation -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">What deserves a longer conversation</h2>
-        </div>
-
-        <div style="background: linear-gradient(135deg, rgba(12, 175, 128, 0.08) 0%, rgba(6, 22, 18, 0.75) 100%); border: 1px solid rgba(12, 175, 128, 0.25); border-radius: 14px; padding: 36px 32px;">
-          <p style="font-size: 1.05rem; color: #D5EDE4; line-height: 1.8; margin-bottom: 18px;">
-            A useful subject is often a question people find difficult to raise in a short meeting: how to discuss wealth with family, what a business exit changes or how to prepare for a new phase of life.
-          </p>
-          <p style="font-size: 1.05rem; color: #D5EDE4; line-height: 1.8; margin-bottom: 28px;">
-            Send a subject suggestion or an enquiry about participation to the BlissMoney team. Guest selection, recording, editorial review and publication would need separate confirmation.
-          </p>
+      <!-- Section 4: call for subjects (dark) -->
+      <section class="pd11-band pd11-green">
+        <div class="pd11-wrap pd11-call">
           <div>
-            <a href="../reach-us.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
-              Suggest a subject
-            </a>
+            <h2 class="pd11-title">What deserves a longer conversation</h2>
+            <p>
+              A useful subject is often a question people find difficult to raise in a short meeting: how to discuss wealth with family, what a business exit changes or how to prepare for a new phase of life.
+            </p>
+            <p>
+              Send a subject suggestion or an enquiry about participation to the BlissMoney team. Guest selection, recording, editorial review and publication would need separate confirmation.
+            </p>
+            <a href="../reach-us.html" class="btn btn-primary">Suggest a subject</a>
+          </div>
+          <div class="pd11-rings" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <svg class="pd11-rings-mic" viewBox="0 0 120 200" fill="none">
+              <rect x="34" y="8" width="52" height="96" rx="26" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M18 82 C 18 128, 102 128, 102 82" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M60 126 V170 M36 190 H84 M60 170 V190" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
           </div>
         </div>
       </section>

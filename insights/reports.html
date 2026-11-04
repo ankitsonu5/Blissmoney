@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=2.8">
+  <link rel="stylesheet" href="../assets/css/about.css?v=4.7">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -305,89 +305,87 @@
 
     </section>
 
-    <!-- Main Container -->
-    <div class="about-container" id="reports-collection">
+    <!-- Research-report layout: stamp notice, report covers, highlighter notes, chart CTA -->
+    <div class="rp9-collection" id="reports-collection">
 
-      <!-- Editorial Notice Box -->
-      <div class="outputs-note-box" style="margin-top: 10px; margin-bottom: 36px;">
-        <p class="outputs-note-text">
-          New original editorial copy for review; publication dates and author attributions will be added after approval.
-        </p>
-      </div>
+      <!-- Section 1: report covers -->
+      <section class="rp9-band rp9-light">
+        <div class="rp9-wrap">
+          <div class="rp9-head">
+            <div class="rp9-stamp">
+              <p>
+                New original editorial copy for review; publication dates and author attributions will be added after approval.
+              </p>
+            </div>
+            <h2 class="rp9-title">Make your next discussion more specific</h2>
+          </div>
 
-      <!-- Section 1: Make your next discussion more specific -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Make your next discussion more specific</h2>
-        </div>
-
-        <div class="insights-gradient-wrap">
-          <div class="financial-facets-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
-            <!-- Guide 1 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">The annual wealth review</h3>
-                <p class="article-gradient-desc">
-                  An annual review is an opportunity to reconcile the financial plan with the life it is meant to support. Use this working guide to assemble the relevant information, identify decisions that need attention, and leave the meeting with a practical action list rather than another performance summary.
-                </p>
-              </div>
+          <div class="rp9-shelf">
+            <article class="rp9-cover">
+              <span class="rp9-spine" aria-hidden="true"></span>
+              <svg class="rp9-cover-chart" viewBox="0 0 320 140" fill="none" aria-hidden="true">
+                <path d="M0 139 H320" stroke="currentColor" stroke-width="1" opacity=".4"/>
+                <rect x="20" y="90" width="34" height="49" fill="currentColor" opacity=".18"/>
+                <rect x="74" y="64" width="34" height="75" fill="currentColor" opacity=".26"/>
+                <rect x="128" y="76" width="34" height="63" fill="currentColor" opacity=".2"/>
+                <rect x="182" y="40" width="34" height="99" fill="currentColor" opacity=".32"/>
+                <rect x="236" y="22" width="34" height="117" fill="#19D79F" opacity=".75"/>
+                <path class="rp9-trend" d="M37 86 L91 60 L145 72 L199 36 L253 18" stroke="#19D79F" stroke-width="2"/>
+              </svg>
+              <h3 class="rp9-cover-title">The annual wealth review</h3>
+              <p class="rp9-cover-text">
+                An annual review is an opportunity to reconcile the financial plan with the life it is meant to support. Use this working guide to assemble the relevant information, identify decisions that need attention, and leave the meeting with a practical action list rather than another performance summary.
+              </p>
             </article>
 
-            <!-- Guide 2 -->
-            <article class="article-gradient-card">
-              <div>
-                <h3 class="article-gradient-title">Preparing for a business liquidity event</h3>
-                <p class="article-gradient-desc">
-                  A business sale, secondary transaction or other liquidity event can change a family's financial position quickly. The planning work begins before the proceeds arrive: distinguish expectations from commitments, organise the professional responsibilities, and give the money a considered purpose before making decisions that are difficult to reverse.
-                </p>
-              </div>
+            <article class="rp9-cover rp9-cover-alt">
+              <span class="rp9-spine" aria-hidden="true"></span>
+              <svg class="rp9-cover-chart" viewBox="0 0 320 140" fill="none" aria-hidden="true">
+                <path d="M0 139 H320" stroke="currentColor" stroke-width="1" opacity=".4"/>
+                <path d="M0 120 C 60 118, 90 100, 140 96 S 220 40, 320 20 V139 H0 Z" fill="currentColor" opacity=".14"/>
+                <path class="rp9-trend" d="M0 120 C 60 118, 90 100, 140 96 S 220 40, 320 20" stroke="#0D251E" stroke-width="2"/>
+                <circle cx="140" cy="96" r="5" fill="#0D251E"/>
+                <circle cx="320" cy="20" r="6" fill="#0D251E"/>
+              </svg>
+              <h3 class="rp9-cover-title">Preparing for a business liquidity event</h3>
+              <p class="rp9-cover-text">
+                A business sale, secondary transaction or other liquidity event can change a family's financial position quickly. The planning work begins before the proceeds arrive: distinguish expectations from commitments, organise the professional responsibilities, and give the money a considered purpose before making decisions that are difficult to reverse.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: Take the questions into your own context -->
-      <section class="about-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">Take the questions into your own context</h2>
-        </div>
+      <!-- Section 2: highlighter reading notes -->
+      <section class="rp9-band rp9-white">
+        <div class="rp9-wrap rp9-notes-layout">
+          <h2 class="rp9-title">Take the questions into your own context</h2>
 
-        <div class="planning-pillars-grid">
-          <!-- Pillar 1 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
-              Educational reading can improve the questions you ask. It cannot establish the right decision for your circumstances on its own.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
+          <div class="rp9-notes">
+            <p class="rp9-highlight"><mark>Educational reading can improve the questions you ask. It cannot establish the right decision for your circumstances on its own.</mark></p>
+            <p>
               Use these pieces to identify what you understand, what still needs checking and which information would make a discussion more useful. Keep your goals, liquidity, responsibilities and existing arrangements in view.
             </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="planning-pillar-item">
-            <p class="planning-pillar-desc" style="font-size: 1rem; color: #D5EDE4; line-height: 1.75;">
+            <p>
               Sources are provided on each detail page. Product terms, legal or tax questions and any personal recommendation require the relevant assessment and qualified professional input.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Section 3: Closing CTA -->
-      <div class="services-closing-cta" id="consultation-section" style="margin-top: 48px;">
-        <h3 class="services-closing-title">Bring the question that stayed with you</h3>
-        <p class="services-closing-desc">
-          We can discuss the circumstances behind it and identify what needs attention.
-        </p>
-        <div>
-          <a href="../reach-us.html" class="btn btn-primary btn-consult-primary">
-            Book a consultation
-          </a>
+      <!-- Section 3: chart CTA -->
+      <section class="rp9-band rp9-dark rp9-cta" id="consultation-section">
+        <svg class="rp9-cta-chart" viewBox="0 0 1200 300" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <path class="rp9-cta-line" d="M0 260 C 160 250, 240 200, 380 210 S 600 120, 760 140 S 1000 40, 1200 30" stroke="#19D79F" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="rp9-wrap rp9-cta-inner">
+          <h3 class="rp9-cta-title">Bring the question that stayed with you</h3>
+          <p>
+            We can discuss the circumstances behind it and identify what needs attention.
+          </p>
+          <a href="../reach-us.html" class="btn btn-primary">Book a consultation</a>
         </div>
-      </div>
+      </section>
 
     </div>
   </main>
