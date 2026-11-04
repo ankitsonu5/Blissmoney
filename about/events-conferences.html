@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=1.5">
+  <link rel="stylesheet" href="../assets/css/about.css?v=2.8">
 </head>
 
 <body class="about-subpage page-events-conferences">
@@ -273,6 +273,15 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching about/index.html banner style) -->
     <section class="top-banner-section">
+      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
+        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
+        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
+        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
+        <circle class="art-dot" cx="686" cy="407" r="9" />
+        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+      </svg>
+
       <div class="banner-box">
         <h1><em>Make space for a more useful discussion.</em></h1>
         <p class="banner-subtitle">
@@ -297,32 +306,19 @@
         </ul>
       </div>
 
-      <!-- Animated Wave Layers -->
-      <div class="wave-container" aria-hidden="true">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-      </div>
     </section>
 
-    <!-- Main Container -->
-    <div class="about-container">
-
-      <!-- Section 1: Better questions make better conversations -->
-      <section class="connected-view-section event-intro-section">
-        <div class="connected-view-grid">
-          <div class="event-intro-copy">
-            <div class="about-section-header event-intro-header">
-              <h2 class="about-section-title">
-                Better questions make better conversations
-              </h2>
-            </div>
-            <div class="connected-lead-box event-intro-lead">
-              <p>
-                Financial topics are easier to engage with when they start with decisions people recognise.
-              </p>
-            </div>
-            <div class="connected-body-text event-intro-body">
+    <!-- Intro + announcements (redesigned, light band) -->
+    <section class="ab-band ab-light ab-events-intro">
+      <svg class="ab-decor" viewBox="0 0 300 300" fill="none" aria-hidden="true"><g class="ab-orbit"><circle cx="150" cy="150" r="137" stroke="currentColor" stroke-width="1.2"/><circle cx="191" cy="19" r="8" fill="currentColor"/></g></svg>
+      <div class="ab-wrap">
+        <div class="ab-events-grid">
+          <div class="ab-events-copy">
+            <h2 class="ab-title">Better questions make better conversations</h2>
+            <blockquote class="ab-quote">
+              <p>Financial topics are easier to engage with when they start with decisions people recognise.</p>
+            </blockquote>
+            <div class="ab-body">
               <p>
                 For an investor education session, a leadership discussion or a family wealth conversation, a useful programme gives participants a clear theme, practical questions and room for discussion.
               </p>
@@ -332,23 +328,19 @@
             </div>
           </div>
 
-          <div class="event-announcement-panel">
-            <div class="about-section-header event-announcement-header">
-              <h2 class="about-section-title">
-                Event announcements
-              </h2>
-            </div>
-            <div class="connected-fiduciary-badge event-announcement-box">
-              <p>
-                No confirmed event dates or historical participation records were supplied for this preview. Confirmed announcements can be added here with the venue, programme and registration details.
-              </p>
-              <a href="../reach-us.html" class="btn btn-primary event-announcement-btn">
-                Ask about a session
-              </a>
-            </div>
-          </div>
+          <aside class="ab-announce">
+            <h2>Event announcements</h2>
+            <p>
+              No confirmed event dates or historical participation records were supplied for this preview. Confirmed announcements can be added here with the venue, programme and registration details.
+            </p>
+            <a href="../reach-us.html" class="btn btn-primary">Ask about a session</a>
+          </aside>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- Main Container (kept as-is): Two formats for a focused discussion -->
+    <div class="about-container">
 
       <!-- Section 2: Two formats for a focused discussion -->
       <section class="about-section event-formats-section">
@@ -425,44 +417,32 @@
         </div>
       </section>
 
-      <!-- Section 3: What to share in your enquiry -->
-      <section class="about-section event-enquiry-section">
-        <div class="about-section-header">
-          <h2 class="about-section-title">What to share in your enquiry</h2>
+    </div>
+
+    <!-- What to share in your enquiry (redesigned, white band) -->
+    <section class="ab-band ab-white ab-events-enquiry">
+      <div class="ab-wrap">
+        <h2 class="ab-title">What to share in your enquiry</h2>
+
+        <div class="ab-cards-3">
+          <article class="ab-card">
+            <h3>The audience</h3>
+            <p>Who will be in the room, their familiarity with the subject and the decisions they are considering.</p>
+          </article>
+          <article class="ab-card ab-card-accent">
+            <h3>The objective</h3>
+            <p>The questions participants should be better equipped to discuss after the session.</p>
+          </article>
+          <article class="ab-card">
+            <h3>The format</h3>
+            <p>Dates, location, duration and whether the session is in person, online, recorded or private.</p>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="about-grid-3">
-          <!-- Card 1 -->
-          <div class="service-feature-card event-enquiry-card">
-            <div>
-              <h3 class="service-card-title">The audience</h3>
-              <p class="service-card-desc">
-                Who will be in the room, their familiarity with the subject and the decisions they are considering.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="service-feature-card event-enquiry-card">
-            <div>
-              <h3 class="service-card-title">The objective</h3>
-              <p class="service-card-desc">
-                The questions participants should be better equipped to discuss after the session.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="service-feature-card event-enquiry-card">
-            <div>
-              <h3 class="service-card-title">The format</h3>
-              <p class="service-card-desc">
-                Dates, location, duration and whether the session is in person, online, recorded or private.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- Closing CTA (kept as-is) -->
+    <div class="about-container">
 
       <!-- Section 4: Closing CTA Card -->
       <div class="about-cta-card event-cta-card" id="discuss-event">
