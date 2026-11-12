@@ -7,11 +7,11 @@
  * - Dot 4: Card 3 slides down, 4th card remains alone
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Section 01: Who We Serve - Interactive Stacked Deck
   function initWhoWeServeDeck() {
-    const cards = document.querySelectorAll('.card-item');
-    const dots = document.querySelectorAll('.deck-dot');
+    const cards = document.querySelectorAll(".card-item");
+    const dots = document.querySelectorAll(".deck-dot");
     let currentIndex = 0;
 
     if (!cards.length || !dots.length) return;
@@ -22,44 +22,47 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update active state on dots
       dots.forEach((dot, idx) => {
         if (idx === activeIndex) {
-          dot.classList.add('active');
-          dot.setAttribute('aria-selected', 'true');
+          dot.classList.add("active");
+          dot.setAttribute("aria-selected", "true");
         } else {
-          dot.classList.remove('active');
-          dot.setAttribute('aria-selected', 'false');
+          dot.classList.remove("active");
+          dot.setAttribute("aria-selected", "false");
         }
       });
 
       // Update dot section step for smooth upward/return animation
-      const deckControls = document.querySelector('.deck-controls');
+      const deckControls = document.querySelector(".deck-controls");
       if (deckControls) {
-        deckControls.style.setProperty('--dot-step', activeIndex);
+        deckControls.style.setProperty("--dot-step", activeIndex);
       }
 
       // Update cards: cards before activeIndex peel off to the bottom-left;
       // remaining cards stay in their fixed stacked positions (last card stays anchored!)
       cards.forEach((card, idx) => {
-        card.classList.remove('is-dropped', 'is-dropped-far');
+        card.classList.remove("is-dropped", "is-dropped-far");
 
         if (idx < activeIndex) {
           // Previous card has peeled down-left and exited
           if (activeIndex - idx > 1) {
-            card.classList.add('is-dropped-far');
+            card.classList.add("is-dropped-far");
           } else {
-            card.classList.add('is-dropped');
+            card.classList.add("is-dropped");
           }
-          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute("aria-hidden", "true");
         } else {
           // Card stays at its fixed base stack position
-          card.setAttribute('aria-hidden', idx === activeIndex ? 'false' : 'true');
+          card.setAttribute(
+            "aria-hidden",
+            idx === activeIndex ? "false" : "true",
+          );
         }
       });
     }
 
     // Attach click events to dots
     dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+      dot.addEventListener("click", () => {
+        const targetIndex = parseInt(dot.getAttribute("data-index"), 10);
         if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
           updateDeck(targetIndex);
         }
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Allow clicking cards to slide through the deck (cycle forward and loop back up)
     cards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
+      card.addEventListener("click", () => {
         if (idx === currentIndex) {
           // Clicking active front card slides it down to reveal the next card
           const nextIndex = (currentIndex + 1) % cards.length;
@@ -80,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    const stackedDeck = document.querySelector('.stacked-deck');
+    const stackedDeck = document.querySelector(".stacked-deck");
     if (stackedDeck) {
-      stackedDeck.addEventListener('click', (e) => {
+      stackedDeck.addEventListener("click", (e) => {
         if (e.target === stackedDeck) {
           const nextIndex = (currentIndex + 1) % cards.length;
           updateDeck(nextIndex);
@@ -92,20 +95,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to ensure card deck's top-right card (Card 4) touches the bottom of serve-decor SVG
     function alignDeckWithDecor() {
-      const decor = document.querySelector('.serve-decor');
-      const header = document.querySelector('.serve-header');
-      const wrapper = document.querySelector('.serve-deck-wrapper');
+      const decor = document.querySelector(".serve-decor");
+      const header = document.querySelector(".serve-header");
+      const wrapper = document.querySelector(".serve-deck-wrapper");
       if (!decor || !header || !wrapper) return;
 
       if (window.innerWidth > 900) {
         const decorBottom = decor.getBoundingClientRect().bottom;
         const headerBottom = header.getBoundingClientRect().bottom;
         const style = getComputedStyle(document.documentElement);
-        const offsetY = parseFloat(style.getPropertyValue('--card-stack-offset-y')) || 60;
-        const targetMargin = Math.max(30, (decorBottom - headerBottom) + offsetY);
+        const offsetY =
+          parseFloat(style.getPropertyValue("--card-stack-offset-y")) || 60;
+        const targetMargin = Math.max(30, decorBottom - headerBottom + offsetY);
         wrapper.style.marginTop = `${targetMargin}px`;
       } else {
-        wrapper.style.marginTop = '';
+        wrapper.style.marginTop = "";
       }
     }
 
@@ -113,17 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDeck(0);
     alignDeckWithDecor();
 
-    window.addEventListener('resize', alignDeckWithDecor);
-    window.addEventListener('load', alignDeckWithDecor);
+    window.addEventListener("resize", alignDeckWithDecor);
+    window.addEventListener("load", alignDeckWithDecor);
   }
 
   initWhoWeServeDeck();
 
   // Section 04: How We Work - 6 Steps Interactive Deck
   function initStepsDeck() {
-    const cards = document.querySelectorAll('.steps-card-item');
-    const dots = document.querySelectorAll('.steps-dot');
-    const controls = document.querySelector('.steps-controls');
+    const cards = document.querySelectorAll(".steps-card-item");
+    const dots = document.querySelectorAll(".steps-dot");
+    const controls = document.querySelector(".steps-controls");
     let currentIndex = 0;
 
     if (!cards.length || !dots.length) return;
@@ -134,41 +138,44 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update active state on dots
       dots.forEach((dot, idx) => {
         if (idx === activeIndex) {
-          dot.classList.add('active');
-          dot.setAttribute('aria-selected', 'true');
+          dot.classList.add("active");
+          dot.setAttribute("aria-selected", "true");
         } else {
-          dot.classList.remove('active');
-          dot.setAttribute('aria-selected', 'false');
+          dot.classList.remove("active");
+          dot.setAttribute("aria-selected", "false");
         }
       });
 
       // Update dot section step for smooth upward/return animation
       if (controls) {
-        controls.style.setProperty('--step-dot', activeIndex);
+        controls.style.setProperty("--step-dot", activeIndex);
       }
 
       // Update cards: cards before activeIndex peel off to the bottom-left;
       // remaining cards stay in their fixed stacked positions (last card stays anchored!)
       cards.forEach((card, idx) => {
-        card.classList.remove('is-dropped', 'is-dropped-far');
+        card.classList.remove("is-dropped", "is-dropped-far");
 
         if (idx < activeIndex) {
           if (activeIndex - idx > 1) {
-            card.classList.add('is-dropped-far');
+            card.classList.add("is-dropped-far");
           } else {
-            card.classList.add('is-dropped');
+            card.classList.add("is-dropped");
           }
-          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute("aria-hidden", "true");
         } else {
-          card.setAttribute('aria-hidden', idx === activeIndex ? 'false' : 'true');
+          card.setAttribute(
+            "aria-hidden",
+            idx === activeIndex ? "false" : "true",
+          );
         }
       });
     }
 
     // Attach click events to dots
     dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const targetIndex = parseInt(dot.getAttribute('data-step'), 10);
+      dot.addEventListener("click", () => {
+        const targetIndex = parseInt(dot.getAttribute("data-step"), 10);
         if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
           updateDeck(targetIndex);
         }
@@ -177,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Allow clicking cards to slide through the deck (cycle forward and loop back up)
     cards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
+      card.addEventListener("click", () => {
         if (idx === currentIndex) {
           const nextIndex = (currentIndex + 1) % cards.length;
           updateDeck(nextIndex);
@@ -187,9 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    const stepsStackedDeck = document.querySelector('.steps-stacked-deck');
+    const stepsStackedDeck = document.querySelector(".steps-stacked-deck");
     if (stepsStackedDeck) {
-      stepsStackedDeck.addEventListener('click', (e) => {
+      stepsStackedDeck.addEventListener("click", (e) => {
         if (e.target === stepsStackedDeck) {
           const nextIndex = (currentIndex + 1) % cards.length;
           updateDeck(nextIndex);
@@ -208,29 +215,153 @@ document.addEventListener('DOMContentLoaded', () => {
   // object-fit: contain anchored right-center; "tall" scales to 194% of stage height.
   // c: circles [cx, cy, r] | l: lines [x1, y1, x2, y2] | d: dots [x, y]
   const DISCIPLINE_GEOMS = [
-    { w: 1357, h: 815, c: [[950, 406, 407], [117, 406, 116]], l: [[233, 406, 950, 406], [950, 406, 950, 815]], d: [[233, 406], [950, 406]] },
-    { w: 1164, h: 793, c: [[608, 340, 213]], l: [[8, 127, 608, 127], [608, 0, 608, 793], [608, 553, 1164, 553], [8, 127, 8, 793]], d: [[608, 127], [8, 468]] },
-    { w: 1104, h: 818, c: [[1095, 409, 409], [415, 407, 270]], l: [[0, 407, 1104, 407]], d: [[686, 407], [8, 407]] },
-    { w: 1178, h: 923, c: [[345, 901, 345], [985, 364, 192]], l: [[360, 556, 1178, 0], [360, 556, 985, 556]], d: [[360, 556], [876, 208]] },
-    { w: 1096, h: 1598, tall: true, c: [[529, 529, 397], [700, 1201, 297]], l: [[529, 521, 674, 1088]], d: [[529, 521]] },
-    { w: 887, h: 843, c: [[486, 457, 273], [64, 775, 45]], l: [[884, 184, 64, 778], [486, 0, 486, 820], [486, 184, 884, 184]], d: [[486, 184], [227, 662]] },
-    { w: 1526, h: 815, c: [[1118, 406, 407], [117, 406, 116]], l: [[233, 406, 1112, 406], [1112, 406, 1112, 815]], d: [[233, 406], [1112, 406]] },
-    { w: 1162, h: 797, c: [[602, 342, 214]], l: [[0, 128, 602, 128], [602, 0, 602, 797], [602, 556, 1162, 556]], d: [[602, 128], [24, 128]] },
-    { w: 1275, h: 818, c: [[1092, 409, 409], [414, 407, 270]], l: [[8, 407, 812, 407]], d: [[8, 407]] }
+    {
+      w: 1357,
+      h: 815,
+      c: [
+        [950, 406, 407],
+        [117, 406, 116],
+      ],
+      l: [
+        [233, 406, 950, 406],
+        [950, 406, 950, 815],
+      ],
+      d: [
+        [233, 406],
+        [950, 406],
+      ],
+    },
+    {
+      w: 1164,
+      h: 793,
+      c: [[608, 340, 213]],
+      l: [
+        [8, 127, 608, 127],
+        [608, 0, 608, 793],
+        [608, 553, 1164, 553],
+        [8, 127, 8, 793],
+      ],
+      d: [
+        [608, 127],
+        [8, 468],
+      ],
+    },
+    {
+      w: 1104,
+      h: 818,
+      c: [
+        [1095, 409, 409],
+        [415, 407, 270],
+      ],
+      l: [[0, 407, 1104, 407]],
+      d: [
+        [686, 407],
+        [8, 407],
+      ],
+    },
+    {
+      w: 1178,
+      h: 923,
+      c: [
+        [345, 901, 345],
+        [985, 364, 192],
+      ],
+      l: [
+        [360, 556, 1178, 0],
+        [360, 556, 985, 556],
+      ],
+      d: [
+        [360, 556],
+        [876, 208],
+      ],
+    },
+    {
+      w: 1096,
+      h: 1598,
+      tall: true,
+      c: [
+        [529, 529, 397],
+        [700, 1201, 297],
+      ],
+      l: [[529, 521, 674, 1088]],
+      d: [[529, 521]],
+    },
+    {
+      w: 887,
+      h: 843,
+      c: [
+        [486, 457, 273],
+        [64, 775, 45],
+      ],
+      l: [
+        [884, 184, 64, 778],
+        [486, 0, 486, 820],
+        [486, 184, 884, 184],
+      ],
+      d: [
+        [486, 184],
+        [227, 662],
+      ],
+    },
+    {
+      w: 1526,
+      h: 815,
+      c: [
+        [1118, 406, 407],
+        [117, 406, 116],
+      ],
+      l: [
+        [233, 406, 1112, 406],
+        [1112, 406, 1112, 815],
+      ],
+      d: [
+        [233, 406],
+        [1112, 406],
+      ],
+    },
+    {
+      w: 1162,
+      h: 797,
+      c: [[602, 342, 214]],
+      l: [
+        [0, 128, 602, 128],
+        [602, 0, 602, 797],
+        [602, 556, 1162, 556],
+      ],
+      d: [
+        [602, 128],
+        [24, 128],
+      ],
+    },
+    {
+      w: 1275,
+      h: 818,
+      c: [
+        [1092, 409, 409],
+        [414, 407, 270],
+      ],
+      l: [[8, 407, 812, 407]],
+      d: [[8, 407]],
+    },
   ];
 
   function createDisciplineGeometry(svg, stage) {
-    const NS = 'http://www.w3.org/2000/svg';
+    const NS = "http://www.w3.org/2000/svg";
     const POOL = { c: 2, l: 4, d: 2 };
     const DOT_R = 8;
     const DURATION = 1000;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     const els = { c: [], l: [], d: [] };
-    ['c', 'l', 'd'].forEach((type) => {
+    ["c", "l", "d"].forEach((type) => {
       for (let i = 0; i < POOL[type]; i++) {
-        const el = document.createElementNS(NS, type === 'l' ? 'line' : 'circle');
-        el.setAttribute('class', type === 'd' ? 'geom-dot' : 'geom-stroke');
+        const el = document.createElementNS(
+          NS,
+          type === "l" ? "line" : "circle",
+        );
+        el.setAttribute("class", type === "d" ? "geom-dot" : "geom-stroke");
         svg.appendChild(el);
         els[type].push(el);
       }
@@ -250,33 +381,50 @@ document.addEventListener('DOMContentLoaded', () => {
       const oy = (H - g.h * k) / 2;
       const X = (x) => ox + x * k;
       const Y = (y) => oy + y * k;
-      const pad = (arr, n, fn) => Array.from({ length: n }, (_, i) => (arr[i] ? fn(arr[i]) : null));
+      const pad = (arr, n, fn) =>
+        Array.from({ length: n }, (_, i) => (arr[i] ? fn(arr[i]) : null));
       return {
-        c: pad(g.c, POOL.c, ([cx, cy, r]) => ({ cx: X(cx), cy: Y(cy), r: r * k, o: 1 })),
-        l: pad(g.l, POOL.l, ([x1, y1, x2, y2]) => ({ x1: X(x1), y1: Y(y1), x2: X(x2), y2: Y(y2), o: 1 })),
-        d: pad(g.d, POOL.d, ([x, y]) => ({ cx: X(x), cy: Y(y), r: Math.max(3, DOT_R * k), o: 1 }))
+        c: pad(g.c, POOL.c, ([cx, cy, r]) => ({
+          cx: X(cx),
+          cy: Y(cy),
+          r: r * k,
+          o: 1,
+        })),
+        l: pad(g.l, POOL.l, ([x1, y1, x2, y2]) => ({
+          x1: X(x1),
+          y1: Y(y1),
+          x2: X(x2),
+          y2: Y(y2),
+          o: 1,
+        })),
+        d: pad(g.d, POOL.d, ([x, y]) => ({
+          cx: X(x),
+          cy: Y(y),
+          r: Math.max(3, DOT_R * k),
+          o: 1,
+        })),
       };
     }
 
     // Hidden state of a shape: circles/dots shrink to their centre, lines retract to their start
     function collapse(type, s) {
-      if (type === 'l') return { x1: s.x1, y1: s.y1, x2: s.x1, y2: s.y1, o: 0 };
+      if (type === "l") return { x1: s.x1, y1: s.y1, x2: s.x1, y2: s.y1, o: 0 };
       return { cx: s.cx, cy: s.cy, r: 0, o: 0 };
     }
 
     function render(state) {
-      ['c', 'l', 'd'].forEach((type) => {
+      ["c", "l", "d"].forEach((type) => {
         state[type].forEach((s, i) => {
           const el = els[type][i];
-          if (type === 'l') {
-            el.setAttribute('x1', s.x1.toFixed(2));
-            el.setAttribute('y1', s.y1.toFixed(2));
-            el.setAttribute('x2', s.x2.toFixed(2));
-            el.setAttribute('y2', s.y2.toFixed(2));
+          if (type === "l") {
+            el.setAttribute("x1", s.x1.toFixed(2));
+            el.setAttribute("y1", s.y1.toFixed(2));
+            el.setAttribute("x2", s.x2.toFixed(2));
+            el.setAttribute("y2", s.y2.toFixed(2));
           } else {
-            el.setAttribute('cx', s.cx.toFixed(2));
-            el.setAttribute('cy', s.cy.toFixed(2));
-            el.setAttribute('r', Math.max(0, s.r).toFixed(2));
+            el.setAttribute("cx", s.cx.toFixed(2));
+            el.setAttribute("cy", s.cy.toFixed(2));
+            el.setAttribute("r", Math.max(0, s.r).toFixed(2));
           }
           el.style.opacity = s.o.toFixed(3);
         });
@@ -287,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function resolve(from, to) {
       const start = { c: [], l: [], d: [] };
       const end = { c: [], l: [], d: [] };
-      ['c', 'l', 'd'].forEach((type) => {
+      ["c", "l", "d"].forEach((type) => {
         for (let i = 0; i < POOL[type]; i++) {
           const a = from[type][i];
           const b = to[type][i];
@@ -305,23 +453,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function lerpState(a, b, t) {
       const out = { c: [], l: [], d: [] };
-      ['c', 'l', 'd'].forEach((type) => {
+      ["c", "l", "d"].forEach((type) => {
         a[type].forEach((sa, i) => {
           const sb = b[type][i];
           const o = {};
-          Object.keys(sb).forEach((key) => { o[key] = sa[key] + (sb[key] - sa[key]) * t; });
+          Object.keys(sb).forEach((key) => {
+            o[key] = sa[key] + (sb[key] - sa[key]) * t;
+          });
           out[type][i] = o;
         });
       });
       return out;
     }
 
-    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const ease = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     // First frame: nothing visible yet, so seed every slot as collapsed
     function emptyState(layout) {
       const st = { c: [], l: [], d: [] };
-      ['c', 'l', 'd'].forEach((type) => {
+      ["c", "l", "d"].forEach((type) => {
         layout[type].forEach((s, i) => {
           st[type][i] = collapse(type, s || { cx: 0, cy: 0, x1: 0, y1: 0 });
         });
@@ -365,14 +516,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Section 05: Nine Disciplines Interactive Showcase
   function initDisciplinesShowcase() {
-    const buttons = document.querySelectorAll('.discipline-btn');
-    const cards = document.querySelectorAll('.discipline-card');
+    const buttons = document.querySelectorAll(".discipline-btn");
+    const cards = document.querySelectorAll(".discipline-card");
     let currentIndex = 0;
 
     if (!buttons.length || !cards.length) return;
 
-    const geomSvg = document.querySelector('.discipline-geom');
-    const geom = geomSvg ? createDisciplineGeometry(geomSvg, geomSvg.parentElement) : null;
+    const geomSvg = document.querySelector(".discipline-geom");
+    const geom = geomSvg
+      ? createDisciplineGeometry(geomSvg, geomSvg.parentElement)
+      : null;
 
     function updateDiscipline(targetIndex) {
       currentIndex = targetIndex;
@@ -381,72 +534,88 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update active state on buttons
       buttons.forEach((btn, idx) => {
         if (idx === targetIndex) {
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected', 'true');
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
         } else {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
         }
       });
 
       // Update active state on cards
       cards.forEach((card, idx) => {
         if (idx === targetIndex) {
-          card.classList.add('active');
-          card.setAttribute('aria-hidden', 'false');
+          card.classList.add("active");
+          card.setAttribute("aria-hidden", "false");
         } else {
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
+          card.classList.remove("active");
+          card.setAttribute("aria-hidden", "true");
         }
       });
     }
 
     // Scroll-pinned stepping: stickyBox sticks while each scroll step advances one card
-    const scroller = document.getElementById('disciplinesScroll');
-    const stickyBox = scroller ? (scroller.querySelector('.disciplines-sticky-box') || scroller) : null;
+    const scroller = document.getElementById("disciplinesScroll");
+    const stickyBox = scroller
+      ? scroller.querySelector(".disciplines-sticky-box") || scroller
+      : null;
     let stepPx = 0;
     let pinTop = 0;
     let clickLockUntil = 0;
 
     function layoutPin() {
       if (!scroller || !stickyBox) return;
-      const section = scroller.closest('.disciplines-section') || scroller.parentElement;
-      const stage = scroller.querySelector('.disciplines-stage');
+      const section =
+        scroller.closest(".disciplines-section") || scroller.parentElement;
+      const stage = scroller.querySelector(".disciplines-stage");
       stepPx = Math.max(260, Math.round(window.innerHeight * 0.55));
-      const boxHeight = stage ? stage.offsetHeight : (stickyBox.offsetHeight || 500);
+      const boxHeight = stage
+        ? stage.offsetHeight
+        : stickyBox.offsetHeight || 500;
 
       // Vertically center the showcase card in the viewport
       pinTop = Math.max(10, Math.round((window.innerHeight - boxHeight) / 2));
-      stickyBox.style.setProperty('--disciplines-pin-top', pinTop + 'px');
+      stickyBox.style.setProperty("--disciplines-pin-top", pinTop + "px");
 
       // Pin through cards 1 to 9 (indices 0 to 8), then smoothly unpin right after card 9
-      scroller.style.height = (boxHeight + stepPx * (cards.length - 1 + 0.6)) + 'px';
+      scroller.style.height =
+        boxHeight + stepPx * (cards.length - 1 + 0.6) + "px";
 
       // Ensure bottom clearance so next section stays below the viewport when card unpins
       if (section) {
-        const bottomClearance = Math.max(120, window.innerHeight - pinTop - boxHeight + 80);
-        section.style.paddingBottom = bottomClearance + 'px';
+        const bottomClearance = Math.max(
+          120,
+          window.innerHeight - pinTop - boxHeight + 80,
+        );
+        section.style.paddingBottom = bottomClearance + "px";
       }
     }
 
     function syncToScroll() {
       if (!scroller || !stepPx || Date.now() < clickLockUntil) return;
       const scrolled = pinTop - scroller.getBoundingClientRect().top;
-      const idx = Math.min(cards.length - 1, Math.max(0, Math.floor(scrolled / stepPx)));
+      const idx = Math.min(
+        cards.length - 1,
+        Math.max(0, Math.floor(scrolled / stepPx)),
+      );
       if (idx !== currentIndex) updateDiscipline(idx);
     }
 
     let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        syncToScroll();
-        ticking = false;
-      });
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          syncToScroll();
+          ticking = false;
+        });
+      },
+      { passive: true },
+    );
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       layoutPin();
       syncToScroll();
       if (geom) geom.relayout();
@@ -454,16 +623,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Numbered buttons scroll to the matching step so scroll position and card stay in sync
     buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const targetIndex = parseInt(btn.getAttribute('data-discipline'), 10);
+      btn.addEventListener("click", () => {
+        const targetIndex = parseInt(btn.getAttribute("data-discipline"), 10);
         if (isNaN(targetIndex) || targetIndex === currentIndex) return;
         if (scroller && stepPx) {
           // Skip intermediate cards while the smooth scroll travels to the target step
           clickLockUntil = Date.now() + 900;
-          const scrollerTop = scroller.getBoundingClientRect().top + window.scrollY;
+          const scrollerTop =
+            scroller.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: scrollerTop - pinTop + (targetIndex + 0.2) * stepPx,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
         updateDiscipline(targetIndex);
@@ -474,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDiscipline(0);
     layoutPin();
     syncToScroll();
-    window.addEventListener('load', () => {
+    window.addEventListener("load", () => {
       layoutPin();
       syncToScroll();
       if (geom) geom.relayout();
@@ -485,10 +655,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Section 07: Testimonials Showcase Carousel
   function initTestimonialSlider() {
-    const track = document.getElementById('testimonialTrack');
-    const prevBtn = document.getElementById('testimonialPrevBtn');
-    const nextBtn = document.getElementById('testimonialNextBtn');
-    const cards = document.querySelectorAll('.testimonial-card');
+    const track = document.getElementById("testimonialTrack");
+    const prevBtn = document.getElementById("testimonialPrevBtn");
+    const nextBtn = document.getElementById("testimonialNextBtn");
+    const cards = document.querySelectorAll(".testimonial-card");
     if (!track || !prevBtn || !nextBtn || !cards.length) return;
 
     let currentSlide = 0;
@@ -502,9 +672,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateSlider(animate = true) {
       if (!animate) {
-        track.style.transition = 'none';
+        track.style.transition = "none";
       } else {
-        track.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
+        track.style.transition =
+          "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)";
       }
       const step = getStep();
       track.style.transform = `translateX(-${currentSlide * step}px)`;
@@ -512,14 +683,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // Hide any cards that have slid to the left of the active view
       cards.forEach((card, idx) => {
         if (idx < currentSlide) {
-          card.classList.add('is-passed');
+          card.classList.add("is-passed");
         } else {
-          card.classList.remove('is-passed');
+          card.classList.remove("is-passed");
         }
       });
     }
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener("click", () => {
       if (currentSlide < totalCards - 1) {
         currentSlide++;
       } else {
@@ -528,7 +699,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     });
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener("click", () => {
       if (currentSlide > 0) {
         currentSlide--;
       } else {
@@ -541,29 +712,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0;
     let isSwiping = false;
 
-    track.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isSwiping = true;
-    }, { passive: true });
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+      },
+      { passive: true },
+    );
 
-    track.addEventListener('touchend', (e) => {
-      if (!isSwiping) return;
-      isSwiping = false;
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if (diff > 50) {
-        if (currentSlide < totalCards - 1) currentSlide++;
-        else currentSlide = 0;
-        updateSlider();
-      } else if (diff < -50) {
-        if (currentSlide > 0) currentSlide--;
-        else currentSlide = totalCards - 1;
-        updateSlider();
-      }
-    }, { passive: true });
+    track.addEventListener(
+      "touchend",
+      (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (diff > 50) {
+          if (currentSlide < totalCards - 1) currentSlide++;
+          else currentSlide = 0;
+          updateSlider();
+        } else if (diff < -50) {
+          if (currentSlide > 0) currentSlide--;
+          else currentSlide = totalCards - 1;
+          updateSlider();
+        }
+      },
+      { passive: true },
+    );
 
     // Handle resize
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       updateSlider(false);
     });
 
@@ -590,7 +769,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    window.addEventListener("scroll", handleScrollTopVisibility, { passive: true });
+    window.addEventListener("scroll", handleScrollTopVisibility, {
+      passive: true,
+    });
     handleScrollTopVisibility();
 
     backToTopBtn.addEventListener("click", () => {
@@ -632,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Trigger header background when 2nd uploaded section starts moving up (p >= 0.90)
       const siteHeaderEl = document.getElementById("siteHeader");
       if (siteHeaderEl) {
-        if (p >= 0.90) {
+        if (p >= 0.9) {
           siteHeaderEl.classList.add("is-scrolled");
         } else {
           siteHeaderEl.classList.remove("is-scrolled");
@@ -669,7 +850,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    window.addEventListener("scroll", () => updateTarget(false), { passive: true });
+    window.addEventListener("scroll", () => updateTarget(false), {
+      passive: true,
+    });
     window.addEventListener("resize", () => updateTarget(true));
     updateTarget(true);
   }
@@ -687,18 +870,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update submenu active state helper (syncs classes for mobile width expansion)
     const updateSubmenuState = () => {
       if (!siteMenuDropdown) return;
-      const hasOpenSubmenu = !!siteMenuDropdown.querySelector(".has-submenu.is-open") ||
-                             !!siteMenuDropdown.querySelector(".has-submenu.is-open-mobile");
+      const hasOpenSubmenu =
+        !!siteMenuDropdown.querySelector(".has-submenu.is-open") ||
+        !!siteMenuDropdown.querySelector(".has-submenu.is-open-mobile");
       siteMenuDropdown.classList.toggle("has-submenu-open", hasOpenSubmenu);
       siteMenuWrap.classList.toggle("has-submenu-open", hasOpenSubmenu);
     };
 
     // Toggle dropdown open/close state on click (disabled when dropdown is hidden)
     const toggleMenu = (forceState) => {
-      if (!siteMenuDropdown || window.getComputedStyle(siteMenuDropdown).display === "none") {
+      if (
+        !siteMenuDropdown ||
+        window.getComputedStyle(siteMenuDropdown).display === "none"
+      ) {
         return;
       }
-      const willOpen = typeof forceState === "boolean" ? forceState : !siteMenuWrap.classList.contains("is-open");
+      const willOpen =
+        typeof forceState === "boolean"
+          ? forceState
+          : !siteMenuWrap.classList.contains("is-open");
       if (willOpen) {
         siteMenuWrap.classList.add("is-open");
         siteHeader.classList.add("menu-is-open");
@@ -742,13 +932,18 @@ document.addEventListener('DOMContentLoaded', () => {
           toggleMenu(false);
         } else {
           // If clicking inside menu wrap but outside any submenu item, close open submenus
-          const insideSubmenu = e.target.closest(".has-submenu") || e.target.closest(".site-submenu-box");
+          const insideSubmenu =
+            e.target.closest(".has-submenu") ||
+            e.target.closest(".site-submenu-box");
           if (!insideSubmenu && siteMenuDropdown) {
-            siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
-              item.classList.remove("is-open", "is-open-mobile");
-              const parentLink = item.querySelector(".site-nav-link-parent");
-              if (parentLink) parentLink.setAttribute("aria-expanded", "false");
-            });
+            siteMenuDropdown
+              .querySelectorAll(".has-submenu")
+              .forEach((item) => {
+                item.classList.remove("is-open", "is-open-mobile");
+                const parentLink = item.querySelector(".site-nav-link-parent");
+                if (parentLink)
+                  parentLink.setAttribute("aria-expanded", "false");
+              });
             updateSubmenuState();
           }
         }
@@ -776,14 +971,18 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             const parentItem = link.closest(".has-submenu");
             if (parentItem) {
-              const isOpen = parentItem.classList.contains("is-open") || parentItem.classList.contains("is-open-mobile");
-              
+              const isOpen =
+                parentItem.classList.contains("is-open") ||
+                parentItem.classList.contains("is-open-mobile");
+
               // Close any other open submenus first
-              siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
-                item.classList.remove("is-open", "is-open-mobile");
-                const pLink = item.querySelector(".site-nav-link-parent");
-                if (pLink) pLink.setAttribute("aria-expanded", "false");
-              });
+              siteMenuDropdown
+                .querySelectorAll(".has-submenu")
+                .forEach((item) => {
+                  item.classList.remove("is-open", "is-open-mobile");
+                  const pLink = item.querySelector(".site-nav-link-parent");
+                  if (pLink) pLink.setAttribute("aria-expanded", "false");
+                });
 
               // If it was not open, open it now
               if (!isOpen) {
@@ -796,7 +995,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           // Consultation modal trigger
-          if (link.getAttribute("data-open-consultation") === "true" || href === "#consultationModal") {
+          if (
+            link.getAttribute("data-open-consultation") === "true" ||
+            href === "#consultationModal"
+          ) {
             e.preventDefault();
             toggleMenu(false);
             if (window.openConsultationModal) {
@@ -806,7 +1008,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           // Client Portal modal trigger
-          if (link.getAttribute("data-open-portal") === "true" || href === "#portal" || href === "#portalModal") {
+          if (
+            link.getAttribute("data-open-portal") === "true" ||
+            href === "#portal" ||
+            href === "#portalModal"
+          ) {
             e.preventDefault();
             toggleMenu(false);
             if (window.openPortalModal) {
@@ -821,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleMenu(false);
             window.scrollTo({
               top: 0,
-              behavior: "smooth"
+              behavior: "smooth",
             });
             if (history.pushState) {
               history.pushState(null, null, window.location.pathname);
@@ -836,10 +1042,13 @@ document.addEventListener('DOMContentLoaded', () => {
               e.preventDefault();
               toggleMenu(false);
               const headerOffset = 70;
-              const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+              const targetY =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerOffset;
               window.scrollTo({
                 top: Math.max(0, targetY),
-                behavior: "smooth"
+                behavior: "smooth",
               });
               if (history.pushState) {
                 history.pushState(null, null, href);
@@ -850,17 +1059,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // In-page link formatted as index.html#... when already on index.html
           const isHomePage = !!document.getElementById("heroScroll");
-          if (isHomePage && href.includes("#") && href.startsWith("index.html#")) {
+          if (
+            isHomePage &&
+            href.includes("#") &&
+            href.startsWith("index.html#")
+          ) {
             const hash = href.substring(href.indexOf("#"));
             const target = document.querySelector(hash);
             if (target) {
               e.preventDefault();
               toggleMenu(false);
               const headerOffset = 70;
-              const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+              const targetY =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerOffset;
               window.scrollTo({
                 top: Math.max(0, targetY),
-                behavior: "smooth"
+                behavior: "smooth",
               });
               if (history.pushState) {
                 history.pushState(null, null, hash);
@@ -892,7 +1108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           e.preventDefault();
           window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: "smooth",
           });
           if (history.pushState) {
             history.pushState(null, null, window.location.pathname);
@@ -910,7 +1126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = heroScroll.getBoundingClientRect();
         const range = rect.height - window.innerHeight;
         // Trigger background when hero card shrink completes and starts moving up out of view
-        const isUp = range > 0 ? (-rect.top >= range * 0.90) : (window.scrollY > 120);
+        const isUp =
+          range > 0 ? -rect.top >= range * 0.9 : window.scrollY > 120;
         if (isUp) {
           siteHeader.classList.add("is-scrolled");
         } else {
@@ -927,7 +1144,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    window.addEventListener("scroll", updateHeaderBackground, { passive: true });
+    window.addEventListener("scroll", updateHeaderBackground, {
+      passive: true,
+    });
     window.addEventListener("resize", updateHeaderBackground);
     updateHeaderBackground();
   }
@@ -963,9 +1182,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle initial active accordion state
-    const activeHead = document.querySelector('.acc-head[aria-expanded="true"]');
+    const activeHead = document.querySelector(
+      '.acc-head[aria-expanded="true"]',
+    );
     if (activeHead && activeHead.nextElementSibling) {
-      activeHead.nextElementSibling.style.maxHeight = activeHead.nextElementSibling.scrollHeight + "px";
+      activeHead.nextElementSibling.style.maxHeight =
+        activeHead.nextElementSibling.scrollHeight + "px";
       const item = activeHead.closest(".acc-item");
       if (item) item.classList.add("is-open");
     }
@@ -974,7 +1196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", () => {
       const active = document.querySelector('.acc-head[aria-expanded="true"]');
       if (active && active.nextElementSibling) {
-        active.nextElementSibling.style.maxHeight = active.nextElementSibling.scrollHeight + "px";
+        active.nextElementSibling.style.maxHeight =
+          active.nextElementSibling.scrollHeight + "px";
       }
     });
   }
@@ -982,6 +1205,53 @@ document.addEventListener('DOMContentLoaded', () => {
   initPillarsAccordion();
 
   /* ---------- Consultation Booking Modal Controller ---------- */
+  // POST a form submission to the email function (api/consultation.js)
+  function sendConsultation(payload) {
+    return fetch("/api/consultation.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).then((r) => {
+      if (!r.ok) throw new Error("Request failed: " + r.status);
+      return r.json();
+    });
+  }
+
+  // Reach Us page form
+  function initReachForm() {
+    const form = document.querySelector(".reach-consultation-form");
+    if (!form) return;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const btnHtml = btn ? btn.innerHTML : "";
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+      }
+      const payload = Object.fromEntries(new FormData(form).entries());
+      payload.page = window.location.href;
+      sendConsultation(payload)
+        .then(() => {
+          form.reset();
+          alert(
+            "Thank you! Your request has been sent. Our team will get back to you within 24 business hours.",
+          );
+        })
+        .catch(() => {
+          alert(
+            "Sorry, we couldn't send your request right now. Please try again, or reach us on WhatsApp or at contact@blissmoney.in.",
+          );
+        })
+        .finally(() => {
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = btnHtml;
+          }
+        });
+    });
+  }
+
   function initConsultationModal() {
     const modal = document.getElementById("consultationModal");
     if (!modal) return;
@@ -1020,7 +1290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Attach to all consultation triggers across the page
     const triggers = document.querySelectorAll(
-      '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]'
+      '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]',
     );
     triggers.forEach((trigger) => {
       trigger.addEventListener("click", (e) => {
@@ -1032,7 +1302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Document-level event delegation for 100% click capture reliability
     document.addEventListener("click", (e) => {
       const trigger = e.target.closest(
-        '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]'
+        '[data-open-consultation="true"], #btn-book-consultation, #btn-consult-open, .sidebar-cta-btn, a[href="#consultationModal"]',
       );
       if (trigger) {
         e.preventDefault();
@@ -1082,23 +1352,34 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.textContent = "Submitting Request...";
         }
 
-        const nameVal = document.getElementById("consultName")?.value || "there";
+        const nameVal =
+          document.getElementById("consultName")?.value || "there";
         const phoneVal = document.getElementById("consultPhone")?.value || "";
 
-        // Simulated high-end submission feedback
-        setTimeout(() => {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Confirm Consultation Request";
-          }
-          if (form && successState) {
-            form.style.display = "none";
-            successState.style.display = "flex";
-            if (successSummary) {
-              successSummary.textContent = `Thank you, ${nameVal}! Our Senior Wealth Advisory team has received your request and will reach out to you at ${phoneVal || "your provided contact"} within 24 business hours.`;
+        const payload = Object.fromEntries(new FormData(form).entries());
+        payload.page = window.location.href;
+
+        sendConsultation(payload)
+          .then(() => {
+            if (form && successState) {
+              form.style.display = "none";
+              successState.style.display = "flex";
+              if (successSummary) {
+                successSummary.textContent = `Thank you, ${nameVal}! Our Senior Wealth Advisory team has received your request and will reach out to you at ${phoneVal || "your provided contact"} within 24 business hours.`;
+              }
             }
-          }
-        }, 600);
+          })
+          .catch(() => {
+            alert(
+              "Sorry, we couldn't submit your request right now. Please try again, or reach us on WhatsApp or at contact@blissmoney.in.",
+            );
+          })
+          .finally(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Confirm Consultation Request";
+            }
+          });
       });
     }
   }
@@ -1165,7 +1446,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return modal;
     }
 
-    window.openPortalModal = function() {
+    window.openPortalModal = function () {
       const modal = createPortalModal();
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
@@ -1174,7 +1455,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (userInput) setTimeout(() => userInput.focus(), 150);
     };
 
-    window.closePortalModal = function() {
+    window.closePortalModal = function () {
       const modal = document.getElementById("portalModal");
       if (!modal) return;
       modal.classList.remove("is-open");
@@ -1192,7 +1473,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener("click", (e) => {
-      const trigger = e.target.closest('[data-open-portal="true"], a[href="#portal"], a[href="#portalModal"]');
+      const trigger = e.target.closest(
+        '[data-open-portal="true"], a[href="#portal"], a[href="#portalModal"]',
+      );
       if (trigger) {
         e.preventDefault();
         window.openPortalModal();
@@ -1201,8 +1484,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initConsultationModal();
+  initReachForm();
   initPortalModal();
 });
-
-
-
