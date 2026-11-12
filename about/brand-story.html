@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.5">
+  <link rel="stylesheet" href="../assets/css/about.css?v=3.8">
 </head>
 
 <body class="about-subpage page-brand-story">
@@ -273,13 +273,33 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching about/index.html banner style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Geometric Diamond Astrolabe with animated traveling beacon & pulsing dots -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary diamond / rhombus -->
+        <path class="art-diamond art-diamond-lg" d="M 680,100 L 1020,410 L 680,720 L 340,410 Z" />
+
+        <!-- Accent dashed diamond frame -->
+        <path class="art-diamond art-diamond-dash" d="M 680,180 L 930,410 L 680,640 L 430,410 Z" />
+
+        <!-- Inner offset diamond -->
+        <path class="art-diamond art-diamond-sm" d="M 680,260 L 840,410 L 680,560 L 520,410 Z" />
+
+        <!-- Architectural diagonal guide rays -->
+        <line class="art-axis art-axis-diag" x1="380" y1="110" x2="980" y2="710" />
+        <line class="art-axis art-axis-diag" x1="380" y1="710" x2="980" y2="110" />
+
+        <!-- Cardinal horizon & meridian lines -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis" x1="680" y1="40" x2="680" y2="780" />
+
+        <!-- Junction dots at key intersections -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
+
+        <!-- Traveling Dot: Orbiting smoothly along the outer diamond path -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="14s" repeatCount="indefinite" path="M 680,100 L 1020,410 L 680,720 L 340,410 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -297,13 +317,6 @@
             Explore our services
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>Brand Story</li>
-        </ul>
       </div>
 
     </section>
@@ -311,7 +324,6 @@
     <!-- Brand Philosophy (light, editorial split) -->
     <section class="ab2-band ab2-light bs2-philosophy">
       <div class="ab2-wrap">
-        <p class="ab2-eyebrow">Brand Philosophy</p>
         <h2 class="ab2-title">Wealth should make room for life</h2>
         <span class="bs2-caption">Existing BlissMoney website imagery. People shown are illustrative.</span>
 
@@ -353,7 +365,6 @@
       </svg>
       <div class="ab2-wrap">
         <div class="ab2-center-head">
-          <p class="ab2-eyebrow">Practical Wellbeing</p>
           <h2 class="ab2-title">A practical sense of financial wellbeing</h2>
         </div>
 
@@ -385,7 +396,6 @@
       <div class="ab2-wrap">
         <div class="bs2-purpose-head">
           <div>
-            <p class="ab2-eyebrow">Action &amp; Purpose</p>
             <h2 class="ab2-title">A clear purpose for every next step</h2>
           </div>
           <p class="ab2-lead">
@@ -393,21 +403,101 @@
           </p>
         </div>
 
-        <div class="bs2-audiences">
-          <article class="bs2-audience">
-            <span class="bs2-tag">Business Owners</span>
-            <h3>Beyond Business Equity</h3>
-            <p>For business owners, that may mean looking beyond business equity to family liquidity.</p>
+        <div class="bm-principles-deck" id="purposeDeck" role="region" aria-label="A clear purpose for every next step">
+          <!-- Card 1: Business Owners (Active by default) -->
+          <article class="bm-principle-card is-active" data-index="1" tabindex="0" aria-expanded="true">
+            <img src="../assets/images/who_we_serve/business_owner.jpg" alt="Business Owners illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar (visible when expanded) -->
+              <div class="bm-principle-top">
+                <a href="../clients/clients.html" class="bm-principle-link" aria-label="Explore more regarding Business Owners">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Beyond Business Equity</h3>
+                  <p class="bm-principle-desc">For business owners, that may mean looking beyond business equity to family liquidity.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label (visible when card is collapsed) -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">01</span>
+                <span class="bm-collapsed-title">Business Owners</span>
+              </div>
+            </div>
           </article>
-          <article class="bs2-audience">
-            <span class="bs2-tag">Senior Professionals</span>
-            <h3>Connecting Compensation</h3>
-            <p>For a senior professional, it may mean connecting compensation, borrowing and retirement.</p>
+
+          <!-- Card 2: Senior Professionals -->
+          <article class="bm-principle-card" data-index="2" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/who_we_serve/seniorprofessionals.jpg" alt="Senior Professionals illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar -->
+              <div class="bm-principle-top">
+                <a href="../clients/clients.html" class="bm-principle-link" aria-label="Explore more regarding Senior Professionals">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Connecting Compensation</h3>
+                  <p class="bm-principle-desc">For a senior professional, it may mean connecting compensation, borrowing and retirement.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">02</span>
+                <span class="bm-collapsed-title">Professionals</span>
+              </div>
+            </div>
           </article>
-          <article class="bs2-audience">
-            <span class="bs2-tag">Families</span>
-            <h3>Generational Understanding</h3>
-            <p>For a family, it may mean making intentions and responsibilities easier to understand.</p>
+
+          <!-- Card 3: Families -->
+          <article class="bm-principle-card" data-index="3" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="Families illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar -->
+              <div class="bm-principle-top">
+                <a href="../clients/clients.html" class="bm-principle-link" aria-label="Explore more regarding Families">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Generational Understanding</h3>
+                  <p class="bm-principle-desc">For a family, it may mean making intentions and responsibilities easier to understand.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">03</span>
+                <span class="bm-collapsed-title">Families</span>
+              </div>
+            </div>
           </article>
         </div>
 
@@ -419,9 +509,13 @@
 
     <!-- Next Steps (white split CTA) -->
     <section class="ab2-band ab2-cta">
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ab2-wrap ab2-cta-grid">
         <div>
-          <p class="ab2-eyebrow">Next Steps</p>
           <h2 class="ab2-title">What would financial clarity change for you</h2>
         </div>
         <div class="ab2-cta-side">
@@ -541,6 +635,60 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <!-- Interactive Purpose Deck Script -->
+  <script>
+    (function () {
+      const deck = document.getElementById('purposeDeck');
+      if (!deck) return;
+
+      const cards = Array.from(deck.querySelectorAll('.bm-principle-card'));
+      let activeCard = deck.querySelector('.bm-principle-card.is-active') || cards[0];
+
+      function setActive(card) {
+        if (!card || card === activeCard) return;
+        cards.forEach((c) => {
+          c.classList.remove('is-active');
+          c.setAttribute('aria-expanded', 'false');
+        });
+        card.classList.add('is-active');
+        card.setAttribute('aria-expanded', 'true');
+        activeCard = card;
+      }
+
+      cards.forEach((card, index) => {
+        // Expand on click / tap
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return; // Allow natural link clicking
+          setActive(card);
+        });
+
+        // Expand on desktop hover
+        card.addEventListener('mouseenter', () => {
+          if (window.matchMedia('(hover: hover) and (min-width: 681px)').matches) {
+            setActive(card);
+          }
+        });
+
+        // Keyboard navigation
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setActive(card);
+          } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = cards[(index + 1) % cards.length];
+            next.focus();
+            setActive(next);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = cards[(index - 1 + cards.length) % cards.length];
+            prev.focus();
+            setActive(prev);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

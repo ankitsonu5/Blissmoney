@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.5">
+  <link rel="stylesheet" href="../assets/css/about.css?v=11.2">
 </head>
 
 <body class="about-subpage page-philanthropy">
@@ -275,11 +275,22 @@
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Diagonal guide linking the two squares -->
+        <line class="art-sq-guide" x1="330" y1="20" x2="1104" y2="794" />
+
+        <!-- Two interlocking squares with the shared area softly filled -->
+        <rect class="art-sq-overlap" x="600" y="290" width="280" height="280" />
+        <rect class="art-sq art-sq-a" x="420" y="110" width="460" height="460" />
+        <rect class="art-sq art-sq-b" x="600" y="290" width="460" height="460" />
+
+        <!-- Small nodes where the edges cross -->
+        <rect class="art-sq-node" x="871" y="281" width="18" height="18" />
+        <rect class="art-sq-node" x="591" y="561" width="18" height="18" />
+
+        <!-- Animated dot travelling around the second square -->
+        <circle class="art-dot art-dot-travel" cx="0" cy="0" r="9">
+          <animateMotion dur="14s" repeatCount="indefinite" path="M600 290 H1060 V750 H600 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -294,43 +305,54 @@
             Start a giving conversation
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Philanthropy</li>
-        </ul>
       </div>
 
     </section>
 
-    <!-- 1 · Ripple intro + three drops (light) -->
+    <!-- 1 · Intro head row + image cards (light, our-people expertise style) -->
     <section class="ph7-band ph7-light ph7-intro">
-      <div class="ph7-ripples" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="ph7-wrap">
-        <div class="ph7-center">
-          <h2 class="ph7-title">Turn individual contributions into a considered approach</h2>
-          <p class="ph7-lead">
-            Whether giving responds to immediate needs or supports a sustained commitment, clear priorities help. Start with an affordable allocation and a shared understanding of what meaningful progress would look like.
-          </p>
+        <div class="op2-adv-head">
+          <div>
+            <h2 class="ph7-title">Turn individual contributions into a considered approach</h2>
+          </div>
+          <div class="op2-adv-side">
+            <p class="ph7-lead">
+              Whether giving responds to immediate needs or supports a sustained commitment, clear priorities help. Start with an affordable allocation and a shared understanding of what meaningful progress would look like.
+            </p>
+          </div>
         </div>
 
-        <div class="ph7-drops">
-          <article class="ph7-drop">
-            <span class="ph7-drop-mark" aria-hidden="true"></span>
-            <h3>Giving has become reactive or fragmented</h3>
-            <p>Responding to requests can create contributions without a clear direction. Clarify the causes, geography and type of support you care about to guide future decisions.</p>
+        <div class="op2-experts" role="region" aria-label="Turn individual contributions into a considered approach">
+          <article class="op2-card">
+            <img src="../assets/images/services-philanthropy.png" alt="" class="op2-card-bg" loading="lazy" style="object-position: 72% 50%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">Giving has become reactive or fragmented</h3>
+                <p class="op2-card-desc">Responding to requests can create contributions without a clear direction. Clarify the causes, geography and type of support you care about to guide future decisions.</p>
+              </div>
+            </div>
           </article>
-          <article class="ph7-drop">
-            <span class="ph7-drop-mark" aria-hidden="true"></span>
-            <h3>You want to involve the next generation</h3>
-            <p>Family discussions can establish shared values and responsibilities. Agreed roles help participation develop while respecting that different members may have different priorities.</p>
+          <article class="op2-card">
+            <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="" class="op2-card-bg" loading="lazy" style="object-position: 50% 25%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">You want to involve the next generation</h3>
+                <p class="op2-card-desc">Family discussions can establish shared values and responsibilities. Agreed roles help participation develop while respecting that different members may have different priorities.</p>
+              </div>
+            </div>
           </article>
-          <article class="ph7-drop">
-            <span class="ph7-drop-mark" aria-hidden="true"></span>
-            <h3>You are considering a lasting commitment</h3>
-            <p>Recurring or formal giving arrangements carry ongoing obligations. Understand the financial, administrative and specialist requirements before deciding whether a lasting commitment is realistic.</p>
+          <article class="op2-card">
+            <img src="../assets/images/expertise/expert_1_legal.jpg" alt="" class="op2-card-bg" loading="lazy" style="object-position: 50% 40%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">You are considering a lasting commitment</h3>
+                <p class="op2-card-desc">Recurring or formal giving arrangements carry ongoing obligations. Understand the financial, administrative and specialist requirements before deciding whether a lasting commitment is realistic.</p>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -375,25 +397,21 @@
           <ol class="ph7-steps">
             <li class="ph7-step">
               <span class="ph7-node" aria-hidden="true"></span>
-              <span class="ph7-phase">Phase 01</span>
               <h3>Clarify what you want to support</h3>
               <p>Begin with your values, preferred areas of focus and intended family involvement. Agree the questions you want a more structured approach to answer.</p>
             </li>
             <li class="ph7-step">
               <span class="ph7-node" aria-hidden="true"></span>
-              <span class="ph7-phase">Phase 02</span>
               <h3>Set the financial context</h3>
               <p>Consider the resources you can commit, the timing of contributions and the effect on other priorities. Distinguish a working budget from a long-term legal or funding obligation.</p>
             </li>
             <li class="ph7-step">
               <span class="ph7-node" aria-hidden="true"></span>
-              <span class="ph7-phase">Phase 03</span>
               <h3>Organise the necessary assessment</h3>
               <p>Define the recipient information and professional advice needed for the decisions under consideration. Record unresolved issues before moving from intention to commitment.</p>
             </li>
             <li class="ph7-step">
               <span class="ph7-node" aria-hidden="true"></span>
-              <span class="ph7-phase">Phase 04</span>
               <h3>Review participation and progress</h3>
               <p>Revisit the allocation, decision process and information received. Adapt the approach as your family's priorities, financial circumstances or understanding of the cause develops.</p>
             </li>
@@ -402,31 +420,39 @@
       </div>
     </section>
 
-    <!-- 4 · Pinned notes (grey) -->
+    <!-- 4 · Photo tiles, 2 x 2 (grey) -->
     <section class="ph7-band ph7-grey">
       <div class="ph7-wrap">
         <h2 class="ph7-title">A useful basis for the next decision</h2>
 
-        <div class="ph7-notes">
-          <article class="ph7-note-card">
-            <span class="ph7-pin" aria-hidden="true"></span>
-            <h3>Giving intent brief</h3>
-            <p>A record of the causes, priorities and participation preferences that will guide the decisions within scope.</p>
+        <div class="ph7-tiles">
+          <article class="ph7-tile ph7-tile-1">
+            <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="" class="ph7-tile-bg" loading="lazy" style="object-position: 60% 40%;">
+            <div class="ph7-tile-text">
+              <h3>Giving intent brief</h3>
+              <p>A record of the causes, priorities and participation preferences that will guide the decisions within scope.</p>
+            </div>
           </article>
-          <article class="ph7-note-card">
-            <span class="ph7-pin" aria-hidden="true"></span>
-            <h3>Financial allocation view</h3>
-            <p>A working view of planned contributions and timing, considered alongside liquidity needs and the broader financial plan.</p>
+          <article class="ph7-tile ph7-tile-2">
+            <img src="../assets/images/services-financial-planning.png" alt="" class="ph7-tile-bg" loading="lazy" style="object-position: 70% 50%;">
+            <div class="ph7-tile-text">
+              <h3>Financial allocation view</h3>
+              <p>A working view of planned contributions and timing, considered alongside liquidity needs and the broader financial plan.</p>
+            </div>
           </article>
-          <article class="ph7-note-card">
-            <span class="ph7-pin" aria-hidden="true"></span>
-            <h3>Assessment and specialist checklist</h3>
-            <p>An agreed list of recipient questions, information gaps and legal or tax matters requiring qualified advice.</p>
+          <article class="ph7-tile ph7-tile-3">
+            <img src="../assets/images/six_steps/risk_profiling.jpg" alt="" class="ph7-tile-bg" loading="lazy" style="object-position: 65% 35%;">
+            <div class="ph7-tile-text">
+              <h3>Assessment and specialist checklist</h3>
+              <p>An agreed list of recipient questions, information gaps and legal or tax matters requiring qualified advice.</p>
+            </div>
           </article>
-          <article class="ph7-note-card">
-            <span class="ph7-pin" aria-hidden="true"></span>
-            <h3>Governance and review agenda</h3>
-            <p>A practical record of decision responsibilities, documentation expectations and the information to revisit over time.</p>
+          <article class="ph7-tile ph7-tile-4">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="" class="ph7-tile-bg" loading="lazy" style="object-position: 60% 35%;">
+            <div class="ph7-tile-text">
+              <h3>Governance and review agenda</h3>
+              <p>A practical record of decision responsibilities, documentation expectations and the information to revisit over time.</p>
+            </div>
           </article>
         </div>
 
@@ -441,26 +467,51 @@
       <div class="ph7-wrap">
         <h2 class="ph7-title">Clarity before commitment</h2>
 
-        <div class="ph7-faq">
-          <div class="ph7-faq-item">
-            <h3><span class="ph7-q" aria-hidden="true">Q.</span><span>Do I need to establish a foundation or charitable trust?</span></h3>
-            <p>Not necessarily. The appropriate approach depends on your purpose and circumstances. Formal structures create ongoing obligations. Qualified legal and tax professionals should advise before you establish or fund an arrangement.</p>
+        <div class="accordion bm-faq" id="phFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ph-acc-body-1" id="ph-acc-head-1">
+              <span class="acc-title">Do I need to establish a foundation or charitable trust?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ph-acc-body-1" role="region" aria-labelledby="ph-acc-head-1">
+              <p>Not necessarily. The appropriate approach depends on your purpose and circumstances. Formal structures create ongoing obligations. Qualified legal and tax professionals should advise before you establish or fund an arrangement.</p>
+            </div>
           </div>
-          <div class="ph7-faq-item">
-            <h3><span class="ph7-q" aria-hidden="true">Q.</span><span>Can philanthropy be considered within financial planning?</span></h3>
-            <p>Yes. Considering giving alongside liquidity, family responsibilities and longer-term goals helps make the commitment more deliberate. The relevant discussion includes both what you want to contribute and what level of ongoing commitment your finances can support.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ph-acc-body-2" id="ph-acc-head-2">
+              <span class="acc-title">Can philanthropy be considered within financial planning?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ph-acc-body-2" role="region" aria-labelledby="ph-acc-head-2">
+              <p>Yes. Considering giving alongside liquidity, family responsibilities and longer-term goals helps make the commitment more deliberate. The relevant discussion includes both what you want to contribute and what level of ongoing commitment your finances can support.</p>
+            </div>
           </div>
-          <div class="ph7-faq-item">
-            <h3><span class="ph7-q" aria-hidden="true">Q.</span><span>Will contributions automatically qualify for tax benefits?</span></h3>
-            <p>No. Any tax treatment depends on the contribution, recipient, applicable rules and your circumstances. Eligibility and documentation should be confirmed with a qualified tax professional before you rely on a particular treatment.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ph-acc-body-3" id="ph-acc-head-3">
+              <span class="acc-title">Will contributions automatically qualify for tax benefits?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ph-acc-body-3" role="region" aria-labelledby="ph-acc-head-3">
+              <p>No. Any tax treatment depends on the contribution, recipient, applicable rules and your circumstances. Eligibility and documentation should be confirmed with a qualified tax professional before you rely on a particular treatment.</p>
+            </div>
           </div>
-          <div class="ph7-faq-item">
-            <h3><span class="ph7-q" aria-hidden="true">Q.</span><span>Does BlissMoney guarantee the impact of a contribution?</span></h3>
-            <p>No. Recipient information and reporting can improve understanding but do not guarantee outcomes or independently verify every statement. The depth of any assessment and its limitations should be agreed before proceeding.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ph-acc-body-4" id="ph-acc-head-4">
+              <span class="acc-title">Does BlissMoney guarantee the impact of a contribution?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ph-acc-body-4" role="region" aria-labelledby="ph-acc-head-4">
+              <p>No. Recipient information and reporting can improve understanding but do not guarantee outcomes or independently verify every statement. The depth of any assessment and its limitations should be agreed before proceeding.</p>
+            </div>
           </div>
-          <div class="ph7-faq-item">
-            <h3><span class="ph7-q" aria-hidden="true">Q.</span><span>Can different family members support different causes?</span></h3>
-            <p>Yes. A giving approach can distinguish shared priorities from individual choices. Agreed responsibilities and allocations help people participate while respecting different interests. Formal arrangements require review with the appropriate professional advisers.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ph-acc-body-5" id="ph-acc-head-5">
+              <span class="acc-title">Can different family members support different causes?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ph-acc-body-5" role="region" aria-labelledby="ph-acc-head-5">
+              <p>Yes. A giving approach can distinguish shared priorities from individual choices. Agreed responsibilities and allocations help people participate while respecting different interests. Formal arrangements require review with the appropriate professional advisers.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -492,7 +543,11 @@
 
     <!-- 7 · Ripple CTA (dark) -->
     <section class="ph7-band ph7-cta" id="giving-conversation">
-      <div class="ph7-ripples ph7-ripples-dark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ph7-wrap ph7-center">
         <h2 class="ph7-title ph7-title-light">Begin with the difference you want to make</h2>
         <p class="ph7-cta-text">

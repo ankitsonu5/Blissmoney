@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.9">
+  <link rel="stylesheet" href="../assets/css/about.css?v=12.2">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -294,13 +294,6 @@
             Visit the official channel
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="videos.html">Insights</a></li>
-          <li>Videos</li>
-        </ul>
       </div>
 
     </section>
@@ -308,20 +301,26 @@
     <!-- Cinema / storyboard layout (no play button: the page states none is used) -->
     <div class="vd10-collection" id="videos-collection">
 
-      <!-- Section 1: widescreen concept frame -->
+      <!-- Section 1: discussion brief card -->
       <section class="vd10-band vd10-light">
         <div class="vd10-wrap">
           <h2 class="vd10-title">Ideas made easier to discuss</h2>
 
-          <div class="vd10-screen">
-            <span class="vd10-perf vd10-perf-left" aria-hidden="true"></span>
-            <span class="vd10-perf vd10-perf-right" aria-hidden="true"></span>
-            <div class="vd10-screen-inner">
+          <div class="vd10-brief">
+            <div class="vd10-brief-main">
               <div class="vd10-screen-top">
                 <span class="vd10-badge">Proposed Video Concept</span>
                 <span class="vd10-label">Educational Preview</span>
               </div>
               <h3 class="vd10-screen-title">What protects the financial plan</h3>
+            </div>
+            <div class="vd10-brief-side">
+              <svg class="vd10-brief-art" viewBox="0 0 200 150" fill="none" aria-hidden="true">
+                <path d="M14 18 H130 V88 H62 L36 112 V88 H14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M72 52 H186 V120 H164 V142 L140 120 H72 Z" stroke="#0CAF80" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M34 42 H108 M34 62 H90" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M94 80 H162 M94 98 H146" stroke="#0CAF80" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
               <p class="vd10-screen-text">
                 A practical explanation of liquidity, family responsibilities and the questions to ask about existing protection.
               </p>
@@ -330,10 +329,6 @@
                 <span aria-hidden="true">→</span>
               </a>
             </div>
-            <span class="vd10-corner vd10-corner-tl" aria-hidden="true"></span>
-            <span class="vd10-corner vd10-corner-tr" aria-hidden="true"></span>
-            <span class="vd10-corner vd10-corner-bl" aria-hidden="true"></span>
-            <span class="vd10-corner vd10-corner-br" aria-hidden="true"></span>
           </div>
         </div>
       </section>
@@ -368,6 +363,7 @@
                   <path d="M112 76 c2-10 26-10 28 0" stroke="currentColor" stroke-width="1.5"/>
                 </svg>
               </div>
+              <div class="vd10-frame-mark" aria-hidden="true"><span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
               <h3>A specific question</h3>
               <p>Start with a decision the viewer recognises and explain why it deserves attention.</p>
             </article>
@@ -379,6 +375,7 @@
                   <path d="M40 76 H120 M56 82 H104" stroke="currentColor" stroke-width="1.5"/>
                 </svg>
               </div>
+              <div class="vd10-frame-mark" aria-hidden="true"><span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
               <h3>An accessible explanation</h3>
               <p>Use captions, clear diagrams and a written transcript to make the subject easier to follow.</p>
             </article>
@@ -391,6 +388,7 @@
                   <rect x="90" y="24" width="12" height="12" fill="#0CAF80"/>
                 </svg>
               </div>
+              <div class="vd10-frame-mark" aria-hidden="true"><span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
               <h3>A considered next step</h3>
               <p>Explain what remains situation-specific and where qualified advice or provider confirmation is needed.</p>
             </article>
@@ -398,24 +396,47 @@
         </div>
       </section>
 
-      <!-- Section 4: subtitle-style statement + credits -->
+      <!-- Section 4: context panel + note -->
       <section class="vd10-band vd10-white vd10-context">
         <div class="vd10-wrap">
           <h2 class="vd10-title">Use the idea in your own context</h2>
 
-          <div class="vd10-caption-stage">
-            <p class="vd10-caption">
-              A short explanation can help identify the next question. It cannot establish which investment, policy or financial action is right for you. Use the subject to clarify your circumstances and the information you need before acting.
-            </p>
-          </div>
-
-          <div class="vd10-credits">
-            <p>
-              Only approved recordings should be added to this collection, with an accurate title, speaker, duration, publication date and accessible transcript. This preview does not use a non-functional play button to imply a video is available.
-            </p>
+          <div class="vd10-ctx">
+            <div class="vd10-ctx-panel">
+              <div class="vd10-ctx-videos">
+                <!-- Paste the YouTube link (or video ID) into data-youtube -->
+                <button type="button" class="vd10-vcard" data-youtube="" aria-label="Play video 1">
+                  <img src="../assets/images/six_steps/periodic_review.jpg" alt="" loading="lazy">
+                  <span class="vd10-vshade" aria-hidden="true"></span>
+                  <span class="vd10-vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                </button>
+                <button type="button" class="vd10-vcard" data-youtube="" aria-label="Play video 2">
+                  <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="" loading="lazy">
+                  <span class="vd10-vshade" aria-hidden="true"></span>
+                  <span class="vd10-vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                </button>
+              </div>
+              <svg class="vd10-ctx-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="88" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
+                <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 6" opacity=".55"/>
+                <circle cx="100" cy="100" r="32" stroke="#19D79F" stroke-width="1.6"/>
+                <circle class="vd10-ctx-core" cx="100" cy="100" r="9" fill="#19D79F"/>
+                <g class="vd10-ctx-orbit"><circle cx="100" cy="12" r="6" fill="#FFFFFF"/></g>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- YouTube popup player for the context video cards -->
+      <div class="vd10-modal" id="vd10Modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+        <div class="vd10-modal-box">
+          <button type="button" class="vd10-modal-close" aria-label="Close video">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+          <div class="vd10-modal-frame"></div>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -523,6 +544,41 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <script>
+    (function () {
+      var modal = document.getElementById('vd10Modal');
+      if (!modal) return;
+      var frame = modal.querySelector('.vd10-modal-frame');
+      var closeBtn = modal.querySelector('.vd10-modal-close');
+      var lastFocus = null;
+      function ytId(value) {
+        if (!value) return '';
+        var m = String(value).match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
+        return m ? m[1] : (/^[A-Za-z0-9_-]{6,}$/.test(value) ? value : '');
+      }
+      function open(id, opener) {
+        lastFocus = opener;
+        frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="BlissMoney video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function close() {
+        modal.hidden = true;
+        frame.innerHTML = '';
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+      document.querySelectorAll('.vd10-vcard').forEach(function (card) {
+        var id = ytId(card.getAttribute('data-youtube'));
+        if (!id) { card.classList.add('is-pending'); return; }
+        card.addEventListener('click', function () { open(id, card); });
+      });
+      closeBtn.addEventListener('click', close);
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+    })();
+  </script>
 </body>
 
 </html>

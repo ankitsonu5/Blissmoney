@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.3">
+  <link rel="stylesheet" href="../assets/css/about.css?v=10.6">
 </head>
 
 <body class="about-subpage page-insurance">
@@ -275,11 +275,24 @@
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Orbit ring around the shield -->
+        <circle class="art-shield-ring" cx="760" cy="411" r="360" />
+        <line class="art-axis" x1="300" y1="411" x2="1104" y2="411" />
+
+        <!-- Layered protection shields -->
+        <path class="art-shield art-shield-lg" d="M760 110 C830 150 910 168 995 170 L995 400 C995 560 890 660 760 712 C630 660 525 560 525 400 L525 170 C610 168 690 150 760 110 Z" />
+        <path class="art-shield art-shield-md" d="M760 176 C815 207 877 221 943 223 L943 402 C943 527 861 605 760 646 C659 605 577 527 577 402 L577 223 C643 221 705 207 760 176 Z" />
+        <path class="art-shield art-shield-dash" d="M760 242 C799 265 844 275 892 276 L892 405 C892 494 833 550 760 580 C687 550 628 494 628 405 L628 276 C676 275 721 265 760 242 Z" />
+        <path class="art-shield-check" d="M705 415 L745 455 L820 375" />
+
+        <!-- Animated dots: one travels the shield outline, one circles the ring, one pulses -->
+        <circle class="art-dot art-dot-travel" cx="0" cy="0" r="9">
+          <animateMotion dur="16s" repeatCount="indefinite" path="M760 110 C830 150 910 168 995 170 L995 400 C995 560 890 660 760 712 C630 660 525 560 525 400 L525 170 C610 168 690 150 760 110 Z" />
+        </circle>
+        <circle class="art-dot art-dot-travel art-dot-ring" cx="0" cy="0" r="6">
+          <animateMotion dur="26s" repeatCount="indefinite" path="M 400 411 A 360 360 0 1 1 1120 411 A 360 360 0 1 1 400 411" />
+        </circle>
+        <circle class="art-dot art-dot-end" cx="400" cy="411" r="8" />
       </svg>
 
       <div class="banner-box">
@@ -294,13 +307,6 @@
             Discuss your protection needs
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Insurance and Risk Planning</li>
-        </ul>
       </div>
 
     </section>
@@ -323,18 +329,36 @@
           </div>
         </div>
 
-        <div class="in6-layers">
-          <article class="in6-layer">
-            <h3>Your responsibilities have changed</h3>
-            <p>New dependants, borrowing, care needs or a move away from employment can alter your exposure. Reassess existing policies against your present circumstances and responsibilities.</p>
+        <div class="op2-experts in6-experts" role="region" aria-label="Protection should reflect the responsibilities you actually carry">
+          <article class="op2-card">
+            <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="" class="op2-card-bg" loading="lazy" style="object-position: 50% 25%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">Your responsibilities have changed</h3>
+                <p class="op2-card-desc">New dependants, borrowing, care needs or a move away from employment can alter your exposure. Reassess existing policies against your present circumstances and responsibilities.</p>
+              </div>
+            </div>
           </article>
-          <article class="in6-layer">
-            <h3>You have several policies but limited clarity</h3>
-            <p>Stated cover does not explain exclusions, limits or conditions. A policy inventory helps clarify what each contract addresses and where provider confirmation is needed.</p>
+          <article class="op2-card">
+            <img src="../assets/images/press-protection-planning.png" alt="" class="op2-card-bg" loading="lazy" style="object-position: 72% 50%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">You have several policies but limited clarity</h3>
+                <p class="op2-card-desc">Stated cover does not explain exclusions, limits or conditions. A policy inventory helps clarify what each contract addresses and where provider confirmation is needed.</p>
+              </div>
+            </div>
           </article>
-          <article class="in6-layer">
-            <h3>You want the family to know what to do</h3>
-            <p>Accessible records, current contact details and an understanding of the insurer's process help prepare the people who may need to act. A policy alone is insufficient.</p>
+          <article class="op2-card">
+            <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="" class="op2-card-bg" loading="lazy" style="object-position: 50% 40%;">
+            <div class="op2-card-overlay"></div>
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">You want the family to know what to do</h3>
+                <p class="op2-card-desc">Accessible records, current contact details and an understanding of the insurer's process help prepare the people who may need to act. A policy alone is insufficient.</p>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -393,7 +417,6 @@
           <li class="in6-check">
             <span class="in6-box" aria-hidden="true"></span>
             <div class="in6-check-head">
-              <span class="in6-phase">Phase 01</span>
               <h3>Understand the responsibilities</h3>
             </div>
             <p>Discuss dependants, income, borrowing and existing arrangements. Agree which areas of exposure should be considered and what information is needed for the review.</p>
@@ -401,7 +424,6 @@
           <li class="in6-check">
             <span class="in6-box" aria-hidden="true"></span>
             <div class="in6-check-head">
-              <span class="in6-phase">Phase 02</span>
               <h3>Organise and assess existing protection</h3>
             </div>
             <p>Build a policy inventory and compare the purpose of current cover with your financial responsibilities. Flag missing information and matters that need provider confirmation.</p>
@@ -409,7 +431,6 @@
           <li class="in6-check">
             <span class="in6-box" aria-hidden="true"></span>
             <div class="in6-check-head">
-              <span class="in6-phase">Phase 03</span>
               <h3>Clarify the available choices</h3>
             </div>
             <p>Coordinate questions about policy terms or potential changes with the relevant providers. Consider affordability and continuity alongside the headline premium and stated cover.</p>
@@ -417,7 +438,6 @@
           <li class="in6-check">
             <span class="in6-box" aria-hidden="true"></span>
             <div class="in6-check-head">
-              <span class="in6-phase">Phase 04</span>
               <h3>Keep the review current</h3>
             </div>
             <p>Revisit responsibilities and policy information after material life changes. Record renewal points and actions that require confirmation directly from the provider.</p>
@@ -426,35 +446,187 @@
       </div>
     </section>
 
-    <!-- 4 · Tabbed index cards (grey) -->
-    <section class="in6-band in6-grey">
+    <!-- 4 · Question-style deck (dark) -->
+    <section class="in6-band in6-dark in6-deck-band">
       <div class="in6-wrap">
-        <h2 class="in6-title">A useful basis for the next decision</h2>
+        <h2 class="in6-title in6-title-white">A useful basis for the next decision</h2>
 
-        <div class="in6-tabs">
-          <article class="in6-tabcard">
-            <span class="in6-tab" aria-hidden="true"></span>
-            <h3>Protection inventory</h3>
-            <p>An organised record of the policies and arrangements within scope, including the purpose and key information available for review.</p>
+        <div class="svc-q-deck" id="inOutputDeck" role="region" aria-label="A useful basis for the next decision">
+          <article class="svc-q-card is-active" data-index="1" tabindex="0" role="button" aria-expanded="true" aria-label="Protection inventory">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">Protection inventory</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">Protection inventory</h3>
+                <p class="svc-q-exp-desc">
+                  An organised record of the policies and arrangements within scope, including the purpose and key information available for review.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/services-financial-planning.png" alt="" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="in6-tabcard">
-            <span class="in6-tab" aria-hidden="true"></span>
-            <h3>Exposure and gap discussion</h3>
-            <p>A working view of responsibilities that may be insufficiently addressed, subject to policy interpretation and professional advice.</p>
+          <article class="svc-q-card" data-index="2" tabindex="0" role="button" aria-expanded="false" aria-label="Exposure and gap discussion">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">Exposure and gap discussion</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">Exposure and gap discussion</h3>
+                <p class="svc-q-exp-desc">
+                  A working view of responsibilities that may be insufficiently addressed, subject to policy interpretation and professional advice.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/six_steps/risk_profiling.jpg" alt="" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="in6-tabcard">
-            <span class="in6-tab" aria-hidden="true"></span>
-            <h3>Provider clarification checklist</h3>
-            <p>Specific questions about cover, conditions, continuity or documentation to resolve with the relevant insurer or authorised intermediary.</p>
+          <article class="svc-q-card" data-index="3" tabindex="0" role="button" aria-expanded="false" aria-label="Provider clarification checklist">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">Provider clarification checklist</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">Provider clarification checklist</h3>
+                <p class="svc-q-exp-desc">
+                  Specific questions about cover, conditions, continuity or documentation to resolve with the relevant insurer or authorised intermediary.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/six_steps/excution.jpg" alt="" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="in6-tabcard">
-            <span class="in6-tab" aria-hidden="true"></span>
-            <h3>Family information and review agenda</h3>
-            <p>Agreed actions for keeping relevant records accessible and revisiting the review when circumstances or policies change.</p>
+          <article class="svc-q-card" data-index="4" tabindex="0" role="button" aria-expanded="false" aria-label="Family information and review agenda">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">Family information and review agenda</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">Family information and review agenda</h3>
+                <p class="svc-q-exp-desc">
+                  Agreed actions for keeping relevant records accessible and revisiting the review when circumstances or policies change.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
         </div>
 
-        <p class="in6-note">
+        <p class="in6-note in6-note-light">
           Proposed engagement outputs. The specific work, costs, specialist involvement and review arrangements are agreed before the engagement begins.
         </p>
       </div>
@@ -465,26 +637,51 @@
       <div class="in6-wrap">
         <h2 class="in6-title">Clarity before commitment</h2>
 
-        <div class="in6-schedule">
-          <div class="in6-row">
-            <h3 class="in6-row-q"><span class="in6-q" aria-hidden="true">Q.</span><span>Does having employer-provided cover remove the need for a review?</span></h3>
-            <p class="in6-row-a">Not necessarily. Consider who is covered, the terms and what happens if your employment changes. Personal protection decisions should reflect your responsibilities and the specific employer and insurer documentation.</p>
+        <div class="accordion bm-faq" id="inFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="in-acc-body-1" id="in-acc-head-1">
+              <span class="acc-title">Does having employer-provided cover remove the need for a review?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="in-acc-body-1" role="region" aria-labelledby="in-acc-head-1">
+              <p>Not necessarily. Consider who is covered, the terms and what happens if your employment changes. Personal protection decisions should reflect your responsibilities and the specific employer and insurer documentation.</p>
+            </div>
           </div>
-          <div class="in6-row">
-            <h3 class="in6-row-q"><span class="in6-q" aria-hidden="true">Q.</span><span>Will the review recommend cancelling existing policies?</span></h3>
-            <p class="in6-row-a">First establish what existing policies do and what could be lost by changing them. Cancellation or replacement can affect continuity, benefits and eligibility. Discuss these consequences with the provider before acting.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="in-acc-body-2" id="in-acc-head-2">
+              <span class="acc-title">Will the review recommend cancelling existing policies?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="in-acc-body-2" role="region" aria-labelledby="in-acc-head-2">
+              <p>First establish what existing policies do and what could be lost by changing them. Cancellation or replacement can affect continuity, benefits and eligibility. Discuss these consequences with the provider before acting.</p>
+            </div>
           </div>
-          <div class="in6-row">
-            <h3 class="in6-row-q"><span class="in6-q" aria-hidden="true">Q.</span><span>Can you guarantee cover or the payment of a claim?</span></h3>
-            <p class="in6-row-a">No. Policy issuance, underwriting, exclusions and claims decisions rest with the relevant insurer under the applicable contract. A planning review or provider discussion does not establish eligibility or create a guarantee of claims acceptance.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="in-acc-body-3" id="in-acc-head-3">
+              <span class="acc-title">Can you guarantee cover or the payment of a claim?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="in-acc-body-3" role="region" aria-labelledby="in-acc-head-3">
+              <p>No. Policy issuance, underwriting, exclusions and claims decisions rest with the relevant insurer under the applicable contract. A planning review or provider discussion does not establish eligibility or create a guarantee of claims acceptance.</p>
+            </div>
           </div>
-          <div class="in6-row">
-            <h3 class="in6-row-q"><span class="in6-q" aria-hidden="true">Q.</span><span>Is the lowest premium the best comparison?</span></h3>
-            <p class="in6-row-a">Premium is one consideration. Compare the intended cover, material conditions, exclusions, limits, affordability and continuity. The relevance of each factor depends on your circumstances and the actual policy wording.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="in-acc-body-4" id="in-acc-head-4">
+              <span class="acc-title">Is the lowest premium the best comparison?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="in-acc-body-4" role="region" aria-labelledby="in-acc-head-4">
+              <p>Premium is one consideration. Compare the intended cover, material conditions, exclusions, limits, affordability and continuity. The relevance of each factor depends on your circumstances and the actual policy wording.</p>
+            </div>
           </div>
-          <div class="in6-row">
-            <h3 class="in6-row-q"><span class="in6-q" aria-hidden="true">Q.</span><span>What is BlissMoney's role in insurance?</span></h3>
-            <p class="in6-row-a">The proposed service covers protection assessment and provider coordination. Any distribution, referral or servicing role must be confirmed separately. Insurance contracts are provided by insurers; clarify policy interpretation with the authorised provider.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="in-acc-body-5" id="in-acc-head-5">
+              <span class="acc-title">What is BlissMoney's role in insurance?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="in-acc-body-5" role="region" aria-labelledby="in-acc-head-5">
+              <p>The proposed service covers protection assessment and provider coordination. Any distribution, referral or servicing role must be confirmed separately. Insurance contracts are provided by insurers; clarify policy interpretation with the authorised provider.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -641,6 +838,25 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <script>
+    (function () {
+      var deck = document.getElementById('inOutputDeck');
+      if (!deck) return;
+      var cards = deck.querySelectorAll('.svc-q-card');
+      cards.forEach(function (card) {
+        function activate() {
+          if (card.classList.contains('is-active')) return;
+          cards.forEach(function (c) { c.classList.remove('is-active'); c.setAttribute('aria-expanded', 'false'); });
+          card.classList.add('is-active');
+          card.setAttribute('aria-expanded', 'true');
+        }
+        card.addEventListener('click', activate);
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

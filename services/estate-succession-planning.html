@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.9">
+  <link rel="stylesheet" href="../assets/css/about.css?v=9.5">
 </head>
 
 <body class="about-subpage page-estate-planning">
@@ -273,13 +273,40 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching About / Services Banner Style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Geometric Heritage Shield Matrix with animated traveling beacon & pulsing dots -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary heritage shield -->
+        <path class="art-shield art-shield-lg" d="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
+
+        <!-- Accent dashed shield frame -->
+        <path class="art-shield art-shield-dash" d="M 680,185 L 895,235 L 895,430 L 680,640 L 465,430 L 465,235 Z" />
+
+        <!-- Inner offset heritage shield -->
+        <path class="art-shield art-shield-sm" d="M 680,260 L 830,295 L 830,420 L 680,560 L 530,420 L 530,295 Z" />
+
+        <!-- Diagonal lineage guide rays -->
+        <line class="art-axis art-axis-shield" x1="400" y1="175" x2="960" y2="440" />
+        <line class="art-axis art-axis-shield" x1="960" y1="175" x2="400" y2="440" />
+
+        <!-- Cardinal horizon & meridian lines -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis" x1="680" y1="40" x2="680" y2="780" />
+
+        <!-- Junction dots at key intersections -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="680" cy="110" r="6" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="680" cy="720" r="6" />
+
+        <!-- Primary Traveling Dot: Orbiting smoothly along the outer heritage shield perimeter -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="15s" repeatCount="indefinite" path="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
+        </circle>
+
+        <!-- Secondary Trailing Beacon: Orbiting along the same trajectory for celestial depth -->
+        <circle r="5" fill="#46DBB1" class="art-dot art-dot-glow" opacity="0.85">
+          <animateMotion dur="15s" begin="-7.5s" repeatCount="indefinite" path="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -294,47 +321,100 @@
             Discuss estate and succession planning
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Estate &amp; Succession Planning</li>
-        </ul>
       </div>
 
     </section>
 
-    <!-- 1 · Two-tone split: dark intro panel + branching list -->
-    <section class="es3-context">
-      <div class="es3-context-panel">
-        <svg class="es3-rings" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-          <circle cx="400" cy="400" r="300" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="400" cy="400" r="210" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
-          <circle cx="400" cy="400" r="120" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
-          <circle class="es3-ring-dot" cx="100" cy="400" r="7" fill="#19D79F"/>
-        </svg>
-        <div class="es3-context-inner">
-          <h2 class="es3-title es3-title-light">Some important decisions should not be left implicit</h2>
-          <p class="es3-context-intro">
+    <!-- 1 · Redesigned Estate Context Section (Matching Reference Style) -->
+    <section class="es3-terra-section" id="estate-decisions">
+      <div class="es3-terra-container">
+        <!-- Left Column: Editorial Intro -->
+        <div class="es3-terra-left">
+          <span class="es3-terra-pill">Estate &amp; Succession</span>
+          <h2 class="es3-terra-title">Some important decisions should not be left implicit</h2>
+          <p class="es3-terra-desc">
             Families often understand what they own better than how it would be administered or transferred. Planning helps clarify intentions while the relevant people can participate and important information remains accessible.
           </p>
-        </div>
-      </div>
 
-      <div class="es3-branches">
-        <article class="es3-branch">
-          <h3>Assets are held across people and entities</h3>
-          <p>Personal accounts, jointly held property, business interests and existing legal arrangements may have different implications. A coordinated inventory helps identify where ownership, documentation and intended succession need specialist review.</p>
-        </article>
-        <article class="es3-branch">
-          <h3>Family responsibilities are changing</h3>
-          <p>Marriage, separation, bereavement, new dependants or changing care needs can make earlier arrangements unsuitable. Revisiting the plan helps ensure that the right questions reach the appropriate legal and tax professionals.</p>
-        </article>
-        <article class="es3-branch">
-          <h3>The next generation needs context</h3>
-          <p>A list of assets does not explain the decisions behind them. Structured family conversations can establish responsibilities, explain intentions and help beneficiaries prepare for the practical demands of future stewardship.</p>
-        </article>
+          <!-- Bottom Preview Photos (Matching Reference Layout) -->
+          <div class="es3-terra-thumbs" aria-hidden="true">
+            <div class="es3-terra-thumb-wrap">
+              <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="" class="es3-terra-thumb" loading="lazy">
+            </div>
+            <div class="es3-terra-thumb-wrap">
+              <img src="../assets/images/who_we_serve/techfounder.jpg" alt="" class="es3-terra-thumb" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 3 Horizontal Cards Stack -->
+        <div class="es3-terra-right" role="region" aria-label="Key Considerations in Estate Planning">
+          <!-- Card 1 (Light) -->
+          <article class="es3-terra-card" tabindex="0">
+            <div class="es3-terra-card-body">
+              <h3 class="es3-terra-card-title">Assets are held across people and entities</h3>
+              <p class="es3-terra-card-desc">
+                Personal accounts, jointly held property, business interests and existing legal arrangements may have different implications. A coordinated inventory helps identify where ownership, documentation and intended succession need specialist review.
+              </p>
+              <a href="../reach-us.html" class="es3-terra-card-btn" aria-label="Learn more about assets across people and entities">
+                <span class="es3-terra-btn-text">Learn More</span>
+                <span class="es3-terra-btn-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div class="es3-terra-card-media">
+              <img src="../assets/images/expertise/expert_1_legal.jpg" alt="Assets and legal entities" class="es3-terra-card-img" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 2 (Active Dark Green by default matching reference) -->
+          <article class="es3-terra-card is-active" tabindex="0">
+            <div class="es3-terra-card-body">
+              <h3 class="es3-terra-card-title">Family responsibilities are changing</h3>
+              <p class="es3-terra-card-desc">
+                Marriage, separation, bereavement, new dependants or changing care needs can make earlier arrangements unsuitable. Revisiting the plan helps ensure that the right questions reach the appropriate legal and tax professionals.
+              </p>
+              <a href="../reach-us.html" class="es3-terra-card-btn" aria-label="Learn more about changing family responsibilities">
+                <span class="es3-terra-btn-text">Learn More</span>
+                <span class="es3-terra-btn-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div class="es3-terra-card-media">
+              <img src="../assets/images/who_we_serve/seniorprofessionals.jpg" alt="Family responsibilities and life stages" class="es3-terra-card-img" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Card 3 (Light) -->
+          <article class="es3-terra-card" tabindex="0">
+            <div class="es3-terra-card-body">
+              <h3 class="es3-terra-card-title">The next generation needs context</h3>
+              <p class="es3-terra-card-desc">
+                A list of assets does not explain the decisions behind them. Structured family conversations can establish responsibilities, explain intentions and help beneficiaries prepare for the practical demands of future stewardship.
+              </p>
+              <a href="../reach-us.html" class="es3-terra-card-btn" aria-label="Learn more about next generation context">
+                <span class="es3-terra-btn-text">Learn More</span>
+                <span class="es3-terra-btn-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div class="es3-terra-card-media">
+              <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="Next generation family continuity" class="es3-terra-card-img" loading="lazy">
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -346,18 +426,22 @@
         <div class="es3-hub">
           <span class="es3-hub-node" aria-hidden="true"><span></span></span>
           <article class="es3-hub-cell">
+            <span class="es3-hub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
             <h3>Estate information and ownership map</h3>
             <p>Organise the assets, liabilities, ownership records and existing arrangements within the agreed scope. Record where nominations, beneficiary details or supporting documents need to be checked by the relevant institution or legal professional.</p>
           </article>
           <article class="es3-hub-cell">
+            <span class="es3-hub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 2 4 5"/></svg></span>
             <h3>Family priorities and continuity needs</h3>
             <p>Discuss who may need financial support, who is expected to make decisions and which responsibilities require continuity. Identify practical questions around access to information, ongoing expenses and the administration of family affairs.</p>
           </article>
           <article class="es3-hub-cell">
+            <span class="es3-hub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
             <h3>Coordination with legal and tax specialists</h3>
             <p>Prepare a clear brief for professional advice on wills, trusts or other appropriate arrangements. Track the decisions and documentation involved, while legal drafting, structural advice and tax opinions remain with qualified specialists.</p>
           </article>
           <article class="es3-hub-cell">
+            <span class="es3-hub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
             <h3>Family communication and review</h3>
             <p>Help organise conversations about intentions and responsibilities at a level you are comfortable sharing. Establish triggers for review, including material asset changes, family events, residency changes and changes advised by your specialists.</p>
           </article>
@@ -373,28 +457,24 @@
         <ol class="es3-zigzag">
           <li class="es3-zz-item">
             <div class="es3-zz-card">
-              <span class="es3-zz-phase">Phase 01</span>
               <h3>Understand intentions and sensitivities</h3>
               <p>Start with your priorities, family context and existing arrangements. Agree who should participate and how sensitive information will be handled during the engagement.</p>
             </div>
           </li>
           <li class="es3-zz-item">
             <div class="es3-zz-card">
-              <span class="es3-zz-phase">Phase 02</span>
               <h3>Organise the estate picture</h3>
               <p>Create a working inventory and identify information gaps. Separate financial coordination tasks from legal questions that require a professional opinion.</p>
             </div>
           </li>
           <li class="es3-zz-item">
             <div class="es3-zz-card">
-              <span class="es3-zz-phase">Phase 03</span>
               <h3>Coordinate the required decisions</h3>
               <p>Work from the specialist brief to organise meetings, outstanding questions and agreed actions. You retain control of decisions and the appointment of professional providers.</p>
             </div>
           </li>
           <li class="es3-zz-item">
             <div class="es3-zz-card">
-              <span class="es3-zz-phase">Phase 04</span>
               <h3>Keep the arrangements current</h3>
               <p>Review the financial picture and action status when circumstances change. Confirm with the relevant specialists whether existing documents or structures need updating.</p>
             </div>
@@ -403,37 +483,63 @@
       </div>
     </section>
 
-    <!-- 4 · Document folders (grey) -->
-    <section class="es3-band es3-grey">
+    <!-- 4 · Tangible outputs: Redesigned 4-card scope style (as per services.html "Define the scope before the work") -->
+    <section class="es3-band es3-white" id="estate-outputs">
       <div class="es3-wrap">
         <h2 class="es3-title">A useful basis for the next decision</h2>
+        <blockquote class="ab-quote svc-scope-quote">
+          <p>Proposed engagement outputs. The specific work, costs, specialist involvement and review arrangements are agreed before the engagement begins.</p>
+        </blockquote>
 
-        <div class="es3-docs">
-          <article class="es3-doc">
-            <svg class="es3-doc-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h15l7 7v25H9z" stroke="currentColor" stroke-width="1.5"/><path d="M24 4v7h7M14 19h12M14 24h12M14 29h8" stroke="currentColor" stroke-width="1.5"/></svg>
-            <h3>Working estate inventory</h3>
-            <p>An organised record of the assets, liabilities and arrangements included in the review, with information gaps identified.</p>
+        <div class="svc-scope-grid" role="region" aria-label="Outputs of estate planning engagement">
+          <!-- Card 1 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/portfolio_design.jpg" alt="Working estate inventory" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Working estate inventory</h3>
+                <p class="svc-scope-card-desc">An organised record of the assets, liabilities and arrangements included in the review, with information gaps identified.</p>
+              </div>
+            </div>
           </article>
-          <article class="es3-doc">
-            <svg class="es3-doc-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h15l7 7v25H9z" stroke="currentColor" stroke-width="1.5"/><path d="M24 4v7h7M14 20h12M14 25h7" stroke="currentColor" stroke-width="1.5"/><circle cx="26" cy="27" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
-            <h3>Specialist discussion brief</h3>
-            <p>A concise record of intentions, family considerations and questions for your legal and tax professionals.</p>
+
+          <!-- Card 2 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/expertise/expert_2_tax.jpg" alt="Specialist discussion brief" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Specialist discussion brief</h3>
+                <p class="svc-scope-card-desc">A concise record of intentions, family considerations and questions for your legal and tax professionals.</p>
+              </div>
+            </div>
           </article>
-          <article class="es3-doc">
-            <svg class="es3-doc-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h15l7 7v25H9z" stroke="currentColor" stroke-width="1.5"/><path d="M24 4v7h7M13 19l2 2 3-3M13 26l2 2 3-3M21 20h6M21 27h6" stroke="currentColor" stroke-width="1.5"/></svg>
-            <h3>Action and document tracker</h3>
-            <p>A list of agreed tasks, responsible parties and outstanding documentation, without substituting for legal verification.</p>
+
+          <!-- Card 3 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/excution.jpg" alt="Action and document tracker" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Action and document tracker</h3>
+                <p class="svc-scope-card-desc">A list of agreed tasks, responsible parties and outstanding documentation, without substituting for legal verification.</p>
+              </div>
+            </div>
           </article>
-          <article class="es3-doc">
-            <svg class="es3-doc-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h15l7 7v25H9z" stroke="currentColor" stroke-width="1.5"/><path d="M24 4v7h7" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M20 21v3l2 2" stroke="currentColor" stroke-width="1.5"/></svg>
-            <h3>Continuity and review agenda</h3>
-            <p>A practical agenda covering information access, financial commitments and the circumstances that should trigger a further review.</p>
+
+          <!-- Card 4 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="Continuity and review agenda" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Continuity and review agenda</h3>
+                <p class="svc-scope-card-desc">A practical agenda covering information access, financial commitments and the circumstances that should trigger a further review.</p>
+              </div>
+            </div>
           </article>
         </div>
-
-        <p class="es3-docs-note">
-          Proposed engagement outputs. The specific work, costs, specialist involvement and review arrangements are agreed before the engagement begins.
-        </p>
       </div>
     </section>
 
@@ -448,27 +554,52 @@
           </svg>
         </div>
 
-        <div class="es3-accordion">
-          <details class="es3-acc" open>
-            <summary><span class="es3-acc-q" aria-hidden="true">Q.</span><h3>Is estate planning only relevant for very large estates?</h3><span class="es3-acc-icon" aria-hidden="true"></span></summary>
-            <p>The need depends on your responsibilities, not only asset values. Dependants, jointly held assets, business ownership and assets in different locations can create questions worth addressing with professional support.</p>
-          </details>
-          <details class="es3-acc">
-            <summary><span class="es3-acc-q" aria-hidden="true">Q.</span><h3>Will BlissMoney draft my will or establish a trust?</h3><span class="es3-acc-icon" aria-hidden="true"></span></summary>
-            <p>Legal drafting and advice on structures must be provided by qualified legal professionals. The proposed service focuses on financial organisation, preparing the brief and coordinating agreed actions with the professionals you appoint.</p>
-          </details>
-          <details class="es3-acc">
-            <summary><span class="es3-acc-q" aria-hidden="true">Q.</span><h3>Do nominations and a will need to be reviewed together?</h3><span class="es3-acc-icon" aria-hidden="true"></span></summary>
-            <p>They should be considered as part of a coordinated review. Their effect can depend on the asset, governing rules and individual circumstances. A qualified legal professional should explain how the relevant arrangements operate in your situation.</p>
-          </details>
-          <details class="es3-acc">
-            <summary><span class="es3-acc-q" aria-hidden="true">Q.</span><h3>Can planning begin before the whole family participates?</h3><span class="es3-acc-icon" aria-hidden="true"></span></summary>
-            <p>Yes. An initial review can clarify your intentions and existing information. Whether and how other family members participate is a separate decision, informed by your preferences and professional advice.</p>
-          </details>
-          <details class="es3-acc">
-            <summary><span class="es3-acc-q" aria-hidden="true">Q.</span><h3>What changes should prompt a review?</h3><span class="es3-acc-icon" aria-hidden="true"></span></summary>
-            <p>Material changes in family circumstances, ownership, liabilities or residency can be useful triggers. A significant acquisition or sale may also affect earlier intentions. Your legal and tax professionals should advise on changes affecting the documents or structures.</p>
-          </details>
+        <div class="accordion bm-faq" id="esFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="es-acc-body-1" id="es-acc-head-1">
+              <span class="acc-title">Is estate planning only relevant for very large estates?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="es-acc-body-1" role="region" aria-labelledby="es-acc-head-1">
+              <p>The need depends on your responsibilities, not only asset values. Dependants, jointly held assets, business ownership and assets in different locations can create questions worth addressing with professional support.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="es-acc-body-2" id="es-acc-head-2">
+              <span class="acc-title">Will BlissMoney draft my will or establish a trust?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="es-acc-body-2" role="region" aria-labelledby="es-acc-head-2">
+              <p>Legal drafting and advice on structures must be provided by qualified legal professionals. The proposed service focuses on financial organisation, preparing the brief and coordinating agreed actions with the professionals you appoint.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="es-acc-body-3" id="es-acc-head-3">
+              <span class="acc-title">Do nominations and a will need to be reviewed together?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="es-acc-body-3" role="region" aria-labelledby="es-acc-head-3">
+              <p>They should be considered as part of a coordinated review. Their effect can depend on the asset, governing rules and individual circumstances. A qualified legal professional should explain how the relevant arrangements operate in your situation.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="es-acc-body-4" id="es-acc-head-4">
+              <span class="acc-title">Can planning begin before the whole family participates?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="es-acc-body-4" role="region" aria-labelledby="es-acc-head-4">
+              <p>Yes. An initial review can clarify your intentions and existing information. Whether and how other family members participate is a separate decision, informed by your preferences and professional advice.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="es-acc-body-5" id="es-acc-head-5">
+              <span class="acc-title">What changes should prompt a review?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="es-acc-body-5" role="region" aria-labelledby="es-acc-head-5">
+              <p>Material changes in family circumstances, ownership, liabilities or residency can be useful triggers. A significant acquisition or sale may also affect earlier intentions. Your legal and tax professionals should advise on changes affecting the documents or structures.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -623,6 +754,20 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <!-- Interactive Script for Estate Context Cards (Reference Style) -->
+  <script>
+    (function () {
+      const cards = document.querySelectorAll('.es3-terra-card');
+      if (!cards.length) return;
+      cards.forEach((card) => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          cards.forEach((c) => c.classList.remove('is-active'));
+          card.classList.add('is-active');
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

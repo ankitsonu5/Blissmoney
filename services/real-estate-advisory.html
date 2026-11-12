@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.0">
+  <link rel="stylesheet" href="../assets/css/about.css?v=9.7">
 </head>
 
 <body class="about-subpage page-real-estate">
@@ -282,13 +282,50 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching About / Services Banner Style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Architectural Isometric Edifice Matrix with Animated Traveling Beacon & Structural Nodes -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary architectural edifice -->
+        <path class="art-building art-building-lg" d="M 680,110 L 960,240 L 960,580 L 680,710 L 400,580 L 400,240 Z" />
+
+        <!-- Front structural corner pillar -->
+        <line class="art-building-pillar" x1="680" y1="370" x2="680" y2="710" />
+
+        <!-- Roof front facet ridges -->
+        <line class="art-building-roof" x1="680" y1="370" x2="400" y2="240" />
+        <line class="art-building-roof" x1="680" y1="370" x2="960" y2="240" />
+
+        <!-- Inner offset architectural pavilion frame -->
+        <path class="art-building art-building-sm" d="M 680,200 L 860,285 L 860,505 L 680,590 L 500,505 L 500,285 Z" />
+        <line class="art-building-pillar art-building-sm" x1="680" y1="370" x2="680" y2="590" />
+
+        <!-- Intermediate floor slab datum lines (dashed) -->
+        <path class="art-building art-building-dash" d="M 400,410 L 680,540 L 960,410" />
+
+        <!-- Architectural plumb line & cardinal horizon axis -->
+        <line class="art-axis art-axis-plumb" x1="680" y1="30" x2="680" y2="780" />
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+
+        <!-- Diagonal blueprint perspective projection rays -->
+        <line class="art-axis art-axis-ray" x1="220" y1="155" x2="1060" y2="545" />
+        <line class="art-axis art-axis-ray" x1="220" y1="495" x2="1060" y2="105" />
+
+        <!-- Structural junction dots at key coordinates -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="110" r="7" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="680" cy="370" r="6" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="710" r="7" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="400" cy="240" r="6" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="960" cy="240" r="6" />
+
+        <!-- Primary Traveling Beacon: Orbiting continuously along the architectural edifice perimeter -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="16s" repeatCount="indefinite" path="M 680,110 L 960,240 L 960,580 L 680,710 L 400,580 L 400,240 Z" />
+        </circle>
+
+        <!-- Secondary Trailing Beacon: Orbiting along the same architectural path with offset timing -->
+        <circle r="5" fill="#46DBB1" class="art-dot art-dot-glow" opacity="0.85">
+          <animateMotion dur="16s" begin="-8s" repeatCount="indefinite" path="M 680,110 L 960,240 L 960,580 L 680,710 L 400,580 L 400,240 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -307,13 +344,6 @@
             Discuss a property decision
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Real Estate Advisory</li>
-        </ul>
       </div>
 
     </section>
@@ -361,55 +391,130 @@
       <div class="re4-wrap">
         <h2 class="re4-title re4-title-green">A disciplined assessment of property within your plan</h2>
 
-        <div class="re4-skyline">
-          <article class="re4-tower">
-            <h3>Purpose and portfolio fit</h3>
-            <p>Clarify whether the asset is intended for personal use, rental income, future development or another objective. Examine how that purpose fits your existing exposure, available capital and expected holding period before evaluating a transaction.</p>
+        <div class="bm-principles-deck" id="reDeck" role="region" aria-label="A disciplined assessment of property within your plan">
+          <article class="bm-principle-card is-active" data-index="1" tabindex="0" aria-expanded="true">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="" class="bm-principle-bg" loading="lazy" style="object-position: 50% 40%;">
+            <div class="bm-principle-overlay"></div>
+            <div class="bm-principle-content">
+              <div class="bm-principle-top"></div>
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Purpose and portfolio fit</h3>
+                  <p class="bm-principle-desc">Clarify whether the asset is intended for personal use, rental income, future development or another objective. Examine how that purpose fits your existing exposure, available capital and expected holding period before evaluating a transaction.</p>
+                </div>
+              </div>
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-title">Purpose and portfolio fit</span>
+              </div>
+            </div>
           </article>
-          <article class="re4-tower">
-            <h3>Total financial commitment</h3>
-            <p>Build a working view of acquisition costs, financing, recurring outgoings and potential vacancy or maintenance requirements. Use explicit assumptions and distinguish independently verified inputs from estimates that still need validation.</p>
+          <article class="bm-principle-card" data-index="2" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/six_steps/risk_profiling.jpg" alt="" class="bm-principle-bg" loading="lazy" style="object-position: 50% 35%;">
+            <div class="bm-principle-overlay"></div>
+            <div class="bm-principle-content">
+              <div class="bm-principle-top"></div>
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Total financial commitment</h3>
+                  <p class="bm-principle-desc">Build a working view of acquisition costs, financing, recurring outgoings and potential vacancy or maintenance requirements. Use explicit assumptions and distinguish independently verified inputs from estimates that still need validation.</p>
+                </div>
+              </div>
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-title">Total financial commitment</span>
+              </div>
+            </div>
           </article>
-          <article class="re4-tower">
-            <h3>Hold acquire or release capital</h3>
-            <p>Compare the implications of buying, continuing to hold or selling against relevant alternatives. Consider liquidity, borrowing exposure, income uncertainty and the impact on other goals, without treating projected appreciation or rental yield as assured.</p>
+          <article class="bm-principle-card" data-index="3" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/six_steps/excution.jpg" alt="" class="bm-principle-bg" loading="lazy" style="object-position: 60% 40%;">
+            <div class="bm-principle-overlay"></div>
+            <div class="bm-principle-content">
+              <div class="bm-principle-top"></div>
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Hold acquire or release capital</h3>
+                  <p class="bm-principle-desc">Compare the implications of buying, continuing to hold or selling against relevant alternatives. Consider liquidity, borrowing exposure, income uncertainty and the impact on other goals, without treating projected appreciation or rental yield as assured.</p>
+                </div>
+              </div>
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-title">Hold acquire or release capital</span>
+              </div>
+            </div>
           </article>
-          <article class="re4-tower">
-            <h3>Professional due diligence coordination</h3>
-            <p>Identify the legal, valuation, technical and tax inputs relevant to the proposed decision. Coordinate the information and questions for appropriately qualified providers; specialist reports and transaction advice remain their responsibility.</p>
+          <article class="bm-principle-card" data-index="4" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/expertise/expert_1_legal.jpg" alt="" class="bm-principle-bg" loading="lazy" style="object-position: 50% 40%;">
+            <div class="bm-principle-overlay"></div>
+            <div class="bm-principle-content">
+              <div class="bm-principle-top"></div>
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Professional due diligence coordination</h3>
+                  <p class="bm-principle-desc">Identify the legal, valuation, technical and tax inputs relevant to the proposed decision. Coordinate the information and questions for appropriately qualified providers; specialist reports and transaction advice remain their responsibility.</p>
+                </div>
+              </div>
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-title">Professional due diligence coordination</span>
+              </div>
+            </div>
           </article>
         </div>
         <div class="re4-ground" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- 3 · Floor directory (white): phases as stacked floors -->
-    <section class="re4-band re4-white">
-      <div class="re4-wrap re4-floors-layout">
+    <!-- 3 · Process: From the question to an agreed plan (Redesigned with photographic scope cards) -->
+    <section class="re4-band re4-white" id="real-estate-process">
+      <div class="re4-wrap">
         <h2 class="re4-title">From the question to an agreed plan</h2>
 
-        <ol class="re4-floors">
-          <li class="re4-floor">
-            <span class="re4-floor-label">Phase 01</span>
-            <h3>Define the decision</h3>
-            <p>Agree the purpose of the review, the assets involved and the alternatives to assess. Establish what would make the decision suitable for your financial circumstances.</p>
-          </li>
-          <li class="re4-floor">
-            <span class="re4-floor-label">Phase 02</span>
-            <h3>Assemble the financial inputs</h3>
-            <p>Organise available information on ownership, income, costs and liabilities. Record uncertainty rather than presenting an incomplete estimate as a definitive valuation.</p>
-          </li>
-          <li class="re4-floor">
-            <span class="re4-floor-label">Phase 03</span>
-            <h3>Bring in specialist assessment</h3>
-            <p>Identify questions requiring legal, technical, valuation or tax advice. Coordinate the agreed inputs and reflect material findings in the financial comparison.</p>
-          </li>
-          <li class="re4-floor">
-            <span class="re4-floor-label">Phase 04</span>
-            <h3>Decide and revisit</h3>
-            <p>Document your decision and the assumptions behind it. Review material changes in cash flow, financing or intended use that could alter the original rationale.</p>
-          </li>
-        </ol>
+        <div class="svc-scope-grid" role="region" aria-label="Stages from question to agreed plan">
+          <!-- Card 1 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="Define the decision" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Define the decision</h3>
+                <p class="svc-scope-card-desc">Agree the purpose of the review, the assets involved and the alternatives to assess. Establish what would make the decision suitable for your financial circumstances.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/portfolio_design.jpg" alt="Assemble the financial inputs" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Assemble the financial inputs</h3>
+                <p class="svc-scope-card-desc">Organise available information on ownership, income, costs and liabilities. Record uncertainty rather than presenting an incomplete estimate as a definitive valuation.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/expertise/expert_1_legal.jpg" alt="Bring in specialist assessment" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Bring in specialist assessment</h3>
+                <p class="svc-scope-card-desc">Identify questions requiring legal, technical, valuation or tax advice. Coordinate the agreed inputs and reflect material findings in the financial comparison.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="Decide and revisit" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Decide and revisit</h3>
+                <p class="svc-scope-card-desc">Document your decision and the assumptions behind it. Review material changes in cash flow, financing or intended use that could alter the original rationale.</p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -453,26 +558,51 @@
       <div class="re4-wrap">
         <h2 class="re4-title">Clarity before commitment</h2>
 
-        <div class="re4-faq">
-          <div class="re4-faq-item">
-            <h3><span class="re4-faq-q" aria-hidden="true">Q.</span><span>Is this a property brokerage or property listing service?</span></h3>
-            <p>The proposed service covers financial evaluation and specialist coordination. It does not promise property sourcing, brokerage, execution or access to particular developments. Any additional transaction role would need to be expressly established.</p>
+        <div class="accordion bm-faq" id="reFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="re-acc-body-1" id="re-acc-head-1">
+              <span class="acc-title">Is this a property brokerage or property listing service?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="re-acc-body-1" role="region" aria-labelledby="re-acc-head-1">
+              <p>The proposed service covers financial evaluation and specialist coordination. It does not promise property sourcing, brokerage, execution or access to particular developments. Any additional transaction role would need to be expressly established.</p>
+            </div>
           </div>
-          <div class="re4-faq-item">
-            <h3><span class="re4-faq-q" aria-hidden="true">Q.</span><span>Can the review include property I already own?</span></h3>
-            <p>Yes. Existing holdings can be reviewed alongside their purpose, income, costs, financing and place in your finances. The agreed scope determines which assets, alternatives and professional inputs are included.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="re-acc-body-2" id="re-acc-head-2">
+              <span class="acc-title">Can the review include property I already own?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="re-acc-body-2" role="region" aria-labelledby="re-acc-head-2">
+              <p>Yes. Existing holdings can be reviewed alongside their purpose, income, costs, financing and place in your finances. The agreed scope determines which assets, alternatives and professional inputs are included.</p>
+            </div>
           </div>
-          <div class="re4-faq-item">
-            <h3><span class="re4-faq-q" aria-hidden="true">Q.</span><span>Will you certify the title or provide a valuation?</span></h3>
-            <p>Title verification and legal advice require qualified legal professionals. Formal valuations and technical assessments require the appropriate specialists. Financial coordination can organise these inputs, but does not replace their independent assessment or reports.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="re-acc-body-3" id="re-acc-head-3">
+              <span class="acc-title">Will you certify the title or provide a valuation?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="re-acc-body-3" role="region" aria-labelledby="re-acc-head-3">
+              <p>Title verification and legal advice require qualified legal professionals. Formal valuations and technical assessments require the appropriate specialists. Financial coordination can organise these inputs, but does not replace their independent assessment or reports.</p>
+            </div>
           </div>
-          <div class="re4-faq-item">
-            <h3><span class="re4-faq-q" aria-hidden="true">Q.</span><span>How should rental income be assessed?</span></h3>
-            <p>The useful comparison considers relevant costs, vacancies, maintenance, financing and applicable tax advice, alongside the quoted rent. Future occupancy and rental income are uncertain, so a decision should consider less favourable scenarios as well.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="re-acc-body-4" id="re-acc-head-4">
+              <span class="acc-title">How should rental income be assessed?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="re-acc-body-4" role="region" aria-labelledby="re-acc-head-4">
+              <p>The useful comparison considers relevant costs, vacancies, maintenance, financing and applicable tax advice, alongside the quoted rent. Future occupancy and rental income are uncertain, so a decision should consider less favourable scenarios as well.</p>
+            </div>
           </div>
-          <div class="re4-faq-item re4-faq-wide">
-            <h3><span class="re4-faq-q" aria-hidden="true">Q.</span><span>Can a property decision be considered alongside a loan review?</span></h3>
-            <p>Yes. Financing changes the total commitment and the cash-flow impact of a property decision. A coordinated review can consider borrowing and repayment assumptions, while eligibility, terms and approval remain matters for the relevant lender.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="re-acc-body-5" id="re-acc-head-5">
+              <span class="acc-title">Can a property decision be considered alongside a loan review?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="re-acc-body-5" role="region" aria-labelledby="re-acc-head-5">
+              <p>Yes. Financing changes the total commitment and the cash-flow impact of a property decision. A coordinated review can consider borrowing and repayment assumptions, while eligibility, terms and approval remain matters for the relevant lender.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -627,6 +757,32 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <script>
+    (function () {
+      const deck = document.getElementById('reDeck');
+      if (!deck) return;
+      const cards = Array.from(deck.querySelectorAll('.bm-principle-card'));
+      let activeCard = deck.querySelector('.bm-principle-card.is-active') || cards[0];
+      function setActive(card) {
+        if (!card || card === activeCard) return;
+        cards.forEach(function (c) { c.classList.remove('is-active'); c.setAttribute('aria-expanded', 'false'); });
+        card.classList.add('is-active');
+        card.setAttribute('aria-expanded', 'true');
+        activeCard = card;
+      }
+      cards.forEach(function (card, index) {
+        card.addEventListener('click', function () { setActive(card); });
+        card.addEventListener('mouseenter', function () {
+          if (window.matchMedia('(hover: hover) and (min-width: 681px)').matches) setActive(card);
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActive(card); }
+          else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); var n = cards[(index + 1) % cards.length]; n.focus(); setActive(n); }
+          else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); var p = cards[(index - 1 + cards.length) % cards.length]; p.focus(); setActive(p); }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

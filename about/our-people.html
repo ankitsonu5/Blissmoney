@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.4">
+  <link rel="stylesheet" href="../assets/css/about.css?v=4.2">
 </head>
 
 <body class="about-subpage page-our-people">
@@ -273,13 +273,29 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching about/index.html banner style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Architectural rectangles with animated traveling & pulsing dots -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary rectangle -->
+        <rect class="art-rect art-rect-lg" x="320" y="140" width="720" height="540" />
+
+        <!-- Inner offset rectangle -->
+        <rect class="art-rect art-rect-sm" x="460" y="230" width="500" height="360" />
+
+        <!-- Accent dashed rectangle frame -->
+        <rect class="art-rect art-rect-dash" x="220" y="290" width="440" height="320" />
+
+        <!-- Architectural axis lines -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis" x1="680" y1="60" x2="680" y2="760" />
+
+        <!-- Junction dots at key intersections -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
+
+        <!-- Traveling Dot: Orbiting around the outer rectangle perimeter -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="14s" repeatCount="indefinite" path="M 320,140 L 1040,140 L 1040,680 L 320,680 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -297,13 +313,6 @@
             Explore our services
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>Our People</li>
-        </ul>
       </div>
 
     </section>
@@ -312,7 +321,6 @@
     <!-- Leadership (light, profile split) -->
     <section class="ab2-band ab2-light op2-leader">
       <div class="ab2-wrap">
-        <p class="ab2-eyebrow">Leadership</p>
         <h2 class="ab2-title">The people behind the conversation</h2>
 
         <div class="op2-leader-grid">
@@ -356,7 +364,6 @@
       </svg>
       <div class="ab2-wrap">
         <div class="ab2-center-head">
-          <p class="ab2-eyebrow">Governance</p>
           <h2 class="ab2-title">Corporate stewardship</h2>
         </div>
 
@@ -384,35 +391,71 @@
       <div class="ab2-wrap">
         <div class="op2-adv-head">
           <div>
-            <p class="ab2-eyebrow">Advisory Network</p>
             <h2 class="ab2-title">The right expertise for the question</h2>
           </div>
           <div class="op2-adv-side">
             <p class="ab2-lead">
               Some decisions need a qualified legal, tax, property or insurance professional. Clear responsibilities help families understand who is advising, who is executing and who is accountable for the final work.
             </p>
-            <div class="op2-status">
-              <strong>Preview Status:</strong>
-              No named external advisory panel has been verified for this preview.
-            </div>
           </div>
         </div>
 
-        <div class="op2-experts">
-          <article class="op2-expert">
-            <span class="op2-expert-no">01</span>
-            <h3>Legal and succession specialists</h3>
-            <p>Support for legal opinions, estate documentation and entity-specific questions should come from appropriately qualified professionals.</p>
+        <div class="op2-experts" role="region" aria-label="Advisory Network Expertise">
+          <!-- Card 1: Legal and succession specialists -->
+          <article class="op2-card">
+            <img src="../assets/images/expertise/expert_1_legal.jpg" alt="Legal and succession specialists" class="op2-card-bg" loading="lazy">
+            <div class="op2-card-overlay"></div>
+            
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">Legal and succession specialists</h3>
+                <p class="op2-card-desc">Support for legal opinions, estate documentation and entity-specific questions should come from appropriately qualified professionals.</p>
+                <a href="#contact" class="op2-card-btn" aria-label="Explore Legal and succession specialists">
+                  <span>Explore Now</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="op2-expert">
-            <span class="op2-expert-no">02</span>
-            <h3>Tax and accounting professionals</h3>
-            <p>Tax interpretations, filings and accounting obligations remain with the relevant qualified professional.</p>
+
+          <!-- Card 2: Tax and accounting professionals -->
+          <article class="op2-card">
+            <img src="../assets/images/expertise/expert_2_tax.jpg" alt="Tax and accounting professionals" class="op2-card-bg" loading="lazy">
+            <div class="op2-card-overlay"></div>
+            
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">Tax and accounting professionals</h3>
+                <p class="op2-card-desc">Tax interpretations, filings and accounting obligations remain with the relevant qualified professional.</p>
+                <a href="#contact" class="op2-card-btn" aria-label="Explore Tax and accounting professionals">
+                  <span>Explore Now</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="op2-expert">
-            <span class="op2-expert-no">03</span>
-            <h3>Product and transaction providers</h3>
-            <p>Lenders, insurers and other providers determine their own terms, eligibility, underwriting and approvals.</p>
+
+          <!-- Card 3: Product and transaction providers -->
+          <article class="op2-card">
+            <img src="../assets/images/expertise/expert_3_product.jpg" alt="Product and transaction providers" class="op2-card-bg" loading="lazy">
+            <div class="op2-card-overlay"></div>
+            
+            <div class="op2-card-content">
+              <div class="op2-card-bottom">
+                <h3 class="op2-card-title">Product and transaction providers</h3>
+                <p class="op2-card-desc">Lenders, insurers and other providers determine their own terms, eligibility, underwriting and approvals.</p>
+                <a href="#contact" class="op2-card-btn" aria-label="Explore Product and transaction providers">
+                  <span>Explore Now</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -420,9 +463,13 @@
 
     <!-- Next Steps (white split CTA) -->
     <section class="ab2-band ab2-cta">
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ab2-wrap ab2-cta-grid">
         <div>
-          <p class="ab2-eyebrow">Next Steps</p>
           <h2 class="ab2-title">Meet the team through a useful first discussion</h2>
         </div>
         <div class="ab2-cta-side">

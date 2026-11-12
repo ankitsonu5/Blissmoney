@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.2">
+  <link rel="stylesheet" href="../assets/css/about.css?v=3.6">
 </head>
 
 <body class="about-subpage page-about-overview">
@@ -297,12 +297,6 @@
             Explore our services
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li>About</li>
-        </ul>
       </div>
     </section>
 
@@ -310,7 +304,6 @@
     <section class="ab2-band ab2-light ab2-intro">
       <div class="ab2-wrap ab2-intro-grid">
         <div class="ab2-intro-head">
-          <p class="ab2-eyebrow">01 - Connected Perspective</p>
           <h2 class="ab2-title">Your financial life deserves a connected view</h2>
           <svg class="ab2-intro-art" viewBox="0 0 260 260" fill="none" aria-hidden="true">
             <circle cx="130" cy="130" r="120" stroke="currentColor" stroke-width="1.2"/>
@@ -348,7 +341,6 @@
       </svg>
       <div class="ab2-wrap">
         <div class="ab2-center-head">
-          <p class="ab2-eyebrow">02 - Working Practice</p>
           <h2 class="ab2-title">Clarity is a working practice</h2>
         </div>
 
@@ -380,7 +372,6 @@
       <div class="ab2-wrap">
         <div class="ab2-head-row">
           <div>
-            <p class="ab2-eyebrow">03 - Core Values</p>
             <h2 class="ab2-title">Principles you should be able to recognise in the relationship</h2>
             <p class="ab2-lead">
               BlissMoney’s published values emphasise integrity, putting clients first, thoughtful ideas, inclusion and giving back. The test is how those values influence everyday decisions.
@@ -389,33 +380,132 @@
           <a href="brand-story.html" class="btn btn-primary ab2-head-btn">Read our brand story →</a>
         </div>
 
-        <div class="ab2-principles">
-          <article class="ab2-principle">
-            <span class="ab2-principle-no">01</span>
-            <div>
-              <h3>Integrity in the conversation</h3>
-              <p>Discuss objectives, costs, limitations and responsibilities openly. A question that matters to the client deserves a clear answer.</p>
+        <div class="bm-principles-deck" id="principlesDeck" role="region" aria-label="Core Principles">
+          <!-- Card 1 (Active by default) -->
+          <article class="bm-principle-card is-active" data-index="1" tabindex="0" aria-expanded="true">
+            <img src="../assets/images/principles/principle_1_integrity.jpg" alt="Integrity in the conversation illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar (visible when expanded) -->
+              <div class="bm-principle-top">
+                <a href="brand-story.html" class="bm-principle-link" aria-label="Read our brand story regarding Integrity in the conversation">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Integrity in the conversation</h3>
+                  <p class="bm-principle-desc">Discuss objectives, costs, limitations and responsibilities openly. A question that matters to the client deserves a clear answer.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label (visible when card is collapsed) -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">01</span>
+                <span class="bm-collapsed-title">Integrity</span>
+              </div>
             </div>
           </article>
-          <article class="ab2-principle">
-            <span class="ab2-principle-no">02</span>
-            <div>
-              <h3>Respect for individual priorities</h3>
-              <p>Family responsibilities, comfort with risk and liquidity needs differ. Financial conversations should leave room for those differences.</p>
+
+          <!-- Card 2 -->
+          <article class="bm-principle-card" data-index="2" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/principles/principle_2_priorities.jpg" alt="Respect for individual priorities illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar -->
+              <div class="bm-principle-top">
+                <a href="brand-story.html" class="bm-principle-link" aria-label="Read our brand story regarding Respect for individual priorities">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Respect for individual priorities</h3>
+                  <p class="bm-principle-desc">Family responsibilities, comfort with risk and liquidity needs differ. Financial conversations should leave room for those differences.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">02</span>
+                <span class="bm-collapsed-title">Priorities</span>
+              </div>
             </div>
           </article>
-          <article class="ab2-principle">
-            <span class="ab2-principle-no">03</span>
-            <div>
-              <h3>Learning before commitment</h3>
-              <p>Make the relevant trade-offs understandable before a decision is made. Good questions are part of the process.</p>
+
+          <!-- Card 3 -->
+          <article class="bm-principle-card" data-index="3" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/principles/principle_3_learning.jpg" alt="Learning before commitment illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar -->
+              <div class="bm-principle-top">
+                <a href="brand-story.html" class="bm-principle-link" aria-label="Read our brand story regarding Learning before commitment">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Learning before commitment</h3>
+                  <p class="bm-principle-desc">Make the relevant trade-offs understandable before a decision is made. Good questions are part of the process.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">03</span>
+                <span class="bm-collapsed-title">Learning</span>
+              </div>
             </div>
           </article>
-          <article class="ab2-principle">
-            <span class="ab2-principle-no">04</span>
-            <div>
-              <h3>Continuity over time</h3>
-              <p>Return to the plan when priorities change, and keep track of the decisions that need follow-through.</p>
+
+          <!-- Card 4 -->
+          <article class="bm-principle-card" data-index="4" tabindex="0" aria-expanded="false">
+            <img src="../assets/images/principles/principle_4_continuity.jpg" alt="Continuity over time illustration" class="bm-principle-bg" loading="lazy">
+            <div class="bm-principle-overlay"></div>
+            
+            <div class="bm-principle-content">
+              <!-- Top bar -->
+              <div class="bm-principle-top">
+                <a href="brand-story.html" class="bm-principle-link" aria-label="Read our brand story regarding Continuity over time">
+                  Read more <span class="bm-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <!-- Bottom Expanded details -->
+              <div class="bm-principle-bottom-expanded">
+                <div class="bm-principle-text-wrap">
+                  <h3 class="bm-principle-title">Continuity over time</h3>
+                  <p class="bm-principle-desc">Return to the plan when priorities change, and keep track of the decisions that need follow-through.</p>
+                </div>
+                <div class="bm-principle-brand">
+                  <img src="../assets/images/blissmoney_logo.png" alt="BlissMoney" class="bm-brand-white">
+                </div>
+              </div>
+
+              <!-- Bottom Collapsed label -->
+              <div class="bm-principle-bottom-collapsed" aria-hidden="true">
+                <span class="bm-collapsed-no">04</span>
+                <span class="bm-collapsed-title">Continuity</span>
+              </div>
             </div>
           </article>
         </div>
@@ -425,7 +515,6 @@
     <!-- The Sequence (white, horizontal timeline) -->
     <section class="ab2-band ab2-white ab2-sequence">
       <div class="ab2-wrap">
-        <p class="ab2-eyebrow">04 - The Sequence</p>
         <h2 class="ab2-title">A relationship with a clear sequence</h2>
 
         <ol class="ab2-timeline">
@@ -441,9 +530,13 @@
 
     <!-- Next Steps (green-accent split CTA) -->
     <section class="ab2-band ab2-cta">
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ab2-wrap ab2-cta-grid">
         <div>
-          <p class="ab2-eyebrow">05 - Next Steps</p>
           <h2 class="ab2-title">Lets understand what matters to you</h2>
         </div>
         <div class="ab2-cta-side">
@@ -563,6 +656,61 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+
+  <!-- Principles Deck Interactive Script -->
+  <script>
+    (function () {
+      const deck = document.getElementById('principlesDeck');
+      if (!deck) return;
+
+      const cards = Array.from(deck.querySelectorAll('.bm-principle-card'));
+      let activeCard = deck.querySelector('.bm-principle-card.is-active') || cards[0];
+
+      function setActive(card) {
+        if (!card || card === activeCard) return;
+        cards.forEach((c) => {
+          c.classList.remove('is-active');
+          c.setAttribute('aria-expanded', 'false');
+        });
+        card.classList.add('is-active');
+        card.setAttribute('aria-expanded', 'true');
+        activeCard = card;
+      }
+
+      cards.forEach((card, index) => {
+        // Expand on click / tap
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return; // Allow natural link clicking
+          setActive(card);
+        });
+
+        // Expand on desktop hover
+        card.addEventListener('mouseenter', () => {
+          if (window.matchMedia('(hover: hover) and (min-width: 681px)').matches) {
+            setActive(card);
+          }
+        });
+
+        // Keyboard navigation
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setActive(card);
+          } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = cards[(index + 1) % cards.length];
+            next.focus();
+            setActive(next);
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = cards[(index - 1 + cards.length) % cards.length];
+            prev.focus();
+            setActive(prev);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

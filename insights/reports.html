@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.7">
+  <link rel="stylesheet" href="../assets/css/about.css?v=11.6">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -275,11 +275,29 @@
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Dashed gridlines and the chart axes -->
+        <line class="art-chart-grid" x1="500" y1="240" x2="1040" y2="240" />
+        <line class="art-chart-grid" x1="500" y1="340" x2="1040" y2="340" />
+        <line class="art-chart-grid" x1="500" y1="440" x2="1040" y2="440" />
+        <line class="art-chart-grid" x1="500" y1="540" x2="1040" y2="540" />
+        <path class="art-chart-axis" d="M500 170 V640 H1050" />
+
+        <!-- Rising bars -->
+        <rect class="art-chart-bar" x="540" y="470" width="62" height="170" />
+        <rect class="art-chart-bar" x="632" y="390" width="62" height="250" />
+        <rect class="art-chart-bar" x="724" y="435" width="62" height="205" />
+        <rect class="art-chart-bar" x="816" y="310" width="62" height="330" />
+        <rect class="art-chart-bar art-chart-bar-hi" x="908" y="220" width="62" height="420" />
+
+        <!-- Trend line through the bar tops, ending in an arrow -->
+        <path class="art-chart-trend" d="M571 470 L663 390 L755 435 L847 310 L939 220 L1010 160" />
+        <path class="art-chart-arrow" d="M980 162 L1010 160 L1004 190" />
+
+        <!-- Animated dot following the trend line, plus a pulse at the axis origin -->
+        <circle class="art-dot art-dot-travel" cx="0" cy="0" r="9">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M571 470 L663 390 L755 435 L847 310 L939 220 L1010 160" />
+        </circle>
+        <circle class="art-dot art-dot-end" cx="500" cy="640" r="8" />
       </svg>
 
       <div class="banner-box">
@@ -294,13 +312,6 @@
             Browse the collection
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="reports.html">Insights</a></li>
-          <li>Reports</li>
-        </ul>
       </div>
 
     </section>
@@ -312,11 +323,6 @@
       <section class="rp9-band rp9-light">
         <div class="rp9-wrap">
           <div class="rp9-head">
-            <div class="rp9-stamp">
-              <p>
-                New original editorial copy for review; publication dates and author attributions will be added after approval.
-              </p>
-            </div>
             <h2 class="rp9-title">Make your next discussion more specific</h2>
           </div>
 

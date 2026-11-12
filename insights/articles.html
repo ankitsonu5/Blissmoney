@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.6">
+  <link rel="stylesheet" href="../assets/css/about.css?v=11.4">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -275,11 +275,23 @@
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Three stacked isometric layers joined by vertical guides -->
+        <line class="art-iso-guide" x1="530" y1="250" x2="530" y2="570" />
+        <line class="art-iso-guide" x1="990" y1="250" x2="990" y2="570" />
+        <line class="art-iso-guide" x1="760" y1="365" x2="760" y2="685" />
+        <path class="art-iso art-iso-low" d="M760 455 L990 570 L760 685 L530 570 Z" />
+        <path class="art-iso art-iso-mid" d="M760 295 L990 410 L760 525 L530 410 Z" />
+        <path class="art-iso art-iso-top" d="M760 135 L990 250 L760 365 L530 250 Z" />
+
+        <!-- Corner nodes on the middle layer -->
+        <rect class="art-iso-node" x="523" y="403" width="14" height="14" />
+        <rect class="art-iso-node" x="983" y="403" width="14" height="14" />
+
+        <!-- Animated dot travelling around the top layer, plus a pulse on the lowest layer -->
+        <circle class="art-dot art-dot-travel" cx="0" cy="0" r="9">
+          <animateMotion dur="12s" repeatCount="indefinite" path="M760 135 L990 250 L760 365 L530 250 Z" />
+        </circle>
+        <circle class="art-dot art-dot-end" cx="760" cy="685" r="8" />
       </svg>
 
       <div class="banner-box">
@@ -294,29 +306,12 @@
             Browse the collection
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="articles.html">Insights</a></li>
-          <li>Articles</li>
-        </ul>
       </div>
 
     </section>
 
     <!-- Editorial magazine layout: masthead + asymmetric article spread -->
     <div class="ar8-collection" id="articles-collection">
-
-      <!-- Editorial notice as a press strip -->
-      <div class="ar8-strip">
-        <div class="ar8-wrap ar8-strip-inner">
-          <span class="ar8-strip-dot" aria-hidden="true"></span>
-          <p>
-            New original editorial copy for review; publication dates and author attributions will be added after approval.
-          </p>
-        </div>
-      </div>
 
       <!-- Section 1: Make your next discussion more specific -->
       <section class="ar8-band ar8-paper">

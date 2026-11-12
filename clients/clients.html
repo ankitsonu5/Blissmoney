@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.0">
+  <link rel="stylesheet" href="../assets/css/about.css?v=9.0">
   <link rel="stylesheet" href="../assets/css/clients.css?v=1.6">
 </head>
 
@@ -295,13 +295,6 @@
             Book a consultation
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="clients.html">Clients</a></li>
-          <li>Who We Work With</li>
-        </ul>
       </div>
 
     </section>
@@ -429,49 +422,42 @@
           <h2 class="about-section-title">Bring the questions before the paperwork</h2>
         </div>
 
-        <div class="services-faq-grid clients-faq-grid">
-          <!-- Q1 -->
-          <div class="services-faq-item">
-            <h3 class="services-faq-q">
-              <span class="services-faq-q-indicator" aria-hidden="true">Q.</span>
-              <span>Do I have to move all my investments to begin?</span>
-            </h3>
-            <p class="services-faq-a">
-              An initial conversation is for understanding your situation. Any later engagement, onboarding or implementation depends on the scope and terms you agree.
-            </p>
+        <div class="accordion bm-faq" id="clFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="cl-acc-body-1" id="cl-acc-head-1">
+              <span class="acc-title">Do I have to move all my investments to begin?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="cl-acc-body-1" role="region" aria-labelledby="cl-acc-head-1">
+              <p>An initial conversation is for understanding your situation. Any later engagement, onboarding or implementation depends on the scope and terms you agree.</p>
+            </div>
           </div>
-
-          <!-- Q2 -->
-          <div class="services-faq-item">
-            <h3 class="services-faq-q">
-              <span class="services-faq-q-indicator" aria-hidden="true">Q.</span>
-              <span>Can I enquire if my wealth is mainly in my business or property?</span>
-            </h3>
-            <p class="services-faq-a">
-              Yes, you can discuss the situation. Business and property values are different from readily available investment capital, so liquidity and commitments need separate attention.
-            </p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="cl-acc-body-2" id="cl-acc-head-2">
+              <span class="acc-title">Can I enquire if my wealth is mainly in my business or property?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="cl-acc-body-2" role="region" aria-labelledby="cl-acc-head-2">
+              <p>Yes, you can discuss the situation. Business and property values are different from readily available investment capital, so liquidity and commitments need separate attention.</p>
+            </div>
           </div>
-
-          <!-- Q3 -->
-          <div class="services-faq-item">
-            <h3 class="services-faq-q">
-              <span class="services-faq-q-indicator" aria-hidden="true">Q.</span>
-              <span>Does a higher portfolio value determine the right service?</span>
-            </h3>
-            <p class="services-faq-a">
-              Value alone does not establish suitability or service fit. Objectives, risk capacity, time horizon, complexity and the relevant engagement terms also matter.
-            </p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="cl-acc-body-3" id="cl-acc-head-3">
+              <span class="acc-title">Does a higher portfolio value determine the right service?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="cl-acc-body-3" role="region" aria-labelledby="cl-acc-head-3">
+              <p>Value alone does not establish suitability or service fit. Objectives, risk capacity, time horizon, complexity and the relevant engagement terms also matter.</p>
+            </div>
           </div>
-
-          <!-- Q4 -->
-          <div class="services-faq-item">
-            <h3 class="services-faq-q">
-              <span class="services-faq-q-indicator" aria-hidden="true">Q.</span>
-              <span>Can a family member join the discussion?</span>
-            </h3>
-            <p class="services-faq-a">
-              You can discuss who should participate. Sharing personal or financial information needs the appropriate consent and a clear understanding of each person's role.
-            </p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="cl-acc-body-4" id="cl-acc-head-4">
+              <span class="acc-title">Can a family member join the discussion?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="cl-acc-body-4" role="region" aria-labelledby="cl-acc-head-4">
+              <p>You can discuss who should participate. Sharing personal or financial information needs the appropriate consent and a clear understanding of each person's role.</p>
+            </div>
           </div>
         </div>
       </section>

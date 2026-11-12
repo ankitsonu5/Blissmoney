@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=4.1">
+  <link rel="stylesheet" href="../assets/css/about.css?v=9.9">
 </head>
 
 <body class="about-subpage page-lending">
@@ -273,13 +273,34 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching About / Services Banner Style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Calibrated Balance & Equilibrium Nexus with Animated Traveling Infinity Beacon -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer equilibrium hourglass / balance beam facets -->
+        <path class="art-balance art-balance-lg" d="M 680,410 L 920,140 L 440,140 L 680,410 L 920,680 L 440,680 Z" />
+
+        <!-- Vertical suspension & containment frame -->
+        <line class="art-balance-frame" x1="440" y1="140" x2="440" y2="680" />
+        <line class="art-balance-frame" x1="920" y1="140" x2="920" y2="680" />
+
+        <!-- Inner dashed balance frame -->
+        <path class="art-balance art-balance-dash" d="M 680,410 L 840,210 L 520,210 L 680,410 L 840,610 L 520,610 Z" />
+
+        <!-- Cardinal balance horizon & vertical fulcrum plumb line -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis art-axis-plumb" x1="680" y1="40" x2="680" y2="780" />
+
+        <!-- Diagonal parity projection rays -->
+        <line class="art-axis art-axis-ray" x1="260" y1="140" x2="1100" y2="680" />
+        <line class="art-axis art-axis-ray" x1="260" y1="680" x2="1100" y2="140" />
+
+        <!-- Central fulcrum rings -->
+        <circle class="art-balance-pivot" cx="680" cy="410" r="48" />
+        <circle class="art-balance-pivot art-balance-dash" cx="680" cy="410" r="76" />
+
+        <!-- Single Animated Moving Beacon: Orbiting smoothly in a continuous figure-8 infinity equilibrium loop -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="16s" repeatCount="indefinite" path="M 680,410 L 920,140 L 440,140 L 680,410 L 920,680 L 440,680 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -294,13 +315,6 @@
             Review your borrowing needs
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Lending</li>
-        </ul>
       </div>
 
     </section>
@@ -308,106 +322,136 @@
     <!-- 1 · Centered statement + ledger rows (light) -->
     <section class="ln5-band ln5-light">
       <div class="ln5-wrap">
-        <div class="ln5-center">
-          <h2 class="ln5-title">A borrowing decision is also a planning decision</h2>
-          <p class="ln5-statement">
-            The questions extend beyond what a lender may offer. Understand the full cost, what supports repayment and what could happen if income, interest costs or collateral values change.
-          </p>
-        </div>
+        <div class="ln5-rd">
+          <h2 class="ln5-title ln5-rd-title">A borrowing decision is also a <span class="ln5-rd-mark">planning decision</span></h2>
 
-        <div class="ln5-ledger">
-          <article class="ln5-ledger-row">
-            <h3>You need liquidity without disrupting every investment</h3>
-            <span class="ln5-leader" aria-hidden="true"></span>
-            <p>Selling assets and borrowing have different consequences. Compare costs, timing, risk and repayment capacity without assuming that retaining an investment always justifies a loan.</p>
-          </article>
-          <article class="ln5-ledger-row">
-            <h3>Existing loans have become difficult to assess together</h3>
-            <span class="ln5-leader" aria-hidden="true"></span>
-            <p>Separate facilities can obscure total repayments, security commitments and remaining flexibility. A liability inventory brings these obligations together and identifies questions for your lenders.</p>
-          </article>
-          <article class="ln5-ledger-row">
-            <h3>You are considering refinancing or early repayment</h3>
-            <span class="ln5-leader" aria-hidden="true"></span>
-            <p>A lower quoted rate may come with charges or changed terms. Evaluating the full commitment and the remaining borrowing period provides a stronger basis for a decision.</p>
-          </article>
+          <div class="ln5-rd-grid">
+            <div class="ln5-rd-photo">
+              <img src="../assets/images/six_steps/risk_profiling.jpg" alt="" loading="lazy">
+              <p class="ln5-rd-bubble">
+                The questions extend beyond what a lender may offer. Understand the full cost, what supports repayment and what could happen if income, interest costs or collateral values change.
+              </p>
+            </div>
+            <div class="ln5-rd-side">
+              <article class="ln5-rd-item">
+                <h3>You need liquidity without disrupting every investment</h3>
+                <p>Selling assets and borrowing have different consequences. Compare costs, timing, risk and repayment capacity without assuming that retaining an investment always justifies a loan.</p>
+              </article>
+              <article class="ln5-rd-item">
+                <h3>Existing loans have become difficult to assess together</h3>
+                <p>Separate facilities can obscure total repayments, security commitments and remaining flexibility. A liability inventory brings these obligations together and identifies questions for your lenders.</p>
+              </article>
+              <article class="ln5-rd-item">
+                <h3>You are considering refinancing or early repayment</h3>
+                <p>A lower quoted rate may come with charges or changed terms. Evaluating the full commitment and the remaining borrowing period provides a stronger basis for a decision.</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 2 · Balance layout around a scale (dark) -->
-    <section class="ln5-band ln5-dark">
+    <!-- 2 · Image stage with bottom cut-out tabs (light) -->
+    <section class="ln5-band ln5-light ln5-stage-band">
       <div class="ln5-wrap">
-        <h2 class="ln5-title ln5-title-green ln5-title-center">Understand the structure before accepting the commitment</h2>
+        <h2 class="ln5-title ln5-title-center ln5-stage-title">Understand the structure before accepting the commitment</h2>
 
-        <div class="ln5-balance">
-          <div class="ln5-pan">
-            <article class="ln5-weight">
-              <h3>Liabilities and repayment capacity</h3>
+        <div class="ln5-stage" id="lnStage">
+          <div class="ln5-stage-media">
+            <div class="ln5-stage-panel is-active" id="ln5-panel-1" role="tabpanel" aria-labelledby="ln5-tab-1">
+              <img src="../assets/images/six_steps/monitoring.jpg" alt="" loading="lazy" style="object-position: 50% 35%;">
               <p>Organise outstanding balances, repayments, interest terms and security commitments. Consider the affordability of existing and proposed borrowing against recurring income, variable income, essential expenditure and the reserves you need to retain.</p>
-            </article>
-            <article class="ln5-weight">
-              <h3>Borrowing versus available alternatives</h3>
+            </div>
+            <div class="ln5-stage-panel" id="ln5-panel-2" role="tabpanel" aria-labelledby="ln5-tab-2">
+              <img src="../assets/images/six_steps/periodic_review.jpg" alt="" loading="lazy" style="object-position: 50% 35%;">
               <p>Compare the proposed loan with relevant alternatives such as staged spending, partial use of available assets or a different purchase timeline. Record the assumptions and trade-offs rather than framing debt as automatically beneficial or harmful.</p>
-            </article>
-          </div>
-
-          <svg class="ln5-scale" viewBox="0 0 160 300" fill="none" aria-hidden="true">
-            <line x1="80" y1="40" x2="80" y2="270" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M50 270 H110" stroke="currentColor" stroke-width="1.6"/>
-            <g class="ln5-beam">
-              <line x1="10" y1="60" x2="150" y2="60" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M18 60 L4 120 H32 Z" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M142 60 L128 120 H156 Z" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="80" cy="60" r="6" fill="#19D79F"/>
-            </g>
-          </svg>
-
-          <div class="ln5-pan">
-            <article class="ln5-weight">
-              <h3>Total costs and material terms</h3>
+            </div>
+            <div class="ln5-stage-panel" id="ln5-panel-3" role="tabpanel" aria-labelledby="ln5-tab-3">
+              <img src="../assets/images/who_we_serve/business_owner.jpg" alt="" loading="lazy" style="object-position: 40% 30%;">
               <p>Review the information provided on interest, fees, repayment structure, reset conditions and prepayment terms. Identify questions about collateral, guarantees or other obligations that should be clarified directly with the lender and relevant specialists.</p>
-            </article>
-            <article class="ln5-weight">
-              <h3>Lender and specialist coordination</h3>
+            </div>
+            <div class="ln5-stage-panel" id="ln5-panel-4" role="tabpanel" aria-labelledby="ln5-tab-4">
+              <img src="../assets/images/six_steps/excution.jpg" alt="" loading="lazy" style="object-position: 55% 35%;">
               <p>Help organise the financial information and questions required for the agreed discussions. Lending providers determine eligibility, underwriting, security requirements and terms; legal or tax implications should be assessed by the relevant qualified professionals.</p>
-            </article>
+            </div>
+            <span class="ln5-stage-shade" aria-hidden="true"></span>
+          </div>
+          <div class="ln5-stage-tabs" role="tablist" aria-label="Structure before the commitment">
+            <div class="ln5-stage-tab is-active" role="tab" id="ln5-tab-1" aria-controls="ln5-panel-1" aria-selected="true" tabindex="0">
+              <span class="ln5-stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h15a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7l12-3v3"/><circle cx="16.5" cy="14" r="1.2"/></svg></span>
+              <h3>Liabilities and repayment capacity</h3>
+            </div>
+            <div class="ln5-stage-tab" role="tab" id="ln5-tab-2" aria-controls="ln5-panel-2" aria-selected="false" tabindex="-1">
+              <span class="ln5-stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4L3 8l4 4"/><path d="M3 8h13"/><path d="M17 20l4-4-4-4"/><path d="M21 16H8"/></svg></span>
+              <h3>Borrowing versus available alternatives</h3>
+            </div>
+            <div class="ln5-stage-tab" role="tab" id="ln5-tab-3" aria-controls="ln5-panel-3" aria-selected="false" tabindex="-1">
+              <span class="ln5-stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.2"/><circle cx="17" cy="17" r="2.2"/></svg></span>
+              <h3>Total costs and material terms</h3>
+            </div>
+            <div class="ln5-stage-tab" role="tab" id="ln5-tab-4" aria-controls="ln5-panel-4" aria-selected="false" tabindex="-1">
+              <span class="ln5-stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+              <h3>Lender and specialist coordination</h3>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3 · Repayment-track timeline (white) -->
-    <section class="ln5-band ln5-white">
+    <!-- 3 · Process: From the question to an agreed plan (Redesigned with photographic scope cards) -->
+    <section class="ln5-band ln5-white" id="lending-process">
       <div class="ln5-wrap">
         <h2 class="ln5-title">From the question to an agreed plan</h2>
 
-        <ol class="ln5-track">
-          <li class="ln5-stage">
-            <span class="ln5-bar" aria-hidden="true"><span></span></span>
-            <span class="ln5-phase">Phase 01</span>
-            <h3>Establish the purpose</h3>
-            <p>Clarify why liquidity is needed, how much is required and when. Agree which existing liabilities and potential alternatives belong in the assessment.</p>
-          </li>
-          <li class="ln5-stage">
-            <span class="ln5-bar" aria-hidden="true"><span></span></span>
-            <span class="ln5-phase">Phase 02</span>
-            <h3>Assess the financial impact</h3>
-            <p>Map expected repayments against cash flow and reserves. Consider scenarios involving lower income, higher borrowing costs or changes in the value of pledged assets.</p>
-          </li>
-          <li class="ln5-stage">
-            <span class="ln5-bar" aria-hidden="true"><span></span></span>
-            <span class="ln5-phase">Phase 03</span>
-            <h3>Compare documented options</h3>
-            <p>Organise the material terms available for review and highlight unresolved questions. Seek clarification from providers before treating an indicative offer as an agreed facility.</p>
-          </li>
-          <li class="ln5-stage">
-            <span class="ln5-bar" aria-hidden="true"><span></span></span>
-            <span class="ln5-phase">Phase 04</span>
-            <h3>Plan repayment and monitoring</h3>
-            <p>Record the chosen commitment and review triggers. Revisit repayment capacity when your circumstances, loan terms or supporting asset values change materially.</p>
-          </li>
-        </ol>
+        <div class="svc-scope-grid" role="region" aria-label="Stages from question to agreed plan">
+          <!-- Card 1 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="Establish the purpose" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Establish the purpose</h3>
+                <p class="svc-scope-card-desc">Clarify why liquidity is needed, how much is required and when. Agree which existing liabilities and potential alternatives belong in the assessment.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/portfolio_design.jpg" alt="Assess the financial impact" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Assess the financial impact</h3>
+                <p class="svc-scope-card-desc">Map expected repayments against cash flow and reserves. Consider scenarios involving lower income, higher borrowing costs or changes in the value of pledged assets.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/expertise/expert_1_legal.jpg" alt="Compare documented options" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Compare documented options</h3>
+                <p class="svc-scope-card-desc">Organise the material terms available for review and highlight unresolved questions. Seek clarification from providers before treating an indicative offer as an agreed facility.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="Plan repayment and monitoring" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Plan repayment and monitoring</h3>
+                <p class="svc-scope-card-desc">Record the chosen commitment and review triggers. Revisit repayment capacity when your circumstances, loan terms or supporting asset values change materially.</p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -445,26 +489,51 @@
       <div class="ln5-wrap">
         <h2 class="ln5-title ln5-title-center">Clarity before commitment</h2>
 
-        <div class="ln5-convo">
-          <div class="ln5-pair">
-            <h3 class="ln5-ask"><span class="ln5-q" aria-hidden="true">Q.</span><span>Does BlissMoney lend money directly?</span></h3>
-            <p class="ln5-answer">This service focuses on reviewing liabilities and coordinating borrowing discussions. BlissMoney is not presented as a lender. The lending provider remains responsible for any facility, underwriting decision and loan agreement.</p>
+        <div class="accordion bm-faq" id="lnFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ln-acc-body-1" id="ln-acc-head-1">
+              <span class="acc-title">Does BlissMoney lend money directly?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ln-acc-body-1" role="region" aria-labelledby="ln-acc-head-1">
+              <p>This service focuses on reviewing liabilities and coordinating borrowing discussions. BlissMoney is not presented as a lender. The lending provider remains responsible for any facility, underwriting decision and loan agreement.</p>
+            </div>
           </div>
-          <div class="ln5-pair">
-            <h3 class="ln5-ask"><span class="ln5-q" aria-hidden="true">Q.</span><span>Can a loan approval or interest rate be guaranteed?</span></h3>
-            <p class="ln5-answer">No. Eligibility, pricing, collateral requirements and approval depend on the lender's assessment and the applicable terms. An indicative discussion or comparison should not be interpreted as an offer or an assurance that finance will be available.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ln-acc-body-2" id="ln-acc-head-2">
+              <span class="acc-title">Can a loan approval or interest rate be guaranteed?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ln-acc-body-2" role="region" aria-labelledby="ln-acc-head-2">
+              <p>No. Eligibility, pricing, collateral requirements and approval depend on the lender's assessment and the applicable terms. An indicative discussion or comparison should not be interpreted as an offer or an assurance that finance will be available.</p>
+            </div>
           </div>
-          <div class="ln5-pair">
-            <h3 class="ln5-ask"><span class="ln5-q" aria-hidden="true">Q.</span><span>Is borrowing against investments always preferable to selling them?</span></h3>
-            <p class="ln5-answer">No. Borrowing introduces interest costs, repayment obligations and potentially collateral-related risks. The appropriate comparison depends on the assets, loan terms, timing and your circumstances. Investment returns should not be assumed to exceed the borrowing cost.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ln-acc-body-3" id="ln-acc-head-3">
+              <span class="acc-title">Is borrowing against investments always preferable to selling them?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ln-acc-body-3" role="region" aria-labelledby="ln-acc-head-3">
+              <p>No. Borrowing introduces interest costs, repayment obligations and potentially collateral-related risks. The appropriate comparison depends on the assets, loan terms, timing and your circumstances. Investment returns should not be assumed to exceed the borrowing cost.</p>
+            </div>
           </div>
-          <div class="ln5-pair">
-            <h3 class="ln5-ask"><span class="ln5-q" aria-hidden="true">Q.</span><span>Can existing loans be reviewed without taking a new loan?</span></h3>
-            <p class="ln5-answer">Yes. Understanding outstanding liabilities, repayment priorities and available flexibility can be useful on its own. Any refinancing or restructuring decision should follow a comparison of the relevant costs, conditions and financial consequences.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ln-acc-body-4" id="ln-acc-head-4">
+              <span class="acc-title">Can existing loans be reviewed without taking a new loan?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ln-acc-body-4" role="region" aria-labelledby="ln-acc-head-4">
+              <p>Yes. Understanding outstanding liabilities, repayment priorities and available flexibility can be useful on its own. Any refinancing or restructuring decision should follow a comparison of the relevant costs, conditions and financial consequences.</p>
+            </div>
           </div>
-          <div class="ln5-pair">
-            <h3 class="ln5-ask"><span class="ln5-q" aria-hidden="true">Q.</span><span>What should I bring to a borrowing discussion?</span></h3>
-            <p class="ln5-answer">Summarise the purpose, amount, timing, existing loans and expected repayment sources. Detailed documents can follow through an agreed process; do not include sensitive account information in a website enquiry.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="ln-acc-body-5" id="ln-acc-head-5">
+              <span class="acc-title">What should I bring to a borrowing discussion?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="ln-acc-body-5" role="region" aria-labelledby="ln-acc-head-5">
+              <p>Summarise the purpose, amount, timing, existing loans and expected repayment sources. Detailed documents can follow through an agreed process; do not include sensitive account information in a website enquiry.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -621,6 +690,33 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <script>
+    (function () {
+      var stage = document.getElementById('lnStage');
+      if (!stage) return;
+      var tabs = Array.prototype.slice.call(stage.querySelectorAll('.ln5-stage-tab'));
+      var panels = Array.prototype.slice.call(stage.querySelectorAll('.ln5-stage-panel'));
+      function show(i) {
+        tabs.forEach(function (t, k) {
+          var on = k === i;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.setAttribute('tabindex', on ? '0' : '-1');
+          panels[k].classList.toggle('is-active', on);
+        });
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { show(i); });
+        tab.addEventListener('keydown', function (e) {
+          var n = null;
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i); return; }
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % tabs.length;
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + tabs.length) % tabs.length;
+          if (n !== null) { e.preventDefault(); show(n); tabs[n].focus(); }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

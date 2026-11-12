@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.6">
+  <link rel="stylesheet" href="../assets/css/about.css?v=9.0">
 </head>
 
 <body class="about-subpage page-press-releases">
@@ -273,13 +273,33 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching about/index.html banner style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Hexagonal Telemetry Matrix with animated traveling beacon & pulsing dots -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary hexagon -->
+        <path class="art-hex art-hex-lg" d="M 680,80 L 966,245 L 966,575 L 680,740 L 394,575 L 394,245 Z" />
+
+        <!-- Accent dashed hexagon frame -->
+        <path class="art-hex art-hex-dash" d="M 680,160 L 896,285 L 896,535 L 680,660 L 464,535 L 464,285 Z" />
+
+        <!-- Inner offset hexagon -->
+        <path class="art-hex art-hex-sm" d="M 680,240 L 827,325 L 827,495 L 680,580 L 533,495 L 533,325 Z" />
+
+        <!-- Diagonal telemetric radiating rays -->
+        <line class="art-axis art-axis-hex" x1="330" y1="208" x2="1030" y2="612" />
+        <line class="art-axis art-axis-hex" x1="330" y1="612" x2="1030" y2="208" />
+
+        <!-- Cardinal horizon & meridian lines -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis" x1="680" y1="40" x2="680" y2="780" />
+
+        <!-- Junction dots at key intersections -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
+
+        <!-- Traveling Dot: Orbiting smoothly along the outer hexagon perimeter -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="15s" repeatCount="indefinite" path="M 680,80 L 966,245 L 966,575 L 680,740 L 394,575 L 394,245 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -297,13 +317,6 @@
             Explore our services
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>Press Releases</li>
-        </ul>
       </div>
 
     </section>
@@ -313,7 +326,6 @@
       <div class="ab2-wrap">
         <div class="pr2-news-head">
           <div>
-            <p class="ab2-eyebrow">Newsroom</p>
             <h2 class="ab2-title">Published announcements and coverage</h2>
           </div>
           <svg class="pr2-news-art" viewBox="0 0 220 220" fill="none" aria-hidden="true">
@@ -325,14 +337,24 @@
 
         <div class="pr2-releases">
           <article class="pr2-release">
-            <span class="pr2-tag">Announcement</span>
+            <div class="pr2-release-media">
+              <img src="../assets/images/press-protection-planning.png" alt="A glass shield over financial planning papers on an advisor's desk" loading="lazy" style="object-position: 78% 50%;">
+              <span class="pr2-tag">Announcement</span>
+            </div>
+            <div class="pr2-release-body">
             <h3>BlissMoney draws attention to protection gaps in wealth planning</h3>
             <p>A published release discusses why insurance and emergency preparedness belong alongside investment decisions. It includes comments from founder and CEO Rajesh Kumar. Numerical findings from the firm’s internal review are not republished here because the sample and methodology have not been supplied.</p>
+            </div>
           </article>
           <article class="pr2-release">
-            <span class="pr2-tag pr2-tag-alt">Media Feature</span>
+            <div class="pr2-release-media">
+              <img src="../assets/images/who_we_serve/techfounder.jpg" alt="A team of professionals standing together in a modern office" loading="lazy" style="object-position: 50% 30%;">
+              <span class="pr2-tag pr2-tag-alt">Media Feature</span>
+            </div>
+            <div class="pr2-release-body">
             <h3>BlissMoney featured in a look at Indias fintech businesses</h3>
             <p>Press Insider includes BlissMoney in its coverage of financial services businesses using technology to support clients. The feature identifies Rajesh Kumar and describes the firm’s focus on personal financial needs.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -346,8 +368,7 @@
       </svg>
       <div class="ab2-wrap pr2-contact-grid">
         <div class="pr2-desk">
-          <p class="ab2-eyebrow">Media Desk</p>
-          <h2 class="ab2-title">A clear point of contact</h2>
+          <h2 class="ab2-title">A clear point<br class="pr2-break">of contact</h2>
           <p>
             For company information, an interview request or permission to use approved brand materials, contact the BlissMoney team.
           </p>
@@ -358,7 +379,6 @@
         </div>
 
         <aside class="pr2-profile">
-          <p class="ab2-eyebrow">Corporate Profile</p>
           <h2 class="pr2-profile-title">About BlissMoney</h2>
           <p>
             BlissMoney is a Bengaluru-based financial services business. Its published proposition connects financial planning, investments, protection and family continuity. The firm publicly identifies as an AMFI-registered Mutual Fund Distributor, ARN 259356. Product-specific engagements and specialist services are subject to their applicable scope and terms.
@@ -370,49 +390,49 @@
     <!-- Verification & Assets (grey, Q&A rows like home) -->
     <section class="ab2-band ab2-grey pr2-sources">
       <div class="ab2-wrap">
-        <p class="ab2-eyebrow">Verification &amp; Assets</p>
         <h2 class="ab2-title">Source information and enquiries</h2>
 
-        <div class="pr2-faq">
-          <article class="pr2-faq-item">
-            <span class="pr2-faq-no">01</span>
-            <div>
-              <h3>
-                <svg class="pr2-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span>Can I quote an announcement from this page?</span>
-              </h3>
+        <div class="accordion bm-faq" id="prFaq" role="region" aria-label="Questions and answers">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="pr-acc-body-1" id="pr-acc-head-1">
+              <span class="acc-title">Can I quote an announcement from this page?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="pr-acc-body-1" role="region" aria-labelledby="pr-acc-head-1">
               <p>Please use the original linked publication as the source and contact the company to confirm any current statement, spokesperson attribution or data point.</p>
             </div>
-          </article>
-          <article class="pr2-faq-item">
-            <span class="pr2-faq-no">02</span>
-            <div>
-              <h3>
-                <svg class="pr2-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span>Where can I request a logo or a leadership photograph?</span>
-              </h3>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="pr-acc-body-2" id="pr-acc-head-2">
+              <span class="acc-title">Where can I request a logo or a leadership photograph?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="pr-acc-body-2" role="region" aria-labelledby="pr-acc-head-2">
               <p>Email the team with the intended use. Use company-approved materials and confirm the relevant permissions before publication.</p>
             </div>
-          </article>
-          <article class="pr2-faq-item">
-            <span class="pr2-faq-no">03</span>
-            <div>
-              <h3>
-                <svg class="pr2-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span>Are the articles on third-party sites written by BlissMoney?</span>
-              </h3>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="pr-acc-body-3" id="pr-acc-head-3">
+              <span class="acc-title">Are the articles on third-party sites written by BlissMoney?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="pr-acc-body-3" role="region" aria-labelledby="pr-acc-head-3">
               <p>Media coverage and syndicated announcements are labelled separately. Their publication on an external site does not establish that BlissMoney authored or independently verified every statement in that publication.</p>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Media & Advisory (white split CTA) -->
     <section class="ab2-band ab2-cta">
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ab2-wrap ab2-cta-grid">
         <div>
-          <p class="ab2-eyebrow">Media &amp; Advisory</p>
           <h2 class="ab2-title">Explore our services</h2>
         </div>
         <div class="ab2-cta-side">

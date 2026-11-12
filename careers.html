@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="assets/css/about.css?v=3.0">
+  <link rel="stylesheet" href="assets/css/about.css?v=12.5">
 </head>
 
 <body class="about-subpage page-careers">
@@ -274,11 +274,24 @@
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Base line -->
+        <line class="art-axis" x1="380" y1="670" x2="1104" y2="670" />
+
+        <!-- Rising staircase: soft fill, dashed back edge and connectors -->
+        <path class="art-step-fill" d="M480 670 L480 570 L585 570 L585 470 L690 470 L690 370 L795 370 L795 270 L900 270 L900 170 L1005 170 L1005 670 Z" />
+        <path class="art-step-back" d="M520 630 L520 530 L625 530 L625 430 L730 430 L730 330 L835 330 L835 230 L940 230 L940 130 L1045 130" />
+        <line class="art-step-link" x1="480" y1="570" x2="520" y2="530" />
+        <line class="art-step-link" x1="585" y1="470" x2="625" y2="430" />
+        <line class="art-step-link" x1="690" y1="370" x2="730" y2="330" />
+        <line class="art-step-link" x1="795" y1="270" x2="835" y2="230" />
+        <line class="art-step-link" x1="900" y1="170" x2="940" y2="130" />
+        <path class="art-step" d="M480 670 L480 570 L585 570 L585 470 L690 470 L690 370 L795 370 L795 270 L900 270 L900 170 L1005 170" />
+
+        <!-- Animated dot climbing the steps, plus a pulse at the start -->
+        <circle class="art-dot art-dot-travel" cx="0" cy="0" r="9">
+          <animateMotion dur="10s" repeatCount="indefinite" path="M480 670 L480 570 L585 570 L585 470 L690 470 L690 370 L795 370 L795 270 L900 270 L900 170 L1005 170" />
+        </circle>
+        <circle class="art-dot art-dot-end" cx="480" cy="670" r="8" />
       </svg>
 
       <div class="banner-box">
@@ -293,12 +306,6 @@
             Explore published opportunities
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li>Careers</li>
-        </ul>
       </div>
 
     </section>

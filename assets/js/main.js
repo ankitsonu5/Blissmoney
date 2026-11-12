@@ -947,6 +947,8 @@ document.addEventListener('DOMContentLoaded', () => {
           h.setAttribute("aria-expanded", "false");
           const b = h.nextElementSibling;
           if (b) b.style.maxHeight = null;
+          const item = h.closest(".acc-item");
+          if (item) item.classList.remove("is-open");
         });
         if (!expanded) {
           head.setAttribute("aria-expanded", "true");
@@ -954,15 +956,25 @@ document.addEventListener('DOMContentLoaded', () => {
           if (body) {
             body.style.maxHeight = body.scrollHeight + "px";
           }
+          const item = head.closest(".acc-item");
+          if (item) item.classList.add("is-open");
         }
       });
     });
 
+    // Handle initial active accordion state
+    const activeHead = document.querySelector('.acc-head[aria-expanded="true"]');
+    if (activeHead && activeHead.nextElementSibling) {
+      activeHead.nextElementSibling.style.maxHeight = activeHead.nextElementSibling.scrollHeight + "px";
+      const item = activeHead.closest(".acc-item");
+      if (item) item.classList.add("is-open");
+    }
+
     // Handle window resize dynamically adjusting open accordion max-height
     window.addEventListener("resize", () => {
-      const activeHead = document.querySelector('.acc-head[aria-expanded="true"]');
-      if (activeHead && activeHead.nextElementSibling) {
-        activeHead.nextElementSibling.style.maxHeight = activeHead.nextElementSibling.scrollHeight + "px";
+      const active = document.querySelector('.acc-head[aria-expanded="true"]');
+      if (active && active.nextElementSibling) {
+        active.nextElementSibling.style.maxHeight = active.nextElementSibling.scrollHeight + "px";
       }
     });
   }

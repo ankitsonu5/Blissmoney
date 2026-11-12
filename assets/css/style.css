@@ -3690,6 +3690,123 @@ body.menu-is-open .floating-actions {
   }
 }
 
+/* Index only: white section, green card (our-people CTA) + blueprint art (real-estate) */
+.consultation-section--light {
+  background-color: #FFFFFF;
+}
+
+.consultation-section--light .consultation-card {
+  background-color: #0CAF80;
+  background-image:
+    linear-gradient(rgba(13, 37, 30, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 37, 30, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border: 1px solid rgba(13, 37, 30, 0.1);
+  box-shadow: 0 24px 60px rgba(13, 37, 30, 0.14);
+}
+
+.consultation-section--light .consultation-card::before {
+  background: linear-gradient(90deg, transparent, #0D251E, transparent);
+}
+
+.consultation-section--light .consultation-glow {
+  display: none;
+}
+
+.consult-plan {
+  display: none;
+}
+
+.consultation-section--light .consult-plan {
+  display: block;
+  position: absolute;
+  right: clamp(24px, 2.2vw, 36px);
+  bottom: clamp(24px, 2.2vw, 36px);
+  width: clamp(120px, 9vw, 150px);
+  color: rgba(13, 37, 30, 0.32);
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.consultation-section--light .consult-plan-dot {
+  animation: consultPlan 7s ease-in-out infinite;
+}
+
+@keyframes consultPlan {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-150px, 0); }
+  50% { transform: translate(-150px, 110px); }
+  75% { transform: translate(-30px, 110px); }
+}
+
+.consultation-section--light .consultation-eyebrow,
+.consultation-section--light .consultation-title {
+  color: #0D251E;
+}
+
+.consultation-section--light .consultation-title em {
+  color: #FFFFFF;
+}
+
+.consultation-section--light .consultation-description {
+  color: rgba(13, 37, 30, 0.85);
+}
+
+.consultation-section--light .btn-consult-primary {
+  background: #0D251E;
+  color: #FFFFFF;
+  border: 1px solid #0D251E;
+}
+
+.consultation-section--light .btn-consult-primary:hover {
+  background: #FFFFFF;
+  color: #0D251E;
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(13, 37, 30, 0.25);
+}
+
+.consultation-section--light .btn-consult-whatsapp,
+.consultation-section--light .btn-consult-email {
+  background: transparent;
+  color: #0D251E;
+  border: 1.5px solid #0D251E;
+}
+
+.consultation-section--light .btn-consult-whatsapp:hover,
+.consultation-section--light .btn-consult-email:hover {
+  background: #0D251E;
+  color: #FFFFFF;
+  border-color: #0D251E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(13, 37, 30, 0.25);
+}
+
+.consultation-section--light .consultation-direct-info {
+  color: rgba(13, 37, 30, 0.8);
+  border-top-color: rgba(13, 37, 30, 0.18);
+}
+
+.consultation-section--light .direct-item svg {
+  stroke: #0D251E;
+}
+
+.consultation-section--light .direct-dot {
+  color: #0D251E;
+}
+
+@media (max-width: 1180px) {
+  .consultation-section--light .consult-plan {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consultation-section--light .consult-plan-dot {
+    animation: none;
+  }
+}
+
 /* ==========================================================================
    Consultation Modal Dialog
    ========================================================================== */

@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
   <link rel="stylesheet" href="../assets/css/blog.css?v=2.2">
-  <link rel="stylesheet" href="../assets/css/about.css?v=3.1">
+  <link rel="stylesheet" href="../assets/css/about.css?v=5.4">
 </head>
 
 <body class="about-subpage services-page page-services-overview">
@@ -273,13 +273,33 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves (Matching About page style) -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
+      <!-- Line art: Octagonal Telemetric Compass with animated traveling beacon & pulsing dots -->
       <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+        <!-- Outer primary octagon -->
+        <path class="art-oct art-oct-lg" d="M 957,525 L 795,687 L 565,687 L 403,525 L 403,295 L 565,133 L 795,133 L 957,295 Z" />
+
+        <!-- Accent dashed octagon frame -->
+        <path class="art-oct art-oct-dash" d="M 883,494 L 764,613 L 596,613 L 477,494 L 477,326 L 596,207 L 764,207 L 883,326 Z" />
+
+        <!-- Inner offset octagon -->
+        <path class="art-oct art-oct-sm" d="M 809,464 L 734,539 L 626,539 L 551,464 L 551,356 L 626,281 L 734,281 L 809,356 Z" />
+
+        <!-- Diagonal telemetric radiating rays -->
+        <line class="art-axis art-axis-oct" x1="390" y1="120" x2="970" y2="700" />
+        <line class="art-axis art-axis-oct" x1="390" y1="700" x2="970" y2="120" />
+
+        <!-- Cardinal horizon & meridian lines -->
+        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
+        <line class="art-axis" x1="680" y1="50" x2="680" y2="770" />
+
+        <!-- Junction dots at key intersections -->
+        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
+        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
+
+        <!-- Traveling Dot: Orbiting smoothly along the outer octagon perimeter -->
+        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
+          <animateMotion dur="16s" repeatCount="indefinite" path="M 957,525 L 795,687 L 565,687 L 403,525 L 403,295 L 565,133 L 795,133 L 957,295 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">
@@ -294,60 +314,150 @@
             Book a consultation
           </a>
         </div>
-
-        <!-- Breadcrumbs -->
-        <ul class="breadcrumb-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li>Overview</li>
-        </ul>
       </div>
 
     </section>
 
     <!-- One financial life (light) -->
-    <section class="ab-band ab-light">
-      <svg class="ab-decor" viewBox="0 0 300 300" fill="none" aria-hidden="true"><g class="ab-orbit"><circle cx="150" cy="150" r="137" stroke="currentColor" stroke-width="1.2"/><circle cx="191" cy="19" r="8" fill="currentColor"/></g></svg>
+    <section class="ab-band ab-light svc-connected-decisions">
+      <svg class="ab-decor" viewBox="0 0 300 300" fill="none" aria-hidden="true"><g class="ab-orbit"><circle cx="150" cy="150" r="137" stroke="currentColor" stroke-width="1.2"/><circle cx="191" cy="19" r="5.5" fill="currentColor"/></g></svg>
       <div class="ab-wrap">
         <h2 class="ab-title">One financial life Several connected decisions</h2>
 
-        <div class="svc-list">
-          <a href="financial-planning.html" class="svc-row">
-            <span class="svc-idx">01</span>
-            <h3 class="svc-name">Financial Planning</h3>
-            <p class="svc-text">A strong income and a growing portfolio do not automatically create a coherent financial plan.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a href="estate-succession-planning.html" class="svc-row">
-            <span class="svc-idx">02</span>
-            <h3 class="svc-name">Estate and Succession Planning</h3>
-            <p class="svc-text">Wealth passes between people as well as generations.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a href="real-estate-advisory.html" class="svc-row">
-            <span class="svc-idx">03</span>
-            <h3 class="svc-name">Real Estate Advisory</h3>
-            <p class="svc-text">A property decision affects more than the purchase price.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a href="lending.html" class="svc-row">
-            <span class="svc-idx">04</span>
-            <h3 class="svc-name">Lending</h3>
-            <p class="svc-text">Borrowing can support an important purchase or provide flexibility, but it also creates a claim on future cash flow.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a href="insurance-risk-planning.html" class="svc-row">
-            <span class="svc-idx">05</span>
-            <h3 class="svc-name">Insurance and Risk Planning</h3>
-            <p class="svc-text">An investment portfolio cannot answer every financial risk.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a href="philanthropy.html" class="svc-row">
-            <span class="svc-idx">06</span>
-            <h3 class="svc-name">Philanthropy</h3>
-            <p class="svc-text">Giving becomes more meaningful when the intention behind it is clear.</p>
-            <span class="svc-link">Explore <span class="svc-arrow" aria-hidden="true">→</span></span>
-          </a>
+        <!-- Interactive 6 Cards Showcase Area (Built around how your wealth behaves style) -->
+        <div class="steps-deck-wrapper svc-deck-wrap">
+          <!-- 6 Vertical Control Dots -->
+          <div class="steps-controls" role="tablist" aria-label="Connected wealth decisions">
+            <button class="steps-dot active" data-step="0" role="tab" aria-selected="true" aria-label="Card 1: Financial Planning"></button>
+            <button class="steps-dot" data-step="1" role="tab" aria-selected="false" aria-label="Card 2: Estate and Succession Planning"></button>
+            <button class="steps-dot" data-step="2" role="tab" aria-selected="false" aria-label="Card 3: Real Estate Advisory"></button>
+            <button class="steps-dot" data-step="3" role="tab" aria-selected="false" aria-label="Card 4: Lending"></button>
+            <button class="steps-dot" data-step="4" role="tab" aria-selected="false" aria-label="Card 5: Insurance and Risk Planning"></button>
+            <button class="steps-dot" data-step="5" role="tab" aria-selected="false" aria-label="Card 6: Philanthropy"></button>
+          </div>
+
+          <!-- Stacked 6 Cards Container -->
+          <div class="steps-stacked-deck">
+            <!-- Card 1 -->
+            <article class="steps-card-item" data-card="0">
+              <div class="steps-card-left">
+                <span class="steps-card-num">01</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Financial Planning</h3>
+                  <p class="steps-card-desc">
+                    A strong income and a growing portfolio do not automatically create a coherent financial plan.
+                  </p>
+                  <a href="financial-planning.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/nine_displine/imgs/financial_planning_02.png" alt="Financial Planning"
+                  class="steps-card-img" loading="eager">
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="steps-card-item" data-card="1">
+              <div class="steps-card-left">
+                <span class="steps-card-num">02</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Estate and Succession Planning</h3>
+                  <p class="steps-card-desc">
+                    Wealth passes between people as well as generations.
+                  </p>
+                  <a href="estate-succession-planning.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/nine_displine/imgs/estate_successionplanning_05.png" alt="Estate and Succession Planning"
+                  class="steps-card-img" loading="lazy">
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="steps-card-item" data-card="2">
+              <div class="steps-card-left">
+                <span class="steps-card-num">03</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Real Estate Advisory</h3>
+                  <p class="steps-card-desc">
+                    A property decision affects more than the purchase price.
+                  </p>
+                  <a href="real-estate-advisory.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Real Estate Advisory"
+                  class="steps-card-img" loading="lazy">
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="steps-card-item" data-card="3">
+              <div class="steps-card-left">
+                <span class="steps-card-num">04</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Lending</h3>
+                  <p class="steps-card-desc">
+                    Borrowing can support an important purchase or provide flexibility, but it also creates a claim on future cash flow.
+                  </p>
+                  <a href="lending.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/nine_displine/imgs/wealth_management_01.png" alt="Lending"
+                  class="steps-card-img" loading="lazy">
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="steps-card-item" data-card="4">
+              <div class="steps-card-left">
+                <span class="steps-card-num">05</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Insurance and Risk Planning</h3>
+                  <p class="steps-card-desc">
+                    An investment portfolio cannot answer every financial risk.
+                  </p>
+                  <a href="insurance-risk-planning.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/nine_displine/imgs/riskprotection_planning_04.png" alt="Insurance and Risk Planning"
+                  class="steps-card-img" loading="lazy">
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="steps-card-item" data-card="5">
+              <div class="steps-card-left">
+                <span class="steps-card-num">06</span>
+                <div class="steps-card-text-content">
+                  <h3 class="steps-card-title">Philanthropy</h3>
+                  <p class="steps-card-desc">
+                    Giving becomes more meaningful when the intention behind it is clear.
+                  </p>
+                  <a href="philanthropy.html" class="svc-deck-explore" onclick="event.stopPropagation()">
+                    Explore <span class="svc-arrow" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <div class="steps-card-right">
+                <img src="../assets/images/services-philanthropy.png" alt="Philanthropy"
+                  class="steps-card-img" loading="lazy">
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -358,18 +468,140 @@
       <div class="ab-wrap">
         <h2 class="ab-title">The service follows the question</h2>
 
-        <div class="ab-cards-3">
-          <article class="ab-card svc-q-card">
-            <h3>“I want a clearer plan”</h3>
-            <p>Connect goals, cash flow, investments and protection in a financial roadmap.</p>
+                <div class="svc-q-deck" id="svcQuestionDeck" role="region" aria-label="The service follows the question">
+          <!-- Card 1 -->
+          <article class="svc-q-card is-active" data-index="1" tabindex="0" role="button" aria-expanded="true" aria-label="I want a clearer plan">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">“I want a clearer plan”</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">“I want a clearer plan”</h3>
+                <p class="svc-q-exp-desc">
+                  Connect goals, cash flow, investments and protection in a financial roadmap.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/services-financial-planning.png" alt="Clearer financial plan" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="ab-card svc-q-card">
-            <h3>“A family transition is ahead”</h3>
-            <p>Bring ownership, intentions and family responsibilities into a succession conversation.</p>
+
+          <!-- Card 2 -->
+          <article class="svc-q-card" data-index="2" tabindex="0" role="button" aria-expanded="false" aria-label="A family transition is ahead">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">“A family transition is ahead”</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">“A family transition is ahead”</h3>
+                <p class="svc-q-exp-desc">
+                  Bring ownership, intentions and family responsibilities into a succession conversation.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/who_we_serve/nextgen_family.jpg" alt="Family transition and succession" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="ab-card svc-q-card">
-            <h3>“I am making a large commitment”</h3>
-            <p>Consider the wider effect of a property purchase, a borrowing decision or a structured gift.</p>
+
+          <!-- Card 3 -->
+          <article class="svc-q-card" data-index="3" tabindex="0" role="button" aria-expanded="false" aria-label="I am making a large commitment">
+            <div class="svc-q-collapsed">
+              <h3 class="svc-q-title">“I am making a large commitment”</h3>
+              <div class="svc-q-watermark" aria-hidden="true">
+                <svg width="86" height="86" viewBox="0 0 86 86" fill="none">
+                  <circle cx="54" cy="46" r="28" fill="rgba(255, 255, 255, 0.45)"/>
+                  <circle cx="30" cy="54" r="18" fill="rgba(255, 255, 255, 0.32)"/>
+                  <circle cx="44" cy="30" r="12" fill="rgba(13, 37, 30, 0.14)"/>
+                </svg>
+              </div>
+              <div class="svc-q-footer">
+                <span class="svc-q-more">Read More</span>
+                <span class="svc-q-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="svc-q-expanded">
+              <div class="svc-q-exp-left">
+                <h3 class="svc-q-exp-title">“I am making a large commitment”</h3>
+                <p class="svc-q-exp-desc">
+                  Consider the wider effect of a property purchase, a borrowing decision or a structured gift.
+                </p>
+                <div class="svc-q-exp-footer">
+                  <span class="svc-q-more">Read More</span>
+                  <span class="svc-q-btn-action" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="svc-q-exp-right">
+                <div class="svc-q-img-wrap">
+                  <img src="../assets/images/nine_displine/imgs/alternative_investment_07.png" alt="Large financial commitments" class="svc-q-img" loading="lazy">
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -383,28 +615,55 @@
           <p>An initial conversation should establish the decision, the work needed and the people who need to be involved.</p>
         </blockquote>
 
-        <ol class="svc-phases">
-          <li>
-            <span class="svc-phase">Phase 01</span>
-            <h3>Understand the context</h3>
-            <p>Consider your goals, existing arrangements and the practical constraints around a decision.</p>
-          </li>
-          <li>
-            <span class="svc-phase">Phase 02</span>
-            <h3>Agree the engagement</h3>
-            <p>Clarify what BlissMoney will do, what another provider will do, the relevant costs and any limitations.</p>
-          </li>
-          <li>
-            <span class="svc-phase">Phase 03</span>
-            <h3>Coordinate the next steps</h3>
-            <p>Keep track of agreed actions and confirm who is responsible for each one.</p>
-          </li>
-          <li>
-            <span class="svc-phase">Phase 04</span>
-            <h3>Return to the plan</h3>
-            <p>Revisit priorities and the effect of any change in your life, finances or responsibilities.</p>
-          </li>
-        </ol>
+        <div class="svc-scope-grid" role="region" aria-label="Scope of engagement stages">
+          <!-- Card 1 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/discovery_meeting.jpg" alt="Understand the context" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Understand the context</h3>
+                <p class="svc-scope-card-desc">Consider your goals, existing arrangements and the practical constraints around a decision.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/portfolio_design.jpg" alt="Agree the engagement" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Agree the engagement</h3>
+                <p class="svc-scope-card-desc">Clarify what BlissMoney will do, what another provider will do, the relevant costs and any limitations.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/excution.jpg" alt="Coordinate the next steps" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Coordinate the next steps</h3>
+                <p class="svc-scope-card-desc">Keep track of agreed actions and confirm who is responsible for each one.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="svc-scope-card">
+            <img src="../assets/images/six_steps/periodic_review.jpg" alt="Return to the plan" class="svc-scope-card-bg" loading="lazy">
+            <div class="svc-scope-card-overlay"></div>
+            <div class="svc-scope-card-content">
+              <div class="svc-scope-card-bottom">
+                <h3 class="svc-scope-card-title">Return to the plan</h3>
+                <p class="svc-scope-card-desc">Revisit priorities and the effect of any change in your life, finances or responsibilities.</p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -413,22 +672,42 @@
       <div class="ab-wrap">
         <h2 class="ab-title">Questions to ask</h2>
 
-        <div class="svc-faq">
-          <div class="svc-faq-item">
-            <h3><span class="svc-faq-q" aria-hidden="true">Q.</span><span>Do I need to know which service I need?</span></h3>
-            <p>No. Describe the decision or situation you want help with. An initial discussion can help identify the relevant scope and whether specialist input is needed.</p>
+        <div class="accordion svc-accordion" id="svcFaq" role="region" aria-label="Questions to ask">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="svc-acc-body-1" id="svc-acc-head-1">
+              <span class="acc-title">Do I need to know which service I need?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="svc-acc-body-1" role="region" aria-labelledby="svc-acc-head-1">
+              <p>No. Describe the decision or situation you want help with. An initial discussion can help identify the relevant scope and whether specialist input is needed.</p>
+            </div>
           </div>
-          <div class="svc-faq-item">
-            <h3><span class="svc-faq-q" aria-hidden="true">Q.</span><span>Are all services provided directly by BlissMoney?</span></h3>
-            <p>No such assumption should be made. Mutual fund distribution is the publicly disclosed regulated activity. Legal, tax, insurance, lending, property and philanthropic work may require separate specialist or provider arrangements. Confirm the service model and engagement terms before proceeding.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="svc-acc-body-2" id="svc-acc-head-2">
+              <span class="acc-title">Are all services provided directly by BlissMoney?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="svc-acc-body-2" role="region" aria-labelledby="svc-acc-head-2">
+              <p>No such assumption should be made. Mutual fund distribution is the publicly disclosed regulated activity. Legal, tax, insurance, lending, property and philanthropic work may require separate specialist or provider arrangements. Confirm the service model and engagement terms before proceeding.</p>
+            </div>
           </div>
-          <div class="svc-faq-item">
-            <h3><span class="svc-faq-q" aria-hidden="true">Q.</span><span>Can you work with my existing CA or lawyer?</span></h3>
-            <p>Coordination with an existing professional can be discussed as part of the engagement. Responsibilities, information sharing and the work to be delivered need to be agreed by the parties involved.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="svc-acc-body-3" id="svc-acc-head-3">
+              <span class="acc-title">Can you work with my existing CA or lawyer?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="svc-acc-body-3" role="region" aria-labelledby="svc-acc-head-3">
+              <p>Coordination with an existing professional can be discussed as part of the engagement. Responsibilities, information sharing and the work to be delivered need to be agreed by the parties involved.</p>
+            </div>
           </div>
-          <div class="svc-faq-item">
-            <h3><span class="svc-faq-q" aria-hidden="true">Q.</span><span>How are fees or commissions handled?</span></h3>
-            <p>Ask for a written explanation of the relevant charges, commissions, referral arrangements and provider costs before committing. This preview does not state a fee schedule or a fee-only advisory status.</p>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false" aria-controls="svc-acc-body-4" id="svc-acc-head-4">
+              <span class="acc-title">How are fees or commissions handled?</span>
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-body" id="svc-acc-body-4" role="region" aria-labelledby="svc-acc-head-4">
+              <p>Ask for a written explanation of the relevant charges, commissions, referral arrangements and provider costs before committing. This preview does not state a fee schedule or a fee-only advisory status.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -436,7 +715,11 @@
 
     <!-- Closing CTA (white) -->
     <section class="ab-band ab-white ab-cta" id="consultation">
-      <svg class="ab-decor" viewBox="0 0 300 300" fill="none" aria-hidden="true"><g class="ab-orbit"><circle cx="150" cy="150" r="137" stroke="currentColor" stroke-width="1.2"/><circle cx="191" cy="19" r="8" fill="currentColor"/></g></svg>
+      <svg class="ln5-cta-art" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="120" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <circle class="ln5-cta-dot" cx="200" cy="10" r="7" fill="#0D251E"/>
+      </svg>
       <div class="ab-wrap ab-cta-inner">
         <h2 class="ab-title">Start with the decision on your mind</h2>
         <p class="ab-lead">
@@ -557,6 +840,34 @@
   <!-- Scripts -->
   <script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
+  <!-- Accordion interaction for 'The service follows the question' deck -->
+  <script>
+    (function () {
+      var deck = document.getElementById('svcQuestionDeck');
+      if (!deck) return;
+      var cards = deck.querySelectorAll('.svc-q-card');
+
+      cards.forEach(function (card) {
+        function activate() {
+          if (card.classList.contains('is-active')) return;
+          cards.forEach(function (c) {
+            c.classList.remove('is-active');
+            c.setAttribute('aria-expanded', 'false');
+          });
+          card.classList.add('is-active');
+          card.setAttribute('aria-expanded', 'true');
+        }
+
+        card.addEventListener('click', activate);
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activate();
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

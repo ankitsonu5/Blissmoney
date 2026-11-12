@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="assets/css/about.css?v=1.7">
+  <link rel="stylesheet" href="assets/css/about.css?v=9.0">
 </head>
 
 <body class="about-subpage page-client-portal">
@@ -274,10 +274,6 @@
     <section class="about-hero">
       <div class="about-hero-glow" aria-hidden="true"></div>
       <div class="about-hero-content">
-        <!-- Breadcrumbs -->
-        <nav class="about-breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a> <span class="bc-sep">/</span> <span class="bc-current">Client Portal</span>
-        </nav>
 
         <h1 class="about-hero-title">A clearer route to your client account.</h1>
         <p class="about-hero-subtitle">
@@ -405,33 +401,42 @@
             <h2 class="about-section-title">A clear route to the right help</h2>
           </div>
 
-          <div class="portal-faq-grid">
-            <div class="portal-faq-card">
-              <h3 class="faq-card-question">Can I sign in through this page?</h3>
-              <p class="faq-card-answer">
-                No. This is a design preview and does not connect to live accounts. The team needs to confirm the current portal URL and provider.
-              </p>
+          <div class="accordion bm-faq" id="portalFaq" role="region" aria-label="Questions and answers">
+            <div class="acc-item">
+              <button class="acc-head" aria-expanded="false" aria-controls="portal-acc-body-1" id="portal-acc-head-1">
+                <span class="acc-title">Can I sign in through this page?</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-body" id="portal-acc-body-1" role="region" aria-labelledby="portal-acc-head-1">
+                <p>No. This is a design preview and does not connect to live accounts. The team needs to confirm the current portal URL and provider.</p>
+              </div>
             </div>
-
-            <div class="portal-faq-card">
-              <h3 class="faq-card-question">Where do I get help with an existing account?</h3>
-              <p class="faq-card-answer">
-                Call +91 63648 33952 or email contact@blissmoney.in. Explain the type of support needed without including a password, one-time code or sensitive account information.
-              </p>
+            <div class="acc-item">
+              <button class="acc-head" aria-expanded="false" aria-controls="portal-acc-body-2" id="portal-acc-head-2">
+                <span class="acc-title">Where do I get help with an existing account?</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-body" id="portal-acc-body-2" role="region" aria-labelledby="portal-acc-head-2">
+                <p>Call +91 63648 33952 or email contact@blissmoney.in. Explain the type of support needed without including a password, one-time code or sensitive account information.</p>
+              </div>
             </div>
-
-            <div class="portal-faq-card">
-              <h3 class="faq-card-question">Is the portal view on this page a live product?</h3>
-              <p class="faq-card-answer">
-                No. It is a labelled interface concept for reviewing information architecture. Its modules are subject to provider capability, business requirements and implementation.
-              </p>
+            <div class="acc-item">
+              <button class="acc-head" aria-expanded="false" aria-controls="portal-acc-body-3" id="portal-acc-head-3">
+                <span class="acc-title">Is the portal view on this page a live product?</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-body" id="portal-acc-body-3" role="region" aria-labelledby="portal-acc-head-3">
+                <p>No. It is a labelled interface concept for reviewing information architecture. Its modules are subject to provider capability, business requirements and implementation.</p>
+              </div>
             </div>
-
-            <div class="portal-faq-card">
-              <h3 class="faq-card-question">Will an access enquiry change any investments?</h3>
-              <p class="faq-card-answer">
-                An email asking for access help does not itself instruct an investment transaction. Any transaction must follow the applicable provider’s authorised process.
-              </p>
+            <div class="acc-item">
+              <button class="acc-head" aria-expanded="false" aria-controls="portal-acc-body-4" id="portal-acc-head-4">
+                <span class="acc-title">Will an access enquiry change any investments?</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-body" id="portal-acc-body-4" role="region" aria-labelledby="portal-acc-head-4">
+                <p>An email asking for access help does not itself instruct an investment transaction. Any transaction must follow the applicable provider’s authorised process.</p>
+              </div>
             </div>
           </div>
         </section>
