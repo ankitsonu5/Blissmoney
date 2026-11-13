@@ -280,8 +280,30 @@
         <circle class="art-hex art-hex-lg" cx="985" cy="364" r="192" />
         <line class="art-axis art-axis-hex" x1="360" y1="556" x2="1178" y2="0" />
         <line class="art-axis art-axis-hex" x1="360" y1="556" x2="985" y2="556" />
-        <circle class="art-dot art-dot-pulse" cx="360" cy="556" r="8" />
-        <circle class="art-dot art-dot-end art-dot-delay" cx="876" cy="208" r="8" />
+
+        <!-- Fixed junction dots with pulse & radar waves -->
+        <circle class="art-dot art-dot-pulse art-dot-glow" cx="360" cy="556" r="8">
+          <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="360" cy="556" r="8" fill="none" stroke="#19D79F" stroke-width="1.5">
+          <animate attributeName="r" values="8;24" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.85;0" dur="3s" repeatCount="indefinite" />
+        </circle>
+
+        <circle class="art-dot art-dot-end art-dot-delay art-dot-glow" cx="876" cy="208" r="8">
+          <animate attributeName="r" values="7;10;7" dur="3s" begin="1.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="876" cy="208" r="8" fill="none" stroke="#19D79F" stroke-width="1.5">
+          <animate attributeName="r" values="8;24" dur="3s" begin="1.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.85;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Animated Traveling Beacon: Orbiting along telemetry matrix path -->
+        <circle class="art-dot art-dot-travel art-dot-glow" cx="0" cy="0" r="9">
+          <animateMotion dur="14s" repeatCount="indefinite" path="M 360,556 L 985,556 A 192,192 0 1 0 876,208 L 360,556 Z" />
+        </circle>
       </svg>
 
       <div class="banner-box">

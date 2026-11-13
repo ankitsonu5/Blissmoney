@@ -13284,6 +13284,14 @@ body.page-clients {
   filter: drop-shadow(0 0 6px #19D79F);
 }
 
+.page-press-releases .top-banner-section .ab-banner-art .art-dot-travel {
+  animation: none !important;
+  transform: none;
+  fill: #19D79F;
+  opacity: .95;
+  filter: drop-shadow(0 0 8px rgba(25, 215, 159, 0.85));
+}
+
 /* Events & Conferences Banner: Geometric Triangle Altitude & Angle Matrix with Animated Traveling Dot */
 .page-events-conferences .top-banner-section .ab-banner-art .art-triangle {
   stroke: rgba(25, 215, 159, 0.28);
