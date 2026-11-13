@@ -274,39 +274,14 @@
     <!-- Top Hero Banner with Waves (Matching About / Services Banner Style) -->
     <section class="top-banner-section">
       <!-- Line art: Geometric Heritage Shield Matrix with animated traveling beacon & pulsing dots -->
-      <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <!-- Outer primary heritage shield -->
-        <path class="art-shield art-shield-lg" d="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
-
-        <!-- Accent dashed shield frame -->
-        <path class="art-shield art-shield-dash" d="M 680,185 L 895,235 L 895,430 L 680,640 L 465,430 L 465,235 Z" />
-
-        <!-- Inner offset heritage shield -->
-        <path class="art-shield art-shield-sm" d="M 680,260 L 830,295 L 830,420 L 680,560 L 530,420 L 530,295 Z" />
-
-        <!-- Diagonal lineage guide rays -->
-        <line class="art-axis art-axis-shield" x1="400" y1="175" x2="960" y2="440" />
-        <line class="art-axis art-axis-shield" x1="960" y1="175" x2="400" y2="440" />
-
-        <!-- Cardinal horizon & meridian lines -->
-        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
-        <line class="art-axis" x1="680" y1="40" x2="680" y2="780" />
-
-        <!-- Junction dots at key intersections -->
-        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
-        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
-        <circle class="art-dot art-dot-pulse art-dot-delay" cx="680" cy="110" r="6" />
-        <circle class="art-dot art-dot-pulse art-dot-delay" cx="680" cy="720" r="6" />
-
-        <!-- Primary Traveling Dot: Orbiting smoothly along the outer heritage shield perimeter -->
-        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
-          <animateMotion dur="15s" repeatCount="indefinite" path="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
-        </circle>
-
-        <!-- Secondary Trailing Beacon: Orbiting along the same trajectory for celestial depth -->
-        <circle r="5" fill="#46DBB1" class="art-dot art-dot-glow" opacity="0.85">
-          <animateMotion dur="15s" begin="-7.5s" repeatCount="indefinite" path="M 680,110 L 960,175 L 960,440 L 680,720 L 400,440 L 400,175 Z" />
-        </circle>
+      <!-- Line art: same vector as home page "Loan & Liability Advisory" card (circle + guide lines + dots) -->
+      <svg class="ab-banner-art" viewBox="0 0 1162 797" style="aspect-ratio: 1162 / 797;" fill="none" aria-hidden="true" focusable="false">
+        <circle class="art-shield" cx="602" cy="342" r="214" />
+        <line class="art-axis art-axis-shield" x1="0" y1="128" x2="602" y2="128" />
+        <line class="art-axis art-axis-shield" x1="602" y1="0" x2="602" y2="797" />
+        <line class="art-axis art-axis-shield" x1="602" y1="556" x2="1162" y2="556" />
+        <circle class="art-dot art-dot-pulse" cx="602" cy="128" r="8" />
+        <circle class="art-dot art-dot-end art-dot-delay" cx="24" cy="128" r="8" />
       </svg>
 
       <div class="banner-box">

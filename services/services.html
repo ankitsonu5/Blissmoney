@@ -274,32 +274,14 @@
     <!-- Top Hero Banner with Waves (Matching About page style) -->
     <section class="top-banner-section">
       <!-- Line art: Octagonal Telemetric Compass with animated traveling beacon & pulsing dots -->
-      <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <!-- Outer primary octagon -->
-        <path class="art-oct art-oct-lg" d="M 957,525 L 795,687 L 565,687 L 403,525 L 403,295 L 565,133 L 795,133 L 957,295 Z" />
-
-        <!-- Accent dashed octagon frame -->
-        <path class="art-oct art-oct-dash" d="M 883,494 L 764,613 L 596,613 L 477,494 L 477,326 L 596,207 L 764,207 L 883,326 Z" />
-
-        <!-- Inner offset octagon -->
-        <path class="art-oct art-oct-sm" d="M 809,464 L 734,539 L 626,539 L 551,464 L 551,356 L 626,281 L 734,281 L 809,356 Z" />
-
-        <!-- Diagonal telemetric radiating rays -->
-        <line class="art-axis art-axis-oct" x1="390" y1="120" x2="970" y2="700" />
-        <line class="art-axis art-axis-oct" x1="390" y1="700" x2="970" y2="120" />
-
-        <!-- Cardinal horizon & meridian lines -->
-        <line class="art-axis" x1="0" y1="410" x2="1104" y2="410" />
-        <line class="art-axis" x1="680" y1="50" x2="680" y2="770" />
-
-        <!-- Junction dots at key intersections -->
-        <circle class="art-dot art-dot-end" cx="8" cy="410" r="8" />
-        <circle class="art-dot art-dot-pulse" cx="680" cy="410" r="7" />
-
-        <!-- Traveling Dot: Orbiting smoothly along the outer octagon perimeter -->
-        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
-          <animateMotion dur="16s" repeatCount="indefinite" path="M 957,525 L 795,687 L 565,687 L 403,525 L 403,295 L 565,133 L 795,133 L 957,295 Z" />
-        </circle>
+      <!-- Line art: same vector as home page "Tax Planning & CA Coordination" card (circles + guide lines + dots) -->
+      <svg class="ab-banner-art" viewBox="0 0 1526 815" style="aspect-ratio: 1526 / 815;" fill="none" aria-hidden="true" focusable="false">
+        <circle class="art-oct" cx="1118" cy="406" r="407" />
+        <circle class="art-oct" cx="117" cy="406" r="116" />
+        <line class="art-axis art-axis-oct" x1="233" y1="406" x2="1112" y2="406" />
+        <line class="art-axis art-axis-oct" x1="1112" y1="406" x2="1112" y2="815" />
+        <circle class="art-dot art-dot-end" cx="233" cy="406" r="8" />
+        <circle class="art-dot art-dot-pulse art-dot-delay" cx="1112" cy="406" r="8" />
       </svg>
 
       <div class="banner-box">

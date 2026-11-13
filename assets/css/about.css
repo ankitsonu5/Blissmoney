@@ -17810,3 +17810,69 @@ section.ab2-values {
 @media (max-width: 700px) {
   .page-careers .top-banner-section .ab-banner-art { height: 70%; top: 55%; right: -7%; max-width: none; opacity: .45; }
 }
+
+/* Brand Story banner: show the full SVG inside the banner (no cropping) */
+.page-brand-story .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-brand-story .top-banner-section { overflow: hidden; }
+
+/* Press Releases banner: show the full SVG inside the banner (no cropping) */
+.page-press-releases .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-press-releases .top-banner-section { overflow: hidden; }
+
+/* Events & Conferences banner: show the full SVG inside the banner (no cropping) */
+.page-events-conferences .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-events-conferences .top-banner-section { overflow: hidden; }
+
+/* Services Overview banner: show the full SVG inside the banner (no cropping) */
+.page-services-overview .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-services-overview .top-banner-section { overflow: hidden; }
+
+/* Estate Planning banner: show the full SVG inside the banner (no cropping) */
+.page-estate-planning .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-estate-planning .top-banner-section { overflow: hidden; }
+
+/* Lending banner: show the full SVG inside the banner (no cropping) */
+.page-lending .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page-lending .top-banner-section { overflow: hidden; }

@@ -274,30 +274,15 @@
     <!-- Top Hero Banner with Waves (Matching about/index.html banner style) -->
     <section class="top-banner-section">
       <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
-      <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <!-- Outer primary triangle as per reference geometry -->
-        <path class="art-triangle" d="M 586,160 L 1020,620 L 340,620 Z" />
-
-        <!-- Accent dashed nested architectural triangle -->
-        <path class="art-triangle art-triangle-dash" d="M 604,246 L 916,577 L 426,577 Z" />
-
-        <!-- Altitude perpendicular line (hb) from apex to base -->
-        <line class="art-altitude" x1="586" y1="160" x2="586" y2="620" />
-
-        <!-- Right-angle square marker at foot of altitude -->
-        <path class="art-right-angle" d="M 586,588 L 618,588 L 618,620" />
-
-        <!-- Angle arc indicator at bottom-left corner -->
-        <path class="art-angle-arc" d="M 430,620 A 90 90 0 0 0 382.4,540.6" />
-
-        <!-- Architectural vertical meridian axis & horizon line -->
-        <line class="art-axis" x1="586" y1="80" x2="586" y2="720" />
-        <line class="art-axis" x1="0" y1="620" x2="1104" y2="620" />
-
-        <!-- Traveling Dot: Orbiting smoothly along the outer triangle perimeter -->
-        <circle r="8" fill="#19D79F" class="art-dot art-dot-glow">
-          <animateMotion dur="14s" repeatCount="indefinite" path="M 586,160 L 1020,620 L 340,620 Z" />
-        </circle>
+      <!-- Line art: same vector as home page "Estate & Succession Planning" card (circles + guide lines + dots) -->
+      <svg class="ab-banner-art" viewBox="0 0 887 843" style="aspect-ratio: 887 / 843;" fill="none" aria-hidden="true" focusable="false">
+        <circle class="art-triangle" cx="486" cy="457" r="273" />
+        <circle class="art-triangle" cx="64" cy="775" r="45" />
+        <line class="art-axis" x1="884" y1="184" x2="64" y2="778" />
+        <line class="art-axis" x1="486" y1="0" x2="486" y2="820" />
+        <line class="art-axis" x1="486" y1="184" x2="884" y2="184" />
+        <circle class="art-dot art-dot-pulse" cx="486" cy="184" r="8" />
+        <circle class="art-dot art-dot-end art-dot-delay" cx="227" cy="662" r="8" />
       </svg>
 
       <div class="banner-box">
