@@ -18037,3 +18037,438 @@ section.ab2-values {
   .page-careers .careers-intro-container .about-section-desc { grid-column: 1; }
   .page-careers .careers-intro-container::before { right: -140px; opacity: .6; }
 }
+
+/* Client Portal: breathing room above "A clear route to the right help" */
+.page-client-portal #portal-faqs {
+  padding-top: clamp(24px, 3vw, 36px);
+}
+
+/* ==========================================================================
+   Insights / Articles — Clean BlissMoney Theme (Open layout, zero radius, no card numbers)
+   ========================================================================== */
+.page-articles,
+.page-articles .ar8-collection,
+.page-articles .ar8-paper {
+  background: #FFFFFF;
+}
+
+.page-articles .ar8-masthead {
+  align-items: flex-start;
+  text-align: left;
+  gap: 14px;
+}
+.page-articles .ar8-masthead .ar8-title {
+  max-width: 820px;
+}
+.page-articles .ar8-rule {
+  width: 64px;
+  height: 3px;
+  border: none;
+  border-radius: 0;
+  background: #0CAF80;
+}
+.page-articles .ar8-rule-thin {
+  display: none;
+}
+
+.page-articles .ar8-spread {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "f"
+    "s1"
+    "s2"
+    "w";
+  gap: 0;
+  margin-top: clamp(36px, 4vw, 56px);
+}
+
+.page-articles .ar8-article {
+  border-radius: 0;
+  padding: 0;
+}
+.page-articles .ar8-article::before {
+  display: none;
+}
+
+/* Card 1: Featured dark emerald panel (Upar / Full width across top) */
+.page-articles .ar8-feature {
+  grid-area: f;
+  background: linear-gradient(145deg, #0D251E 0%, #071914 100%);
+  border: 1px solid rgba(25, 215, 159, 0.18);
+  border-radius: clamp(18px, 2.2vw, 24px);
+  box-shadow: 0 14px 36px rgba(13, 37, 30, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: auto;
+  padding: clamp(38px, 4.5vw, 56px) clamp(28px, 4vw, 54px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+.page-articles .ar8-feature:hover {
+  border-color: rgba(25, 215, 159, 0.35);
+  box-shadow: 0 18px 44px rgba(13, 37, 30, 0.18);
+  transform: none;
+}
+.page-articles .ar8-feature-art {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 45%;
+  max-width: 320px;
+  color: rgba(25, 215, 159, 0.28);
+  pointer-events: none;
+}
+.page-articles .ar8-feature .ar8-article-title {
+  position: relative;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 14px 0;
+  max-width: 820px;
+  background: none;
+}
+.page-articles .ar8-feature .ar8-article-text {
+  position: relative;
+  max-width: 820px;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  line-height: 1.75;
+  color: #C9DFD7;
+  margin: 0;
+}
+.page-articles .ar8-dropcap::first-letter {
+  float: none;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Side items: Middle sections — Open editorial layout (NO box container, zero radius) */
+.page-articles .ar8-side:nth-of-type(2) {
+  grid-area: s1;
+}
+.page-articles .ar8-side:nth-of-type(3) {
+  grid-area: s2;
+}
+
+.page-articles .ar8-inset-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: clamp(32px, 3.8vw, 52px) 0;
+  box-shadow: none;
+  display: grid;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  transition: none;
+}
+.page-articles .ar8-inset-card:hover {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Card One: Image on Left, Text on Right (Open Layout, hairline divider) */
+.page-articles .ar8-card-img-left {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(28px, 4vw, 56px);
+  border-top: 1px solid rgba(13, 37, 30, 0.12);
+}
+
+/* Card Two: Text on Left, Image on Right (Open Layout, hairline divider) */
+.page-articles .ar8-card-img-right {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  border-top: 1px solid rgba(13, 37, 30, 0.12);
+  border-bottom: 1px solid rgba(13, 37, 30, 0.12);
+}
+
+.page-articles .ar8-inset-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(8px, 1.2vw, 16px) 0;
+}
+.page-articles .ar8-inset-eyebrow {
+  display: inline-block;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #0CAF80;
+  margin-bottom: 12px;
+}
+.page-articles .ar8-inset-card .ar8-article-title {
+  display: block;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #0D251E;
+  margin: 0 0 16px 0;
+  background: none;
+}
+.page-articles .ar8-inset-card .ar8-article-text {
+  font-size: clamp(0.96rem, 1.08vw, 1.05rem);
+  line-height: 1.8;
+  color: #4A5E57;
+  margin: 0;
+}
+
+.page-articles .ar8-inset-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: 280px;
+  height: 100%;
+  max-height: 380px;
+  box-shadow: none;
+  background: transparent;
+}
+.page-articles .ar8-inset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+  transform: none;
+}
+.page-articles .ar8-inset-card:hover .ar8-inset-img {
+  transform: none;
+}
+
+/* Wide item: Hero card as per reference design (families_conversation image + rounded corners + overlay) */
+.page-articles .ar8-wide {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(18px, 2.5vw, 26px);
+  background: #0D251E;
+  border: 1px solid rgba(25, 215, 159, 0.18);
+  box-shadow: 0 16px 42px rgba(13, 37, 30, 0.12);
+  margin-top: clamp(36px, 4.5vw, 56px);
+  padding: 0;
+  min-height: clamp(380px, 40vw, 460px);
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.page-articles .ar8-wide:hover {
+  background: #0D251E;
+  transform: none;
+  border-color: rgba(25, 215, 159, 0.32);
+  box-shadow: 0 18px 46px rgba(13, 37, 30, 0.15);
+}
+.page-articles .ar8-wide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  z-index: 1;
+}
+.page-articles .ar8-wide:hover .ar8-wide-bg {
+  transform: none;
+}
+.page-articles .ar8-wide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 25, 20, 0.95) 0%, rgba(8, 25, 20, 0.86) 42%, rgba(8, 25, 20, 0.45) 72%, rgba(8, 25, 20, 0.15) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .page-articles .ar8-wide-overlay {
+    background: linear-gradient(180deg, rgba(8, 25, 20, 0.92) 0%, rgba(8, 25, 20, 0.88) 65%, rgba(8, 25, 20, 0.6) 100%);
+  }
+}
+.page-articles .ar8-wide-content {
+  position: relative;
+  z-index: 3;
+  max-width: 640px;
+  padding: clamp(38px, 5vw, 68px) clamp(28px, 4.5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.page-articles .ar8-wide-title {
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 16px 0;
+}
+.page-articles .ar8-wide-text {
+  font-size: clamp(0.96rem, 1.1vw, 1.05rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 28px 0;
+}
+.page-articles .ar8-wide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  color: #0D251E;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+.page-articles .ar8-wide-btn:hover {
+  background: #0CAF80;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(12, 175, 128, 0.4);
+}
+
+/* Section 2: Open White Theme band (Take the questions into your own context) */
+.page-articles .ar8-dark {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(13, 37, 30, 0.1);
+}
+.page-articles .ar8-dark .ar8-title,
+.page-articles .ar8-dark .ar8-title-green {
+  color: #0D251E;
+}
+.page-articles .ar8-note {
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.page-articles .ar8-pull {
+  background: transparent;
+  border: none;
+  border-left: 3px solid #0CAF80;
+  border-radius: 0;
+  padding: 4px 0 4px clamp(20px, 2.5vw, 32px);
+}
+.page-articles .ar8-pull::before {
+  display: none;
+}
+.page-articles .ar8-pull p {
+  color: #0D251E;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.42;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.page-articles .ar8-note-cols {
+  border-left: 1px solid rgba(13, 37, 30, 0.14);
+  gap: 0;
+}
+.page-articles .ar8-note-cols p {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: clamp(16px, 2vw, 24px) 0 clamp(16px, 2vw, 24px) clamp(22px, 2.6vw, 36px);
+  color: #4A5E57;
+  font-size: clamp(0.96rem, 1.05vw, 1.02rem);
+  line-height: 1.8;
+}
+.page-articles .ar8-note-cols p + p {
+  border-top: 1px solid rgba(13, 37, 30, 0.1);
+}
+
+/* Section 3: Closing CTA — BlissMoney Brand Green (as per website index CTA) */
+.page-articles .ar8-cta {
+  background: #0CAF80;
+  border-top: 1px solid rgba(13, 37, 30, 0.12);
+  padding: clamp(64px, 7vw, 100px) 0;
+  position: relative;
+}
+
+.page-articles .ar8-letter {
+  max-width: 780px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: none;
+  padding: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.page-articles .ar8-letter::after {
+  display: none;
+}
+.page-articles .ar8-letter-title {
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #0D251E;
+  margin: 0 auto;
+}
+.page-articles .ar8-scribble {
+  width: 64px;
+  height: 3px;
+  background: #0D251E;
+  border-radius: 0;
+  margin: 18px auto 0;
+}
+.page-articles .ar8-scribble path {
+  display: none;
+}
+.page-articles .ar8-letter p {
+  color: rgba(13, 37, 30, 0.88);
+  font-size: clamp(1.02rem, 1.15vw, 1.15rem);
+  line-height: 1.75;
+  font-weight: 500;
+  margin: 20px auto 32px;
+  max-width: 580px;
+}
+.page-articles .ar8-letter .btn-primary {
+  background: #0D251E;
+  color: #FFFFFF;
+  border: 1px solid #0D251E;
+  font-weight: 700;
+  padding: 14px 34px;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(13, 37, 30, 0.25);
+  transition: all 0.25s ease;
+}
+.page-articles .ar8-letter .btn-primary:hover {
+  background: #061914;
+  border-color: #061914;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(13, 37, 30, 0.35);
+}
+
+@media (max-width: 860px) {
+  .page-articles .ar8-card-img-left,
+  .page-articles .ar8-card-img-right {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: clamp(24px, 4vw, 36px) 0;
+  }
+  .page-articles .ar8-card-img-left .ar8-inset-media,
+  .page-articles .ar8-card-img-right .ar8-inset-media {
+    min-height: 220px;
+    max-height: 300px;
+    order: -1;
+  }
+}
