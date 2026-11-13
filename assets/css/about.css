@@ -17876,3 +17876,31 @@ section.ab2-values {
   transform: translateY(-50%);
 }
 .page-lending .top-banner-section { overflow: hidden; }
+
+/* Blog banner: same height as the Our People banner */
+.blog-archive-page .top-banner-section {
+  min-height: clamp(380px, 38vw, 470px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .blog-archive-page .top-banner-section { min-height: 540px; }
+}
+
+/* Blog banner: keep text left-aligned inside the container (same as Our People) */
+.blog-archive-page .top-banner-section .banner-box {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Blog banner: smaller SVG that fits fully inside the banner */
+.blog-archive-page .top-banner-section .ab-banner-art {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
