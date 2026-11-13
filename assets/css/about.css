@@ -15117,12 +15117,17 @@ section.ab2-values {
 .page-estate-planning .es3-disclaimer { margin: clamp(28px, 3vw, 40px) 0 0; max-width: 980px; font-size: .9rem; line-height: 1.7; color: #6E8780; }
 
 /* 7 · ringed CTA */
-.page-estate-planning .es3-cta { text-align: center; }
+.page-estate-planning .es3-cta { text-align: center; background: #0CAF80; }
 .page-estate-planning .es3-cta-rings { position: absolute; left: 50%; top: 50%; width: min(760px, 110vw); transform: translate(-50%, -50%); color: rgba(13,37,30,.12); pointer-events: none; }
 .page-estate-planning .es3-cta-dot { transform-box: view-box; transform-origin: 400px 400px; animation: abOrbit 30s linear infinite; }
 .page-estate-planning .es3-cta-inner { display: flex; flex-direction: column; align-items: center; }
 .page-estate-planning .es3-cta-inner .es3-title { max-width: 760px; }
-.page-estate-planning .es3-cta-inner p { margin: 22px 0 30px; max-width: 620px; font-size: clamp(1rem, 1.12vw, 1.12rem); line-height: 1.7; color: #556B64; }
+.page-estate-planning .es3-cta-inner p { margin: 22px 0 30px; max-width: 620px; font-size: clamp(1rem, 1.12vw, 1.12rem); line-height: 1.7; color: rgba(13,37,30,.85); }
+/* Green CTA: dark rings/dot + dark button (matches services overview CTA) */
+.page-estate-planning .es3-cta .es3-cta-rings { color: rgba(13,37,30,.35); }
+.page-estate-planning .es3-cta .es3-cta-dot { fill: #0D251E; }
+.page-estate-planning .es3-cta .btn-primary { background: #0D251E; color: #FFFFFF; border: 1px solid #0D251E; }
+.page-estate-planning .es3-cta .btn-primary:hover { background: #FFFFFF; color: #0D251E; border-color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 4px 14px rgba(13, 37, 30, 0.25); }
 
 @media (prefers-reduced-motion: reduce) {
   .page-estate-planning .es3-ring-dot, .page-estate-planning .es3-cta-dot, .page-estate-planning .es3-hub-node span { animation: none; }
@@ -17903,4 +17908,10 @@ section.ab2-values {
   right: 3%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* All banners: slightly larger gap between the heading/text and the buttons */
+.about-subpage .top-banner-section .banner-subtitle,
+.blog-archive-page .top-banner-section .banner-subtitle {
+  margin-bottom: clamp(44px, 4.5vw, 62px);
 }
