@@ -950,6 +950,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Desktop (>=1024px): horizontal nav -> close open submenus on outside click / Escape
+    const closeDesktopSubmenus = () => {
+      if (!siteMenuDropdown) return;
+      siteMenuDropdown.querySelectorAll(".has-submenu").forEach((item) => {
+        item.classList.remove("is-open", "is-open-mobile");
+        const parentLink = item.querySelector(".site-nav-link-parent");
+        if (parentLink) parentLink.setAttribute("aria-expanded", "false");
+      });
+      updateSubmenuState();
+    };
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth >= 1024 && !e.target.closest(".has-submenu")) {
+        closeDesktopSubmenus();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && window.innerWidth >= 1024) closeDesktopSubmenus();
+    });
+
     // Close when pressing the Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && siteMenuWrap.classList.contains("is-open")) {

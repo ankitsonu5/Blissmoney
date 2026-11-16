@@ -1044,7 +1044,16 @@ body.menu-is-open .floating-actions {
     margin-top: 58px;
   }
 
+  /* Mobile: centre the card deck (same as "Six steps" section) */
+  :root {
+    --card-stack-offset-x: 20px;
+    --card-stack-offset-y: 16px;
+  }
+
   .stacked-deck {
+    width: calc(100% - 25px);
+    max-width: 100%;
+    margin: 0 auto;
     height: 520px;
   }
 

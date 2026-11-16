@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=11.8">
+  <link rel="stylesheet" href="../assets/css/about.css?v=12.5">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -273,19 +273,41 @@
   <main class="about-page-wrapper">
     <!-- Top Hero Banner with Waves -->
     <section class="top-banner-section">
-      <!-- Line art (from home "Alternative Investment Strategies" card), sits behind the banner text -->
-      <svg class="ab-banner-art" viewBox="0 0 1104 818" fill="none" aria-hidden="true" focusable="false">
-        <circle class="art-ring art-ring-lg" cx="1095" cy="409" r="409" />
-        <circle class="art-ring art-ring-sm" cx="415" cy="407" r="270" />
-        <line class="art-axis" x1="0" y1="407" x2="1104" y2="407" />
-        <circle class="art-dot" cx="686" cy="407" r="9" />
-        <circle class="art-dot art-dot-end" cx="8" cy="407" r="9" />
+      <!-- Line art: podcast studio - microphone, broadcast rings and sound-wave bars, sits behind the banner text -->
+      <svg class="ab-banner-art" viewBox="0 0 640 480" fill="none" aria-hidden="true" focusable="false">
+        <!-- broadcast rings -->
+        <circle class="art-ring pd-ring pd-ring-1" cx="320" cy="240" r="90" />
+        <circle class="art-ring pd-ring pd-ring-2" cx="320" cy="240" r="150" />
+        <circle class="art-ring pd-ring pd-ring-3" cx="320" cy="240" r="210" />
+        <!-- guide line -->
+        <line class="art-axis" x1="0" y1="240" x2="640" y2="240" />
+        <!-- microphone -->
+        <rect class="pd-mic" x="296" y="160" width="48" height="96" rx="24" />
+        <path class="pd-mic" d="M272 232 C272 276 296 296 320 296 S368 276 368 232" />
+        <line class="pd-mic" x1="320" y1="296" x2="320" y2="332" />
+        <line class="pd-mic" x1="296" y1="332" x2="344" y2="332" />
+        <!-- sound-wave bars -->
+        <line class="pd-bar pd-bar-1" x1="20" y1="222" x2="20" y2="258" />
+        <line class="pd-bar pd-bar-2" x1="36" y1="206" x2="36" y2="274" />
+        <line class="pd-bar pd-bar-3" x1="52" y1="182" x2="52" y2="298" />
+        <line class="pd-bar pd-bar-4" x1="68" y1="200" x2="68" y2="280" />
+        <line class="pd-bar pd-bar-1" x1="84" y1="170" x2="84" y2="310" />
+        <line class="pd-bar pd-bar-2" x1="100" y1="212" x2="100" y2="268" />
+        <line class="pd-bar pd-bar-3" x1="540" y1="212" x2="540" y2="268" />
+        <line class="pd-bar pd-bar-4" x1="556" y1="170" x2="556" y2="310" />
+        <line class="pd-bar pd-bar-1" x1="572" y1="200" x2="572" y2="280" />
+        <line class="pd-bar pd-bar-2" x1="588" y1="182" x2="588" y2="298" />
+        <line class="pd-bar pd-bar-3" x1="604" y1="206" x2="604" y2="274" />
+        <line class="pd-bar pd-bar-4" x1="620" y1="222" x2="620" y2="258" />
+        <!-- dots riding the rings -->
+        <circle class="art-dot pd-dot pd-dot-a" cx="320" cy="30" r="9" />
+        <circle class="art-dot art-dot-end pd-dot pd-dot-b" cx="470" cy="240" r="7" />
       </svg>
 
       <div class="banner-box">
         <h1><em>Good questions deserve a little more time.</em></h1>
         <p class="banner-subtitle">
-          Explore a proposed conversation-led series about wealth and the lives around it, starting with a complete written episode on family financial conversations.
+          Explore a proposed conversation-led series about wealth and the lives around it, starting with a<br class="pd-br">complete written episode on family financial conversations.
         </p>
 
         <!-- Banner CTA -->

@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css?v=2.7">
   <link rel="stylesheet" href="../assets/css/lead-popup.css?v=2.0">
-  <link rel="stylesheet" href="../assets/css/about.css?v=11.6">
+  <link rel="stylesheet" href="../assets/css/about.css?v=11.10">
   <link rel="stylesheet" href="../assets/css/insights.css?v=1.1">
 </head>
 
@@ -497,7 +497,19 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="../assets/js/main.js?v=2.2"></script>
+    <script>
+    /* CTA chart line: redraw upward every time the section scrolls into view */
+    (function () {
+      var sec = document.getElementById('consultation-section');
+      if (!sec || !('IntersectionObserver' in window)) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      sec.classList.add('is-armed');
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.target.classList.toggle('is-in', e.isIntersecting); });
+      }, { threshold: 0.3 }).observe(sec);
+    })();
+  </script>
+<script src="../assets/js/main.js?v=2.2"></script>
   <script src="../assets/js/lead-popup.js"></script>
 </body>
 
