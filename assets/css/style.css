@@ -359,7 +359,7 @@ body.menu-is-open .floating-actions {
   top: 50%;
   left: calc(63% - (15% * var(--center-move, 0)));
   transform: translate(-50%, -50%);
-  width: clamp(410px, 45vw, 930px);
+  width: clamp(380px, 41vw, 850px);
   max-width: 85vw;
   pointer-events: none;
   z-index: 0;
