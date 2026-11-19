@@ -2191,3 +2191,85 @@
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Clients Overview & Client Segments: Photographic Profile Cards
+   (Matching services/services.html "Define the scope before the work" style)
+   ========================================================================== */
+.page-clients .cl12-profiles .svc-scope-grid,
+.page-client-segments .cs12-situations .svc-scope-grid {
+  margin-top: 0;
+}
+
+.page-clients .cl12-profiles .svc-scope-card,
+.page-client-segments .cs12-situations .svc-scope-card {
+  height: clamp(440px, 36vw, 490px);
+}
+
+.page-clients .cl12-profiles .svc-scope-card-title,
+.page-client-segments .cs12-situations .svc-scope-card-title {
+  min-height: 2.7em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.page-clients .cl12-profiles .svc-scope-card-desc,
+.page-client-segments .cs12-situations .svc-scope-card-desc {
+  min-height: clamp(142px, 12.8vw, 170px);
+}
+
+.page-clients .cl12-scope-img--business,
+.page-client-segments .cl12-scope-img--business {
+  object-position: 35% 20%;
+}
+
+.page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--executive,
+.page-client-segments .cs12-situations .svc-scope-card-bg.cl12-scope-img--executive {
+  object-position: 90% 15%;
+}
+
+.page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--family,
+.page-client-segments .cs12-situations .svc-scope-card-bg.cl12-scope-img--family {
+  height: 68%;
+  bottom: auto;
+  object-position: 45% 18%;
+  transform-origin: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
+}
+
+.page-clients .cl12-scope-img--founder,
+.page-client-segments .cl12-scope-img--founder {
+  object-position: 50% 18%;
+}
+
+@media (max-width: 1040px) {
+  .page-clients .cl12-profiles .svc-scope-card,
+  .page-client-segments .cs12-situations .svc-scope-card {
+    height: 430px;
+  }
+  .page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--family,
+  .page-client-segments .cs12-situations .svc-scope-card-bg.cl12-scope-img--family {
+    height: 100%;
+    object-position: 45% 20%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .page-clients .cl12-profiles .svc-scope-card-desc,
+  .page-client-segments .cs12-situations .svc-scope-card-desc {
+    min-height: 112px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-clients .cl12-profiles .svc-scope-card,
+  .page-client-segments .cs12-situations .svc-scope-card {
+    height: 410px;
+  }
+  .page-clients .cl12-profiles .svc-scope-card-title,
+  .page-clients .cl12-profiles .svc-scope-card-desc,
+  .page-client-segments .cs12-situations .svc-scope-card-title,
+  .page-client-segments .cs12-situations .svc-scope-card-desc {
+    min-height: auto;
+  }
+}
