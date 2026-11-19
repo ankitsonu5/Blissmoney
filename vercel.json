@@ -3,6 +3,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/privacy-policy.php",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-conditions.php",
+      "destination": "/legal/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/investor-grievance-redressal.php",
+      "destination": "/legal/grievance-redressal",
+      "permanent": true
+    },
+    {
       "source": "/sabi/privacy-policy.php",
       "destination": "/legal/privacy-policy",
       "permanent": true
@@ -186,6 +201,30 @@
     {
       "source": "/client-portal/",
       "destination": "/client-portal.html"
+    },
+    {
+      "source": "/legal/privacy-policy",
+      "destination": "/legal/privacy-policy.html"
+    },
+    {
+      "source": "/legal/privacy-policy/",
+      "destination": "/legal/privacy-policy.html"
+    },
+    {
+      "source": "/legal/terms-and-conditions",
+      "destination": "/legal/terms-and-conditions.html"
+    },
+    {
+      "source": "/legal/terms-and-conditions/",
+      "destination": "/legal/terms-and-conditions.html"
+    },
+    {
+      "source": "/legal/grievance-redressal",
+      "destination": "/legal/grievance-redressal.html"
+    },
+    {
+      "source": "/legal/grievance-redressal/",
+      "destination": "/legal/grievance-redressal.html"
     }
   ]
 }
