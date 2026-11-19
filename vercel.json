@@ -1,6 +1,23 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sabi/privacy-policy.php",
+      "destination": "/legal/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/sabi/terms-conditions.php",
+      "destination": "/legal/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/sabi/investor-grievance-redressal.php",
+      "destination": "/legal/grievance-redressal",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/about",
@@ -145,22 +162,6 @@
     {
       "source": "/insights/reports/",
       "destination": "/insights/reports.html"
-    },
-    {
-      "source": "/insights/videos",
-      "destination": "/insights/videos.html"
-    },
-    {
-      "source": "/insights/videos/",
-      "destination": "/insights/videos.html"
-    },
-    {
-      "source": "/insights/podcasts",
-      "destination": "/insights/podcasts.html"
-    },
-    {
-      "source": "/insights/podcasts/",
-      "destination": "/insights/podcasts.html"
     },
     {
       "source": "/careers",

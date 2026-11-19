@@ -15,6 +15,31 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, ['ok' => false, 'error' => 'Method not allowed']);
 }
 
+$raw  = file_get_contents('php://input');
+$data = json_decode($raw, true);
+if (!is_array($data)) $data = $_POST;
+
+// Honeypot: bots fill hidden fields; pretend success.
+if (!empty($data['website'])) respond(200, ['ok' => true]);
+
+// Reject automated submissions completed impossibly quickly or with an invalid form timer.
+$elapsedRaw = $data['formElapsedMs'] ?? '';
+if (!is_string($elapsedRaw) || !preg_match('/^\d{1,8}$/', $elapsedRaw)) {
+    respond(400, ['ok' => false, 'error' => 'Invalid form session']);
+}
+$elapsedMs = (int) $elapsedRaw;
+if ($elapsedMs < 1000) {
+    respond(429, ['ok' => false, 'error' => 'Please wait a moment before submitting']);
+}
+if ($elapsedMs > 86400000) respond(400, ['ok' => false, 'error' => 'Form session expired']);
+
+// Consent is mandatory. Record the authoritative server receipt time in UTC.
+if (($data['contactConsent'] ?? '') !== 'agreed') {
+    respond(400, ['ok' => false, 'error' => 'Contact consent is required']);
+}
+$data['contactConsent'] = 'Agreed';
+$data['consent_given_at'] = gmdate('Y-m-d\TH:i:s\Z');
+
 $configFile = __DIR__ . '/config.php';
 $config = file_exists($configFile) ? require $configFile : [];
 $apiKey = $config['RESEND_API_KEY'] ?? '';
@@ -24,13 +49,6 @@ if (!$apiKey || !$to) {
     error_log('consultation: api/config.php missing RESEND_API_KEY or TO_EMAIL');
     respond(500, ['ok' => false, 'error' => 'Email service not configured']);
 }
-
-$raw  = file_get_contents('php://input');
-$data = json_decode($raw, true);
-if (!is_array($data)) $data = $_POST;
-
-// Honeypot: bots fill hidden fields; pretend success.
-if (!empty($data['website'])) respond(200, ['ok' => true]);
 
 $labels = [
     'name'           => 'Name',
@@ -44,6 +62,8 @@ $labels = [
     'preferred_date' => 'Preferred date',
     'message'        => 'Message',
     'body'           => 'Message',
+    'contactConsent' => 'Contact consent',
+    'consent_given_at' => 'Consent recorded at (UTC)',
     'page'           => 'Submitted from',
 ];
 

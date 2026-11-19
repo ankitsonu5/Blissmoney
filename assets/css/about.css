@@ -3140,6 +3140,52 @@ body.page-reach-us {
   min-height: 100px;
 }
 
+.page-reach-us .reach-consent {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  margin-top: 2px;
+  padding: 13px 14px;
+  background: #F8FAF9;
+  border: 1px solid #D5E2DC;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.page-reach-us .reach-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: #0CAF80;
+  cursor: pointer;
+}
+
+.page-reach-us .reach-consent label {
+  color: #314D44;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.page-reach-us .reach-consent a {
+  color: #087A59;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-reach-us .reach-consent a:hover {
+  color: #0CAF80;
+}
+
+.page-reach-us .reach-consent input[type="checkbox"]:focus-visible,
+.page-reach-us .reach-consent a:focus-visible {
+  outline: 2px solid #0CAF80;
+  outline-offset: 3px;
+}
+
 .page-reach-us .reach-form-footer {
   margin-top: 10px;
 }
@@ -3167,6 +3213,31 @@ body.page-reach-us {
   transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(12, 175, 128, 0.42);
   filter: brightness(1.06);
+}
+
+.page-reach-us .reach-privacy-note {
+  max-width: 64ch;
+  margin: 14px 0 0;
+  color: #49645B;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.page-reach-us .reach-privacy-note a {
+  color: #087A59;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-reach-us .reach-privacy-note a:hover {
+  color: #0CAF80;
+}
+
+.page-reach-us .reach-privacy-note a:focus-visible {
+  outline: 2px solid #0CAF80;
+  outline-offset: 3px;
 }
 
 .page-reach-us .reach-form-disclaimer {
@@ -9873,7 +9944,7 @@ body.page-real-estate {
 }
 
 /* ==========================================================================
-   Lending Solutions Subpage (Bespoke Credit Strategy & Liability Structuring)
+   Lending Subpage (Bespoke Credit Strategy & Liability Structuring)
    ========================================================================== */
 
 body.page-lending {
@@ -13863,6 +13934,7 @@ body.page-clients {
   border-left: 4px solid #0CAF80; font-size: .95rem; line-height: 1.7;
 }
 :is(.page-about-overview, .page-our-people, .page-brand-story, .page-press-releases, .page-events-conferences, .page-financial-planning) .ab2-disclosure strong { display: block; margin-bottom: 6px; color: #19D79F; letter-spacing: .02em; }
+:is(.page-about-overview, .page-our-people, .page-brand-story, .page-press-releases, .page-events-conferences, .page-financial-planning) .ab2-disclosure p { margin: 0; color: inherit; font: inherit; }
 
 /* 2. Practice: dark, centred head, three columns with line icons */
 :is(.page-about-overview, .page-our-people, .page-brand-story, .page-press-releases, .page-events-conferences, .page-financial-planning) .ab2-dark .ab2-eyebrow { color: #19D79F; }
@@ -15111,6 +15183,45 @@ section.ab2-values {
 .page-estate-planning .es3-tile-green:hover .es3-tile-arrow { background: #0D251E; color: #0CAF80; }
 .page-estate-planning .es3-tile:focus-visible { outline: 3px solid #19D79F; outline-offset: -3px; }
 .page-estate-planning .es3-disclaimer { margin: clamp(28px, 3vw, 40px) 0 0; max-width: 980px; font-size: .9rem; line-height: 1.7; color: #6E8780; }
+
+.service-regulatory-notice {
+  background: #f4f2eb;
+  border-top: 1px solid rgba(13, 37, 30, 0.1);
+}
+
+.service-regulatory-notice-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(100% - 48px, 1240px);
+  margin-inline: auto;
+  padding: clamp(24px, 3vw, 34px) 0;
+}
+
+.service-regulatory-notice-mark {
+  flex: 0 0 auto;
+  width: 3px;
+  height: 1.7em;
+  margin-top: 0;
+  border-radius: 999px;
+  background: #0caf80;
+}
+
+.service-regulatory-notice p {
+  margin: 0;
+  max-width: 980px;
+  color: #566d66;
+  font-family: var(--font-family-base, 'Raleway', sans-serif);
+  font-size: clamp(0.78rem, 0.3vw + 0.72rem, 0.88rem);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .service-regulatory-notice-inner {
+    width: min(100% - 32px, 1240px);
+  }
+}
 
 /* 7 · ringed CTA */
 .page-estate-planning .es3-cta { text-align: center; background: #0CAF80; }

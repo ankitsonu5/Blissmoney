@@ -380,25 +380,6 @@
 .social-share-btn.mail:hover { background-color: #EA4335; border-color: #EA4335; color: #FFFFFF; }
 .social-share-btn.copy:hover { background-color: #0CAF80; border-color: #0CAF80; color: #FFFFFF; }
 
-/* Copy Toast */
-.copy-feedback-toast {
-  display: inline-block;
-  margin-left: 10px;
-  font-family: var(--font-family-base, 'Raleway', sans-serif);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #0CAF80;
-  opacity: 0;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.copy-feedback-toast.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 /* ---------- 5. Right Sidebar & Related Posts (.related-section-content) ---------- */
 .blog-sidebar-sticky {
   position: sticky;

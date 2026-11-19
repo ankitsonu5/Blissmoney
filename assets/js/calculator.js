@@ -7,6 +7,7 @@
   /* ---------- Helpers ---------- */
   const $ = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+  const CALCULATOR_DISCLAIMER = "Calculators use assumptions, which are shown with each result. They are not projections or promises. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.";
 
   // Indian currency formatting (₹, lakh/crore grouping)
   const inr = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
@@ -184,7 +185,7 @@
       currentLabel: "Current Cost of Vacation",
       futureLabel: "Future Cost of Vacation",
       fields: [
-        { label: "Current Vacation Expenses (₹)", min: 25000, max: 5000000, step: 25000, value: 500000, format: "currency" },
+        { label: "Current Vacation Expenses (₹)", min: 200000, max: 2500000, step: 25000, value: 200000, format: "currency" },
         { label: "After How Many Years Do You Wish To Plan Your Holiday?", min: 1, max: 40, step: 1, value: 5, format: "years" },
         { label: "Rate of Return (%)", min: 1, max: 30, step: 1, value: 5, format: "percent" },
         { label: "Inflation Rate (%)", min: 0, max: 30, step: 1, value: 5, format: "percent" },
@@ -403,9 +404,9 @@
       kicker: "Risk planning",
       title: "Retirement Corpus Calculator",
       description: "Build the retirement corpus required to protect your future lifestyle.",
-      note: "This calculator is for informational and illustrative purposes only and does not constitute investment advice. Actual results may vary with market performance.",
+      note: CALCULATOR_DISCLAIMER,
       fields: [
-        { label: "Current Age (Y)", min: 18, max: 80, step: 1, value: 30, format: "age" },
+        { label: "Current Age (Y)", min: 30, max: 60, step: 1, value: 30, format: "age" },
         { label: "Retirement Age (Y)", min: 35, max: 85, step: 1, value: 60, format: "age" },
         { label: "Life Expectancy (Y)", min: 50, max: 100, step: 1, value: 85, format: "age" },
         { label: "Current Monthly Expenses (₹)", min: 10000, max: 2000000, step: 5000, value: 50000, format: "currency" },
@@ -459,9 +460,9 @@
       kicker: "Risk planning",
       title: "Life Insurance Calculator",
       description: "Human Life Value & Needs Analysis: size protection across liabilities, living costs, and milestone goals, less existing liquid assets & cover.",
-      note: "Needs Analysis accounts for living expenses, debt liabilities, and major future milestones (like children's education & marriage), minus existing life cover and liquid assets to arrive at the net cover needed.",
+      note: CALCULATOR_DISCLAIMER,
       fields: [
-        { label: "Outstanding Loans & Liabilities (₹)", min: 100000000, max: 250000000, step: 100000, value: 100000000, format: "currency" },
+        { label: "Outstanding Loans & Liabilities (₹)", min: 10000000, max: 250000000, step: 100000, value: 10000000, format: "currency" },
         { label: "Monthly Household Expenses (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
         { label: "Protection Duration (Years)", min: 1, max: 40, step: 1, value: 20, format: "years" },
         { label: "Expected Inflation Rate (%)", min: 1, max: 15, step: 0.5, value: 6, format: "percent" },
@@ -502,39 +503,34 @@
     health: {
       kicker: "Risk planning",
       title: "Health Insurance Calculator",
-      description: "Size your base indemnity cover and super top-up deductible buffer against medical inflation.",
-      note: "Indian medical inflation averages 11%–14% annually. A combination of base cover + super top-up maximizes protection at optimal premiums.",
+      description: "Estimate the health cover you may need in the future after accounting for medical inflation.",
+      note: CALCULATOR_DISCLAIMER,
       fields: [
-        { label: "Eldest Member's Current Age (Years)", min: 18, max: 75, step: 1, value: 35, format: "age" },
-        { label: "Current Base Hospitalisation Cover Needed Today (₹)", min: 500000, max: 5000000, step: 100000, value: 1500000, format: "currency" },
-        { label: "Desired Total Health Cover Today (Base + Super Top-up) (₹)", min: 1000000, max: 20000000, step: 500000, value: 5000000, format: "currency" },
-        { label: "Medical Inflation Rate (%)", min: 8, max: 16, step: 0.5, value: 11, format: "percent" },
-        { label: "Projection Horizon (Years)", min: 5, max: 35, step: 1, value: 15, format: "years" },
+        { label: "Eldest Member's Age (Years)", min: 21, max: 75, step: 1, value: 35, format: "age" },
+        { label: "City Tier", type: "select", options: ["Metro", "Non-metro"], value: "Metro" },
+        { label: "Base Cover Needed Today (₹)", min: 500000, max: 20000000, step: 100000, value: 1000000, format: "currency" },
+        { label: "Medical Inflation Rate (%)", min: 1, max: 20, step: 0.5, value: 10, format: "percent" },
+        { label: "Projection Horizon (Years)", min: 10, max: 25, step: 1, value: 15, format: "years" },
       ],
       calculate(values) {
-        const [eldestAge, baseCoverToday, desiredTotalToday, medicalInflation, horizonYears] = values;
-        const totalToday = Math.max(baseCoverToday, desiredTotalToday);
-        const topUpToday = totalToday - baseCoverToday;
+        const [eldestAge, cityTier, baseCoverToday, medicalInflation, horizonYears] = values;
         const inflationFactor = Math.pow(1 + medicalInflation / 100, horizonYears);
-        const futureTotal = Math.round(totalToday * inflationFactor);
-        const futureBase = Math.round(baseCoverToday * inflationFactor);
-        const futureTopUp = futureTotal - futureBase;
+        const futureCover = Math.round(baseCoverToday * inflationFactor);
         return {
           timeline: horizonYears + " years horizon (" + medicalInflation + "% medical inflation)",
           primaryLabel: "Future Health Cover Needed",
-          primaryValue: inr(futureTotal),
+          primaryValue: inr(futureCover),
           rows: [
-            ["Total cover recommended today", inr(totalToday)],
-            ["Base indemnity cover today", inr(baseCoverToday)],
-            ["Super top-up buffer today", inr(topUpToday)],
-            ["Projected future base cover", inr(futureBase)],
-            ["Projected future super top-up", inr(futureTopUp)],
+            ["Base cover needed today", inr(baseCoverToday)],
+            ["City tier", cityTier],
+            ["Medical inflation", medicalInflation + "% p.a."],
+            ["Eldest member's age at horizon", eldestAge + horizonYears + " yrs"],
           ],
           comparisonTitle: "Medical inflation impact",
           comparisonStat: "+" + Math.round((inflationFactor - 1) * 100) + "% cost rise",
           bars: [
-            ["Cover Today", totalToday],
-            ["Future Cover (Age " + (eldestAge + horizonYears) + ")", futureTotal],
+            ["Cover Today", baseCoverToday],
+            ["Future Cover", futureCover],
           ],
         };
       },
@@ -543,7 +539,7 @@
       kicker: "Home finance",
       title: "Home Affordability Calculator",
       description: "Determine the maximum property purchase price based on your monthly EMI budget and available savings.",
-      note: "This calculator is for informational and illustrative purposes only. Final loan sanction depends on bank underwriting and credit eligibility.",
+      note: CALCULATOR_DISCLAIMER,
       fields: [
         { label: "Monthly EMI You Can Comfortably Pay (₹)", min: 10000, max: 2000000, step: 5000, value: 100000, format: "currency" },
         { label: "Down Payment Available (₹)", min: 500000, max: 100000000, step: 250000, value: 2500000, format: "currency" },
@@ -551,28 +547,31 @@
         { label: "Interest Rate (%)", min: 5, max: 20, step: 0.1, value: 8.5, format: "percent" },
       ],
       calculate(values) {
-        const [comfortableEmi, downPayment, years, annualRate] = values;
-        const monthlyRate = (annualRate / 100) / 12;
+        const [affordableMonthlyEmi, downPayment, years, annualRate] = values;
+        const monthlyRate = annualRate / 12 / 100;
         const months = years * 12;
-        const loanEligibility = monthlyRate
-          ? (comfortableEmi * (1 - Math.pow(1 + monthlyRate, -months))) / monthlyRate
-          : comfortableEmi * months;
-        const maxProperty = loanEligibility + downPayment;
-        const downPaymentPercent = maxProperty > 0 ? Math.round((downPayment / maxProperty) * 100) : 0;
+        const compound = Math.pow(1 + monthlyRate, months);
+        const eligibleLoan = monthlyRate
+          ? affordableMonthlyEmi * ((compound - 1) / (monthlyRate * compound))
+          : affordableMonthlyEmi * months;
+        const maximumPropertyValue = eligibleLoan + downPayment;
+        const downPaymentPercent = maximumPropertyValue > 0
+          ? Math.round((downPayment / maximumPropertyValue) * 100)
+          : 0;
         return {
           timeline: years + (years === 1 ? " year tenure @ " : " years tenure @ ") + annualRate + "%",
           primaryLabel: "Maximum Affordable Property Value",
-          primaryValue: inr(maxProperty),
+          primaryValue: inr(maximumPropertyValue),
           rows: [
-            ["Total loan eligibility", inr(loanEligibility)],
+            ["Total loan eligibility", inr(eligibleLoan)],
             ["Down payment available", inr(downPayment)],
-            ["Monthly EMI you can comfortably pay", inr(comfortableEmi)],
-            ["Total loan repayment (P + I)", inr(comfortableEmi * months)],
+            ["Monthly EMI you can comfortably pay", inr(affordableMonthlyEmi)],
+            ["Total loan repayment (P + I)", inr(affordableMonthlyEmi * months)],
           ],
           comparisonTitle: "Property funding ratio",
           comparisonStat: downPaymentPercent + "% down payment",
           bars: [
-            ["Loan (Eligible)", loanEligibility],
+            ["Loan (Eligible)", eligibleLoan],
             ["Down Payment", downPayment],
           ],
         };
@@ -582,7 +581,7 @@
       kicker: "Home finance",
       title: "EMI Calculator",
       description: "Calculate the monthly instalment, total interest and complete loan repayment.",
-      note: "This calculator is for informational and illustrative purposes only. Actual lending terms may vary.",
+      note: CALCULATOR_DISCLAIMER,
       fields: [
         { label: "Loan Amount (₹)", min: 500000, max: 250000000, step: 250000, value: 7500000, format: "currency" },
         { label: "Loan Tenure (Years)", min: 1, max: 30, step: 1, value: 20, format: "years" },
@@ -635,6 +634,7 @@
         <label class="native-field-label">Calculator input</label>
         <input class="goal-number-input native-number-input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Calculator input">
         <input class="native-range-input" type="range" min="0" max="100" step="1" value="0" aria-label="Calculator input">
+        <select class="native-select-input" aria-label="Calculator input" hidden></select>
       </div>
     `).join("");
 
@@ -643,12 +643,14 @@
       label: $(".native-field-label", field),
       output: $(".native-number-input", field),
       input: $(".native-range-input", field),
+      select: $(".native-select-input", field),
     }));
     let activeTool = tabs.find((tab) => tab.classList.contains("active"))?.dataset.nativeTool;
 
     const update = () => {
       const config = nativeToolConfigs[activeTool];
       const values = config.fields.map((field, index) => {
+        if (field.type === "select") return controls[index].select.value;
         const value = +controls[index].input.value;
         if (document.activeElement !== controls[index].output) {
           controls[index].output.value = formatNativeValue(field, value);
@@ -694,6 +696,18 @@
         control.field.hidden = !field;
         if (!field) return;
         control.label.textContent = field.label;
+        const isSelect = field.type === "select";
+        control.output.hidden = isSelect;
+        control.input.hidden = isSelect;
+        control.select.hidden = !isSelect;
+        if (isSelect) {
+          control.select.innerHTML = field.options
+            .map((option) => `<option value="${option}">${option}</option>`)
+            .join("");
+          control.select.value = field.value;
+          control.select.setAttribute("aria-label", field.label);
+          return;
+        }
         control.input.min = field.min;
         control.input.max = field.max;
         control.input.step = field.step;
@@ -770,130 +784,13 @@
         update();
       });
       control.output.addEventListener("blur", commitValue);
+      control.select.addEventListener("change", update);
     });
 
     setTool(activeTool);
   };
 
-  /* --- Native mutual-fund performance calculator (SIP / STP / SWP) --- */
-  const roiAmcOptions = [
-    "360 ONE Mutual Fund",
-    "Aditya Birla Sun Life Mutual Fund",
-    "Axis Mutual Fund",
-    "Bajaj Finserv Mutual Fund",
-    "Bandhan Mutual Fund",
-    "Bank Of India Mutual Fund",
-    "Baroda Bnp Paribas Mutual Fund",
-    "Canara Robeco Mutual Fund",
-    "DSP Mutual Fund",
-    "Edelweiss Mutual Fund",
-    "Franklin Templeton Mutual Fund",
-    "Groww Mutual Fund",
-    "HDFC Mutual Fund",
-    "Helios Mutual Fund",
-    "HSBC Mutual Fund",
-    "ICICI Prudential Mutual Fund",
-    "Invesco Mutual Fund",
-    "ITI Mutual Fund",
-    "JM Financial Mutual Fund",
-    "Kotak Mutual Fund",
-    "LIC Mutual Fund",
-    "Mahindra Manulife Mutual Fund",
-    "Mirae Asset Mutual Fund",
-    "Motilal Oswal Mutual Fund",
-    "NAVI Mutual Fund",
-    "Nippon India Mutual Fund",
-    "NJ Mutual Fund",
-    "OLDBRIDGE Mutual Fund",
-    "PGIM India Mutual Fund",
-    "PPFAS Mutual Fund",
-    "Quant MF",
-    "Quantum Mutual Fund",
-    "Samco Mutual Fund",
-    "SBI Mutual Fund",
-    "Shriram Mutual Fund",
-    "Sundaram Mutual Fund",
-    "Tata Mutual Fund",
-    "Taurus Mutual Fund",
-    "Trust Mutual Fund",
-    "Union Mutual Fund",
-    "Uti Mutual Fund",
-    "WhiteOak Capital Mutual Fund",
-    "Zerodha Mutual Fund",
-    "Angel One Mutual Fund",
-    "Unifi Mutual Fund",
-    "Capitalmind Mutual Fund",
-    "Quant Mutual Fund - SIF",
-    "The Wealth Company Mutual Fund",
-    "Edelweiss Mutual Fund-SIF",
-    "SBI Mutual Fund-SIF",
-    "Taurus Mutual Fund - CAMS",
-    "Taurus Mutual Fund - Karvy",
-    "ITI Mutual Fund - SIF",
-    "Abakkus Mutual Fund",
-    "Tata Mutual Fund-SIF",
-    "Bandhan Mutual Fund -SIF",
-    "ICICI Prudential Mutual Fund - SIF",
-    "360 ONE Mutual Fund SIF",
-    "Bandhan Mutual Fund - SIF",
-    "360 ONE Mutual Fund-SIF (DYNASIF)",
-    "Aditya Birla Sun Life Mutual Fund-SIF (APEX SIF)",
-    "AlphaGrep Mutual Fund",
-    "Bandhan Mutual Fund-SIF (ARUDHA SIF)",
-    "Choice Mutual Fund",
-    "Edelweiss Mutual Fund-SIF (ALTIVA SIF)",
-    "Franklin Templeton Mutual Fund SIF (SAPPHIRE SIF)",
-    "HSBC Mutual Fund SIF (REDHEX SIF)",
-    "ICICI Prudential Mutual Fund-SIF (ISIF)",
-    "Invesco Mutual Fund SIF (Summit SIF)",
-    "ITI Mutual Fund-SIF (DIVINITI SIF)",
-    "Jio BlackRock Mutual Fund",
-    "Jio BlackRock Mutual Fund SIF (Prism SIF)",
-    "Kotak Mutual Fund SIF (INFINITY SIF)",
-    "Mirae Asset Mutual Fund SIF (PLATINUM SIF)",
-    "Quant Mutual Fund-SIF (QSIF)",
-    "SBI Mutual Fund-SIF (MAGNUM SIF)",
-    "Tata Mutual Fund-SIF (TITANIUM SIF)",
-    "The Wealth Company Mutual Fund SIF",
-    "Union Mutual Fund SIF (ARTHAYA SIF)",
-  ];
-
-  const roiAssetGroups = {
-    Equity: [
-      "Large Cap",
-      "Large & Mid Cap",
-      "Mid Cap",
-      "Small Cap",
-      "Flexi Cap",
-      "Multi Cap",
-      "ELSS",
-      "Sectoral / Thematic",
-      "Index",
-    ],
-    Debt: [
-      "Overnight",
-      "Liquid",
-      "Ultra Short Duration",
-      "Short Duration",
-      "Corporate Bond",
-      "Banking & PSU",
-      "Gilt",
-      "Dynamic Bond",
-    ],
-    Hybrid: [
-      "Aggressive Hybrid",
-      "Balanced Advantage",
-      "Multi Asset",
-      "Equity Savings",
-      "Arbitrage",
-    ],
-    Other: [
-      "Gold ETF / FoF",
-      "International",
-      "Solution Oriented",
-      "Fund of Funds",
-    ],
-  };
+  /* --- Assumption-based SIP / STP / SWP return estimators --- */
 
   const toLocalDateValue = (date) => {
     const year = date.getFullYear();
@@ -928,13 +825,11 @@
 
   const roiPerformanceConfigs = {
     "sip-performance": {
-      title: "SIP Performance",
+      title: "SIP Return Estimator",
       description:
-        "Compare a monthly SIP across your selected fund universe, investment dates and return assumption.",
-      note:
-        "This is an assumption-based illustration, not live NAV performance. Actual scheme returns, taxes and exit loads may differ.",
+        "Estimate the potential value of a monthly SIP using your expected annual return.",
+      note: CALCULATOR_DISCLAIMER,
       fields: () => [
-        { name: "scheme", label: "Select / enter scheme", type: "scheme", wide: true },
         { name: "sipAmount", label: "SIP Amount (Monthly)", type: "number", value: 10000, min: 500, max: 10000000 },
         { name: "startDate", label: "SIP Start Date", type: "date", value: roiDateYearsAgo(5) },
         { name: "endDate", label: "SIP End Date", type: "date", value: roiToday },
@@ -943,14 +838,11 @@
       ],
     },
     "stp-performance": {
-      title: "STP Performance",
+      title: "STP Return Estimator",
       description:
-        "Model systematic transfers from a source scheme into a destination scheme over your chosen period.",
-      note:
-        "This STP projection uses separate source and destination return assumptions. Taxes, exit loads and actual NAV movement are excluded.",
+        "Estimate systematic transfers between a source and destination using your expected annual returns.",
+      note: CALCULATOR_DISCLAIMER,
       fields: () => [
-        { name: "fromScheme", label: "Transfer From Scheme", type: "scheme", wide: true },
-        { name: "toScheme", label: "Transfer To Scheme", type: "scheme", wide: true },
         { name: "initialAmount", label: "Initial Amount", type: "number", value: 100000, min: 1000, max: 1000000000 },
         { name: "transferAmount", label: "Transfer Amount", type: "number", value: 1000, min: 100, max: 100000000 },
         { name: "investmentDate", label: "Investment Date", type: "date", value: roiDateYearsAgo(6) },
@@ -961,13 +853,11 @@
       ],
     },
     "swp-performance": {
-      title: "SWP Performance",
+      title: "SWP Return Estimator",
       description:
-        "See how a fixed monthly withdrawal may affect an invested corpus over the selected period.",
-      note:
-        "This SWP projection uses a constant return assumption. Taxes, exit loads and sequence-of-return risk are not included.",
+        "Estimate how fixed monthly withdrawals may affect an invested corpus using your expected annual return.",
+      note: CALCULATOR_DISCLAIMER,
       fields: () => [
-        { name: "scheme", label: "Select / enter scheme", type: "scheme", wide: true },
         { name: "initialAmount", label: "Initial Amount", type: "number", value: 100000, min: 1000, max: 1000000000 },
         { name: "withdrawalAmount", label: "Withdrawal Amount", type: "number", value: 1000, min: 100, max: 100000000 },
         { name: "investmentDate", label: "Investment Date", type: "date", value: roiDateYearsAgo(6) },
@@ -983,21 +873,13 @@
     if (!panel) return;
 
     const toolTabs = $$(".roi-tool-tab", panel);
-    const modeButtons = $$(".roi-mode-btn", panel);
     const resultViews = $$(".roi-result-view", panel);
-    const filterOptions = $(".roi-filter-options", panel);
-    const filterSearch = $(".roi-filter-search", panel);
     const fieldsGrid = $(".roi-fields-grid", panel);
     const formMessage = $(".roi-form-message", panel);
     const calculateButton = $(".roi-calculate-btn", panel);
     const resultCard = $(".roi-performance-result", panel);
     const drafts = {};
-    const selections = {
-      "fund-house": new Set(["HDFC Mutual Fund"]),
-      "asset-category": new Set(["Large Cap"]),
-    };
     let activeTool = "sip-performance";
-    let filterMode = "fund-house";
 
     const escapeHtml = (value) =>
       String(value).replace(/[&<>'"]/g, (character) => ({
@@ -1013,121 +895,6 @@
       formMessage.classList.toggle("is-valid", valid);
     };
 
-    const getSelectedFilters = () => Array.from(selections[filterMode]);
-
-    const getSchemeSuggestions = () => {
-      const selected = getSelectedFilters();
-      return selected.flatMap((name) => {
-        if (filterMode === "asset-category") {
-          return [
-            `${name} portfolio - Direct Growth`,
-            `${name} portfolio - Regular Growth`,
-            `${name} portfolio - IDCW`,
-          ];
-        }
-        const shortName = name
-          .replace(/\s+Mutual Fund.*$/i, "")
-          .replace(/\s+-\s+SIF.*$/i, "")
-          .trim();
-        return [
-          `${shortName} - Direct Growth scheme`,
-          `${shortName} - Regular Growth scheme`,
-          `${shortName} - IDCW scheme`,
-        ];
-      });
-    };
-
-    const updateSelectionSummary = () => {
-      const count = getSelectedFilters().length;
-      $(".roi-selection-count", panel).textContent = `${count} selected`;
-    };
-
-    const updateSchemeInputs = (resetAutomaticValues = false) => {
-      const suggestions = getSchemeSuggestions();
-      $$(".roi-scheme-input", panel).forEach((input, index) => {
-        const list = document.getElementById(input.getAttribute("list"));
-        if (list) {
-          list.innerHTML = suggestions
-            .map((suggestion) => `<option value="${escapeHtml(suggestion)}"></option>`)
-            .join("");
-        }
-
-        const previousAutomaticValue = input.dataset.autoValue || "";
-        const shouldReplace =
-          resetAutomaticValues || !input.value || input.value === previousAutomaticValue;
-        if (shouldReplace) {
-          const nextValue = suggestions.length
-            ? suggestions[Math.min(index, suggestions.length - 1)]
-            : "";
-          input.value = nextValue;
-          input.dataset.autoValue = nextValue;
-          drafts[activeTool] = drafts[activeTool] || {};
-          drafts[activeTool][input.dataset.roiField] = nextValue;
-        }
-      });
-    };
-
-    const appendFilterOption = (name, serial) => {
-      const label = document.createElement("label");
-      const input = document.createElement("input");
-      const text = document.createElement("span");
-      const id = `roi-filter-${filterMode}-${serial}`;
-      label.className = "roi-filter-option";
-      input.type = "checkbox";
-      input.id = id;
-      input.value = name;
-      input.checked = selections[filterMode].has(name);
-      text.textContent = name;
-      label.append(input, text);
-      input.addEventListener("change", () => {
-        if (input.checked) selections[filterMode].add(name);
-        else selections[filterMode].delete(name);
-        updateSelectionSummary();
-        updateSchemeInputs(false);
-        setMessage();
-      });
-      filterOptions.append(label);
-    };
-
-    const renderFilterOptions = () => {
-      const query = filterSearch.value.trim().toLocaleLowerCase("en-IN");
-      filterOptions.innerHTML = "";
-      let serial = 0;
-      let visibleCount = 0;
-
-      if (filterMode === "fund-house") {
-        roiAmcOptions
-          .filter((name) => name.toLocaleLowerCase("en-IN").includes(query))
-          .forEach((name) => {
-            appendFilterOption(name, serial++);
-            visibleCount += 1;
-          });
-      } else {
-        Object.entries(roiAssetGroups).forEach(([group, names]) => {
-          const visibleNames = names.filter((name) =>
-            `${group} ${name}`.toLocaleLowerCase("en-IN").includes(query),
-          );
-          if (!visibleNames.length) return;
-          const heading = document.createElement("p");
-          heading.className = "roi-filter-group-title";
-          heading.textContent = group;
-          filterOptions.append(heading);
-          visibleNames.forEach((name) => {
-            appendFilterOption(name, serial++);
-            visibleCount += 1;
-          });
-        });
-      }
-
-      if (!visibleCount) {
-        const empty = document.createElement("p");
-        empty.className = "roi-empty-options";
-        empty.textContent = "No matching option found.";
-        filterOptions.append(empty);
-      }
-      updateSelectionSummary();
-    };
-
     const renderFields = () => {
       const fields = roiPerformanceConfigs[activeTool].fields();
       const savedDraft = drafts[activeTool] || {};
@@ -1135,15 +902,6 @@
         .map((field) => {
           const id = `roi-${activeTool}-${field.name}`;
           const value = savedDraft[field.name] ?? field.value ?? "";
-          if (field.type === "scheme") {
-            return `
-              <div class="roi-control${field.wide ? " roi-control-wide" : ""}">
-                <label for="${id}">${escapeHtml(field.label)}</label>
-                <input class="roi-field-input roi-scheme-input" id="${id}" type="text" data-roi-field="${field.name}" list="${id}-options" value="${escapeHtml(value)}" placeholder="Type the exact scheme name" autocomplete="off">
-                <datalist id="${id}-options"></datalist>
-                <small class="roi-control-hint">Type any exact scheme name; values are projected from your return assumption.</small>
-              </div>`;
-          }
           if (field.type === "date") {
             return `
               <div class="roi-control${field.wide ? " roi-control-wide" : ""}">
@@ -1190,7 +948,6 @@
         });
       });
 
-      updateSchemeInputs(false);
     };
 
     const readValues = () => {
@@ -1204,16 +961,9 @@
     };
 
     const validateValues = (values) => {
-      if (!getSelectedFilters().length) {
-        return filterMode === "fund-house"
-          ? "Select at least one fund house."
-          : "Select at least one asset category.";
-      }
-
       const config = roiPerformanceConfigs[activeTool];
       for (const field of config.fields()) {
         const value = values[field.name];
-        if (field.type === "scheme" && !value) return `${field.label} is required.`;
         if (field.type === "date" && !value) return `${field.label} is required.`;
         if (field.type === "number") {
           if (!Number.isFinite(value)) return `Enter ${field.label.toLowerCase()}.`;
@@ -1246,9 +996,6 @@
       }
 
       if (activeTool === "stp-performance") {
-        if (values.fromScheme === values.toScheme) {
-          return "Choose different source and destination schemes for the STP.";
-        }
         if (values.transferAmount > values.initialAmount) {
           return "Monthly transfer amount cannot exceed the initial amount.";
         }
@@ -1284,7 +1031,6 @@
         timeline: `${installments} monthly instalment${installments === 1 ? "" : "s"}`,
         primaryLabel: "Projected value as on valuation date",
         primaryValue: inr(valueAtValuation),
-        scheme: values.scheme,
         rows: [
           ["Amount invested", inr(projection.invested)],
           ["Estimated wealth gain", inr(gain)],
@@ -1297,7 +1043,6 @@
           ["Projected", valueAtValuation],
         ],
         table: [
-          ["Scheme", values.scheme],
           ["SIP amount", inr(values.sipAmount)],
           ["SIP period", `${roiDateLabel(values.startDate)} – ${roiDateLabel(values.endDate)}`],
           ["Total instalments", installments.toLocaleString("en-IN")],
@@ -1341,10 +1086,9 @@
         timeline: `${transferMonths} monthly transfer${transferMonths === 1 ? "" : "s"}`,
         primaryLabel: "Projected combined value",
         primaryValue: inr(combinedValue),
-        scheme: `${values.fromScheme} → ${values.toScheme}`,
         rows: [
-          ["Source scheme balance", inr(sourceBalance)],
-          ["Destination scheme value", inr(destinationBalance)],
+          ["Source balance", inr(sourceBalance)],
+          ["Destination value", inr(destinationBalance)],
           ["Total amount transferred", inr(transferred)],
         ],
         chartTitle: "Initial vs projected value",
@@ -1354,8 +1098,6 @@
           ["Projected", combinedValue],
         ],
         table: [
-          ["Transfer from", values.fromScheme],
-          ["Transfer to", values.toScheme],
           ["Initial amount", inr(values.initialAmount)],
           ["Monthly transfer", inr(values.transferAmount)],
           ["Transfer period", `${roiDateLabel(values.startDate)} – ${roiDateLabel(values.endDate)}`],
@@ -1395,7 +1137,6 @@
         timeline: `${withdrawalMonths} monthly withdrawal${withdrawalMonths === 1 ? "" : "s"}`,
         primaryLabel: "Projected remaining balance",
         primaryValue: inr(balance),
-        scheme: values.scheme,
         rows: [
           ["Total amount withdrawn", inr(totalWithdrawn)],
           ["Balance + withdrawals", inr(combinedBenefit)],
@@ -1408,7 +1149,6 @@
           ["Total benefit", combinedBenefit],
         ],
         table: [
-          ["Scheme", values.scheme],
           ["Initial amount", inr(values.initialAmount)],
           ["Monthly withdrawal", inr(values.withdrawalAmount)],
           ["Withdrawal period", `${roiDateLabel(values.startDate)} – ${roiDateLabel(values.endDate)}`],
@@ -1425,7 +1165,6 @@
       $(".roi-tool-timeline", panel).textContent = result.timeline;
       $(".roi-primary-label", panel).textContent = result.primaryLabel;
       $(".roi-primary-value", panel).textContent = result.primaryValue;
-      $(".roi-result-scheme", panel).textContent = result.scheme;
       $(".roi-result-rows", panel).innerHTML = result.rows
         .map(
           ([label, value], index) =>
@@ -1499,40 +1238,6 @@
       calculate({ silent: true });
     };
 
-    const setFilterMode = (mode) => {
-      filterMode = mode;
-      Object.values(drafts).forEach((draft) => {
-        delete draft.scheme;
-        delete draft.fromScheme;
-        delete draft.toScheme;
-      });
-      modeButtons.forEach((button) => {
-        const selected = button.dataset.roiMode === mode;
-        button.classList.toggle("active", selected);
-        button.setAttribute("aria-selected", selected ? "true" : "false");
-        button.tabIndex = selected ? 0 : -1;
-      });
-      const usingFundHouses = mode === "fund-house";
-      $(".roi-filter-title", panel).textContent = usingFundHouses
-        ? "Select AMC"
-        : "Select Asset Category";
-      filterSearch.value = "";
-      filterSearch.placeholder = usingFundHouses
-        ? "Search fund house"
-        : "Search asset category";
-      filterSearch.setAttribute(
-        "aria-label",
-        usingFundHouses ? "Search fund house" : "Search asset category",
-      );
-      filterOptions.setAttribute(
-        "aria-label",
-        usingFundHouses ? "Available fund houses" : "Available asset categories",
-      );
-      renderFilterOptions();
-      updateSchemeInputs(true);
-      calculate({ silent: true });
-    };
-
     const setResultView = (view) => {
       resultViews.forEach((button) => {
         const selected = button.dataset.resultView === view;
@@ -1560,19 +1265,6 @@
       });
     });
 
-    modeButtons.forEach((button, index) => {
-      button.addEventListener("click", () => setFilterMode(button.dataset.roiMode));
-      button.addEventListener("keydown", (event) => {
-        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-        event.preventDefault();
-        const nextIndex = ["ArrowRight", "End"].includes(event.key)
-          ? modeButtons.length - 1
-          : 0;
-        modeButtons[nextIndex].focus();
-        setFilterMode(modeButtons[nextIndex].dataset.roiMode);
-      });
-    });
-
     resultViews.forEach((button, index) => {
       button.addEventListener("click", () => setResultView(button.dataset.resultView));
       button.addEventListener("keydown", (event) => {
@@ -1586,11 +1278,9 @@
       });
     });
 
-    filterSearch.addEventListener("input", renderFilterOptions);
     calculateButton.addEventListener("click", () => calculate());
 
     setTool(activeTool);
-    setFilterMode(filterMode);
     setResultView("graph");
   };
 
@@ -1600,7 +1290,7 @@
   // initial paint
   setGoalCalculator("marriage");
 
-  
+
 
   // Override Tab clicks to sync with URL hash
   $$(".tab").forEach((tab) => {

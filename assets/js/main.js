@@ -1224,6 +1224,23 @@ document.addEventListener("DOMContentLoaded", () => {
   initPillarsAccordion();
 
   /* ---------- Consultation Booking Modal Controller ---------- */
+  function markFormStartTime(form, reset = false) {
+    const startedAt = form?.querySelector('[name="formStartedAt"]');
+    if (startedAt && (reset || !startedAt.value)) {
+      startedAt.value = String(Date.now());
+    }
+  }
+
+  function buildProtectedFormPayload(form) {
+    const payload = Object.fromEntries(new FormData(form).entries());
+    const startedAt = Number(payload.formStartedAt);
+    payload.formElapsedMs = String(
+      Number.isFinite(startedAt) ? Math.max(0, Date.now() - startedAt) : 0,
+    );
+    delete payload.formStartedAt;
+    return payload;
+  }
+
   // POST a form submission to the email function (api/consultation.js)
   function sendConsultation(payload) {
     return fetch("/api/consultation.php", {
@@ -1240,19 +1257,22 @@ document.addEventListener("DOMContentLoaded", () => {
   function initReachForm() {
     const form = document.querySelector(".reach-consultation-form");
     if (!form) return;
+    markFormStartTime(form);
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+      markFormStartTime(form);
       const btn = form.querySelector('button[type="submit"]');
       const btnHtml = btn ? btn.innerHTML : "";
       if (btn) {
         btn.disabled = true;
         btn.textContent = "Sending...";
       }
-      const payload = Object.fromEntries(new FormData(form).entries());
+      const payload = buildProtectedFormPayload(form);
       payload.page = window.location.href;
       sendConsultation(payload)
         .then(() => {
           form.reset();
+          markFormStartTime(form, true);
           alert(
             "Thank you! Your request has been sent. Our team will get back to you within 24 business hours.",
           );
@@ -1282,6 +1302,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const successSummary = document.getElementById("successSummaryText");
 
     const openModal = () => {
+      markFormStartTime(form, true);
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -1365,6 +1386,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        markFormStartTime(form);
         const submitBtn = document.getElementById("consultSubmitBtn");
         if (submitBtn) {
           submitBtn.disabled = true;
@@ -1375,7 +1397,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("consultName")?.value || "there";
         const phoneVal = document.getElementById("consultPhone")?.value || "";
 
-        const payload = Object.fromEntries(new FormData(form).entries());
+        const payload = buildProtectedFormPayload(form);
         payload.page = window.location.href;
 
         sendConsultation(payload)
