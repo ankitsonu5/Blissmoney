@@ -13040,6 +13040,11 @@ body.page-clients {
   .blog-archive-page .top-banner-section {
     padding: 45px 0 55px;
   }
+
+  body:not(.page-home) .top-banner-section {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
 }
 
 /* ==========================================================================
@@ -13653,6 +13658,8 @@ body.page-clients {
 
 .page-services-overview .svc-connected-decisions .steps-stacked-deck {
   margin-left: auto;
+  margin-right: clamp(24px, 3vw, 48px);
+  top: clamp(14px, 1.4vw, 22px);
   width: clamp(580px, 50vw, 860px);
   height: clamp(350px, 25vw, 430px);
 }
@@ -13703,6 +13710,8 @@ body.page-clients {
   .page-services-overview .svc-connected-decisions .steps-stacked-deck {
     width: 100%;
     margin-left: 0;
+    margin-right: 0;
+    top: 0;
   }
 }
 
@@ -14587,6 +14596,10 @@ section.ab2-values {
 
 .page-our-people .op2-card-btn:hover svg {
   transform: translateX(4px);
+}
+
+.page-our-people #contact {
+  scroll-margin-top: 90px;
 }
 
 @media (prefers-reduced-motion: reduce) { .page-our-people .op2-profile-dot { animation: none; } }
@@ -16589,6 +16602,18 @@ section.ab2-values {
   letter-spacing: -0.01em;
 }
 
+.page-services-overview .svc-q-more {
+  display: none;
+}
+
+.page-services-overview .svc-q-footer {
+  justify-content: flex-end;
+}
+
+.page-services-overview .svc-q-exp-footer .svc-q-btn-action {
+  display: none;
+}
+
 :is(.page-services-overview, .page-financial-planning, .page-insurance) .svc-q-btn-arrow {
   width: 38px;
   height: 38px;
@@ -16822,6 +16847,10 @@ section.ab2-values {
   object-position: center;
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 1;
+}
+
+.page-estate-planning .es3-continuity-img {
+  object-position: 50% 78%;
 }
 
 .svc-scope-card:hover .svc-scope-card-bg {
@@ -17344,6 +17373,26 @@ section.ab2-values {
   .page-lending .ln5-rd-grid { grid-template-columns: 1fr; }
   .page-lending .ln5-rd-photo { min-height: 300px; margin-bottom: 0; }
   .page-lending .ln5-rd-bubble { position: relative; left: auto; bottom: auto; width: auto; margin: -50px 16px 0; }
+}
+
+@media (max-width: 640px) {
+  .page-lending .ln5-rd-photo {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .page-lending .ln5-rd-photo img {
+    position: static;
+    inset: auto;
+    height: clamp(260px, 82vw, 340px);
+  }
+
+  .page-lending .ln5-rd-bubble {
+    position: static;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 /* Lending: "Understand the structure before accepting the commitment" - bento grid (pale-green art tile, four soft cards, photo tile) */

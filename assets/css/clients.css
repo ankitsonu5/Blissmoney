@@ -2218,14 +2218,20 @@
   min-height: clamp(142px, 12.8vw, 170px);
 }
 
-.page-clients .cl12-scope-img--business,
-.page-client-segments .cl12-scope-img--business {
+.page-clients .cl12-scope-img--business {
   object-position: 35% 20%;
 }
 
-.page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--executive,
+.page-client-segments .cl12-scope-img--business {
+  object-position: 45% 20%;
+}
+
+.page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--executive {
+  object-position: 65% 15%;
+}
+
 .page-client-segments .cs12-situations .svc-scope-card-bg.cl12-scope-img--executive {
-  object-position: 90% 15%;
+  object-position: 25% 15%;
 }
 
 .page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--family,
@@ -2238,7 +2244,14 @@
   mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
 }
 
-.page-clients .cl12-scope-img--founder,
+.page-clients .cl12-profiles .svc-scope-card-bg.cl12-scope-img--family {
+  object-position: 45% 34%;
+}
+
+.page-clients .cl12-scope-img--founder {
+  object-position: 60% 18%;
+}
+
 .page-client-segments .cl12-scope-img--founder {
   object-position: 50% 18%;
 }

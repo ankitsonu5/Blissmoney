@@ -215,25 +215,9 @@ body.bm-popup-active .floating-actions {
   filter: drop-shadow(0 0 18px rgba(12, 175, 128, 0.45));
 }
 
-.bm-popup-eyebrow {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  margin-top: 26px;
-  padding: 5px 11px;
-  border-radius: 999px;
-  border: 1px solid rgba(12, 175, 128, 0.5);
-  background: rgba(12, 175, 128, 0.12);
-  color: var(--bm-green);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .bm-popup-step-1 .bm-popup-title {
   max-width: 240px;
-  margin-top: 14px;
+  margin-top: 26px;
 }
 
 .bm-popup-step-1 .bm-popup-subtitle {
@@ -596,10 +580,6 @@ body.bm-popup-active .floating-actions {
     right: -34px;
     width: 128px;
     height: 128px;
-  }
-
-  .bm-popup-eyebrow {
-    margin-top: 18px;
   }
 
   .bm-popup-title {

@@ -524,6 +524,21 @@ body.menu-is-open .floating-actions {
   letter-spacing: -0.01em;
 }
 
+.hero-registration {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-base);
+  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  max-width: clamp(600px, 46vw, 920px);
+  margin-bottom: clamp(36px, 2.8vw, 48px);
+}
+
+.hero-registration span {
+  display: block;
+}
+
 /* Paragraph Styling */
 .hero-description {
   color: var(--color-text-muted);
@@ -532,7 +547,7 @@ body.menu-is-open .floating-actions {
   font-weight: 400;
   line-height: 1.7;
   max-width: clamp(600px, 46vw, 920px);
-  margin-bottom: clamp(36px, 2.8vw, 48px);
+  margin-bottom: clamp(18px, 1.4vw, 24px);
   letter-spacing: 0.01em;
 }
 
@@ -641,8 +656,12 @@ body.menu-is-open .floating-actions {
     margin-bottom: 22px;
   }
 
-  .hero-description {
+  .hero-registration {
     margin-bottom: 32px;
+  }
+
+  .hero-description {
+    margin-bottom: 18px;
     max-width: 100%;
   }
 
